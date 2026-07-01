@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>陈波 · 借款人分析报告</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#17130d;--paper2:#1f1a12;--card:#221c14;--ink:#ece3d2;--ink2:#a99e86;--line:#3a3327;--red:#e9705a;--redbg:#3a201b;--amber:#e0a64a;--green:#9ec471;--shadow:0 1px 0 rgba(255,255,255,.03) inset, 0 2px 16px rgba(0,0,0,.38);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:"Noto Sans SC",sans-serif;font-weight:400;line-height:1.75;font-size:15px;padding:0 16px 80px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto}
+header{padding:40px 0 0}
+.kick{font-weight:500;letter-spacing:.32em;font-size:11px;color:var(--red);text-transform:uppercase}
+h1{font-family:"Noto Serif SC";font-weight:900;font-size:38px;line-height:1.1;margin:10px 0 6px;letter-spacing:.02em}
+.sub{color:var(--ink2);font-size:13.5px}
+.tabs{position:sticky;top:0;z-index:9;display:flex;gap:8px;margin:20px 0 4px;padding:10px 0;background:var(--paper);border-bottom:2px solid var(--ink)}
+.tab{flex:1;text-align:center;font-family:"Noto Serif SC";font-weight:700;font-size:14.5px;padding:10px 8px;border:1.5px solid var(--line);border-radius:9px;background:var(--card);color:var(--ink2);cursor:pointer;user-select:none}
+.tab.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.tab small{display:block;font-family:"Noto Sans SC";font-weight:400;font-size:10.5px;letter-spacing:.04em;margin-top:2px;opacity:.8}
+.panel{display:none}
+.panel.on{display:block;animation:fade .25s ease}
+@keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:none}}
+.selfcheck{margin:20px 0;padding:16px 18px;background:var(--paper2);border-left:4px solid var(--red);border-radius:0 8px 8px 0;font-size:13.5px;color:var(--ink2)}
+.selfcheck b{color:var(--ink)}
+section{padding:30px 0 6px;border-bottom:1px solid var(--line)}
+.sechead{display:flex;align-items:baseline;gap:11px;margin-bottom:14px}
+.senum{font-family:"Noto Serif SC";font-weight:900;font-size:13px;color:var(--red);border:1.5px solid var(--red);border-radius:6px;padding:1px 8px;flex:none}
+h2{font-family:"Noto Serif SC";font-weight:700;font-size:21px;letter-spacing:.02em}
+h3{font-size:14px;font-weight:700;margin:14px 0 4px;color:#5a4d36}
+p{margin:9px 0}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:13px;background:var(--card);box-shadow:var(--shadow);border-radius:8px;overflow:hidden}
+th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--paper2);font-weight:700;font-size:12px;color:var(--ink2);letter-spacing:.03em}
+tr:last-child td{border-bottom:none}
+td.num,th.num{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+.r3{color:var(--red);font-weight:700}.r1{color:var(--red);font-weight:600}.o{color:var(--amber);font-weight:600}
+.flowline{font-size:12.5px;color:var(--ink2);padding-left:14px;border-left:2px solid var(--line);margin:5px 0 5px 4px}
+.flowline b{color:var(--red)}
+.block{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:15px 17px;margin:14px 0;box-shadow:var(--shadow)}
+.block.hot{border:1.5px solid var(--red)}
+.block h3{font-family:"Noto Serif SC";font-weight:700;font-size:15.5px;margin-bottom:6px;color:var(--ink)}
+.wp{counter-reset:wp;list-style:none}
+.wp li{position:relative;padding:11px 0 11px 40px;border-bottom:1px dashed var(--line)}
+.wp li:last-child{border-bottom:none}
+.wp li::before{counter-increment:wp;content:counter(wp);position:absolute;left:0;top:11px;width:26px;height:26px;background:var(--ink);color:var(--paper);font-family:"Noto Serif SC";font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;border-radius:7px}
+.wp li.fire::before{background:var(--red)}
+.mc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:13px 0;box-shadow:var(--shadow)}
+.mc .q{font-family:"Noto Serif SC";font-weight:700;font-size:15px}
+.mc .why{font-size:13px;color:var(--ink2);margin:5px 0}
+.mc .br{font-size:12.5px;margin:3px 0;padding-left:14px}
+.mc .br::before{content:"→ ";color:var(--red);font-weight:700}
+.align{background:var(--paper2);border-radius:10px;padding:16px 18px;margin-top:18px;font-size:12.5px;color:var(--ink2)}
+.align h3{font-family:"Noto Serif SC";font-size:14px;color:var(--ink);margin-bottom:8px}
+.align .ok{color:var(--green);font-weight:700}.align .warn{color:var(--amber);font-weight:700}.align .hit{color:var(--red);font-weight:700}
+.align div{margin:4px 0}
+.placeholder{text-align:center;color:var(--ink2);padding:60px 20px;background:var(--card);border:1px dashed var(--line);border-radius:12px;margin:24px 0}
+.placeholder b{font-family:"Noto Serif SC";color:var(--ink);font-size:17px;display:block;margin-bottom:8px}
+footer{text-align:center;color:var(--ink2);font-size:11.5px;padding-top:26px;letter-spacing:.05em}
+.note{font-size:12px;color:var(--ink2);background:var(--paper2);border-radius:6px;padding:7px 11px;margin:10px 0}
+.small{font-size:12px;color:var(--ink2)}
+@media(max-width:600px){h1{font-size:29px}h2{font-size:18px}body{font-size:14.5px}th,td{padding:7px 6px;font-size:11.5px}.tab{font-size:13px}}
+@media (prefers-color-scheme: light){
+  :root{--paper:#f7f2e8;--paper2:#ece4d4;--card:#fffdf9;--ink:#2b2419;--ink2:#6e6453;--line:#dccfb6;--red:#bf3b28;--redbg:#f8e6e0;--amber:#a9761b;--green:#56863a;--shadow:0 1px 0 rgba(0,0,0,.02) inset, 0 2px 14px rgba(120,100,60,.12);}
+  h3{color:#7a6433}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header>
+  <div class="kick">民间借贷视角 · 借款人分析</div>
+  <h1>陈波</h1>
+  <div class="sub">微信支付明细 + 成都琪宇进出口对公 · 截至 2026-06-22</div>
+</header>
+<div class="tabs">
+  <div class="tab on" data-tab="stage1">阶段一<small>深扫</small></div>
+  <div class="tab" data-tab="stage2">阶段二<small>验证 · 收口</small></div>
+</div>
+<div class="panel on" id="stage1">
+  <div class="selfcheck"><b>自检结论：</b>达王汉林颗粒度基准 + V2.0 双维度/现金/名单增强；名单已读（632 卡 / 424 名）<b>无强命中</b>；中行 8121、建行 8530 本人卡本身流水、4 张信用卡账单、支付宝均未提供，已标 ⚠ 盲区、不捏造。</div>
+  <section><div class="sechead"><span class="senum">01</span><h2>📂 数据源</h2></div>
+    <table><tr><th>流水类型</th><th>账号 / ID</th><th>期间</th><th class="num">笔数</th></tr>
+    <tr><td>微信支付交易明细</td><td>微信号 bo101386（绑中行 8121 等）</td><td>2025-06-23 ~ 2026-06-22</td><td class="num">3,150</td></tr>
+    <tr><td>成都琪宇进出口 对公（建行）</td><td>对公账户（陈波经营/控制）</td><td>2025-06-24 ~ 2026-06-22</td><td class="num">263</td></tr></table>
+    <p class="small">微信：收入 242 笔 121.0 万 / 支出 2,881 笔 359.1 万 / 其他 27 笔 69.0 万。琪宇对公：进 1,058.6 万 / 出 1,058.8 万，平进平出。<b>未提供：</b>中行 8121、建行 8530 本人主力卡<b>本身</b>流水（仅微信里露头）、4 张信用卡账单、支付宝 ⚠。</p>
+  </section>
+  <section><div class="sechead"><span class="senum">02</span><h2>👤 这是一个什么人</h2></div>
+    <p>39 岁（身份证 513822********8834，1986-10 生），户籍四川眉山（513822 青神），微信号 bo101386，经营<b>成都琪宇进出口有限公司</b>（进出口/贸易）。</p>
+    <p><b>真实生活轨迹</b>——以成都为主（办公在“吾悦 712A”）：美团外卖 258 次、加油（中石油/中石化/壳牌昆仑）约 45 次、停车 43 次、公共交通 41 次、烧烤 41、火锅/串串/餐饮/超市高频，典型年轻经营者日常。</p>
+    <p><b>日常单笔消费基线：几十元（中位 23 元）。</b></p>
+    <div class="block hot"><h3>研判 · 综合画像</h3>把“39 岁做进出口贸易的陈波”和账户行为对撞——他有真实经营壳（琪宇有 B2B 货款、缴税社保、3 笔建行经营贷 + 融资担保），但账户更像“<b>过路 + 电商刷单 + 公私混用</b>”的走账型：对公 1,058 万平进平出、月末余额贴地（几百到两千）、出现“一达米-补单 / 财源滚滚来-广告费刷单”、微信零钱多次贴 5 万上限提现凑款、公司↔个人来回抽调。他大概率<b>不是“缺钱来借的纯经营户”</b>，而是“过着大额走账、自己也扛着经营贷和多头个人往来”的<b>过手型经营者</b>。核心风险不在“还不上”（经营贷目前正常履约），而在 <span class="r3">来路不清 · 易被牵连冻结</span>——过路账户 + 刷单补单 + 走账，账户随时可能因上下游涉案被冻结；叠加期末新借（知足常乐银行 +20 万）、贴上限凑款、微信支出半年翻 10 倍的资金紧张迹象。此为研判，需必查坐实。</div>
+  </section>
+  <section><div class="sechead"><span class="senum">03</span><h2>🏦 账户管理高度分层</h2></div>
+    <p class="small">已识别在用账户 <b>9 个</b>（仅 2 个提供了流水）：</p>
+    <table><tr><th>账户</th><th>角色</th><th>关键数据（含余额画像）</th></tr>
+    <tr><td>中国银行储蓄卡 8121</td><td><span class="r1">🔴 个人主力卡 / 微信主通道</span></td><td>微信里 1,984 笔、325.1 万走它；<span class="o">本身流水未提供 ⚠，余额/ATM 现金未知</span></td></tr>
+    <tr><td>建设银行储蓄卡 8530</td><td><span class="r1">🔴 个人第二卡 / 公司抽调收款</span></td><td>微信 112 笔 34.2 万 + 公司打款；<span class="o">本身流水未提供 ⚠</span></td></tr>
+    <tr><td>成都琪宇进出口 对公（建行）</td><td><span class="r1">🔴 经营/走账主账户</span></td><td>263 笔、进 1,058.6 万；余额最高 51.3 万、最低 1 元、<b>中位仅 7,218</b>；月末抽样 267/120/502/339 元 = <span class="r3">过路账户</span></td></tr>
+    <tr><td>平安信用卡 3286</td><td>信用卡</td><td>微信 102 笔 2.04 万；账单未提供 ⚠</td></tr>
+    <tr><td>建设信用卡 5977 / 光大 3064 / 兴业 0946</td><td>信用卡</td><td>微信 51/92/64 笔，累计 1.77/1.47/0.55 万；账单未提供 ⚠</td></tr>
+    <tr><td>微信 零钱 / 零钱通</td><td>第三方</td><td>零钱 666 笔、零钱通 5 笔；提现 18 笔 41.8 万落中行 8121</td></tr>
+    <tr><td>支付宝</td><td>第三方</td><td>未见 / 未提供 ⚠</td></tr></table>
+    <p><b>核心观察</b>：真正的两张主力个人卡（中行 8121、建行 8530）<b>只在微信里露头、本身流水没提供</b>——本单最大盲区；琪宇对公是典型<b>过路账户</b>（月末贴地、单日大流量）；同时并用 4 张信用卡。账户被明显分层。</p>
+  </section>
+  <section><div class="sechead"><span class="senum">04</span><h2>🔴 借款链</h2></div>
+    <h3>🟢 真收入（排除，但需核实是否真贸易/走账刷单）</h3>
+    <table><tr><th>来源（琪宇对公）</th><th class="num">累计</th><th class="num">笔数</th><th>特征</th></tr>
+    <tr><td>四川鲸旺商贸</td><td class="num">+248.6 万</td><td class="num">7</td><td>电子汇入</td></tr>
+    <tr><td>四川鲸威贸易</td><td class="num">+138.3 万</td><td class="num">6</td><td>电子汇入</td></tr>
+    <tr><td>成都德迈安科技 / 四川美兴博 / 北京恒佑基业</td><td class="num">+104.7/90/84.8 万</td><td class="num">4/2/3</td><td>电子汇入</td></tr>
+    <tr><td>物空科技 / 汇弘康 / 毅豪致胜 / 航亿伟业 / 陈凤梅</td><td class="num">+73/51/40.8/40.2/21.7 万</td><td class="num">—</td><td>电子汇入</td></tr></table>
+    <p class="small">→ 均公司对手方、形式上贸易货款；但结合平进平出 + 刷单网名，<b>需核实真实贸易 or 走账/刷单</b>（见关注点②）。</p>
+    <h3>🔴 疑似借款 / 个人大额注入（微信个人端）</h3>
+    <table><tr><th>对手</th><th class="num">金额</th><th>特征（含名单标签）</th></tr>
+    <tr><td>知足常乐银行（网名）</td><td class="num">+20 万（06-16）</td><td><span class="r3">🔴 初见即大额</span>，之前无往来、名带“银行”、期末前一周单笔 20 万 → 强疑期末新借</td></tr>
+    <tr><td>蒋</td><td class="num">+11.5 万（2 笔）</td><td><span class="r1">🔴</span> 10 万 04-30 + 1.5 万 05-25，无业务理由</td></tr>
+    <tr><td>张润波·李青龙（钢材建材批发）</td><td class="num">+15 万（03-31）</td><td><span class="r1">🔴</span> 同日两笔 7.5 万，疑借款或供应链回款，待问</td></tr>
+    <tr><td>水电料批发（网名）</td><td class="num">+10 万（3 笔）</td><td><span class="o">🟠</span> 名似供应商但为进款，性质待核</td></tr></table>
+    <div class="flowline">└→ “知足常乐银行” +20 万落微信绑定的中行 8121 通道，<b>该卡本身流水未提供、无法看这 20 万 3 日内去向 ⚠</b>（盲区，列必查①）。</div>
+    <div class="note">📌 持牌负债底盘（归还款端）：琪宇对公有 <b>建行 3 笔经营贷</b>（…1670300 / …1991611 / …2011641），由<b>四川国经普惠融资担保</b>担保（2025-07-24 付担保费 2 万）。放款/本金档：+4.4 万(08-27)、+11.3 万(09-23)、+4.21 万(2026-03-30)。</div>
+  </section>
+  <section><div class="sechead"><span class="senum">05</span><h2>🔴 还款链（时间履约 × 金额纪律）</h2></div>
+    <h3>🔴🔴🔴 时间铁证（持牌银行经营贷 · 月还周期带）</h3>
+    <table><tr><th>对手</th><th>逐月节奏</th><th>判定</th></tr>
+    <tr><td>建行 3 笔经营贷（琪宇）</td><td>每月固定 <b>21 号</b>自动“收回贷款本息”，横跨 2025-07~2026-06 逐月出现；月扣本息约 1.1~1.5 万，另按季归还本金档 4.4/11.3/4.21 万</td><td class="r3">月还 30±3 周期带 · 扣款日死守 21 号</td></tr></table>
+    <div class="flowline">└→ 属<b>持牌银行经营贷履约</b>，目前正常，<b>非民间借贷</b>；是核心负债底盘。</div>
+    <h3>🔴 大额支出（供应商货款 + 经营，非民间还款）</h3>
+    <table><tr><th>子类</th><th>对手</th><th class="num">累计/笔数</th><th>特征</th></tr>
+    <tr><td>供应商货款</td><td>吴迪乐信-智能手机</td><td class="num">-39.2 万 / 25</td><td>手机货款，随进随付</td></tr>
+    <tr><td>供应商货款</td><td>威达信-山寨手机</td><td class="num">-17.0 万 / 4</td><td>手机货款</td></tr>
+    <tr><td>电商补单</td><td>一达米-补单</td><td class="num">-14.2 万 / 11</td><td><span class="r1">🔴 “补单”=刷单走账</span></td></tr>
+    <tr><td>经营开支（租金）</td><td>吾悦 712A 房东 欧彬</td><td class="num">-12.8 万 / 7</td><td>办公室租金</td></tr>
+    <tr><td>公司关联</td><td>岁月了然-熊欣（成都琪宇）</td><td class="num">-72.6 万 / 118</td><td>高频、公司关联/合伙走账</td></tr></table>
+    <h3>🤝 关系型往来 / 合伙周转（非还款；均未命中名单）</h3>
+    <table><tr><th>对手</th><th class="num">进 / 出</th><th>特征</th></tr>
+    <tr><td>刘银（我的劉先生）</td><td class="num">+9.2 / -21.3 万（16 笔）</td><td>金额随机 2 千~5 万、通道切换（中行 8121/零钱）、<b>有来有回</b> → 关系型，非固定还款</td></tr>
+    <tr><td>沐慈</td><td class="num">+6.3 / -11.4 万（13 笔）</td><td>双向、金额散 → 关系型</td></tr>
+    <tr><td>蓝天-秀英姐 / 周登登 / 朱运科 / 海利老表</td><td class="num">均双向</td><td>同额有来有回、随手定 → 合伙/周转</td></tr></table>
+    <div class="flowline">└→ 刘银时间维度：2025-10~12 集中（10-14 进 3 万→10-20 出 3 万；11-19、12-01 各出 5 万→12-03 进 5 万），2026-05 后转小额高频（2~5 千）。<b>间隔不踩单一周期带、金额随机、双向 → 非固定周期履约，判关系型</b>。</div>
+    <h3>🔁 零钱贴上限提现（资金归集/凑款） · 💵 现金</h3>
+    <p class="small">零钱提现 18 笔、41.8 万，全落中行 8121；<b>多次贴 5 万上限</b>：50,050（2025-12-03、2026-03-04）、2026-04-30 同日 49,950+50,050=10 万。→ 微信资金反复归集主力卡，贴上限=凑款/调度。<br>微信 + 琪宇对公<b>全程零现金交易</b>（纯电子）；但中行 8121、建行 8530 本身流水未提供，<b>ATM 现金存取未知 ⚠</b>——若有大量 ATM 存取，基本就是与民间资方的线下往来（列必查①）。</p>
+  </section>
+  <section><div class="sechead"><span class="senum">06</span><h2>🚩 几个值得放贷人关注的点</h2></div>
+    <ol class="wp">
+      <li class="fire"><b>琪宇对公=过路账户铁证</b> — 1,058 万进、1,059 万出，月末余额仅 120~2,916 元（9 月末 267、10 月末 120），中位 7,218；钱过账即走。</li>
+      <li class="fire"><b>电商刷单/补单痕迹</b> — “一达米-补单 -14.2 万 11 笔”“财源滚滚来-广告费刷单 -2.68 万 5 笔”，加对公 1,058 万平进平出，疑刷单/走账占比不低（涉诈/冻结风险）。</li>
+      <li><b>公私账户资金混用</b> — 陈波从琪宇抽调：汇入公司 122.9 万、公司打给个人 50.85 万（经中行 8121/建行 8530）。</li>
+      <li><b>微信零钱多次贴 5 万上限提现凑钱</b> — 50,050 多次、同日两笔凑 10 万。</li>
+      <li><b>微信支出半年翻 10 倍</b> — 2025-06 单月出 6.2 万 → 2026-04 单月 90.3 万。</li>
+      <li><b>4 张信用卡并用</b> — 平安 3286/建设 5977/光大 3064/兴业 0946 微信端高频小额养卡，账单未提供 ⚠。</li>
+      <li class="fire"><b>3 笔建行经营贷 + 融资担保=核心持牌负债底盘</b> — 每月 21 号扣本息、国经普惠担保，目前履约正常；经营现金流一断即触发担保代偿 + 连带。</li>
+      <li class="fire"><b>期末前一周“知足常乐银行”+20 万初见即大额</b> — 2026-06-16，疑期末新借填口。</li>
+      <li><b>名单反查已命中资方汇总</b> — 已读名单（632 卡 / 424 名）<span class="r3">无强命中</span>；仅“朱燕/张涛”网名子串 <span class="o">🟠 常见名</span>弱命中，大概率巧合，<b>未坐实</b>。名单未命中 ≠ 无资方；个人大额往来对手方转阶段 2 同行打听。</li>
+    </ol>
+  </section>
+  <section><div class="sechead"><span class="senum">07</span><h2>🔍 接下来必查 3 件事</h2></div>
+    <div class="mc"><div class="q">1. 中国银行 8121 / 建设银行 8530 本人卡完整流水（重点 ATM 现金）</div><div class="why">为什么：这两张才是真实主力个人卡，现在只在微信里看到局部；民间资方线下往来最可能藏在这两卡的 ATM 现金存取里。</div><div class="br">爽快提供 → 可继续；拒绝/拖延 → 高度警惕、基本可拒</div><div class="br">显示大量 ATM 现金存取 → 线下资方往来坐实</div></div>
+    <div class="mc"><div class="q">2.“知足常乐银行”+20 万来路（2026-06-16）</div><div class="why">为什么：期末前一周、初见即大额、名带“银行”，本单最像“新借”的一笔。</div><div class="br">能出合同/发票/对应货物 → 排除为货款</div><div class="br">说不清/含糊 → 疑期末新借，负债在扩大</div></div>
+    <div class="mc"><div class="q">3. 成都琪宇进出口 工商 + 3 笔建行经营贷 + 刷单核实</div><div class="why">为什么：天眼查看法人是否陈波、经营与涉诉；核 3 笔经营贷余额/到期/担保代偿；核 B2B 平进平出里刷单/走账占比。</div><div class="br">经营真实且贷款正常 → 可看</div><div class="br">查到大量刷单/走账或涉诉 → 易涉诈/冻结，圈内慎接</div></div>
+  </section>
+  <div class="align">
+    <h3>✅ 阶段1 对齐块</h3>
+    <div><b>结构：</b>6 章节齐全顺序固定 <span class="ok">✓</span></div>
+    <div><b>颗粒度：</b>生活画像带次数 / 账户逐张 + 余额画像（未提供卡标 ⚠）/ 借还款链逐笔带日期金额通道 / 关注点点名 / 必查三段式 / 研判段 <span class="ok">✓</span></div>
+    <div><b>全局规范：</b>无放/不放结论 <span class="ok">✓</span> / 疑似·可能 <span class="ok">✓</span> / 无阈值给具体数 <span class="ok">✓</span> / 微信银行卡独立去重 <span class="ok">✓</span></div>
+    <div><b>名单交叉：</b>已读名单 632 卡/424 名，<span class="hit">无强命中</span>；仅“朱燕/张涛”网名子串 🟠 常见名弱命中、未坐实；默认走项目内名单。</div>
+    <div><b>盲区：</b><span class="warn">⚠</span> 中行 8121/建行 8530 本身流水、ATM 现金未知；4 张信用卡账单、支付宝未提供。</div>
+    <div><b>交付：</b>底板 .txt 已写 Drive <span class="ok">✓</span> / 双阶段 HTML 已推窗口与 Discord <span class="ok">✓</span></div>
+  </div>
+</div>
+<div class="panel" id="stage2">
+  <div class="placeholder"><b>阶段二尚未运行</b>输入「进阶段二 / 收口」后，这里会填入验证与收口决策（含最终「做/不做/有条件做」结论）。</div>
+</div>
+<footer>SOP V2.0 阶段1 · 民间借贷视角 · 借款人分析 · 陈波 · 截至 2026-06-22</footer>
+</div>
+<script>
+(function(){var tabs=document.querySelectorAll('.tab'),panels=document.querySelectorAll('.panel');function go(id){tabs.forEach(function(t){t.classList.toggle('on',t.dataset.tab===id)});panels.forEach(function(p){p.classList.toggle('on',p.id===id)})}tabs.forEach(function(t){t.addEventListener('click',function(){go(t.dataset.tab)})});go('stage1');})();
+</script>
+</body>
+</html>
