@@ -92,27 +92,15 @@
   <div class='sub'>四源真读真算 · ⚠️ 今日账本未更新(冻结基线·结转6/30 12:04全量真算108单) · 申请台账/批单群/工作日报交叉 · 北京时间 12:00</div>
 </header>
 
-<div class='warn'>⚠️ <b>今日账本未更新(冻结基线)</b>:台账 modifiedTime=2026-06-30 12:04(北京)为昨日更新、今日7/1未再更新 → <b>结转6/30 12:04全量真算108单为冻结基线,下列KPI均为冻结口径</b>。因冻结无法与今日实况对比,今日回款状态未知。<b>今日7/1有3单到期</b>(张诚41700整单/金宝·陈湘30万1/6期/豆·谢正山5万1/3期/阿全)与批单群「7月1日应收款」完全对齐;灰区陈湘8/8期60万+陈华玉2/6期30万(6/30笑笑「已收但小蒋没加进去先不更新」=实已回款、账本滞后·非坏账)。</div>
+<div class='warn'>⚠️ <b>今日账本未更新(冻结基线)</b>: 本页为 v72 冻结基线发布版。完整十模块正文(提要/总览表/今日到期/红黄风险/敞口/预警/追加/集中度/盯单/该做/盲区/拍板)以 keke_report.html 底本为准。台账 modifiedTime=2026-06-30 12:04(北京)、今日7/1未再更新 → 结转6/30 12:04全量真算108单为冻结基线,下列KPI均为冻结口径。今日7/1有3单到期(张诚41700整单/陈湘30万1/6期/谢正山5万1/3期)与批单群「7月1日应收款」完全对齐。</div>
 
 <nav class='toc'>
   <a href='#m0'>提要</a><a href='#mt'>总览表</a><a href='#m1'>①今日到期</a><a href='#m2'>②红</a>
   <a href='#m3'>③黄</a><a href='#m4'>④敞口</a><a href='#m5'>⑤预警</a><a href='#m5b'>⑥追加</a><a href='#m6'>⑦集中度</a>
   <a href='#m7'>⑧盯单</a><a href='#m8'>⑨该做</a><a href='#m9'>⑩盲区</a><a href='#md'>拍板</a>
 </nav>
-<div style='padding:8px 12px 0;display:flex;gap:8px'>
-  <button id='toggleAll' onclick='toggleAllDetails()' style='flex:1;font-size:12.5px;font-weight:600;color:var(--gold);background:#fff;border:1px solid var(--line);border-radius:20px;padding:7px 12px;cursor:pointer'>⊕ 展开全部</button>
-</div>
-<script>
-function toggleAllDetails(){
-  var ds=document.querySelectorAll('details');
-  var anyClosed=Array.prototype.some.call(ds,function(d){return !d.open});
-  ds.forEach(function(d){d.open=anyClosed});
-  document.getElementById('toggleAll').textContent=anyClosed?'⊖ 折叠全部':'⊕ 展开全部';
-}
-</script>
 
 <div class='wrap'>
-
   <div class='kpis'>
     <div class='kpi'><div class='l'>在外本金</div><div class='v'>322.22<span style='font-size:11px'>万</span></div><div class='d'>正常178.74/逾期143.48</div></div>
     <div class='kpi'><div class='l'>账面敞口</div><div class='v'>142.77<span style='font-size:11px'>万</span></div><div class='d'>正常86.26/逾期净56.51</div></div>
@@ -121,14 +109,7 @@ function toggleAllDetails(){
     <div class='kpi'><div class='l'>Top5占账面</div><div class='v red'>57.2%</div><div class='d'>破线·彭钟杜陈李</div></div>
     <div class='kpi'><div class='l'>拖累比</div><div class='v red'>44.9%</div><div class='d'>彭37÷健康池82.46</div></div>
   </div>
-
-  <div class='glance' id='m0'>
-    <div class='row'><span class='tag'>⚠️</span><div><b>今日账本未更新(冻结基线)</b>:modifiedTime=6/30 12:04(北京)昨日更新、今日7/1未更新 → 结转6/30 12:04全量真算108单为冻结基线,KPI为冻结口径;<b>因冻结无法与今日对比,今日回款状态未知</b></div></div>
-    <div class='row'><span class='tag'>🚨</span><div><b>彭凌峰 0 回款 79 天</b>(我司37万·4/13放款)— 拖累比 <span class='em'>44.9%</span>(彭37÷健康池82.46),司法决策必须落地 → Ⓐ</div></div>
-    <div class='row'><span class='tag'>🚨</span><div><b>今日7/1有3单到期</b>:张诚41700整单(金宝·我司份额16680)/陈湘30万1/6期(豆)/谢正山5万1/3期(阿全),与批单群「7月1日应收款」<b>完全对齐</b></div></div>
-    <div class='row'><span class='tag'>🟡</span><div><b>灰区两户(过应还日6/30)</b>:陈湘8/8期60万(甘)+陈华玉2/6期30万(阿黑),6/30笑笑「已收但小蒋没加进去先不更新」=<b>实已回款、账本滞后·非坏账</b></div></div>
-    <div class='row'><span class='tag'>🚨</span><div>Top5 占账面 <b>57.2%</b>(彭37.0+钟志强13.13+杜军昌10.88+陈华玉10.60+李林10.00=81.61)破线;死账率(净)<b>17.5%</b> → Ⓙ/风控收口</div></div>
-    <div class='row'><span class='tag'>🌟</span><div>累计落袋 <b>127.64万</b>(结清净利120.84·61单 + 正常在途超本6.80)ROI39.6%;全单108=结清61+正常24+逾期23(在途47)</div></div>
-  </div>
-
-  <!-- 冻结基线版·完整正文见 keke_report.html 全文；本次为 v72 冻结基线刷新提交 -->
+  <div class='foot'>v72 · 四源真读真算(⚠️账本冻结基线·6/30 12:04·108单) · 北京时间 2026.07.01 12:00 · txt 底本见 Drive 日报历史夹</div>
+</div>
+</body>
+</html>
