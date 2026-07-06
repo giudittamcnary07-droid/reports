@@ -46,4 +46,52 @@ h3{font-size:14px;font-weight:700;margin:16px 0 4px;color:#5a4d36}
 .flag{display:inline-block;font-size:11px;font-weight:700;color:var(--red);background:var(--redbg);padding:1px 7px;border-radius:5px;margin-left:6px;vertical-align:middle}
 .flowline{font-size:12.5px;color:var(--ink2);padding-left:14px;border-left:2px solid var(--line);margin:5px 0 5px 4px}
 .flowline b{color:var(--red)}
-.w
+.wp{counter-reset:wp;list-style:none}
+.wp li{position:relative;padding:11px 0 11px 40px;border-bottom:1px dashed var(--line)}
+.wp li:last-child{border-bottom:none}
+.wp li::before{counter-increment:wp;content:counter(wp);position:absolute;left:0;top:11px;width:26px;height:26px;background:var(--ink);color:var(--paper);font-family:"Noto Serif SC","Noto Serif CJK SC","Songti SC",serif;font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center;border-radius:7px}
+.wp li.fire::before{background:var(--red)}
+.wp b{font-weight:700}
+.mc{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:13px 0;box-shadow:var(--shadow)}
+.mc .q{font-family:"Noto Serif SC","Noto Serif CJK SC","Songti SC",serif;font-weight:700;font-size:15px}
+.mc .why{font-size:13px;color:var(--ink2);margin:5px 0}
+.mc .br{font-size:12.5px;margin:3px 0;padding-left:14px}
+.mc .br::before{content:"→ ";color:var(--red);font-weight:700}
+.align{background:var(--paper2);border-radius:10px;padding:16px 18px;margin-top:18px;font-size:12.5px;color:var(--ink2)}
+.align h3{font-family:"Noto Serif SC","Noto Serif CJK SC","Songti SC",serif;font-size:14px;color:var(--ink);margin-bottom:8px}
+.align .ok{color:var(--green);font-weight:700}
+.align .warn{color:var(--amber);font-weight:700}
+.align .hit{color:var(--red);font-weight:700}
+.align div{margin:4px 0}
+footer{text-align:center;color:var(--ink2);font-size:11.5px;padding-top:26px;letter-spacing:.05em}
+.note{font-size:12px;color:var(--ink2);background:var(--paper2);border-radius:6px;padding:7px 11px;margin:10px 0}
+.small{font-size:12px;color:var(--ink2)}
+@media(max-width:600px){h1{font-size:30px}h2{font-size:19px}body{font-size:14.5px}th,td{padding:7px 6px;font-size:11.5px}.mono{font-size:10.5px}}
+.judge{font-size:14px;color:var(--ink);background:var(--paper2);border-left:3px solid var(--amber);padding:11px 14px;border-radius:0 8px 8px 0;margin:10px 0;line-height:1.8}
+.judge b{color:var(--red)}
+details.tx{margin:12px 0}
+details.tx summary{cursor:pointer;list-style:none;font-size:13px;font-weight:700;color:var(--red);background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 14px;box-shadow:var(--shadow)}
+details.tx summary::-webkit-details-marker{display:none}
+details.tx summary::before{content:"▸ "}
+details.tx[open] summary::before{content:"▾ "}
+details.tx[open] summary{border-radius:8px 8px 0 0}
+details.tx table{margin:0;border-radius:0 0 8px 8px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="kick">民间借贷视角 · 阶段1 深扫 · SOP V2.0</div>
+  <h1>甘志林</h1>
+  <div class="sub">农行个人 + 微信支付 · 截至 2026-07-06</div>
+  <div class="tagrow">
+    <span class="tag red">🔴 公私混同·彭铁备用金个人卡操盘</span>
+    <span class="tag red">🔴 助源固定还款爬升至7,480</span>
+    <span class="tag red">🔴 干啸对倒·余额打到个位数</span>
+    <span class="tag">过路池·中位余额1.3万</span>
+    <span class="tag">⚪ 名单无卡号·疑重名</span>
+  </div>
+</header>
+
+  <div class="selfcheck"><b>自检结论（v1）：</b>① §0.6 体检：农行余额链<b>零断点</b>(0/389)、结息 2.54 元、微信 679 笔全解析；② 逐笔表机器生成；③ 出门校验器全过；④ <b>名单已过卡号核验规则(SOP v1.2)</b>——农行/微信对手方均无卡号字段，姓名命中一律判 ⚪ 疑重名，不计命中；⑤ <b>盲区</b>：干啸/彭铁背景未知、无对方卡号、无其他账户、无水母。金额口径：汇总 x.xx 万 / 逐笔精确�
