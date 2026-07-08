@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=5.0'>
+<meta name='color-scheme' content='light dark'>
+<title>2026.07.08 经营日报 v72</title>
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#f3f1ec; --card:#ffffff; --card2:#faf8f4; --ink:#23262b; --muted:#5d6470; --dim:#878d97;
+    --line:#e4e0d7; --gold:#9a7b2e;
+    --red:#c0392b; --red-bg:#fbe9e6; --amber:#9a6f0a; --amber-bg:#fbf2d6;
+    --green:#1e7d52; --green-bg:#e2f3e9; --blue:#2a6fb0; --blue-bg:#e7f0fa;
+  }
+  html{color-scheme:light dark;background:var(--bg)}
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1a1c1f; --card:#26292e; --card2:#2d3137; --ink:#e9e7e2; --muted:#aab0ba; --dim:#7f858f;
+      --line:#3a3e45; --gold:#d8bd6e;
+      --red:#ff6f62; --red-bg:#3a2421; --amber:#e6b733; --amber-bg:#36301a;
+      --green:#54cf90; --green-bg:#1d3329; --blue:#62abec; --blue-bg:#1d2c3a;
+    }
+    header{background:linear-gradient(160deg,#26292e,#1f2226)}
+    .toc{background:rgba(26,28,31,.95)}
+    .warn{background:#36301a;border-color:#6b5a1e;color:#e6b733}
+    header h1, summary, .kpi .v, .card2 .h, .dec .dh{color:var(--ink)}
+    .toc a{background:var(--card)}
+    td.red, .em, .kpi .v.red{color:var(--red)}
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+    font-size:15px;line-height:1.62;padding-bottom:50px;-webkit-text-size-adjust:100%}
+  header{background:linear-gradient(160deg,#ffffff,#efece5);padding:18px 16px 15px;border-bottom:2px solid var(--gold)}
+  header .day{font-size:11px;letter-spacing:.25em;color:var(--gold);font-weight:700}
+  header h1{font-size:19px;margin:4px 0 2px;color:var(--ink)}
+  header .sub{font-size:12px;color:var(--muted)}
+  .warn{background:#fbf2d6;border:1px solid #d9b84a;color:#9a6f0a;font-size:12.5px;
+    padding:9px 12px;margin:12px 12px 0;border-radius:9px;line-height:1.55}
+  .wrap{padding:12px 12px 0}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 8px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .kpi .l{font-size:10.5px;color:var(--dim)}
+  .kpi .v{font-size:16px;font-weight:700;margin-top:2px;color:var(--ink)}
+  .kpi .v.red{color:var(--red)} .kpi .v.amber{color:var(--amber)} .kpi .v.green{color:var(--green)}
+  .kpi .d{font-size:10px;color:var(--muted);margin-top:1px}
+  .glance{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .glance .row{display:flex;gap:7px;padding:4px 0;font-size:13px;border-bottom:1px dashed var(--line)}
+  .glance .row:last-child{border-bottom:none}
+  .tag{flex-shrink:0}
+  details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:9px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  summary{padding:12px 14px;font-size:14.5px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink)}
+  summary::-webkit-details-marker{display:none}
+  summary .arw{color:var(--dim);font-size:11px;transition:transform .2s}
+  details[open] summary .arw{transform:rotate(90deg)}
+  details[open] summary{border-bottom:1px solid var(--line)}
+  .body{padding:11px 14px 14px;font-size:13px;color:var(--ink)}
+  .body p{margin:6px 0}
+  .mut{color:var(--muted);font-size:12px}
+  .hr{height:1px;background:var(--line);margin:9px 0}
+  .pill{display:inline-block;padding:1px 7px;border-radius:6px;font-size:11px;font-weight:600;margin-right:4px}
+  .p-red{background:var(--red-bg);color:var(--red)} .p-amber{background:var(--amber-bg);color:var(--amber)}
+  .p-green{background:var(--green-bg);color:var(--green)} .p-blue{background:var(--blue-bg);color:var(--blue)}
+  table{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0}
+  th,td{padding:5px 6px;text-align:right;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--dim);font-weight:600;font-size:11px;background:var(--card2)}
+  td.red{color:var(--red);font-weight:700}
+  .card2{background:var(--card2);border-radius:8px;padding:9px 11px;margin:8px 0;border-left:3px solid var(--line)}
+  .card2.r{border-left-color:var(--red)} .card2.a{border-left-color:var(--amber)} .card2.g{border-left-color:var(--green)} .card2.b{border-left-color:var(--blue)}
+  .card2 .h{font-weight:700;font-size:13.5px;margin-bottom:3px;color:var(--ink)}
+  .kv{font-size:12px;color:var(--muted);margin:2px 0}
+  .kv b{color:var(--ink)}
+  .dec{background:var(--card2);border-radius:8px;padding:9px 11px;margin:8px 0;border-left:3px solid var(--amber)}
+  .dec.r{border-left-color:var(--red)} .dec.g{border-left-color:var(--green)}
+  .dec .dh{font-weight:700;font-size:13px;color:var(--ink)}
+  .dec .opt{font-size:12px;color:var(--muted);margin:3px 0}
+  .dec .rec{font-size:12px;color:var(--green);font-weight:600}
+  .toc{position:sticky;top:0;z-index:9;background:rgba(243,241,236,.97);backdrop-filter:blur(6px);
+    display:flex;gap:6px;overflow-x:auto;padding:9px 12px;border-bottom:1px solid var(--line);margin-bottom:10px}
+  .toc a{flex-shrink:0;font-size:12px;color:var(--muted);text-decoration:none;padding:3px 9px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
+  .foot{text-align:center;font-size:11px;color:var(--dim);padding:16px 12px}
+  .em{color:var(--red);font-weight:700}
+  .star{color:var(--gold)}
+</style>
+</head>
+<body>
+<header>
+  <div class='day'>DAILY REPORT · 周三</div>
+  <h1>2026.07.08 经营日报 <span class='star'>v72</span></h1>
+  <div class='sub'>四源真读真算 · 可可账本 7/06 23:54 对今日冻结·今日未更新 · 申请台账=外访交接单 · 工作日报笑笑至7/06夜结 · 批单群至7/07李林 · 北京时间</div>
+</header>
+
+<div class='warn'>🟡 <b>账本冻结警告 · 可可2026.xlsm 于 7月6日 23:54 对今日冻结·今日(7/08)未更新</b>:下列全部量化值取自最近一次解冻真算(账本7-06状态)为基线,<b>非今日实时</b>。今日到期2单(杜军昌3/3期50万·阿全;李林1/5期25万·大雄)、灰区3户(伍丹/顾心丽/陈前)均按7-06基线标注,今晚夜结或次日解冻后须复核到账。<b>请以"冻结基线+待复核"口径阅读本报。</b></div>
+
+<nav class='toc'>
+  <a href='#m0'>提要</a><a href='#mt'>总览表</a><a href='#m1'>①今日到期</a><a href='#m2'>②红</a>
+  <a href='#m3'>③黄</a><a href='#m4'>④敞口</a><a href='#m5'>⑤预警</a><a href='#m5b'>⑥追加</a><a href='#m6'>⑦集中度</a>
+  <a href='#m7'>⑧盯单</a><a href='#m8'>⑨该做</a><a href='#m9'>⑩盲区</a><a href='#md'>拍板</a>
+</nav>
+<div style='padding:8px 12px 0;display:flex;gap:8px'>
+  <button id='toggleAll' onclick='toggleAllDetails()' style='flex:1;font-size:12.5px;font-weight:600;color:var(--gold);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:7px 12px;cursor:pointer'>⊕ 展开全部</button>
+</div>
+<script>
+function toggleAllDetails(){
+  var ds=document.querySelectorAll('details');
+  var anyClosed=Array.prototype.some.call(ds,function(d){return !d.open});
+  ds.forEach(function(d){d.open=anyClosed});
+  document.getElementById('toggleAll').textContent=anyClosed?'⊖ 折叠全部':'⊕ 展开全部';
+}
+</script>
+
+<div class='wrap'>
+
+  <div class='kpis'>
+    <div class='kpi'><div class='l'>彭0回款</div><div class='v red'>86<span style='font-size:11px'>天</span></div><div class='d'>拖累42.27%</div></div>
+    <div class='kpi'><div class='l'>今日到期</div><div class='v amber'>2<span style='font-size:11px'>单</span></div><div class='d'>杜军昌末期/李林首期</div></div>
+    <div class='kpi'><div class='l'>逾期</div><div class='v red'>22<span sty
