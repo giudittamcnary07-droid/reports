@@ -1,1 +1,111 @@
-PCFET0NUWVBFIGh0bWw+CjxodG1sIGxhbmc9J3poLUNOJz4KPGhlYWQ+CjxtZXRhIGNoYXJzZXQ9J1VURi04Jz4KPG1ldGEgbmFtZT0ndmlld3BvcnQnIGNvbnRlbnQ9J3dpZHRoPWRldmljZS13aWR0aCwgaW5pdGlhbC1zY2FsZT0xLjAsIG1heGltdW0tc2NhbGU9NS4wJz4KPG1ldGEgbmFtZT0nY29sb3Itc2NoZW1lJyBjb250ZW50PSdsaWdodCBkYXJrJz4KPHRpdGxlPjIwMjYuMDcuMDgg57uP6JCl5pel5oqlIHY3MjwvdGl0bGU+CjxzdHlsZT4KICA6cm9vdHsKICAgIGNvbG9yLXNjaGVtZTogbGlnaHQgZGFyazsKICAgIC0tYmc6I2YzZjFlYzsgLS1jYXJkOiNmZmZmZmY7IC0tY2FyZDI6I2ZhZjhmNDsgLS1pbms6IzIzMjYyYjsgLS1tdXRlZDojNWQ2NDcwOyAtLWRpbTojODc4ZDk3OwogICAgLS1saW5lOiNlNGUwZDc7IC0tZ29sZDojOWE3YjJlOwogICAgLS1yZWQ6I2MwMzkyYjsgLS1yZWQtYmc6I2ZiZTllNjsgLS1hbWJlcjojOWE2ZjBhOyAtLWFtYmVyLWJnOiNmYmYyZDY7CiAgICAtLWdyZWVuOiMxZTdkNTI7IC0tZ3JlZW4tYmc6I2UyZjNlOTsgLS1ibHVlOiMyYTZmYjA7IC0tYmx1ZS1iZzojZTdmMGZhOwogIH0KICBodG1se2NvbG9yLXNjaGVtZTpsaWdodCBkYXJrO2JhY2tncm91bmQ6dmFyKC0tYmcpfQogIEBtZWRpYSAocHJlZmVycy1jb2xvci1zY2hlbWU6IGRhcmspewogICAgOnJvb3R7CiAgICAgIC0tYmc6IzFhMWMxZjsgLS1jYXJkOiMyNjI5MmU7IC0tY2FyZDI6IzJkMzEzNzsgLS1pbms6I2U5ZTdlMjsgLS1tdXRlZDojYWFiMGJhOyAtLWRpbTojN2Y4NThmOwogICAgICAtLWxpbmU6IzNhM2U0NTsgLS1nb2xkOiNkOGJkNmU7CiAgICAgIC0tcmVkOiNmZjZmNjI7IC0tcmVkLWJnOiMzYTI0MjE7IC0tYW1iZXI6I2U2YjczMzsgLS1hbWJlci1iZzojMzYzMDFhOwogICAgICAtLWdyZWVuOiM1NGNmOTA7IC0tZ3JlZW4tYmc6IzFkMzMyOTsgLS1ibHVlOiM2MmFiZWM7IC0tYmx1ZS1iZzojMWQyYzNhOwogICAgfQogICAgaGVhZGVye2JhY2tncm91bmQ6bGluZWFyLWdyYWRpZW50KDE2MGRlZywjMjYyOTJlLCMxZjIyMjYpfQogICAgLnRvY3tiYWNrZ3JvdW5kOnJnYmEoMjYsMjgsMzEsLjk1KX0KICAgIC53YXJue2JhY2tncm91bmQ6IzM2MzAxYTtib3JkZXItY29sb3I6IzZiNWExZTtjb2xvcjojZTZiNzMzfQogICAgaGVhZGVyIGgxLCBzdW1tYXJ5LCAua3BpIC52LCAuY2FyZDIgLmgsIC5kZWMgLmRoe2NvbG9yOnZhcigtLWluayl9CiAgICAudG9jIGF7YmFja2dyb3VuZDp2YXIoLS1jYXJkKX0KICAgIHRkLnJlZCwgLmVtLCAua3BpIC52LnJlZHtjb2xvcjp2YXIoLS1yZWQpfQogIH0KICAqe21hcmdpbjowO3BhZGRpbmc6MDtib3gtc2l6aW5nOmJvcmRlci1ib3g7LXdlYmtpdC10YXAtaGlnaGxpZ2h0LWNvbG9yOnRyYW5zcGFyZW50fQogIGJvZHl7YmFja2dyb3VuZDp2YXIoLS1iZyk7Y29sb3I6dmFyKC0taW5rKTsKICAgIGZvbnQtZmFtaWx5Oi1hcHBsZS1zeXN0ZW0sQmxpbmtNYWNTeXN0ZW1Gb250LCdQaW5nRmFuZyBTQycsJ01pY3Jvc29mdCBZYUhlaScsc2Fucy1zZXJpZjsKICAgIGZvbnQtc2l6ZToxNXB4O2xpbmUtaGVpZ2h0OjEuNjI7cGFkZGluZy1ib3R0b206NTBweDstd2Via2l0LXRleHQtc2l6ZS1hZGp1c3Q6MTAwJX0KICBoZWFkZXJ7YmFja2dyb3VuZDpsaW5lYXItZ3JhZGllbnQoMTYwZGVnLCNmZmZmZmYsI2VmZWNlNSk7cGFkZGluZzoxOHB4IDE2cHggMTVweDtib3JkZXItYm90dG9tOjJweCBzb2xpZCB2YXIoLS1nb2xkKX0KICBoZWFkZXIgLmRheXtmb250LXNpemU6MTFweDtsZXR0ZXItc3BhY2luZzouMjVlbTtjb2xvcjp2YXIoLS1nb2xkKTtmb250LXdlaWdodDo3MDB9CiAgaGVhZGVyIGgxe2ZvbnQtc2l6ZToxOXB4O21hcmdpbjo0cHggMCAycHg7Y29sb3I6
+<!DOCTYPE html>
+<html lang='zh-CN'>
+<head>
+<meta charset='UTF-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=5.0'>
+<meta name='color-scheme' content='light dark'>
+<title>2026.07.13 经营日报 v72</title>
+<style>
+  :root{
+    color-scheme: light dark;
+    --bg:#f3f1ec; --card:#ffffff; --card2:#faf8f4; --ink:#23262b; --muted:#5d6470; --dim:#878d97;
+    --line:#e4e0d7; --gold:#9a7b2e;
+    --red:#c0392b; --red-bg:#fbe9e6; --amber:#9a6f0a; --amber-bg:#fbf2d6;
+    --green:#1e7d52; --green-bg:#e2f3e9; --blue:#2a6fb0; --blue-bg:#e7f0fa;
+  }
+  html{color-scheme:light dark;background:var(--bg)}
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#1a1c1f; --card:#26292e; --card2:#2d3137; --ink:#e9e7e2; --muted:#aab0ba; --dim:#7f858f;
+      --line:#3a3e45; --gold:#d8bd6e;
+      --red:#ff6f62; --red-bg:#3a2421; --amber:#e6b733; --amber-bg:#36301a;
+      --green:#54cf90; --green-bg:#1d3329; --blue:#62abec; --blue-bg:#1d2c3a;
+    }
+    header{background:linear-gradient(160deg,#26292e,#1f2226)}
+    .toc{background:rgba(26,28,31,.95)}
+    .warn{background:#1d3329;border-color:#2c5440;color:#7fe0aa}
+    .warn.warn-frz{background:#36301a;border-color:#6b5a1e;color:#e6b733}
+    header h1, summary, .kpi .v, .card2 .h, .dec .dh{color:var(--ink)}
+    .toc a{background:var(--card)}
+    td.red, .em, .kpi .v.red{color:var(--red)}
+  }
+  *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{background:var(--bg);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+    font-size:15px;line-height:1.62;padding-bottom:50px;-webkit-text-size-adjust:100%}
+  header{background:linear-gradient(160deg,#ffffff,#efece5);padding:18px 16px 15px;border-bottom:2px solid var(--gold)}
+  header .day{font-size:11px;letter-spacing:.25em;color:var(--gold);font-weight:700}
+  header h1{font-size:19px;margin:4px 0 2px;color:var(--ink)}
+  header .sub{font-size:12px;color:var(--muted)}
+  .warn{background:#e6f4ea;border:1px solid #a9d6ba;color:#1e6b43;font-size:12.5px;
+    padding:9px 12px;margin:12px 12px 0;border-radius:9px;line-height:1.55}
+  .warn.warn-frz{background:var(--amber-bg);border-color:var(--amber);color:var(--amber)}
+  .wrap{padding:12px 12px 0}
+  .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 8px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .kpi .l{font-size:10.5px;color:var(--dim)}
+  .kpi .v{font-size:16px;font-weight:700;margin-top:2px;color:var(--ink)}
+  .kpi .v.red{color:var(--red)} .kpi .v.amber{color:var(--amber)} .kpi .v.green{color:var(--green)}
+  .kpi .d{font-size:10px;color:var(--muted);margin-top:1px}
+  .glance{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  .glance .row{display:flex;gap:7px;padding:4px 0;font-size:13px;border-bottom:1px dashed var(--line)}
+  .glance .row:last-child{border-bottom:none}
+  .tag{flex-shrink:0}
+  details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:9px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.03)}
+  summary{padding:12px 14px;font-size:14.5px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink)}
+  summary::-webkit-details-marker{display:none}
+  summary .arw{color:var(--dim);font-size:11px;transition:transform .2s}
+  details[open] summary .arw{transform:rotate(90deg)}
+  details[open] summary{border-bottom:1px solid var(--line)}
+  .body{padding:11px 14px 14px;font-size:13px;color:var(--ink)}
+  .body p{margin:6px 0}
+  .mut{color:var(--muted);font-size:12px}
+  .hr{height:1px;background:var(--line);margin:9px 0}
+  .pill{display:inline-block;padding:1px 7px;border-radius:6px;font-size:11px;font-weight:600;margin-right:4px}
+  .p-red{background:var(--red-bg);color:var(--red)} .p-amber{background:var(--amber-bg);color:var(--amber)}
+  .p-green{background:var(--green-bg);color:var(--green)} .p-blue{background:var(--blue-bg);color:var(--blue)}
+  table{width:100%;border-collapse:collapse;font-size:12px;margin:6px 0}
+  th,td{padding:5px 6px;text-align:right;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  th{color:var(--dim);font-weight:600;font-size:11px;background:var(--card2)}
+  td.red{color:var(--red);font-weight:700}
+  .card2{background:var(--card2);border-radius:8px;padding:9px 11px;margin:8px 0;border-left:3px solid var(--line)}
+  .card2.r{border-left-color:var(--red)} .card2.a{border-left-color:var(--amber)} .card2.g{border-left-color:var(--green)} .card2.b{border-left-color:var(--blue)}
+  .card2 .h{font-weight:700;font-size:13.5px;margin-bottom:3px;color:var(--ink)}
+  .kv{font-size:12px;color:var(--muted);margin:2px 0}
+  .kv b{color:var(--ink)}
+  .dec{background:var(--card2);border-radius:8px;padding:9px 11px;margin:8px 0;border-left:3px solid var(--amber)}
+  .dec.r{border-left-color:var(--red)} .dec.g{border-left-color:var(--green)}
+  .dec .dh{font-weight:700;font-size:13px;color:var(--ink)}
+  .dec .opt{font-size:12px;color:var(--muted);margin:3px 0}
+  .dec .rec{font-size:12px;color:var(--green);font-weight:600}
+  .toc{position:sticky;top:0;z-index:9;background:rgba(243,241,236,.97);backdrop-filter:blur(6px);
+    display:flex;gap:6px;overflow-x:auto;padding:9px 12px;border-bottom:1px solid var(--line);margin-bottom:10px}
+  .toc a{flex-shrink:0;font-size:12px;color:var(--muted);text-decoration:none;padding:3px 9px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
+  .foot{text-align:center;font-size:11px;color:var(--dim);padding:16px 12px}
+  .em{color:var(--red);font-weight:700}
+  .star{color:var(--gold)}
+</style>
+</head>
+<body>
+<header>
+<h1 style='color:var(--ink)'>可可2026 · 经营日报 <span class='v72'>v72</span></h1>
+<div class='sub'>2026年7月13日(周一) · 四源真读真算 · 可可账本7/12 22:28冻结基线(昨夜全量更新) · 申请台账=外访交接单7/6 · 工作日报至7/12夜结(7/11-12合并报) · 批单群至7/8 · 北京时间 12:25</div>
+</header>
+<div class='warn' style='border-left:4px solid var(--amber)'>
+🟡 <b>账本7月12日22:28对今日冻结·今日(7/13)未更新</b>:下列量化值以7/12 22:28最近真算为基线(已含7/11~12入账:张诚3/5期41700我司16680、陈湘2/6期70000我司30333、谢正山2/3期5000我司2000,并补录7/10徐敏新单60万合同·我司出资80800·杨超45万主份额——昨报置顶盲区已销项),冻结期内今日若有新回款尚未入账。注:<b>7/12四档日报因连接器故障全部停摆,本报为7/11 12:20后首报</b>,跳变归因跨7/11~12两天入账。今日7/13有<b>3单到期</b>(王汉林新单首期68000·阿全 / 李志雄末期15000·小蒋-胖子 / 刘莹2/8期5430·阿全,工作日报7/12已预列),收款确认后明日基线刷新。
+</div>
+<nav class='toc'>
+<a href='#m0'>口径</a><a href='#mt'>总览</a><a href='#m1'>①到期</a><a href='#m2'>②红</a><a href='#m3'>③黄</a><a href='#m4'>④敞口</a><a href='#m5'>⑤预警</a><a href='#m5b'>追加</a><a href='#m6'>⑦集中</a><a href='#m7'>⑧盯单</a><a href='#m8'>⑨该做</a><a href='#m9'>⑩盲区</a><a href='#md'>拍板</a>
+</nav>
+<div style='text-align:center;margin:6px 0'><button id='togAll' onclick='toggleAllDetails()' style='background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:6px 18px;font-size:13px'>⊕ 展开全部</button></div>
+<details id='m0' open><summary>口径锁定 · 全可可统计(先读我) <span class='arw'>▶</span></summary><div class='body'>
+<div class='kpi-row'>
+<div class='kpi'><div class='k'>账面净敞口</div><div class='v' style='color:var(--ink)'>155.66万</div></div>
+<div class='kpi'><div class='k'>死账率(净)</div><div class='v' style='color:var(--red)'>17.69%</div></div>
+<div class='kpi'><div class='k'>灰区(真)</div><div class='v' style='color:var(--green)'>0 单</div></div>
+<div class='kpi'><div class='k'>累计落袋</div><div class='v' style='color:var(--gold)'>143.36万</div></div>
+</div>
+<div class='card'>
+<b>冻结基线</b>:🟡账本7/12 22:28冻结·今日7/13未更新;全单116=结清68+正常26+逾期22(在途48单);敞口155.66万、死账率17.69%、Top5 55.34%、拖累比36.45%、落袋143.36万、ROI 46.76%。
+<br><b>跳变归因(vs 7/11报·7/10基线,跨7/11~12两天,7/12报因连接器故障未发)</b>:7/11~12入账=张诚3/5期41700(我司16680)+陈湘2/6期70000(我司30333)+谢正山2/3期5000(我司2000)=回款缩敞4.90万;补录徐敏7/10新单(我司出资80800入池)→ ①在外本金298.48→<b>306.56</b>(+8.08,徐敏新单入池);②账面敞口152.48→<b>155.66</b>(+3.18=+8.08新单−4.90回款);③落袋144.37→<b>143.36</b>(−1.01=徐敏6/6单结清净利按账本col39权威登记49693=4.97万,7/11报曾�
