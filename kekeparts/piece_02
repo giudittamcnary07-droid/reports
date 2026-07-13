@@ -1,1 +1,56 @@
-czo2cHg7Zm9udC1zaXplOjExcHg7Zm9udC13ZWlnaHQ6NjAwO21hcmdpbi1yaWdodDo0cHh9CiAgLnAtcmVke2JhY2tncm91bmQ6dmFyKC0tcmVkLWJnKTtjb2xvcjp2YXIoLS1yZWQpfSAucC1hbWJlcntiYWNrZ3JvdW5kOnZhcigtLWFtYmVyLWJnKTtjb2xvcjp2YXIoLS1hbWJlcil9CiAgLnAtZ3JlZW57YmFja2dyb3VuZDp2YXIoLS1ncmVlbi1iZyk7Y29sb3I6dmFyKC0tZ3JlZW4pfSAucC1ibHVle2JhY2tncm91bmQ6dmFyKC0tYmx1ZS1iZyk7Y29sb3I6dmFyKC0tYmx1ZSl9CiAgdGFibGV7d2lkdGg6MTAwJTtib3JkZXItY29sbGFwc2U6Y29sbGFwc2U7Zm9udC1zaXplOjEycHg7bWFyZ2luOjZweCAwfQogIHRoLHRke3BhZGRpbmc6NXB4IDZweDt0ZXh0LWFsaWduOnJpZ2h0O2JvcmRlci1ib3R0b206MXB4IHNvbGlkIHZhcigtLWxpbmUpfQogIHRoOmZpcnN0LWNoaWxkLHRkOmZpcnN0LWNoaWxke3RleHQtYWxpZ246bGVmdH0KICB0aHtjb2xvcjp2YXIoLS1kaW0pO2ZvbnQtd2VpZ2h0OjYwMDtmb250LXNpemU6MTFweDtiYWNrZ3JvdW5kOnZhcigtLWNhcmQyKX0KICB0ZC5yZWR7Y29sb3I6dmFyKC0tcmVkKTtmb250LXdlaWdodDo3MDB9CiAgLmNhcmQye2JhY2tncm91bmQ6dmFyKC0tY2FyZDIpO2JvcmRlci1yYWRpdXM6OHB4O3BhZGRpbmc6OXB4IDExcHg7bWFyZ2luOjhweCAwO2JvcmRlci1sZWZ0OjNweCBzb2xpZCB2YXIoLS1saW5lKX0KICAuY2FyZDIucntib3JkZXItbGVmdC1jb2xvcjp2YXIoLS1yZWQpfSAuY2FyZDIuYXtib3JkZXItbGVmdC1jb2xvcjp2YXIoLS1hbWJlcil9IC5jYXJkMi5ne2JvcmRlci1sZWZ0LWNvbG9yOnZhcigtLWdyZWVuKX0gLmNhcmQyLmJ7Ym9yZGVyLWxlZnQtY29sb3I6dmFyKC0tYmx1ZSl9CiAgLmNhcmQyIC5oe2ZvbnQtd2VpZ2h0OjcwMDtmb250LXNpemU6MTMuNXB4O21hcmdpbi1ib3R0b206M3B4O2NvbG9yOnZhcigtLWluayl9CiAgLmt2e2ZvbnQtc2l6ZToxMnB4O2NvbG9yOnZhcigtLW11dGVkKTttYXJnaW46MnB4IDB9CiAgLmt2IGJ7Y29sb3I6dmFyKC0taW5rKX0KICAuZGVje2JhY2tncm91bmQ6dmFyKC0tY2FyZDIpO2JvcmRlci1yYWRpdXM6OHB4O3BhZGRpbmc6OXB4IDExcHg7bWFyZ2luOjhweCAwO2JvcmRlci1sZWZ0OjNweCBzb2xpZCB2YXIoLS1hbWJlcil9CiAgLmRlYy5ye2JvcmRlci1sZWZ0LWNvbG9yOnZhcigtLXJlZCl9IC5kZWMuZ3tib3JkZXItbGVmdC1jb2xvcjp2YXIoLS1ncmVlbil9CiAgLmRlYyAuZGh7Zm9udC13ZWlnaHQ6NzAwO2ZvbnQtc2l6ZToxM3B4O2NvbG9yOnZhcigtLWluayl9CiAgLmRlYyAub3B0e2ZvbnQtc2l6ZToxMnB4O2NvbG9yOnZhcigtLW11dGVkKTttYXJnaW46M3B4IDB9CiAgLmRlYyAucmVje2ZvbnQtc2l6ZToxMnB4O2NvbG9yOnZhcigtLWdyZWVuKTtmb250LXdlaWdodDo2MDB9CiAgLnRvY3twb3NpdGlvbjpzdGlja3k7dG9wOjA7ei1pbmRleDo5O2JhY2tncm91bmQ6cmdiYSgyNDMsMjQxLDIzNiwuOTcpO2JhY2tkcm9wLWZpbHRlcjpibHVyKDZweCk7CiAgICBkaXNwbGF5OmZsZXg7Z2FwOjZweDtvdmVyZmxvdy14OmF1dG87cGFkZGluZzo5cHggMTJweDtib3JkZXItYm90dG9tOjFweCBzb2xpZCB2YXIoLS1saW5lKTttYXJnaW4tYm90dG9tOjEwcHh9CiAgLnRvYyBhe2ZsZXgtc2hyaW5rOjA7Zm9udC1zaXplOjEycHg7Y29sb3I6dmFyKC0tbXV0ZWQpO3RleHQtZGVjb3JhdGlvbjpub25lO3BhZGRpbmc6M3B4IDlweDtib3JkZXI6MXB4IHNvbGlkIHZhcigtLWxpbmUpO2JvcmRlci1yYWRpdXM6MjBweDtiYWNrZ3JvdW5kOnZhcigtLWNhcmQpfQogIC5mb290e3RleHQtYWxpZ246Y2VudGVyO2ZvbnQtc2l6ZToxMXB4O2NvbG9yOnZhcigtLWRpbSk7cGFkZGluZzoxNnB4IDEycHh9CiAgLmVte2Nv
+<div class='kv'><b>历史</b>:6/3放款,我司2.7万(总合同6万),1期30天,7/2一次性归本65000</div>
+<div class='kv'><b>结清前后动作</b>:净利+0.55万+结清分红500。结清前后动作:三源无新申请;30天单险测试通过。</div></div>
+<div class='card2'><div class='h' style='color:var(--ink)'>陈湘(4/12那笔) <span class='tag green'>已结清</span></div>
+<div class='kv'><b>结清时间</b>:6/30 足期结清</div>
+<div class='kv'><b>历史</b>:4/12放款,我司13.13万(总合同60万),8期10天,每期114000,6/30末期结清+分红46960</div>
+<div class='kv'><b>结清前后动作</b>:净利+6.87万。结清前后动作:<b>6/22已续借新单30万(我司13万,豆豆放款)在途,第2期70000已于7/11足额入账,敞口13→6.93万退出Top5(现第8)</b>——「结清→续借」节奏确认关键期已过验,降级为常规跟踪,第3期7/21。</div></div>
+<div class='card2'><div class='h' style='color:var(--ink)'>薛桢桢 <span class='tag green'>已结清</span></div>
+<div class='kv'><b>结清时间</b>:6/29 提前结清</div>
+<div class='kv'><b>历史</b>:6/10放款,我司4.5万(总合同10万),5期,2期后6/29提前结清85000</div>
+<div class='kv'><b>结清前后动作</b>:净利+0.86万(含2000保证金条款履约)。结清前后动作:三源无新申请,结案。</div></div>
+<div class='card2'><div class='h' style='color:var(--ink)'>李建文(6/10那笔) <span class='tag green'>已结清</span></div>
+<div class='kv'><b>结清时间</b>:6/29 提前结清</div>
+<div class='kv'><b>历史</b>:6/10放款,我司4.5万(总合同10万·金宝3万),5期,2期后6/29提前结清86000</div>
+<div class='kv'><b>结清前后动作</b>:净利+1.17万,历史4单累计落袋4.67万。结清前后动作:<b>6/17已另有一单在途(我司0.95万·胡子渠道,2/5期,第3期7/16)</b>;7月无新申请。</div></div>
+<div class='card2'><div class='h' style='color:var(--ink)'>李林(5/31那笔) <span class='tag green'>已结清</span></div>
+<div class='kv'><b>结清时间</b>:6/29 足期结清</div>
+<div class='kv'><b>历史</b>:5/31放款,我司8.5万(总合同20万),3期10天,末期169000,6/29结清</div>
+<div class='kv'><b>结清前后动作</b>:净利+2.38万,历史4单累计落袋3.64万。结清前后动作:<b>连环续借:6/29当天新放25万(我司8.5万,首期7/8已收62500✓)+7/7再放10万(我司4.5万,批单群7/7甘线批文,首期7/16)</b>——整户在途敞口10.87万居Top5第4,续借节奏加速,盯单⑧。</div></div>
+<div class='note'>汇总三数字(真算):累计落袋 <b>143.36万</b>(结清净利143.29+正常在途超本0.07) / 账面敞口 <b>155.66万</b> / 总账缺口(逾期净敞口) <b>54.23万</b>。</div>
+</div>
+</div></details><details id='m1' open><summary>一、今日到期 7/13(3单·阿全×2/小蒋-胖子) <span class='arw'>▶</span></summary><div class='body'>
+<div class='card2'><div class='h' style='color:var(--ink)'>王汉林 1/6期 · 整单30万 · 阿全 <span class='tag red'>新单首期·Ⓓ</span></div>
+<div class='kv'><b>应还日</b>:7/13(7/4放款·10天6期,首期68000;账本回款区日期串2026.7.13与工作日报7/12预列「7.4王汉林1/6期 30万 阿全」一致)</div>
+<div class='kv'><b>历史(全可可2单)</b>:①5/28放款30万(我司16万)6期10天,已收4期每期70000全部足额,第5期7/16;②7/4本单30万(我司18万)0/6期,今日首验</div>
+<div class='kv'><b>分账(7/4那笔)</b>:黑6万;龙3万;茹兰1万;路遥1万;甘1万;我司18万(备注原文,份额12+我司18=总合同30万✅)</div>
+<div class='kv'><b>客户累计落袋</b>:无结清史;整户在途正敞口19.06万=Top5第2</div>
+<div class='kv'><b>4源</b>:账本0期首验✓ / 工作日报7/12列「7月13日应收 7.4王汉林1/6期 30万 阿全」✓ / 批单群7/5批文「王汉林30万·10天6期·每期68000·利息6」✓ / 申请台账无新报单✓</div>
+<div class='kv'><b>集中度</b>:王汉林整户19.06万Top5第2(占正敞11.77%);阿全渠道正敞口61.40万全场第1,今日68,000大单再压同一收款线</div>
+<div class='kv'><b>判断</b>:老单4期零瑕疵是信用垫,但新单18万是全场最大单笔首期、首期违约弹性最大;批单群批文分配写「龙6万」、账本备注「龙3万我司18万」有出入,以账本权威为准、差异列⑩待核</div>
+<div class='kv'><b>动作</b>:阿全今日14:00前收68,000;今晚回报到人;卡单即升红、冻结王汉林线追加并触发Ⓓ预案(7/16老单第5期两连验第二关)</div></div>
+<div class='card2'><div class='h' style='color:var(--ink)'>李志雄 4/4期 · 整单5万 · 小蒋-胖子 <span class='tag green'>末期结清位</span></div>
+<div class='kv'><b>应还日</b>:7/13(6/4放款·10天4期,末期15000;账本回款区日期串2026.7.13,工作日报7/12预列「甘-胖子」,账本收款方小蒋-胖子)</div>
+<div class='kv'><b>历史(全可可4单)</b>:①4/7放款10万5/25提前结清+1.02万;②5/16那笔8万(我司3.03万)5/6期已超本−0.07,末期明日7/14;③6/4本单5万(我司2.525万)3期均足额7500;④7/1那笔6万(我司2.6万)1/5期,首期7/10已过验</div>
+<div class='kv'><b>分账(6/4那笔)</b>:胖子0.5万;黑1万;小蒋0.5万;清清0.5万;我司2.5万(备注原文,份额2.5+我司2.5=总合同5万✅)</div>
+<div class='kv'><b>客户累计落袋</b>:结清单净利+1.02万;本单在途敞口0.28万,整户在途净敞2.16万</div>
+<div class='kv'><b>4源</b>:账本已收3期✓ / 工作日报7/12列「7月13日应收 6.4李志雄4/4期 5万 甘-胖子」✓ / 批单群6/4「李志雄5万10天4期满到1%」✓ / 申请台账无新报单✓</div>
+<div class='kv'><b>集中度</b>:户不入Top5(整户正敞2.23万);小蒋-胖子线仅此一口</div>
+<div class='kv'><b>判断</b>:末期15,000即本单结清;明日7/14另一单末期16,500接续——48小时内户级两连清,全户信用再验证窗口</div>
+<div class='kv'><b>动作</b>:小蒋-胖子今日收15,000结清本单;明日阿龙-全线16,500接续;两清后追加议题以户为单位统一议(模块⑥)</div></div>
+<div class='card2'><div class='h' style='color:var(--ink)'>刘莹 2/8期 · 整单3万 · 阿全 <span class='tag green'>小额高频</span></div>
+<div class='kv'><b>应还日</b>:7/13(6/30放款·7天8期,第2期5430;账本回款区日期串2026.7.13,工作日报7/12预列同)</div>
+<div class='kv'><b>历史(全可可2单)</b>:①6/19那笔2万(我司0.8万)8期7天,已收3期均足额1560,第4期7/16;②6/30本单3万(我司1万),首期7/6足额1810(整单5430)</div>
+<div class='kv'><b>分账(6/30那笔)</b>:清0.5万;黑0.5万;龙0.5万;甘0.5万;我司1万(备注原文,份额2+我司1=总合同3万✅)</div>
+<div class='kv'><b>客户累计落袋</b>:新户无结清史;两单在途敞口合计1.15万</div>
+<div class='kv'><b>4源</b>:账本已收1期✓ / 工作日报7/12列「6.30刘莹2/8期 3万 阿全」✓ / 批单群7/2补批文「刘莹3万·7天8期·千8·下户300中介2000」✓ / 申请台账无新报单✓</div>
+<div class='kv'><b>集中度</b>:阿全渠道;金额小、户不入Top5;户内双单并行但合计仅1.8万出资</div>
+<div class='kv'><b>判断</b>:小额高频8期结构,首期足额;6/19老单3期零瑕疵旁证还款意愿;违约概率低</div>
+<div class='kv'><b>动作</b>:阿全今日收5,430;同线王汉林68,000大单优先、刘莹顺带;魏川/张平静零星催收同线执行</div></div>
+</div></details>
+<details id='m2' open><summary>二、🔴 红色风险(逾期池·净敞口54.23万) <span class='arw'>▶</span></summary><div class='body'>
+<div class='card'>
+<div class='card2'><div class='h' style='color:var(--ink)'>🚨 ① 彭凌峰</div><div class='kv'> 0回款91天(我司37万·4/13放款·天数=4/13逐日+1):逾期池68%、全池Top1(占正敞口22.85%)。催收人员线在跟、无实质回款。司法/催收二选一决策悬置每多一天,回收率折价加深 → <b>Ⓐ</b></div></div>
+<div class='card2'><div class='h' style='color:var(--ink)'>🔴 ② 魏川</div><div class='kv'> 净敞口4.64万(3/25放款9万):阿全线缓催中,7/3催回4000、<b>7/11又催回2000(工作日报7/11-12报,账本未入·在途差列⑩)</b>——回款脉搏在,维持每周至少1催1报。</div></div>
+<div class='card2'><div class='h' style='color:var(--ink)'>🔴 ③ 杜军昌</div><div class='kv'> 整户口径:4/14那笔(阿龙-豆)净敞口3.76万逾期;同户4/10(16.5万·已收3期缺尾款4.18万)与4/25(3万·2/6期)账本标「正常」,按整户口径全户计逾期池。7/8~7/9催收累计回2万,7/10起断火三天——<b>整户9.58万随陈湘退出顶替升入Top5第5</b>,乘胜追击别断火 → <b>Ⓔ</b></div></div>
+<div class='card2'><div class='h' style='color:var(--ink)'>🔴 ④ 廖春芳</div><div class='kv'> 净敞口3.00万(6/12放款3万·0回款):6/21首期即爆(工作日报「爆了」),豆豆线遗留,已31天0回款,小额但回收率最差象限,建议并入外访批次。</div></div>
+<div class='card2'><div class='h' style
