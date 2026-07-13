@@ -96,7 +96,7 @@
 🟡 <b>账本7月12日22:28对今日冻结·今日(7/13)未更新</b>:下列量化值以7/12 22:28最近真算为基线(已含7/11~12入账:张诚3/5期41700我司16680、陈湘2/6期70000我司30333、谢正山2/3期5000我司2000,并补录7/10徐敏新单60万合同·我司出资80800·杨超45万主份额——昨报置顶盲区已销项),冻结期内今日若有新回款尚未入账。注:<b>7/12四档日报因连接器故障全部停摆,本报为7/11 12:20后首报</b>,跳变归因跨7/11~12两天入账。今日7/13有<b>3单到期</b>(王汉林新单首期68000·阿全 / 李志雄末期15000·小蒋-胖子 / 刘莹2/8期5430·阿全,工作日报7/12已预列),收款确认后明日基线刷新。
 </div>
 <nav class='toc'>
-<a href='#m0'>口径</a><a href='#mt'>总览</a><a href='#m1'>①到期</a><a href='#m2'>②红</a><a href='#m3'>③黄</a><a href='#m4'>④敞口</a><a href='#m5'>⑤预警</a><a href='#m5b'>追加</a><a href='#m6'>⑦集中</a><a href='#m7'>⑧盯单</a><a href='#m8'>⑨该做</a><a href='#m9'>⑩盲区</a><a href='#md'>拍板</a>
+<a href='#m0'>口径</a><a href='#mt'>总览</a><a href='#m1'>①到期</a><a href='#m2'>②红</a><a href='#m3'>③黄</a><a href='#m4'>④敞口</a><a href='#m5'>⑤预警</a><a href='#m5b'>⑥追加</a><a href='#m6'>⑦集中</a><a href='#m7'>⑧盯单</a><a href='#m8'>⑨该做</a><a href='#m9'>⑩盲区</a><a href='#md'>拍板</a>
 </nav>
 <div style='text-align:center;margin:6px 0'><button id='togAll' onclick='toggleAllDetails()' style='background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:6px 18px;font-size:13px'>⊕ 展开全部</button></div>
 <details id='m0' open><summary>口径锁定 · 全可可统计(先读我) <span class='arw'>▶</span></summary><div class='body'>
