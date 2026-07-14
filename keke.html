@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang='zh-CN'>
+<html lang="zh-CN">
 <head>
-<meta charset='UTF-8'>
-<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=5.0'>
-<meta name='color-scheme' content='light dark'>
-<title>2026.07.13 经营日报 v72</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<meta name="color-scheme" content="light dark">
+<title>2026.07.14 经营日报 v72</title>
 <style>
   :root{
     color-scheme: light dark;
@@ -24,27 +24,25 @@
     header{background:linear-gradient(160deg,#26292e,#1f2226)}
     .toc{background:rgba(26,28,31,.95)}
     .warn{background:#1d3329;border-color:#2c5440;color:#7fe0aa}
-    .warn.warn-frz{background:#36301a;border-color:#6b5a1e;color:#e6b733}
     header h1, summary, .kpi .v, .card2 .h, .dec .dh{color:var(--ink)}
     .toc a{background:var(--card)}
     td.red, .em, .kpi .v.red{color:var(--red)}
   }
   *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
   body{background:var(--bg);color:var(--ink);
-    font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif;
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
     font-size:15px;line-height:1.62;padding-bottom:50px;-webkit-text-size-adjust:100%}
   header{background:linear-gradient(160deg,#ffffff,#efece5);padding:18px 16px 15px;border-bottom:2px solid var(--gold)}
   header .day{font-size:11px;letter-spacing:.25em;color:var(--gold);font-weight:700}
-  header h1{font-size:19px;margin:4px 0 2px;color:var(--ink)}
+  header h1{font-size:19px;margin:4px 0 2px;color:#1c1f24}
   header .sub{font-size:12px;color:var(--muted)}
   .warn{background:#e6f4ea;border:1px solid #a9d6ba;color:#1e6b43;font-size:12.5px;
     padding:9px 12px;margin:12px 12px 0;border-radius:9px;line-height:1.55}
-  .warn.warn-frz{background:var(--amber-bg);border-color:var(--amber);color:var(--amber)}
   .wrap{padding:12px 12px 0}
   .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px}
   .kpi{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:9px 8px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
   .kpi .l{font-size:10.5px;color:var(--dim)}
-  .kpi .v{font-size:16px;font-weight:700;margin-top:2px;color:var(--ink)}
+  .kpi .v{font-size:16px;font-weight:700;margin-top:2px;color:#1c1f24}
   .kpi .v.red{color:var(--red)} .kpi .v.amber{color:var(--amber)} .kpi .v.green{color:var(--green)}
   .kpi .d{font-size:10px;color:var(--muted);margin-top:1px}
   .glance{background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px;margin-bottom:12px;box-shadow:0 1px 2px rgba(0,0,0,.03)}
@@ -52,7 +50,7 @@
   .glance .row:last-child{border-bottom:none}
   .tag{flex-shrink:0}
   details{background:var(--card);border:1px solid var(--line);border-radius:10px;margin-bottom:9px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.03)}
-  summary{padding:12px 14px;font-size:14.5px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--ink)}
+  summary{padding:12px 14px;font-size:14.5px;font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;color:#1c1f24}
   summary::-webkit-details-marker{display:none}
   summary .arw{color:var(--dim);font-size:11px;transition:transform .2s}
   details[open] summary .arw{transform:rotate(90deg)}
@@ -71,17 +69,17 @@
   td.red{color:var(--red);font-weight:700}
   .card2{background:var(--card2);border-radius:8px;padding:9px 11px;margin:8px 0;border-left:3px solid var(--line)}
   .card2.r{border-left-color:var(--red)} .card2.a{border-left-color:var(--amber)} .card2.g{border-left-color:var(--green)} .card2.b{border-left-color:var(--blue)}
-  .card2 .h{font-weight:700;font-size:13.5px;margin-bottom:3px;color:var(--ink)}
+  .card2 .h{font-weight:700;font-size:13.5px;margin-bottom:3px;color:#1c1f24}
   .kv{font-size:12px;color:var(--muted);margin:2px 0}
   .kv b{color:var(--ink)}
   .dec{background:var(--card2);border-radius:8px;padding:9px 11px;margin:8px 0;border-left:3px solid var(--amber)}
   .dec.r{border-left-color:var(--red)} .dec.g{border-left-color:var(--green)}
-  .dec .dh{font-weight:700;font-size:13px;color:var(--ink)}
+  .dec .dh{font-weight:700;font-size:13px;color:#1c1f24}
   .dec .opt{font-size:12px;color:var(--muted);margin:3px 0}
   .dec .rec{font-size:12px;color:var(--green);font-weight:600}
   .toc{position:sticky;top:0;z-index:9;background:rgba(243,241,236,.97);backdrop-filter:blur(6px);
     display:flex;gap:6px;overflow-x:auto;padding:9px 12px;border-bottom:1px solid var(--line);margin-bottom:10px}
-  .toc a{flex-shrink:0;font-size:12px;color:var(--muted);text-decoration:none;padding:3px 9px;border:1px solid var(--line);border-radius:20px;background:var(--card)}
+  .toc a{flex-shrink:0;font-size:12px;color:var(--muted);text-decoration:none;padding:3px 9px;border:1px solid var(--line);border-radius:20px;background:#fff}
   .foot{text-align:center;font-size:11px;color:var(--dim);padding:16px 12px}
   .em{color:var(--red);font-weight:700}
   .star{color:var(--gold)}
@@ -89,316 +87,381 @@
 </head>
 <body>
 <header>
-<h1 style='color:var(--ink)'>可可2026 · 经营日报 <span class='v72'>v72</span></h1>
-<div class='sub'>2026年7月13日(周一) · 四源真读真算 · 可可账本7/12 22:28冻结基线(昨夜全量更新) · 申请台账=外访交接单7/6 · 工作日报至7/12夜结(7/11-12合并报) · 批单群至7/8 · 北京时间 12:25</div>
+  <div class="day">DAILY REPORT · 周二</div>
+  <h1>2026.07.14 经营日报 <span class="star">v72</span></h1>
+  <div class="sub">四源真读真算 · 可可账本已更新7/14 07:31 全量真算(在贷48单) · 申请台账=外访交接单 · 工作日报 · 批单群 · 北京时间</div>
 </header>
-<div class='warn' style='border-left:4px solid var(--amber)'>
-🟡 <b>账本7月12日22:28对今日冻结·今日(7/13)未更新</b>:下列量化值以7/12 22:28最近真算为基线(已含7/11~12入账:张诚3/5期41700我司16680、陈湘2/6期70000我司30333、谢正山2/3期5000我司2000,并补录7/10徐敏新单60万合同·我司出资80800·杨超45万主份额——昨报置顶盲区已销项),冻结期内今日若有新回款尚未入账。注:<b>7/12四档日报因连接器故障全部停摆,本报为7/11 12:20后首报</b>,跳变归因跨7/11~12两天入账。今日7/13有<b>3单到期</b>(王汉林新单首期68000·阿全 / 李志雄末期15000·小蒋-胖子 / 刘莹2/8期5430·阿全,工作日报7/12已预列),收款确认后明日基线刷新。
-</div>
-<nav class='toc'>
-<a href='#m0'>口径</a><a href='#mt'>总览</a><a href='#m1'>①到期</a><a href='#m2'>②红</a><a href='#m3'>③黄</a><a href='#m4'>④敞口</a><a href='#m5'>⑤预警</a><a href='#m5b'>⑥追加</a><a href='#m6'>⑦集中</a><a href='#m7'>⑧盯单</a><a href='#m8'>⑨该做</a><a href='#m9'>⑩盲区</a><a href='#md'>拍板</a>
+
+<div class="warn">🟢 <b>账本已更新·7/14 07:31 全量真算(今日已更新=未冻结)</b>:全量真算,无冻结警告。<b>今日7/14仅1单到期</b>(李志雄R80·6/6末期·敞-0.07超收·阿龙-全)。灰区收敛至<b>2单</b>(李志雄R89/刘莹R112·各过应还日1天)。<b>彭凌峰R49 0回款今日已92天</b>(我司37万·唯一最大死资金·拖累比38.44%·Top1占23.45%·决策悬约53天)→ Ⓐ。</div>
+
+<nav class="toc">
+  <a href="#m0">提要</a><a href="#mt">总览表</a><a href="#m1">①今日到期</a><a href="#m2">②红</a>
+  <a href="#m3">③黄</a><a href="#m4">④敞口</a><a href="#m5">⑤预警</a><a href="#m5b">⑥追加</a><a href="#m6">⑦集中度</a>
+  <a href="#m7">⑧盯单</a><a href="#m8">⑨该做</a><a href="#m9">⑩盲区</a><a href="#md">拍板</a>
 </nav>
-<div style='text-align:center;margin:6px 0'><button id='togAll' onclick='toggleAllDetails()' style='background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;padding:6px 18px;font-size:13px'>⊕ 展开全部</button></div>
-<details id='m0' open><summary>口径锁定 · 全可可统计(先读我) <span class='arw'>▶</span></summary><div class='body'>
-<div class='kpi-row'>
-<div class='kpi'><div class='k'>账面净敞口</div><div class='v' style='color:var(--ink)'>155.66万</div></div>
-<div class='kpi'><div class='k'>死账率(净)</div><div class='v' style='color:var(--red)'>17.69%</div></div>
-<div class='kpi'><div class='k'>灰区(真)</div><div class='v' style='color:var(--green)'>0 单</div></div>
-<div class='kpi'><div class='k'>累计落袋</div><div class='v' style='color:var(--gold)'>143.36万</div></div>
+<div style="padding:8px 12px 0;display:flex;gap:8px">
+  <button id="toggleAll" onclick="toggleAllDetails()" style="flex:1;font-size:12.5px;font-weight:600;color:var(--gold);background:var(--card);border:1px solid var(--line);border-radius:20px;padding:7px 12px;cursor:pointer">⊕ 展开全部</button>
 </div>
-<div class='card'>
-<b>冻结基线</b>:🟡账本7/12 22:28冻结·今日7/13未更新;全单116=结清68+正常26+逾期22(在途48单);敞口155.66万、死账率17.69%、Top5 55.34%、拖累比36.45%、落袋143.36万、ROI 46.76%。
-<br><b>跳变归因(vs 7/11报·7/10基线,跨7/11~12两天,7/12报因连接器故障未发)</b>:7/11~12入账=张诚3/5期41700(我司16680)+陈湘2/6期70000(我司30333)+谢正山2/3期5000(我司2000)=回款缩敞4.90万;补录徐敏7/10新单(我司出资80800入池)→ ①在外本金298.48→<b>306.56</b>(+8.08,徐敏新单入池);②账面敞口152.48→<b>155.66</b>(+3.18=+8.08新单−4.90回款);③落袋144.37→<b>143.36</b>(−1.01=徐敏6/6单结清净利按账本col39权威登记49693=4.97万,7/11报曾按工作日报预估5.98万,以账本为准修正);④ROI 48.37→<b>46.76%</b>(分子−1.01、分母+8.08双向);⑤死账率18.17→<b>17.69%</b>(逾期净敞口54.23不变、分母扩8.08被动下降);⑥拖累比37.63→<b>36.45%</b>(彭37万不变、健康池98.32→101.50,回款+新单净扩3.18);⑦Top5 56.70→<b>55.34%</b>——陈湘回款后整户敞口9.97→6.93退出Top5,杜军昌整户9.58顶替进第5;分子90.02→89.64、分母正敞口158.74→161.92(同口径可比,−1.36pct为回款缩分子+新单扩分母双重)。
-</div>
-<div class='card'>
-<b>两池 × 三口径 九宫格(万)</b>
-<table><tr><th></th><th>🟢正常(26单)</th><th>🔴逾期(22单)</th><th>合计(48单)</th></tr>
-<tr><td>在外本金(存量债权·出资全额)</td><td>166.07</td><td>140.48</td><td><b>306.56</b></td></tr>
-<tr><td>账面净敞口(超收计负)</td><td>101.43</td><td>54.23</td><td><b>155.66</b></td></tr>
-<tr><td>正敞口(逐单max0)</td><td>101.50</td><td>60.42</td><td><b>161.92</b></td></tr></table>
-<div class='note'>守恒校验:存量 166.07+140.48=306.56 ✅(尾差0.01为两位舍入);账面净 101.43+54.23=155.66 ✅;正敞口 101.50+60.42=161.92 ✅。超收(负敞口):正常−0.07、逾期−6.19、合计−6.26。恒等式:在外已收 = 在外本金−账面敞口 = 306.56−155.66 ≈ <b>150.90万</b>(逐单真算150.8956,尾差为两位四舍五入)✅</div>
-<div class='note'><b>口径注</b>:①在外本金(存量债权)=我司出资全额,只要未结清即全计,已还期数不减;②账面敞口=我司出资−各期已收(减还款、超收计负);③正敞口=逐单max(0,敞口)之和;④落袋=结清单col39净利和+仅正常在途超本(逾期超收不计);⑤死账率=逾期净敞口÷在外本金;⑥Top5=整户正敞口前5÷正敞口总额(分子分母同口径·单元floor);⑦灰区=正常且应还日严格＜今日;⑧拖累比=彭凌峰敞口÷健康池(正常正敞口−灰区正敞口)。<b>张诚R101</b>:41700整单/16680我司份额=账实一致非差(Ⓕ结案),本轮第3期41700我司16680如约入账再验✅。</div>
-</div>
-</div></details>
-<details id='mt' open><summary>🚨 逾期 + 灰区本金总览表 + 今日到期 + 结清复盘 <span class='arw'>▶</span></summary><div class='body'><div class='card'><b>🔴 逾期15户总览(净敞口·万)</b><table><tr><th>户</th><th>净敞口</th><th>出资</th><th>放款</th><th>线</th><th>脉搏</th></tr><tr><td class='red'>彭凌峰</td><td class='red'>37.00</td><td>37.0</td><td>4/13</td><td>催收人员</td><td>0回款91天·Ⓐ</td></tr><tr><td>魏川</td><td>4.64</td><td>9.0</td><td>3/25</td><td>阿全</td><td>7/11又催回2000(账本未入)</td></tr><tr><td>杜军昌</td><td>3.76</td><td>16.0</td><td>4/14</td><td>阿龙-豆</td><td>整户9.58·7/8~9回2万</td></tr><tr><td>廖春芳</td><td>3.00</td><td>3.0</td><td>6/12</td><td>豆豆</td><td>首期爆·0回款</td></tr><tr><td>刘娟(4单)</td><td>2.81</td><td>10.1</td><td>5月</td><td>阿全/辣条</td><td>零星回款</td></tr><tr><td>余兆堂</td><td>2.68</td><td>2.7</td><td>4月</td><td>催收</td><td>无近期回款</td></tr><tr><td>陈晓玲</td><td>1.95</td><td>6.0</td><td>2/26</td><td>胡子</td><td>车已拉回</td></tr><tr><td>刘永东</td><td>1.04</td><td>2.6</td><td>4/12</td><td>阿全</td><td>累计回1.4万</td></tr><tr><td>刘丹</td><td>0.80</td><td>2.0</td><td>1/19</td><td>阿全</td><td>6/3回1000</td></tr><tr><td>倪伟</td><td>0.35</td><td>14.0</td><td>5/14</td><td>豹哥-黑</td><td>已回99.7%</td></tr><tr><td>陈家川</td><td>0.29</td><td>7.3</td><td>3~5月</td><td>阿全/余</td><td>报警5/25</td></tr><tr><td>潘磊</td><td>0.01</td><td>1.1</td><td>6/9</td><td>阿全</td><td>连带催收中</td></tr><tr><td>肖光华</td><td>−0.15</td><td>7.1</td><td>4/23</td><td>美国</td><td>超收脱险</td></tr><tr><td>杨云</td><td>−1.64</td><td>8.5</td><td>4/19</td><td>甘</td><td>超收脱险</td></tr><tr><td>杨曼</td><td>−2.32</td><td>14.1</td><td>3~4月</td><td>大雄</td><td>超收脱险·日回款</td></tr></table><div class='note'>逾期净敞口合计 54.23万(正敞口60.42−超收6.19);灰区今日0单——总缺口=54.23万。逾期池7/11~12零入账(账本口径),魏川7/11催回2000见工作日报、账本未入列在途差(盲区⑩)。</div></div>
-<div class='card'>
-<b>A. 今日(7/13)到期 3 单</b>
-<table><tr><th>客户</th><th>期</th><th>整单应还</th><th>收款方</th><th>我司敞口</th><th>状态</th></tr>
-<tr><td class='red'>王汉林(7/4放款)</td><td>1/6</td><td>68,000</td><td>阿全</td><td class='red'>18.00万</td><td>🔴新单首期·Ⓓ两连验第一关</td></tr>
-<tr><td>李志雄(6/4放款)</td><td>4/4</td><td>15,000</td><td>小蒋-胖子</td><td>0.28万</td><td>🟢末期结清位</td></tr>
-<tr><td>刘莹(6/30放款)</td><td>2/8</td><td>5,430</td><td>阿全</td><td>0.82万</td><td>🟢小额高频</td></tr></table>
-<div class='note'>4源:工作日报7/12预列「7月13日应收款 6.4李志雄4/4期 5万 甘-胖子 / 6.30刘莹2/8期 3万 阿全 / 7.4王汉林1/6期 30万 阿全」;账本逐单算应还日命中同3单(回款区日期串2026.7.13);批单群7/5王汉林批文在案;申请台账无冲突。</div>
-</div>
-<div class='card'>
-<b>B. 真灰区(正常在途·过应还日) 0 单(账本7/12真算)</b>
-<div class='note'>✅ 灰区口径:正常在途且 next_due 严格＜今日(7/13)。本轮冻结基线下所有正常单 next_due ≥ 7/13:7/11到期3单(张诚/陈湘/谢正山)已于账本7/12更新全额入账销项✓;7/12(周日)零到期✓;最近的今日3单(王汉林/李志雄/刘莹)落在今日到期①,7/14李志雄末期落在预警⑤。</div>
-</div>
-<div class='card'>
-<b>C. 近期结清复盘(增厚落袋·账本col39净利·每卡三段·按结清时间从新到旧)</b>
-<div class='card2'><div class='h' style='color:var(--ink)'>徐敏(6/6那笔) <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:7/10 提前结清(第5期84800一并结清+分红18160)</div>
-<div class='kv'><b>历史</b>:6/6放款20万(我司9万),6期7天,前4期足额51500,7/10第5期提前结清;历史2单:5/15那笔20万6/23足期结清+3.10万</div>
-<div class='kv'><b>结清前后动作</b>:净利+4.97万(账本col39权威登记49693;7/11报曾按工作日报预估5.98万,今按账本修正),客户累计落袋+8.07万(全可可第2厚户)。结清前后动作:<b>「结清→3日内续借」坐实——账本7/12更新补录7/10徐敏新单60万合同(我司出资80800、杨超45万主份额、8期15天、首期7/24、收款杨超)</b>,昨报置顶盲区「杨超平15万出款」已销项;新单0/8期入盯单⑧;批单群批文仍缺(Ⓚ联动)。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>伍丹 <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:7/8 提前结清</div>
-<div class='kv'><b>历史</b>:6/9放款,我司0.55万(总合同1.5万),6期7天,已收4期后于7/8提前结清9600</div>
-<div class='kv'><b>结清前后动作</b>:净利+0.49万(单ROI 89%)。结清前后动作:申请台账6/9后无伍丹新报单;批单群6/29有「胖子 伍丹5000到85以天还」外部跟单分润;账本无新单——干净退出。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>何宗彬 <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:7/4 提前结清</div>
-<div class='kv'><b>历史</b>:5/24放款,我司4.04万(合单我司占8万,跟大元筱筱合股),7期10天,4期后7/4提前结清48113</div>
-<div class='kv'><b>结清前后动作</b>:净利+0.57万。结清前后动作:三源扫描(申请台账/批单群/账本7/1~今日)均无何宗彬新申请——无续借信号,结案。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>付涛 <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:7/3 足期结清</div>
-<div class='kv'><b>历史</b>:5/15放款,我司22万(总合同70万),5期10天,每期196000全额按时,7/3末期结清</div>
-<div class='kv'><b>结清前后动作</b>:净利+7.04万(本轮最大单笔落袋)。结清前后动作:三源无付涛新申请;阿龙-全渠道履约全程零瑕疵——优质户,可列白名单。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>陈华玉 <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:7/3 提前结清</div>
-<div class='kv'><b>历史</b>:6/11放款,我司13.77万(总合同30万),6期,2期后7/3提前结清199500</div>
-<div class='kv'><b>结清前后动作</b>:净利+1.96万,历史5单累计落袋16.59万(全可可最厚户)。结清前后动作:三源扫描无新申请;注意其历史「结清→隔月新借」节奏,8月再现概率高,提前定额度线。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>徐建明 <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:7/2 结清</div>
-<div class='kv'><b>历史</b>:6/3放款,我司2.7万(总合同6万),1期30天,7/2一次性归本65000</div>
-<div class='kv'><b>结清前后动作</b>:净利+0.55万+结清分红500。结清前后动作:三源无新申请;30天单险测试通过。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>陈湘(4/12那笔) <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:6/30 足期结清</div>
-<div class='kv'><b>历史</b>:4/12放款,我司13.13万(总合同60万),8期10天,每期114000,6/30末期结清+分红46960</div>
-<div class='kv'><b>结清前后动作</b>:净利+6.87万。结清前后动作:<b>6/22已续借新单30万(我司13万,豆豆收款)在途,第2期70000已于7/11足额入账,敞口13→6.93万退出Top5(现第8)</b>——「结清→续借」节奏确认关键期已过验,降级为常规跟踪,第3期7/21。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>薛桢桢 <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:6/29 提前结清</div>
-<div class='kv'><b>历史</b>:6/10放款,我司4.5万(总合同10万),5期,2期后6/29提前结清85000</div>
-<div class='kv'><b>结清前后动作</b>:净利+0.86万(含2000保证金条款履约)。结清前后动作:三源无新申请,结案。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>李建文(6/10那笔) <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:6/29 提前结清</div>
-<div class='kv'><b>历史</b>:6/10放款,我司4.5万(总合同10万·金宝3万),5期,2期后6/29提前结清86000</div>
-<div class='kv'><b>结清前后动作</b>:净利+1.17万,历史4单累计落袋4.67万。结清前后动作:<b>6/17已另有一单在途(我司0.95万·胡子渠道,2/5期,第3期7/16)</b>;7月无新申请。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>李林(5/31那笔) <span class='tag green'>已结清</span></div>
-<div class='kv'><b>结清时间</b>:6/29 足期结清</div>
-<div class='kv'><b>历史</b>:5/31放款,我司8.5万(总合同20万),3期10天,末期169000,6/29结清</div>
-<div class='kv'><b>结清前后动作</b>:净利+2.38万,历史4单累计落袋3.64万。结清前后动作:<b>连环续借:6/29当天新放25万(我司8.5万,首期7/8已收62500✓)+7/7再放10万(我司4.5万,批单群7/7甘线批文,首期7/16)</b>——整户在途敞口10.87万居Top5第4,续借节奏加速,盯单⑧。</div></div>
-<div class='note'>汇总三数字(真算):累计落袋 <b>143.36万</b>(结清净利143.29+正常在途超本0.07) / 账面敞口 <b>155.66万</b> / 总账缺口(逾期净敞口) <b>54.23万</b>。</div>
-</div>
-</div></details><details id='m1' open><summary>一、今日到期 7/13(3单·阿全×2/小蒋-胖子) <span class='arw'>▶</span></summary><div class='body'>
-<div class='card2'><div class='h' style='color:var(--ink)'>王汉林 1/6期 · 整单30万 · 阿全 <span class='tag red'>新单首期·Ⓓ</span></div>
-<div class='kv'><b>应还日</b>:7/13(7/4放款·10天6期,首期68000;账本回款区日期串2026.7.13与工作日报7/12预列「7.4王汉林1/6期 30万 阿全」一致)</div>
-<div class='kv'><b>历史(全可可2单)</b>:①5/28放款30万(我司16万)6期10天,已收4期每期70000全部足额,第5期7/16;②7/4本单30万(我司18万)0/6期,今日首验</div>
-<div class='kv'><b>分账(7/4那笔)</b>:黑6万;龙3万;茹兰1万;路遥1万;甘1万;我司18万(备注原文,份额12+我司18=总合同30万✅)</div>
-<div class='kv'><b>客户累计落袋</b>:无结清史;整户在途正敞口19.06万=Top5第2</div>
-<div class='kv'><b>4源</b>:账本0期首验✓ / 工作日报7/12列「7月13日应收 7.4王汉林1/6期 30万 阿全」✓ / 批单群7/5批文「王汉林30万·10天6期·每期68000·利息6」✓ / 申请台账无新报单✓</div>
-<div class='kv'><b>集中度</b>:王汉林整户19.06万Top5第2(占正敞11.77%);阿全渠道正敞口61.40万全场第1,今日68,000大单再压同一收款线</div>
-<div class='kv'><b>判断</b>:老单4期零瑕疵是信用垫,但新单18万是全场最大单笔首期、首期违约弹性最大;批单群批文分配写「龙6万」、账本备注「龙3万我司18万」有出入,以账本权威为准、差异列⑩待核</div>
-<div class='kv'><b>动作</b>:阿全今日14:00前收68,000;今晚回报到人;卡单即升红、冻结王汉林线追加并触发Ⓓ预案(7/16老单第5期两连验第二关)</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>李志雄 4/4期 · 整单5万 · 小蒋-胖子 <span class='tag green'>末期结清位</span></div>
-<div class='kv'><b>应还日</b>:7/13(6/4放款·10天4期,末期15000;账本回款区日期串2026.7.13,工作日报7/12预列「甘-胖子」,账本收款方小蒋-胖子)</div>
-<div class='kv'><b>历史(全可可4单)</b>:①4/7放款10万5/25提前结清+1.02万;②5/16那笔8万(我司3.03万)5/6期已超本−0.07,末期明日7/14;③6/4本单5万(我司2.525万)3期均足额7500;④7/1那笔6万(我司2.6万)1/5期,首期7/10已过验</div>
-<div class='kv'><b>分账(6/4那笔)</b>:胖子0.5万;黑1万;小蒋0.5万;清清0.5万;我司2.5万(备注原文,份额2.5+我司2.5=总合同5万✅)</div>
-<div class='kv'><b>客户累计落袋</b>:结清单净利+1.02万;本单在途敞口0.28万,整户在途净敞2.16万</div>
-<div class='kv'><b>4源</b>:账本已收3期✓ / 工作日报7/12列「7月13日应收 6.4李志雄4/4期 5万 甘-胖子」✓ / 批单群6/4「李志雄5万10天4期满到1%」✓ / 申请台账无新报单✓</div>
-<div class='kv'><b>集中度</b>:户不入Top5(整户正敞2.23万);小蒋-胖子线仅此一口</div>
-<div class='kv'><b>判断</b>:末期15,000即本单结清;明日7/14另一单末期16,500接续——48小时内户级两连清,全户信用再验证窗口</div>
-<div class='kv'><b>动作</b>:小蒋-胖子今日收15,000结清本单;明日阿龙-全线16,500接续;两清后追加议题以户为单位统一议(模块⑥)</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>刘莹 2/8期 · 整单3万 · 阿全 <span class='tag green'>小额高频</span></div>
-<div class='kv'><b>应还日</b>:7/13(6/30放款·7天8期,第2期5430;账本回款区日期串2026.7.13,工作日报7/12预列同)</div>
-<div class='kv'><b>历史(全可可2单)</b>:①6/19那笔2万(我司0.8万)8期7天,已收3期均足额1560,第4期7/16;②6/30本单3万(我司1万),首期7/6足额1810(整单5430)</div>
-<div class='kv'><b>分账(6/30那笔)</b>:清0.5万;黑0.5万;龙0.5万;甘0.5万;我司1万(备注原文,份额2+我司1=总合同3万✅)</div>
-<div class='kv'><b>客户累计落袋</b>:新户无结清史;两单在途敞口合计1.15万</div>
-<div class='kv'><b>4源</b>:账本已收1期✓ / 工作日报7/12列「6.30刘莹2/8期 3万 阿全」✓ / 批单群7/2补批文「刘莹3万·7天8期·千8·下户300中介2000」✓ / 申请台账无新报单✓</div>
-<div class='kv'><b>集中度</b>:阿全渠道;金额小、户不入Top5;户内双单并行但合计仅1.8万出资</div>
-<div class='kv'><b>判断</b>:小额高频8期结构,首期足额;6/19老单3期零瑕疵旁证还款意愿;违约概率低</div>
-<div class='kv'><b>动作</b>:阿全今日收5,430;同线王汉林68,000大单优先、刘莹顺带;魏川/张平静零星催收同线执行</div></div>
-</div></details>
-<details id='m2' open><summary>二、🔴 红色风险(逾期池·净敞口54.23万) <span class='arw'>▶</span></summary><div class='body'>
-<div class='card'>
-<div class='card2'><div class='h' style='color:var(--ink)'>🚨 ① 彭凌峰</div><div class='kv'> 0回款91天(我司37万·4/13放款·天数=4/13逐日+1):逾期池68%、全池Top1(占正敞口22.85%)。催收人员线在跟、无实质回款。司法/催收二选一决策悬置每多一天,回收率折价加深 → <b>Ⓐ</b></div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>🔴 ② 魏川</div><div class='kv'> 净敞口4.64万(3/25放款9万):阿全线缓催中,7/3催回4000、<b>7/11又催回2000(工作日报7/11-12报,账本未入·在途差列⑩)</b>——回款脉搏在,维持每周至少1催1报。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>🔴 ③ 杜军昌</div><div class='kv'> 整户口径:4/14那笔(阿龙-豆)净敞口3.76万逾期;同户4/10(16.5万·已收3期缺尾款4.18万)与4/25(3万·2/6期)账本标「正常」,按整户口径全户计逾期池。7/8~7/9催收累计回2万,7/10起断火三天——<b>整户9.58万随陈湘退出顶替升入Top5第5</b>,乘胜追击别断火 → <b>Ⓔ</b></div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>🔴 ④ 廖春芳</div><div class='kv'> 净敞口3.00万(6/12放款3万·0回款):6/21首期即爆(工作日报「爆了」),豆豆线遗留,已31天0回款,小额但回收率最差象限,建议并入外访批次。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>🔴 ⑤ 刘娟</div><div class='kv'> 4单叠户净敞口2.81万(5/1·5/15·5/16·5/23共出资10.1万):阿全/辣条双线催收,6月每单有零星回款,叠户结构定性为「多头借新还旧失败」,只按现金流回收、不再展期。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>🔴 ⑥ 小额长尾</div><div class='kv'> 余兆堂2.68万(两笔4月单)/陈晓玲1.95万(2/26·车已拉回)/刘永东1.04万(累计催回1.4万+)/刘丹0.80万/倪伟0.35万(5/14百万级单已收回99.7%·豹哥线)/陈家川0.29万(5/14回1期·报警5/25)/潘磊0.01万——7户合计约9.1万,以现金流催收为主,不占决策带宽。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>🟢 ⑦ 超收已脱险 6户(负敞口−6.19万)</div><div class='kv'>:杨曼−2.32万/杨云−1.64万/肖光华−0.15万(7/3美国催回8000完成第6期)等——本金已收回,后续每一笔均为逾期超收、按口径<b>不计落袋</b>,仅摊薄逾期池。</div></div>
-<div class='kv'><b>⑧ 16风险完整扫描</b>(账本逾期15户+龙哥线遗留蒋敏=16覆盖;敞口=净敞口·万):
-<table><tr><th>#</th><th>户</th><th>净敞口</th><th>出资</th><th>线</th><th>脉搏(最近30天)</th></tr>
-<tr><td>1</td><td class='red'>彭凌峰</td><td class='red'>37.00</td><td>37.0</td><td>催收人员</td><td>0回款91天 → Ⓐ</td></tr>
-<tr><td>2</td><td>魏川</td><td>4.64</td><td>9.0</td><td>阿全</td><td>7/3回4000·7/11又回2000(账本未入)</td></tr>
-<tr><td>3</td><td>杜军昌</td><td>3.76(整户9.58)</td><td>16.0</td><td>阿龙-豆/阿全</td><td>7/8~7/9催回2万·7/10起断火</td></tr>
-<tr><td>4</td><td>廖春芳</td><td>3.00</td><td>3.0</td><td>豆豆</td><td>0回款·6/21首期爆</td></tr>
-<tr><td>5</td><td>刘娟(4单)</td><td>2.81</td><td>10.1</td><td>阿全/辣条</td><td>6月零星回款</td></tr>
-<tr><td>6</td><td>余兆堂</td><td>2.68</td><td>2.7</td><td>催收</td><td>无近期回款</td></tr>
-<tr><td>7</td><td>陈晓玲</td><td>1.95</td><td>6.0</td><td>胡子</td><td>车已拉回抵偿中</td></tr>
-<tr><td>8</td><td>刘永东</td><td>1.04</td><td>2.6</td><td>阿全</td><td>5/29起累计回1.4万</td></tr>
-<tr><td>9</td><td>刘丹</td><td>0.80</td><td>2.0</td><td>阿全</td><td>6/3回1000</td></tr>
-<tr><td>10</td><td>倪伟</td><td>0.35</td><td>14.0</td><td>豹哥-黑</td><td>5/22代扣后余尾款</td></tr>
-<tr><td>11</td><td>陈家川</td><td>0.29</td><td>7.3</td><td>阿全/余兆堂</td><td>5/14回1期·报警5/25</td></tr>
-<tr><td>12</td><td>潘磊</td><td>0.01</td><td>1.1</td><td>阿全</td><td>7/8杜军昌线连带催回中</td></tr>
-<tr><td>13</td><td>肖光华</td><td>−0.15(超收)</td><td>7.1</td><td>美国</td><td>7/3催回8000·已脱险</td></tr>
-<tr><td>14</td><td>杨云</td><td>−1.64(超收)</td><td>8.5</td><td>甘</td><td>已脱险</td></tr>
-<tr><td>15</td><td>杨曼</td><td>−2.32(超收)</td><td>14.1</td><td>大雄</td><td>7/12遗留名单仍列·每日小额回款中·已脱险</td></tr>
-<tr><td>16</td><td>蒋敏(龙哥线遗留)</td><td>账本已结清</td><td>—</td><td>阿龙</td><td>「只收了本金等龙哥回来下一步」·账外遗留,不入池仅备忘</td></tr></table>
-<div class='note'>小计 22单逾期净敞口 54.23万(死账率 17.69%——逾期分子7/11~12零变动、徐敏新单扩分母被动下降0.48pct);含超收6单负敞口−6.19万,正敞口60.42万。逾期池主体仍为彭凌峰(37万·占逾期正敞口61%)+魏川+杜军昌,三户占逾期正敞口约75%。工作日报7/12遗留名单(蔡华莹/郭俊姝/张平静/简平起诉/王飘/黄志炳/杜军昌/潘磊/罗杰先收息等)为账本外或跨线遗留,金额未入可可池部分列盲区⑩跟踪。</div>
-</div>
-</div></details><details id='m3' open><summary>三、🟡 黄色风险(真灰区) 0 单 <span class='arw'>▶</span></summary><div class='body'><div class='card'>
-<div class='kv'>✅ <b>灰区口径</b>:正常在途且 next_due 严格＜今日(7/13),逢X优先、账本回款区日期串为准。</div>
-<div class='kv'>✅ <b>本轮真算 0 单</b>:26张正常单逐单核应还日,全部 ≥ 7/13。</div>
-<div class='kv'>✅ <b>7/11三单销项</b>:张诚41700(我司16680)/陈湘70000(我司30333)/谢正山5000(我司2000)均已于账本7/12更新足额入账——不成灰区,时滞一天已消化。</div>
-<div class='kv'>🟡 <b>边界提示</b>:今日到期3单(王汉林/李志雄/刘莹)若今日实收未入账,明日基线刷新前会短暂显示灰区,属冻结时滞、非真灰。</div>
-<div class='kv'>🟡 <b>准灰区盯防</b>:罗杰50万原应还7/5已过、账本改期7/15(<b>仅剩2天</b>)——形式上不满足灰区口径(应还日已改),实质是全场最大的准灰单,已提级至盯单⑧与Ⓒ;7/15同日还有干志林/曾杰/牟波/王红霞四口,阿全线带宽预案见⑨。</div>
-<div class='kv'>✅ <b>健康池含义</b>:灰区0 → 健康池=正常正敞口全额101.50万,拖累比分母无缩水。</div>
-</div></div></details><details id='m4' open><summary>四、当前敞口结构 + 拖累比 + 出资人维度(真算) <span class='arw'>▶</span></summary><div class='body'>
-<div class='card'>
-<b>敞口结构(账面净敞口 155.66万)</b>
-<table><tr><th>池</th><th>存量在外本金</th><th>账面净敞口</th><th>正敞口</th><th>占净敞口</th></tr>
-<tr><td>🟢正常26单</td><td>166.07</td><td>101.43</td><td>101.50</td><td>65.2%</td></tr>
-<tr><td>🔴逾期22单</td><td>140.48</td><td>54.23</td><td>60.42</td><td>34.8%</td></tr>
-<tr><td><b>合计48单</b></td><td><b>306.56</b></td><td><b>155.66</b></td><td><b>161.92</b></td><td>100%</td></tr></table>
-<div class='note'>恒等式:在外已收=306.56−155.66≈<b>150.90万</b>(真算150.8956)✅;正常+逾期=合计 三行均守恒 ✅</div>
-<div class='card'><b>🟢 正常在途26单明细(我司口径·万)</b><table><tr><th>放款</th><th>户</th><th>出资</th><th>期</th><th>净敞口</th><th>应还日</th><th>收款方</th></tr><tr><td>04/10</td><td>杜军昌</td><td>16.50</td><td>3/3</td><td>4.18</td><td>08/05</td><td>阿全-阿力</td></tr><tr><td>04/25</td><td>杜军昌</td><td>3.00</td><td>2/6</td><td>1.64</td><td>09/01</td><td>熊猫</td></tr><tr><td>05/16</td><td>李志雄</td><td>3.03</td><td>5/6</td><td>-0.07</td><td>07/14</td><td>阿龙-全</td></tr><tr><td>05/28</td><td>王汉林</td><td>16.00</td><td>4/6</td><td>1.07</td><td>07/16</td><td>小蒋</td></tr><tr><td>06/04</td><td>李志雄</td><td>2.52</td><td>3/4</td><td>0.28</td><td>07/13</td><td>小蒋-胖子</td></tr><tr><td>06/05</td><td>牟波</td><td>4.50</td><td>3/5</td><td>0.92</td><td>07/15</td><td>小蒋</td></tr><tr><td>06/06</td><td>王红霞</td><td>2.00</td><td>3/4</td><td>0.14</td><td>07/15</td><td>小蒋-全</td></tr><tr><td>06/10</td><td>王亚勤</td><td>9.50</td><td>3/6</td><td>2.46</td><td>07/19</td><td>小蒋-全</td></tr><tr><td>06/12</td><td>张诚</td><td>6.00</td><td>3/5</td><td>1.00</td><td>07/21</td><td>金宝</td></tr><tr><td>06/17</td><td>李建文</td><td>0.95</td><td>2/5</td><td>0.44</td><td>07/16</td><td>胡子</td></tr><tr><td>06/18</td><td>顾心丽</td><td>3.10</td><td>2/6</td><td>1.85</td><td>07/17</td><td>阿全</td></tr><tr><td>06/19</td><td>刘莹</td><td>0.80</td><td>3/8</td><td>0.33</td><td>07/16</td><td>阿全</td></tr><tr><td>06/22</td><td>陈湘</td><td>13.00</td><td>2/6</td><td>6.93</td><td>07/21</td><td>豆豆</td></tr><tr><td>06/22</td><td>谢正山</td><td>2.02</td><td>2/3</td><td>1.62</td><td>07/21</td><td>阿全</td></tr><tr><td>06/23</td><td>陈前</td><td>4.00</td><td>1/4</td><td>2.70</td><td>07/22</td><td>阿全</td></tr><tr><td>06/25</td><td>钟志强</td><td>13.13</td><td>0/2</td><td class='red'>13.13</td><td>07/24</td><td>阿全</td></tr><tr><td>06/26</td><td>罗杰</td><td>6.50</td><td>1/1</td><td>6.24</td><td>07/15</td><td>豹哥-慧</td></tr><tr><td>06/29</td><td>李林</td><td>8.50</td><td>1/5</td><td>6.38</td><td>07/18</td><td>大雄</td></tr><tr><td>06/30</td><td>刘莹</td><td>1.00</td><td>1/8</td><td>0.82</td><td>07/13</td><td>阿全</td></tr><tr><td>07/01</td><td>李志雄</td><td>2.60</td><td>1/5</td><td>1.95</td><td>07/20</td><td>阿龙</td></tr><tr><td>07/01</td><td>曾杰</td><td>3.84</td><td>0/3</td><td>3.84</td><td>07/15</td><td>阿全</td></tr><tr><td>07/04</td><td>王汉林</td><td>18.00</td><td>0/6</td><td class='red'>18.00</td><td>07/13</td><td>阿全</td></tr><tr><td>07/06</td><td>干志林</td><td>6.00</td><td>0/5</td><td>6.00</td><td>07/15</td><td>阿全</td></tr><tr><td>07/07</td><td>李林</td><td>4.50</td><td>0/3</td><td>4.50</td><td>07/16</td><td>小蒋</td></tr><tr><td>07/07</td><td>朱泽</td><td>7.00</td><td>0/6</td><td>7.00</td><td>07/16</td><td>阿全</td></tr><tr><td>07/10</td><td>徐敏</td><td>8.08</td><td>0/8</td><td>8.08</td><td>07/24</td><td>杨超</td></tr></table><div class='note'>小计:出资166.07万、净敞口101.43万,与九宫格正常列守恒✅。红字=净敞口≥13万(王汉林7/4/钟志强)。vs 7/11报:张诚2.66→1.00、陈湘9.97→6.93、谢正山1.82→1.62(7/11三单入账缩敞4.90);<b>新增7/10徐敏60万合同单(我司出资8.08万·8期15天·首期7/24·收款杨超,账本7/12补录)</b>。</div></div>
-<div class='kv'><b>拖累比(彭凌峰÷健康池)</b> = 37.00 ÷ 101.50(正常正敞口101.50−灰区正敞口0)= <b>36.45%</b>。彭一户仍拖住健康池超三分之一,较7/11(37.63%)降1.18pct——非彭好转,而是回款+徐敏新单使健康池净扩3.18万的被动稀释。</div>
-</div>
-<div class='card'>
-<b>出资人维度(备注分账·整户口径·万)</b> — 名义=分账份额;实际未收/亏损=份额×(我司敞口÷出资)、超收记0;同户有逾期则全户计逾期(如杜军昌4/10「正常」单随户入逾期列);别名已归一;幽灵数熊猫已剔除;我司行用账本权威值
-<table><tr><th>出资人</th><th>正常名义</th><th>正常实际未收</th><th>逾期名义</th><th>逾期亏损本金</th></tr>
-<tr><td><b>我司(账本权威)</b></td><td>166.07</td><td>101.50</td><td>140.48</td><td>60.42</td></tr><tr><td>黑</td><td>64.45</td><td>40.85</td><td>84.82</td><td class='red'>34.47</td></tr><tr><td>阿龙</td><td>27.05</td><td>21.58</td><td>78.12</td><td class='red'>39.84</td></tr><tr><td>豹哥</td><td>35.00</td><td>33.60</td><td>60.00</td><td>1.51</td></tr><tr><td>杨超</td><td>45.00</td><td>45.00</td><td>0.00</td><td>0.00</td></tr><tr><td>美国</td><td>0.00</td><td>0.00</td><td>45.00</td><td class='red'>7.33</td></tr><tr><td>小蒋</td><td>15.00</td><td>8.94</td><td>16.36</td><td class='red'>7.05</td></tr><tr><td>茹兰</td><td>16.00</td><td>9.13</td><td>11.50</td><td>4.10</td></tr><tr><td>路遥</td><td>9.00</td><td>5.73</td><td>12.00</td><td>4.60</td></tr><tr><td>大雄</td><td>8.00</td><td>4.76</td><td>10.22</td><td>3.92</td></tr><tr><td>清清</td><td>10.50</td><td>5.45</td><td>5.50</td><td>2.80</td></tr><tr><td>胡子</td><td>6.00</td><td>2.78</td><td>8.00</td><td class='red'>5.60</td></tr><tr><td>小雅</td><td>7.50</td><td>6.50</td><td>0.00</td><td>0.00</td></tr><tr><td>华姐</td><td>2.00</td><td>0.13</td><td>5.00</td><td>1.52</td></tr><tr><td>阿力</td><td>0.00</td><td>0.00</td><td>6.00</td><td>2.10</td></tr><tr><td>胖哥</td><td>3.00</td><td>1.37</td><td>1.50</td><td>1.00</td></tr><tr><td>甘</td><td>4.00</td><td>3.78</td><td>0.50</td><td>0.00</td></tr><tr><td>金宝</td><td>4.50</td><td>0.75</td><td>0.00</td><td>0.00</td></tr><tr><td>艺萍</td><td>0.00</td><td>0.00</td><td>3.00</td><td>0.05</td></tr><tr><td>豆豆</td><td>1.50</td><td>0.76</td><td>1.00</td><td>0.50</td></tr><tr><td>贝贝</td><td>1.50</td><td>1.50</td><td>0.00</td><td>0.00</td></tr><tr><td>艳艳</td><td>0.00</td><td>0.00</td><td>1.00</td><td>0.52</td></tr><tr><td>文慧</td><td>0.00</td><td>0.00</td><td>1.00</td><td>0.00</td></tr><tr><td>李小玲</td><td>0.50</td><td>0.10</td><td>0.50</td><td>0.00</td></tr></table>
-<div class='note'>vs 7/11报变动:<b>新出资人杨超45万名义(徐敏7/10新单主份额·未收45.00)一跃成第2大外部资方敞口</b>;徐敏新单同步抬升黑62.45→64.45、阿龙25.05→27.05、小蒋14→15、大雄7→8、茹兰15.5→16、路遥8.5→9;7/11三单回款压降实际未收:金宝2.00→0.75(张诚)、黑41.44→40.85、阿龙(陈湘份额)等。阿龙逾期亏损39.84万仍为全场最大(彭凌峰37万主敞口在其名下份额);豹哥逾期名义60万但亏损仅1.51万(倪伟单已回99.7%)。分账校验:逐单核「备注份额合计=总合同c42」全部通过;杜军昌4/25「熊猫3万」为幽灵数已剔除(该单合同10万);别名归一(龙→阿龙/胖子·胖胖→胖哥/豆→豆豆等)已执行。</div>
-</div>
-</div></details>
-<details id='m5' open><summary>五、明天预警(7/14 1单 + 7/15 5单) <span class='arw'>▶</span></summary><div class='body'>
-<div class='card'>
-<b>明天7/14(周二) 1 单</b>
-<table><tr><th>客户</th><th>期</th><th>整单应还</th><th>收款方</th><th>我司敞口</th><th>风险注</th></tr>
-<tr><td>李志雄(5/16放款)</td><td>6/6</td><td>16,500</td><td>阿龙-全</td><td>−0.07万(超本)</td><td>🟢末期结清位;与今日6/4单末期构成48小时户级两连清</td></tr></table>
-<div class='note'>4源:工作日报7/12预列「7月14日应收款 5.16李志雄6/6期 8万 阿龙-全」✓;账本应还日逐单核7/14命中同1单✓。</div>
-<b>后天7/15 五口同日(布防提前量·阿全线大考)</b>
-<table><tr><th>客户</th><th>期</th><th>整单应还</th><th>收款方</th><th>我司敞口</th><th>风险注</th></tr>
-<tr><td class='red'>罗杰(6/26放款)</td><td>改期日</td><td>120,000+</td><td>豹哥-慧</td><td class='red'>6.24万</td><td>🔴改期条款「7/15付12w、15号归40」·准灰置顶Ⓒ</td></tr>
-<tr><td>干志林(7/6放款)</td><td>1/5</td><td>24,000</td><td>阿全</td><td>6.00万</td><td>🟡新单首验;历史2单结清+1.31万信用垫</td></tr>
-<tr><td>曾杰(7/1放款)</td><td>1/3</td><td>先息后本</td><td>阿全</td><td>3.84万</td><td>🟡新单首验;7/2已先收5000利息待口径确认</td></tr>
-<tr><td>牟波(6/5放款)</td><td>4/5</td><td>26,500</td><td>小蒋</td><td>0.92万</td><td>🟢3期足额;外部叠加杠杆盯防(⑥谨慎)</td></tr>
-<tr><td>王红霞(6/6放款)</td><td>4/4</td><td>15,500</td><td>小蒋-全</td><td>0.14万</td><td>🟢末期结清位</td></tr></table>
-<div class='note'>7/15合计整单应还约19万+罗杰12万改期款,其中罗杰/干志林/曾杰三口压在豹哥-慧与阿全两条线;今晚起逐口提前确认,罗杰书面确认今日必须闭环(Ⓒ)。</div>
-</div>
-</div></details><details id='m5b' open><summary>六、考虑追加客户(履约过半·整户口径·9户卡) <span class='arw'>▶</span></summary><div class='body'>
-<div class='note'>口径注:基于账本7/12 22:28冻结基线已还期数;「已收未更新」回款未计入,实际进度或更靠前。倾向三档:🟢可追加/🟡谨慎/🚫暂不。按已还比例从高到低。vs 7/11报:张诚(3/5=60%)、谢正山(2/3=67%)因7/11期款入账过半线<b>新入列</b>,共9户卡。</div>
-<div class='card2'><div class='h' style='color:var(--ink)'>罗杰 1/1期(100%)·🚫坚决暂不</div>
-<div class='kv'><b>应还日</b>:7/15(6/26放款50万1期10天,原应还7/5「豹哥还在催」,账本日期串7/15=改期,<b>仅剩2天</b>)</div>
-<div class='kv'><b>历史</b>:全可可1单:6/26放款50万(我司6.5万·合股阿晨15实出14.4),先收利息6000计1期,本金50万未归</div>
-<div class='kv'><b>分账</b>:黑4.5万;龙1.5万;小蒋0.5万;小雅0.5万;清清0.5万;胖子0.5万;大雄0.5万;我司6.5万;豹哥35万</div>
-<div class='kv'><b>4源</b>:工作日报7/5「6.26罗杰1/1期 50万 豹哥-慧 豹哥还在催」+7/6「罗杰先收利息6000」;批单群6/26批文「结清提15%,7月5日未归转等本」;账本1/1期但敞口6.24万未消</div>
-<div class='kv'><b>风控落地人/收款</b>:豹哥-慧线;批单群备注:7/15未归付12w、15号归40</div>
-<div class='kv'><b>推理/倾向</b>:🧠已还比例100%是「先收息」造成的口径假象,本金一分未归且改期日只剩2天——<b>倾向:坚决暂不追加</b>,准灰区盯单⑧;7/15书面确认Ⓒ今日必须闭环</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>李志雄 5/6期(83%)·🟡谨慎</div>
-<div class='kv'><b>应还日</b>:7/14(5/16放款8万,5期已收,第6期=末期16500)</div>
-<div class='kv'><b>历史</b>:全可可4单:4/7(10万)5/25提前结清+1.02万;5/16在途超本−0.07;6/4在途3/4(<b>末期今日7/13到期①</b>);7/1新单首期15000已于7/10足额入账✓,现1/5期</div>
-<div class='kv'><b>分账</b>:小蒋0.5万;茹兰1万;黑1万;阿龙2万;清清0.5万;我司3万(账本权威3.03万)</div>
-<div class='kv'><b>4源</b>:账本3单在途✓;工作日报7/12预列7/13末期+7/14末期两单✓;批单群7/1「李志雄6万」放款记录✓;申请台账无新报单✓</div>
-<div class='kv'><b>风控落地人/收款</b>:阿龙线(3单主);收款方阿龙-全/小蒋-胖子</div>
-<div class='kv'><b>推理/倾向</b>:🧠首期考验通过加分,但整户3单并行(在途净敞2.16万)=仍在加杠杆——<b>倾向:谨慎,今明48小时两末期连清后再议</b></div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>李志雄(6/4那笔) 3/4期(75%)·🟡谨慎</div>
-<div class='kv'><b>应还日</b>:<b>今日7/13</b>(6/4放款5万,末期15000,今日到期①)</div>
-<div class='kv'><b>历史</b>:同上李志雄整户(3单在途,7/1单首期已过验)</div>
-<div class='kv'><b>分账</b>:胖子0.5万;黑1万;小蒋0.5万;清清0.5万;我司2.5万(账本权威2.525万)</div>
-<div class='kv'><b>4源</b>:账本3期✓;工作日报7/12预列「6.4李志雄4/4期 5万 甘-胖子」✓;批单群6/4「李志雄5万10天4期满到1%」✓</div>
-<div class='kv'><b>风控落地人/收款</b>:小蒋-胖子线</div>
-<div class='kv'><b>推理/倾向</b>:🧠末期今日结清后此单退出;追加决策并入户级判断(见上)——<b>倾向:谨慎,以户为单位统一议</b></div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>王红霞 3/4期(75%)·🟢可追加(小额)</div>
-<div class='kv'><b>应还日</b>:7/15(6/6放款5万,末期15500)</div>
-<div class='kv'><b>历史</b>:全可可1单:6/6放款5万(我司2万)10天4期,3期均足额15500(7/5那期「在外面借还没有借到」延1日后7/6补足)</div>
-<div class='kv'><b>分账</b>:黑1.5万;茹兰1万;小蒋0.5万;我司2万</div>
-<div class='kv'><b>4源</b>:账本3期✓;工作日报6/25/7/6均列已收✓;批单群6/6批文「5万10天4期到9」✓;申请台账无新报单</div>
-<div class='kv'><b>风控落地人/收款</b>:小蒋-全收款;甘出款</div>
-<div class='kv'><b>推理/倾向</b>:🧠履约3期但7/5曾现资金面紧(靠外借补足),末期后如申请续借——<b>倾向:可追加但降半档(≤2万)并盯首期</b></div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>王汉林 4/6期(67%)·🚫暂不</div>
-<div class='kv'><b>应还日</b>:7/16(5/28放款30万,第5期70000)</div>
-<div class='kv'><b>历史</b>:全可可2单:5/28(我司16万)4期均足额70000;<b>7/4又放新单30万(我司18万)0/6期,首期今日7/13到期①</b>,整户在途34万、正敞口19.06万=Top5第2</div>
-<div class='kv'><b>分账</b>:5/28那笔:黑5万;路遥2万;华姐2万;清清2万;蒋1万;雄1万;胖1万;我司16万。7/4那笔:黑6万;龙3万;茹兰1万;路遥1万;甘1万;我司18万</div>
-<div class='kv'><b>4源</b>:账本两单✓;批单群7/5王汉林30万批文(利息6.,黑6万龙6万茹1路1甘1)✓;工作日报7/12预列今日首期✓;申请台账无新报单</div>
-<div class='kv'><b>风控落地人/收款</b>:阿全收款;甘出款;风控晨</div>
-<div class='kv'><b>推理/倾向</b>:🧠追加已经发生了(7/4新单即事实追加),整户曝光19.06万第2位——<b>倾向:暂不再追加</b>,今日新单首期+7/16老单第5期两连验是硬门槛 → Ⓓ</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>谢正山 2/3期(67%)·🚫暂不(新入列)</div>
-<div class='kv'><b>应还日</b>:7/21(6/22放款5万10天3期,末期45000)</div>
-<div class='kv'><b>历史</b>:全可可1单:6/22放款5万(我司2.02万),前两期5000均足额(7/1、7/11各入账,我司各2000),末期45000占整单90%</div>
-<div class='kv'><b>分账</b>:清清1万;黑0.75万;龙0.75万;小蒋0.5万;我司2万(份额3+我司2=总合同5万✅;我司行按账本权威2.02万计)</div>
-<div class='kv'><b>4源</b>:账本2期✓(7/11期7/12入账);工作日报7/11-12「6.22谢正山2/3期 5万 阿全 已收」✓;批单群6/28补批文「谢正山10天3期·千3.3」✓;申请台账无新报单</div>
-<div class='kv'><b>风控落地人/收款</b>:阿全收款;甘出款;风控晨</div>
-<div class='kv'><b>推理/倾向</b>:🧠期款足额但结构后置——末期45000未验前谈追加为时过早——<b>倾向:暂不,7/21末期过验后再议</b></div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>牟波 3/5期(60%)·🟡谨慎</div>
-<div class='kv'><b>应还日</b>:7/15(6/5放款10万,第4期26500)</div>
-<div class='kv'><b>历史</b>:全可可1单:6/5放款10万(我司4.5万)5期,3期足额;<b>外部杠杆警报:7/5申请台账报单15-50万→7/6外部渠道放款15万(跟单分润,非我司出资)</b></div>
-<div class='kv'><b>分账</b>:大雄1万;黑2万;小蒋1万;茹兰1万;李小玲0.5万;我司4.5万</div>
-<div class='kv'><b>4源</b>:账本3期✓;申请台账7/5牟波报单「放款成功15万」✓;批单群6/29「胖子牟波15万到95」跟单✓;工作日报6/16牟波12万保3期记录✓</div>
-<div class='kv'><b>风控落地人/收款</b>:小蒋收款;外部单走胖子/筱筱线</div>
-<div class='kv'><b>推理/倾向</b>:🧠我司单履约正常,但30天内外部叠加15万+12万杠杆,总债务服务压力陡增——<b>倾向:谨慎,我司不加仓,7/15、7/25两期足额再评</b></div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>张诚 3/5期(60%)·🟢可追加(新入列)</div>
-<div class='kv'><b>应还日</b>:7/21(6/12放款15万,第4期41700)</div>
-<div class='kv'><b>历史</b>:全可可2单:①4/9放款15万(我司6万)6/6期6/7足期结清+3.79万;②6/12本单15万(我司6万)5期10天,3期均足额41700(我司16680×3,7/11期7/12入账),敞口余1.00万</div>
-<div class='kv'><b>分账</b>:金宝4.5万;黑1.5万;小蒋0.5万;路遥0.5万;茹兰0.5万;豆0.5万;大雄0.5万;清清0.5万;我司6万(份额9+我司6=总合同15万✅)</div>
-<div class='kv'><b>4源</b>:账本3期✓;工作日报7/11-12「6.12张诚3/5期 41700 已收」✓;批单群6/12「张诚15万 中介费3750」✓;申请台账无新报单✓</div>
-<div class='kv'><b>风控落地人/收款</b>:金宝收款(份额4.5万主渠道);风控黑线</div>
-<div class='kv'><b>推理/倾向</b>:🧠上单足期结清+本单3期零瑕疵、R101口径已结案Ⓕ、敞口仅剩1万——<b>倾向:可追加,建议7/21第4期过后执行,留一期安全垫</b></div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>王亚勤 3/6期(50%)·🟢可追加(边界)</div>
-<div class='kv'><b>应还日</b>:7/19(6/10放款20万,第4期49400)</div>
-<div class='kv'><b>历史</b>:全可可1单:6/10放款20万(我司9.5万)6期,3期均足额49400(7/9最新一期已入账)</div>
-<div class='kv'><b>分账</b>:黑6万;茹兰2.5万;小蒋1万;清清1万;我司9.5万</div>
-<div class='kv'><b>4源</b>:账本3期含7/9入账✓;工作日报7/9「王亚勤3/6期已收」✓;批单群6/10下户费记录✓;申请台账无新报单</div>
-<div class='kv'><b>风控落地人/收款</b>:小蒋-全收款;甘-全催收线</div>
-<div class='kv'><b>推理/倾向</b>:🧠恰过50%边界、节奏零瑕疵、单笔期款近5万的承接力已被验证——<b>倾向:可追加,建议等第4期(7/19)过后执行,留一期安全垫</b></div></div>
-</div></details>
-<details id='m6' open><summary>七、集中度叠加扫描(五渠道) <span class='arw'>▶</span></summary><div class='body'><div class='card'>
-<div class='card2'><div class='h' style='color:var(--ink)'>◆ 渠道1 · 客户整户 Top5 = 55.34% 破线</div><div class='kv'>:彭凌峰22.85%(37.00万)+王汉林11.77%(19.06)+钟志强8.10%(13.13)+李林6.71%(10.87)+杜军昌5.91%(9.58),÷正敞口161.92(分子分母同口径·单元floor)。vs 7/11报56.70%:陈湘回款后整户9.97→6.93退出Top5、杜军昌整户9.58顶替入列;−1.36pct为回款缩分子+徐敏新单扩分母双重。>50%红线持续 → Ⓙ</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>◆ 渠道2 · 收款方集中</div><div class='kv'>:阿全61.40万(37.9%)+阿龙39.58万(24.4%)——两人手上超六成正敞口;其后小蒋10.81/杨超8.08(新)/豆豆6.93/豹哥-慧6.59。<b>今日阿全线一人扛王汉林68,000大单+刘莹5,430;7/15干志林/曾杰两口首验+罗杰改期日同压豹哥-慧与阿全</b>——本周阿全线带宽是最大操作性风险点。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>◆ 渠道3 · 出资人集中</div><div class='kv'>:黑名义合计149.27万(正常64.45+逾期84.82)为最大外部资方;阿龙105.17万次之且逾期亏损39.84万最大——资方情绪风险点在阿龙线(彭凌峰主份额);<b>新出资人杨超单笔45万名义(徐敏7/10新单)一跃第3,单一新资方绑在单一新单上,批文缺失待补(Ⓚ)</b>。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>◆ 渠道4 · 6A近14天新放</div><div class='kv'>:6/29李林8.5+6/30刘莹1.0+7/1李志雄2.6+7/1曾杰3.84+7/4王汉林18.0+7/6干志林6.0+7/7李林4.5+7/7朱泽7.0+7/10徐敏8.08 = 9单我司59.52万(占正常正敞口58.6%)——新放集中度进一步抬升,首期违约弹性大;首验窗:今日王汉林、7/15干志林/曾杰、7/16李林/朱泽、7/24徐敏。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>◆ 渠道5 · 6B业务网总曝光</div><div class='kv'>:在外本金306.56+账本外龙哥线遗留(蒋敏/王飘/黄志炳0.58)——昨报置顶的「杨超平徐敏15万出款」已随账本7/12补录销项入池;剩余账外项为龙哥线与工作日报遗留名单,未量化入池(盲区⑩)。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>◆ 6C 风控分歧/申请端(外访交接单7/1~7/6)</div><div class='kv'>:陈前7/1+7/2两次报单「可继续邀约」(已有6/23在途单敞口2.70——续贷需求信号);牟波7/5报单→7/6外部放款15万(见⑥谨慎);吕稚合7/4报「50-100万及以上」大额需求待外访;肖欧/王敏/张安林「可继续邀约」;干志林7/6报单「无见面忽略」但当日我司已放6万——报单与放款时序倒挂,风控留痕补齐;华文意/范中华/杨哲/代忠瑜等「不可继续邀约」拒单正常。<b>台账停更7天(最新7/6 18:42),7/7后申请端信号为盲</b>。</div></div>
-<div class='card2'><div class='h' style='color:var(--ink)'>◆ 业务网 Top5(整户正敞口·万)</div><div class='kv'>彭凌峰37.00 → 王汉林19.06 → 钟志强13.13 → 李林10.87 → 杜军昌9.58;Top1/3/5 占正敞口 = 22.85% / 42.72% / 55.34%(单元floor)。第6~8位:徐敏8.08/朱泽7.00/陈湘6.93——第2~8位全是6/22后新放或整户叠单,新钱风险接棒旧账的结构未变。</div></div></div></div></details><details id='m7' open><summary>八、重点单状态(固定盯单·8张) <span class='arw'>▶</span></summary><div class='body'><div class='card'>
-<div class='note'>vs 7/11报:陈湘第2期足额入账、敞口6.93退出盯单;<b>徐敏7/10新单(杨超45万主份额)顶替入列</b>。</div>
-<div class='kv'>1️⃣ <b>罗杰 R110</b> 50万整单·我司6.5万·先收息未归本·原应还7/5已过、改期7/15<b>仅剩2天</b></div>
-<div class='kv'>└ 状态:豹哥-慧在催;批单群条款「7/15未归付12w、15号归40」;书面确认今日必须闭环,拿不到按逾期预案 → Ⓒ</div>
-<div class='kv'>2️⃣ <b>王汉林 R114</b> 7/4新单18万·<b>今日首期68,000到期(①)</b>·整户19.06万Top5第2</div>
-<div class='kv'>└ 两连验48小时窗开启:今日新单首期+7/16老单第5期;任一卡单升红、期间冻结追加 → Ⓓ</div>
-<div class='kv'>3️⃣ <b>钟志强 R107</b> 6/25放款30万(我司13.13万)0/2期·Top5第3</div>
-<div class='kv'>└ 首期7/24回7.8万,30天单空窗长;本周阿全线中途触达确认经营面 → Ⓑ</div>
-<div class='kv'>4️⃣ <b>徐敏 R118(新入列)</b> 7/10放款60万合同(我司出资8.08万·杨超45万主份额)0/8期·15天8期·首期7/24·收款杨超</div>
-<div class='kv'>└ 「6/6单7/10结清→当日续借60万」节奏;账本7/12已补录、<b>批单群批文缺失待补(Ⓚ)</b>;新资方杨超首单,首期前收款线与批文双确认</div>
-<div class='kv'>5️⃣ <b>李林 R110/R116</b> 连环续借:6/29放8.5万(首期7/8已收62500✓)+7/7放4.5万(首期7/16)</div>
-<div class='kv'>└ 户敞口10.87万Top5第4;滚贷画像,第3期前不再加单</div>
-<div class='kv'>6️⃣ <b>朱泽 R117</b> 7/7放款15万(我司7万)0/6期:批单群7/8批文「豆2甘1黑1龙1清0.5」;首期7/16;新户首验</div>
-<div class='kv'>7️⃣ <b>曾杰 R113</b> 7/1放款10万(我司3.84万)0/3期:7/2已先收5000利息(账本未记期);首期7/15确认口径(先息后本)</div>
-<div class='kv'>8️⃣ <b>干志林 R115</b> 7/6放款10万(我司6万)0/5期:历史2单结清+1.31万信用垫;首期7/15;申请台账7/6报单「无见面忽略」的留痕补齐待办 → Ⓚ联动</div>
-</div></div></details><details id='m8' open><summary>九、今天该做的事(按收款方·8线) <span class='arw'>▶</span></summary><div class='body'><div class='card'><div class='card2'><div class='h' style='color:var(--ink)'>阿全</div><div class='kv'>收王汉林新单首期68,000(14:00前·今日最大单笔·卡单即触发Ⓓ升红);收刘莹5,430;魏川周催(7/11刚回2000保持节奏);7/15干志林24,000+曾杰首期两口布防今晚启动;钟志强中途触达(本周)→Ⓑ。</div></div><div class='card2'><div class='h' style='color:var(--ink)'>小蒋-胖子</div><div class='kv'>收李志雄6/4单末期15,000(结清位);入账后此单出池。</div></div><div class='card2'><div class='h' style='color:var(--ink)'>阿龙</div><div class='kv'>明日7/14李志雄5/16单末期16,500布防(48小时户级两连清第二腿);彭凌峰Ⓐ材料线确认份额签认。</div></div><div class='card2'><div class='h' style='color:var(--ink)'>豹哥-慧</div><div class='kv'>罗杰改期书面确认(今日硬性·7/15仅剩2天)→Ⓒ;倪伟尾款0.35万顺带。</div></div><div class='card2'><div class='h' style='color:var(--ink)'>豆豆</div><div class='kv'>陈湘第3期7/21提前跟(2期足额已降级常规);廖春芳外访批次排期→Ⓖ。</div></div><div class='card2'><div class='h' style='color:var(--ink)'>大雄</div><div class='kv'>李林7/18第2期提前跟;杨曼线日常小额催收继续。</div></div><div class='card2'><div class='h' style='color:var(--ink)'>催收线(杜军昌/余兆堂)</div><div class='kv'>杜军昌7/10起断火三天,今日重启目标1万→Ⓔ(其整户已升Top5第5);余兆堂/陈家川周报。</div></div><div class='card2'><div class='h' style='color:var(--ink)'>财务(小蒋)</div><div class='kv'>7/12当夜22:28更新✓;<b>魏川7/11催回2000补入账</b>;<b>徐敏新单批文补录+王汉林批文「龙6万」vs账本「龙3万」差异核对</b>→Ⓚ;今日实收当晚入账。</div></div></div></div></details><details id='m9' open><summary>十、数据盲区 <span class='arw'>▶</span></summary><div class='body'>
-<div class='card'>
-<div class='kv'>✅ <b>昨报置顶项已销项</b>:「杨超平徐敏15万出款未入账本」——账本7/12更新已补录徐敏7/10新单(60万合同·我司出资80800·杨超45万主份额),在外本金/死账率/集中度全部按新口径重算;<b>遗留半项:批单群批文仍缺失</b>,列Ⓚ。</div>
-<div class='kv'>🚨 <b>7/12日报四档停摆</b>:7/12(周日)9/12/16/20四档因连接器认证故障(HTTP 403)全部未生成未发布,线上keke.html昨日全天为7/11版——本报为恢复后首报,跳变跨7/11~12两天,阅读同比时注意。</div>
-<div class='kv'>⚠️ <b>账本冻结时滞</b>:本报以7/12 22:28为基线(昨夜全量更新·时滞已归零),今日实收(王汉林/李志雄/刘莹)未入,敞口数偏保守(偏大)。</div>
-<div class='kv'>⚠️ <b>魏川7/11催回2000在途差</b>:工作日报7/11-12已报、账本未入——魏川真实净敞约4.44万(账面4.64),财务今日补录。</div>
-<div class='kv'>⚠️ <b>王汉林7/4批文分配差异</b>:批单群7/5批文「黑6万龙6万茹1路1甘1」vs 账本备注「黑6龙3茹1路1甘1我司18」——龙份额差3万,以账本权威计算,需财务与批单群对齐。</div>
-<div class='kv'>⚠️ <b>龙哥线账外遗留</b>:蒋敏「只收本金等龙哥回来」、王飘「没法催收」、黄志炳5800——金额未入可可池,实际业务网风险大于账面。</div>
-<div class='kv'>⚠️ <b>工作日报遗留名单</b>中蔡华莹/郭俊姝/张平静/简平(起诉中)/刘娟/杜军昌/潘磊/廖春芳/罗杰(先收息)等历史与跨线户,催回资金部分不体现在本报KPI。</div>
-<div class='kv'>⚠️ <b>批单群7/9起空窗</b>:最后留底为7/8朱泽批文——7/10徐敏60万大单批文缺失(见上),批文流程与放款脱钩风险。</div>
-<div class='kv'>⚠️ <b>申请台账停更7天</b>(最新7/6 18:42导出):7/7~7/13申请端信号缺失,6C扫描仅覆盖到7/6。</div>
-</div>
-</div></details><details id='md' open><summary>✅ 待你拍板 Ⓐ–Ⓚ(11项全列) <span class='arw'>▶</span></summary><div class='body'>
-<div class='card'>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓐ 彭凌峰37万司法/催收二选一</div>91天0回款、拖累比36.45%——材料备齐,本周内拍板,每拖1天回收率折价。<b>需拍板</b></div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓑ 钟志强30万首期(7/24)中途触达</div>本周安排阿全线触达,确认经营面。<b>需安排</b></div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓒ 罗杰50万改期路径(7/15仅剩2天)</div>今日向豹哥要「7/15付12w+15号归40」书面确认,拿不到按逾期预案。<b>今日必办</b></div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓓ 王汉林整户19.06万两连验(今日开闸)</div>今日新单首期68,000+7/16老单第5期,任一卡单升红;期间冻结追加。<b>今日第一关</b></div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓔ 杜军昌催收重启</div>7/8~7/9已回2万、7/10起断火三天,今日重启目标1万;整户9.58万已升Top5第5。<b>需执行</b></div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓕ 张诚R101账实一致(已结案·只列)</div>41700整单/16680我司份额,第3期7/11如约入账再验✅;7/21第4期照收,⑥已列🟢可追加。</div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓖ 廖春芳3万外访批次(只列不执行)</div>31天0回款,并入下一次外访排期。</div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓗ 龙哥线遗留量化(只列不执行)</div>蒋敏/王飘/黄志炳待龙哥回来后统一定,金额先挂盲区。</div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓘ 账本更新纪律(保持)</div>7/12当夜22:28全量更新✓(7/11未更、隔日并入)——目标回到「当日款当日入」;今日3单实收今晚必须入账。<b>需保持</b></div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓙ Top5集中度55.34%破50%红线(只列)</div>较昨56.70%回落1.36pct但仍破线;结构性问题:彭出清+新单分散是唯一解,短期无操作项。</div>
-<div class='dec'><div class='dh' style='color:var(--ink)'>Ⓚ 批文/台账补录三件套</div>①徐敏7/10新单60万批文补录(杨超45万新资方首单);②王汉林批文「龙6万vs账本龙3万」差异对齐;③申请台账停更7天催恢复+干志林留痕补齐。<b>需催办</b></div><div class='note'><b>决策优先级排序(建议)</b>:今日必办=Ⓒ(罗杰书面确认·2天倒计时)>Ⓓ(王汉林首期68,000今日开闸)>Ⓔ(杜军昌重启)>Ⓚ①(徐敏批文·新资方45万敞口无批文裸奔);本周内=Ⓐ(彭凌峰91天拍板)+Ⓑ(钟志强触达)+Ⓘ(纪律保持);只列不动=Ⓕ(已结案)/Ⓖ(排期)/Ⓗ(等龙哥)/Ⓙ(结构性)。合计11项,可执行7项、只列4项。判断依据全部来自上文模块①-⑩真算数,无一编造。</div>
-</div>
-</div></details><details id='mchk' open><summary>自检 · 三闸真跑记录 <span class='arw'>▶</span></summary><div class='body'><div class='card'>
-<b>自检(发布前三闸·真跑非预打钩)</b>
-<div class='kv'>✅ <b>闸①黄金diff(真跑)</b>:card2 44/昨42、kv 164/昨150、dec 11/11、tr 105/昨99(徐敏新单入正常表+7/15预警表扩行)、◆7、details 14/14、16风险✓、复盘卡10张✓;逐模块字数13/13全部≥昨×0.7(m5b 3262/2453·mt 2889/2698·m4 2178/2031·m9 726/492等,追加9卡vs昨7卡系张诚/谢正山过半线新入列、属口径变动非缺漏)</div>
-<div class='kv'>✅ <b>闸②逐卡元素级(真跑)</b>:今日到期3卡×8元素(应还日/历史/分账/累计落袋/4源/集中度/判断/动作)缺0;考虑追加9卡×6元素(应还日/历史/分账/4源/风控落地/推理倾向)缺0;关键字用黄金实际标签措辞比对;陈湘退出Top5、徐敏新单入盯单已注明</div>
-<div class='kv'>✅ <b>闸③口径守恒(真跑重算)</b>:敞口155.66/死账率17.69%/拖累比36.45%/Top5 55.34%(÷正敞161.92·单元floor)/落袋143.36/ROI 46.76% 逐条重算==口径✓;守恒:存量166.07+140.48=306.56✓、账面净101.43+54.23=155.66✓、正敞口101.50+60.42=161.92✓;恒等式在外已收≈150.90(真算150.8956)✓;彭凌峰91天✓;灰区0✓;16项独立复核全绿</div>
-<div class='kv'>✅ <b>深色扫描(真跑)</b>:</style>后正文无硬编码#1c1f24、无background:#fff,全部走var(--ink)/var(--card);light dark双模自适应✓。R101脏格16680¨按铁律取数✓;逾期匹配用子串含「逾期」✓;熊猫幽灵数已剔除✓;胖子/胖胖/豆别名归一✓;徐敏6/6结清净利以账本col39=49693权威修正✓</div>
-</div>
-<div class='note' style='text-align:center;margin:14px 0'>可可2026 · v72 · 2026-07-13 · 账本7/12 22:28冻结基线 · 四源:账本/外访交接单7/6/工作日报7/12/批单群7/8 · 下次刷新:今日16:00</div>
-</div></details><script>
-function toggleAllDetails(){var ds=document.querySelectorAll('details');var anyClosed=false;ds.forEach(function(d){if(!d.open)anyClosed=true});ds.forEach(function(d){d.open=anyClosed});document.getElementById('togAll').textContent=anyClosed?'⊖ 折叠全部':'⊕ 展开全部';}
+<script>
+function toggleAllDetails(){
+  var ds=document.querySelectorAll('details');
+  var anyClosed=Array.prototype.some.call(ds,function(d){return !d.open});
+  ds.forEach(function(d){d.open=anyClosed});
+  document.getElementById('toggleAll').textContent=anyClosed?'⊖ 折叠全部':'⊕ 展开全部';
+}
 </script>
+
+<div class="wrap">
+
+  <div class="kpis">
+    <div class="kpi"><div class="l">彭0回款</div><div class="v red">92<span style="font-size:11px">天</span></div><div class="d">拖累38.44%↑</div></div>
+    <div class="kpi"><div class="l">今日到期</div><div class="v amber">1<span style="font-size:11px">单</span></div><div class="d">李志雄R80超收</div></div>
+    <div class="kpi"><div class="l">逾期</div><div class="v red">22<span style="font-size:11px">单</span></div><div class="d">净54.23万·真算</div></div>
+    <div class="kpi"><div class="l">账面敞口</div><div class="v">157.76<span style="font-size:11px">万</span></div><div class="d">净敞口151.50</div></div>
+    <div class="kpi"><div class="l">Top5占账面</div><div class="v red">54.24%</div><div class="d">破线·彭主导</div></div>
+    <div class="kpi"><div class="l">累计落袋</div><div class="v green">143.34<span style="font-size:11px">万</span></div><div class="d">ROI46.77%</div></div>
+  </div>
+
+  <div class="glance" id="m0">
+    <div class="row"><span class="tag">🚨</span><div><b>彭凌峰 0 回款 92 天</b>(我司37万)— 拖累比 <span class="em">38.44%</span>(健康池96.24)·Top1占账面 <b>23.45%</b>·司法决策悬约 <b>53 天</b> → Ⓐ</div></div>
+    <div class="row"><span class="tag">🟢</span><div><b>账本7/14 07:31已更新·全量真算(在贷48单)</b>:今日已更新=未冻结、全量真算;在外本金306.48、账面敞口157.76、死账率17.69%、Top5 54.24%、灰区2单 → ④归因</div></div>
+    <div class="row"><span class="tag">🚨</span><div>Top5 占账面 <b>54.24%</b>(彭23.45+<b>王汉林9.49</b>+<b>钟志强8.32</b>+李林6.89+杜军昌6.07)破线;钟志强R107结清即新借13.13、王汉林30万入账推高头部 → Ⓙ</div></div>
+    <div class="row"><span class="tag">🚨</span><div><b>钟志强 R107 结清即新借13.13万</b>(6/25·2期30天·0回款·Top3)+ <b>杜军昌整户逾期</b>(R52卡·敞3.76)+ <b>廖春芳R100新户首期即爆</b>(敞3.00·唯一真坏账·豆豆催)→ Ⓔ/Ⓗ/Ⓙ</div></div>
+    <div class="row"><span class="tag">🟡</span><div><b>今日7/14仅1单到期</b>:李志雄R80(6/6末期·敞-0.07超收·阿龙-全);<b>明日7/15有5单</b>(王红霞/牟波/罗杰/曾杰/干志林·阿全/小蒋线为主)</div></div>
+    <div class="row"><span class="tag">🚨</span><div><b>跳变归因(vs 6/29黄金)</b>:账面敞口148.48→157.76↑ · 死账率16.27→17.69%↑ · Top5 57.0→54.24%↓ · 灰区3→2单 · 在外329.70→306.48↓ · 拖累比37.64→38.44%↑ → ④归因</div></div>
+    <div class="row"><span class="tag">🌟</span><div>累计落袋 <b>143.34万</b>(结清净利143.27·68单 + 正常在途超本0.07)ROI 46.77%;6/29后徐敏/陈华玉/薛桢桢/李建文/伍丹/赵靖华等多单结清移出、落袋增厚</div></div>
+  </div>
+
+  <div class="glance">
+    <p style="font-size:13.5px;font-weight:700;color:var(--ink);margin:2px 0 6px">两池 × 三口径 九宫格(北京时间7/14真算)</p>
+    <table>
+      <tr><th style="text-align:left">口径(万元)</th><th>🟢正常(26单)</th><th>🔴逾期(22单)</th><th>合计</th><th style="text-align:left">守恒</th></tr>
+      <tr><td style="text-align:left;font-weight:600">① 在外本金(状态≠结清)</td><td>165.995</td><td>140.48</td><td><b>306.48</b></td><td style="text-align:left;color:var(--green)">✓</td></tr>
+      <tr><td style="text-align:left;font-weight:600">② 账面净敞口(超收计负)</td><td>97.27</td><td>54.23</td><td><b>151.50</b></td><td style="text-align:left;color:var(--green)">✓</td></tr>
+      <tr><td style="text-align:left;font-weight:600">③ 正敞口(逐单max0求和)</td><td>97.34</td><td>60.42</td><td><b>157.76</b></td><td style="text-align:left;color:var(--green)">✓</td></tr>
+    </table>
+    <p class="mut" style="font-size:11px">口径注:①=我司出资全额(未结清全计、已还期不减);②=我司出资−各期已收(超收计负);③=逐单max(0,净敞口)求和=账面敞口。②与③差=逾期池超收6.26万(负敞口回填)。死账率=逾期净敞口54.23÷在外306.48=<b>17.69%</b>。</p>
+  </div>
+
+  <details open><summary>口径锁定 · 全可可统计(北京时间7/14真算)<span class="arw">▶</span></summary>
+  <div class="body">
+    <p class="mut">★ <b style="color:var(--ink)">账本已更新·7/14 07:31 全量真算(在贷48单)</b>:今日已更新=未冻结、全量真算,无冻结警告。下列量化值均为7/14北京时间真算。</p>
+    <div class="hr"></div>
+    <p><b>在贷 48 单</b>:🟢正常(在途)26 + 🔴逾期 22;历史累计结清 68 单</p>
+    <p class="mut"><b>在外本金(我司·48活单)306.48万,按状态分</b>:🟢正常26单 <b>165.995万</b>(54.2%) + 🔴逾期22单 <b>140.48万</b>(45.8%)[守恒✓]</p>
+    <p class="mut"><b>账面敞口 157.76万(正敞口),按状态分</b>:🟢正常 <b>97.34万</b> + 🔴逾期 <b>60.42万</b>。<b>账面净敞口 151.50万</b>=正常97.27+逾期54.23(超收计负)。死账率=逾期净敞口54.23÷在外本金306.48=<b>17.69%</b></p>
+    <p class="mut"><b>口径注</b>:①<b>在外本金(存量债权)</b>=我司出资<b>全额</b>,只要未结清即全计、已还期<b>不减</b>(306.48万);②<b>账面净敞口</b>=我司出资−各期已收(超收计负=151.50万);③<b>正敞口/账面敞口</b>=逐单max0求和(157.76万)。三口径勿混。结清单一律移出两池。</p>
+    <div class="hr"></div>
+    <p class="mut"><b>落袋口径(#18)</b>:①结清净利 143.27万(68单)+ ②正常在途超本 0.07万 ≈ <b>143.34万</b>(逾期户超收不计落袋);在外本金 306.48万 → ROI <b>46.77%</b>。</p>
+    <p class="mut"><b>应还日(#19)</b>:可可备注栏 → 逢X按备注,否则 放款日+(N×天数-1)。彭放款 4/13 → 今日92天。</p>
+    <p class="mut"><b>跳变归因(vs 6/29黄金 golden.html)</b>:账面敞口148.48→<b>157.76</b>↑、死账率16.27→<b>17.69%</b>↑、Top5 57.0→<b>54.24%</b>↓、灰区3→<b>2</b>单、在外329.70→<b>306.48</b>↓、拖累比37.64→<b>38.44%</b>↑。变化:6/29后多单结清(徐敏/陈华玉/薛桢桢/李建文/伍丹/赵靖华等移出两池),新放款录入(王汉林30万/干志林10万/李林10万/朱泽15万/曾杰10万);灰区脱灰(何宗彬/付涛/王汉林已入账);死账率升因彭凌峰0回款拖长+在外本金降。</p>
+  </div></details>
+  <details id="mt"><summary>🚨 逾期 + 灰区本金总览表 <span class="arw">▶</span></summary>
+  <div class="body">
+    <p class="mut">A. 状态=逾期 <b>22 单</b>(真算·按敞口降序):</p>
+    <table>
+      <tr><th>客户</th><th>出资</th><th>已收</th><th>敞口</th><th>备注</th></tr>
+      <tr><td>彭凌峰</td><td>37.00</td><td>0</td><td class="red">37.00</td><td>0回款92天🚨</td></tr>
+      <tr><td>魏川</td><td>9.00</td><td>4.36</td><td>4.64</td><td>缓慢·阿全催</td></tr>
+      <tr><td>杜军昌52</td><td>16.00</td><td>12.24</td><td>3.76</td><td>整户逾期🚨Ⓙ</td></tr>
+      <tr><td>廖春芳</td><td>3.00</td><td>0</td><td class="red">3.00</td><td>新户首期爆·唯一真坏账Ⓔ</td></tr>
+      <tr><td>陈晓玲</td><td>6.00</td><td>4.05</td><td>1.95</td><td></td></tr>
+      <tr><td>刘娟84</td><td>3.30</td><td>1.69</td><td>1.63</td><td>辣条催</td></tr>
+      <tr><td>陈家川75</td><td>2.50</td><td>1.00</td><td>1.50</td><td>报警5.25+协商Ⓒ</td></tr>
+      <tr><td>余兆堂54</td><td>1.40</td><td>0</td><td>1.35</td><td>对账归位</td></tr>
+      <tr><td>余兆堂55</td><td>1.30</td><td>0</td><td>1.33</td><td>对账归位</td></tr>
+      <tr><td>刘永东</td><td>2.60</td><td>1.56</td><td>1.04</td><td>缓慢</td></tr>
+      <tr><td>刘娟81</td><td>2.40</td><td>1.37</td><td>1.00</td><td></td></tr>
+      <tr><td>刘丹</td><td>2.00</td><td>1.20</td><td>0.80</td><td>龙哥催</td></tr>
+      <tr><td>杨曼15</td><td>7.00</td><td>6.37</td><td>0.63</td><td>慢回</td></tr>
+      <tr><td>刘娟77</td><td>1.90</td><td>1.48</td><td>0.42</td><td></td></tr>
+      <tr><td>倪伟76</td><td>14.00</td><td>13.65</td><td>0.35</td><td>基本回本</td></tr>
+      <tr><td>潘磊94</td><td>1.10</td><td>1.09</td><td>0.01</td><td>近超本</td></tr>
+      <tr><td>肖光华59</td><td>7.10</td><td>7.22</td><td>-0.15</td><td>超收</td></tr>
+      <tr><td>刘娟65</td><td>2.50</td><td>2.75</td><td>-0.25</td><td>超收</td></tr>
+      <tr><td>陈家川26</td><td>2.30</td><td>2.88</td><td>-0.57</td><td>超收</td></tr>
+      <tr><td>陈家川47</td><td>2.50</td><td>3.14</td><td>-0.64</td><td>超收</td></tr>
+      <tr><td>杨云56</td><td>8.50</td><td>10.14</td><td>-1.64</td><td>超收</td></tr>
+      <tr><td>杨曼30</td><td>7.12</td><td>10.07</td><td>-2.95</td><td>超收</td></tr>
+    </table>
+    <p class="mut">小计 22 单逾期正敞口 <b>60.42 万</b>、净敞口 <b>54.23 万</b>(死账率 17.69%);含超收 6 单负敞口 −6.20万。彭凌峰单笔37万占逾期正敞口61%,为最大死资金。</p>
+    <div class="hr"></div>
+    <p class="mut">B. 真灰区(正常在途·过应还日·逢X优先)<b>2 单</b>(账本7/14真算):</p>
+    <div class="card2 a"><div class="kv"><b>李志雄 R89</b> 6/4 我司2.5万 / 第4期(末期)应还7/13 <span class="p-amber">逾1天</span> 敞0.28 已收3期 / 小蒋-胖子 — <b>复借良性小额,末期尾款未确认</b> → 小蒋盯尾款到账即结清</div></div>
+    <div class="card2 a"><div class="kv"><b>刘莹 R112</b> 6/30 我司1.0万 / 第2期应还7/13 <span class="p-amber">逾1天</span> 敞0.82 已收1期 / 阿全 — <b>小微单8期·第2期缓一天</b> → 阿全盯到账、微额低危</div></div>
+    <p class="mut">灰区正敞口 <b>1.09 万</b>(李志雄R89 0.28 + 刘莹R112 0.82)。较6/29(3单)脱灰:何宗彬/付涛/王汉林回款已入账、移出灰区。</p>
+        <p style="font-size:13.5px;font-weight:700;color:var(--ink);margin:10px 0 6px">C. 近期回款/结清复盘(约11单·按结清时间从新到旧)— 姓名 / 我司出资 / 净利 三段 + 备注分账</p>
+    <div class="card2 b"><div class="h">✅ 陈华玉 — 6/11 结清(净利 +1.96万)</div>
+      <div class="kv">我司出资 <b>13.77万</b> / 净利 <b style="color:var(--green)">+1.96万</b> / 收款 阿力(结清分红0.47)</div>
+      <div class="kv">分账:黑9万；小蒋1万；清清1万；茹兰1万；路遥1万；大雄1万；胖子1万；小雅1万；我司14万。老单复借优质大户。</div></div>
+    <div class="card2 g"><div class="h">✅ 薛桢桢 — 6/10 结清(净利 +0.86万)</div>
+      <div class="kv">我司出资 <b>4.5万</b> / 净利 <b style="color:var(--green)">+0.86万</b> / 收款 小蒋(结清分红0.20)</div>
+      <div class="kv">分账:黑2万；小雅1万；小蒋0.5万；清清0.5万；茹兰1.5万；我司4.5万(2000保证金条款)。短小单收尾干净。</div></div>
+    <div class="card2 b"><div class="h">✅ 李建文 — 6/10 结清(净利 +1.17万)</div>
+      <div class="kv">我司出资 <b>4.5万</b> / 净利 <b style="color:var(--green)">+1.17万</b> / 收款 金宝(结清分红0.24)</div>
+      <div class="kv">分账:贝贝1万；黑1万；路遥0.5万；金宝3万；我司4.5万。三单全清·复借优质户(注意≠"李建洪")。另有R102 0.9万仍在贷。</div></div>
+    <div class="card2 g"><div class="h">✅ 伍丹 — 6/9 结清(净利 +0.49万)</div>
+      <div class="kv">我司出资 <b>0.55万</b> / 净利 <b style="color:var(--green)">+0.49万</b> / 收款 小蒋-全(结清分红0.17)</div>
+      <div class="kv">分账:黑0.45万；清清0.5万；我司0.55万。小微单履约稳、近回本结清。</div></div>
+    <div class="card2 b"><div class="h">✅ 赵靖华 — 6/6 结清(净利 +0.45万)</div>
+      <div class="kv">我司出资 <b>2.02万</b> / 净利 <b style="color:var(--green)">+0.45万</b> / 收款 小蒋(结清分红0.16)</div>
+      <div class="kv">分账:黑1.5万；茹兰1万；小蒋0.5万；我司2万。短小单收尾;结清当天曾被报单,外访反馈在外多头、暂不再放。</div></div>
+    <div class="card2 g"><div class="h">✅ 徐敏 — 6/6 结清(净利 +4.95万·复借优质)</div>
+      <div class="kv">我司出资 <b>9.0万</b> / 净利 <b style="color:var(--green)">+4.95万</b> / 收款 大雄(结清分红0.79)</div>
+      <div class="kv">分账:黑6万；小蒋1万；大雄1.5万；茹兰2.5万；我司9万。复借优质户;另5/15一笔亦已结清(+3.10)、7/10又新放R118 8万在贷。</div></div>
+    <div class="card2 b"><div class="h">✅ 徐敏 — 5/15 结清(净利 +3.10万·复借优质)</div>
+      <div class="kv">我司出资 <b>9.0万</b> / 净利 <b style="color:var(--green)">+3.10万</b> / 收款 阿龙-蒋(结清分红0.28)</div>
+      <div class="kv">分账:阿龙6万；黑2万；茹兰1.5万；李小玲0.5万；蒋0.5万；清清0.5万；我司9万。同户高频复借、履约最稳的一类。</div></div>
+    <div class="card2 b"><div class="h">✅ 徐建明 — 6/3 结清(净利 +0.55万)</div>
+      <div class="kv">我司出资 <b>2.7万</b> / 净利 <b style="color:var(--green)">+0.55万</b> / 收款 小蒋-全(结清分红0.05)</div>
+      <div class="kv">分账:黑1.8万；蒋0.5万；清清1万；我司2.7万。小额收尾干净。</div></div>
+    <div class="card2 g"><div class="h">✅ 李林 — 5/31 结清(净利 +2.38万·复借优质)</div>
+      <div class="kv">我司出资 <b>8.5万</b> / 净利 <b style="color:var(--green)">+2.38万</b> / 收款 小蒋(结清分红0.41)</div>
+      <div class="kv">分账:黑8万；蒋1.5万；清清1万；茹兰0.5万；路遥0.5万；我司8.5万。三单全清后6/29+7/7又新放R110/R116两笔在贷(整户Top5)。</div></div>
+    <div class="card2 b"><div class="h">✅ 何宗彬 — 5/24 结清(净利 +0.57万)</div>
+      <div class="kv">我司出资 <b>4.04万</b> / 净利 <b style="color:var(--green)">+0.57万</b> / 收款 小蒋(结清分红0.10)</div>
+      <div class="kv">分账:黑1万；路遥1万；贝贝1万；清清0.5万；小蒋0.5万；我司4万(合单我司占8万·跟大元筱筱合股)。逢4批文口径已对齐。</div></div>
+    <div class="card2 g"><div class="h">✅ 肖乾鸣 — 5/20 结清(净利 +1.23万)</div>
+      <div class="kv">我司出资 <b>4.0万</b> / 净利 <b style="color:var(--green)">+1.23万</b> / 收款 阿全</div>
+      <div class="kv">分账:黑4万；清清0.5万；小蒋0.5万；我司4万。阿全线短单收尾。</div></div>
+    <div class="card2 b"><div class="h">✅ 刘后英 — 5/18 结清(净利 +0.80万)</div>
+      <div class="kv">我司出资 <b>14.5万</b> / 净利 <b style="color:var(--green)">+0.80万</b> / 收款 阿龙-蒋(结清分红0.15)</div>
+      <div class="kv">分账:阿龙9万；黑3万；小蒋0.5万；清清1万；茹兰1万；路遥1万；我司14.5万(利润按10%提)。大额单收尾、利润率偏低。</div></div>
+    <div class="hr"></div>
+    <p><b>逾期净敞口 54.23 + 灰区正敞 1.09 = 死资金/软灰结构见模块四</b><br><span class="mut">真坏账聚焦廖春芳R100(新户首期爆·3.00·唯一);彭凌峰R49 37万0回款92天为最大死资金(拖累38.44%)</span></p>
+  </div></details>
+  <details id="m1" open><summary>一、今日到期 7/14(1单·李志雄R80末期超收)<span class="arw">▶</span></summary>
+  <div class="body">
+    <div class="card2 b"><div class="h">① 李志雄 R80 · 5/16放(合同8万·我司出资3.0万)· 第6期(末期)今日到 · 敞-0.07超收 · 阿龙-全</div>
+      <div class="kv"><b>应还日</b>:5/16+(6×10-1)=7/14今日(工作日报7/14应收"5.16李志雄6/6期8万阿龙-全"印证;工作日报记8万=合同/期额,账本我司出资3.0万)。<b>历史(全可可·多单)</b>:🟡R80 5/16放/我司3.0万 已还5/6期·末期今日到(敞-0.07·已超收);🟡R89 6/4放/我司2.5万 已还3/4期(敞0.28·灰区逾1天);🟡R111 7/1放/我司2.6万 已还1/5期(敞1.95)。<b>分账(R80)</b>:小蒋0.5+茹兰1+黑1+阿龙2+清清0.5+我司3。<b>累计落袋</b>:R80在途超本+0.07(净利+1471);无结清单。<b>4源</b>:账本+工作日报7/14应收"5.16李志雄6/6期8万阿龙-全"+批单群5/16批文。<b>集中度</b>:小额(我司2.5-3万级),不进Top5。<b>判断</b>:末期已超收(敞-0.07)、履约稳,末期尾款到账即结清。<b>动作</b>:阿龙-全确认末期到账即结清;复借良性,可承接下一小额单。</div></div>
+    <p class="mut">近日结清复盘(见总览表C·约11单):徐敏(+4.95)/陈华玉(+1.96)/李林(+2.38)/肖乾鸣(+1.23)/李建文(+1.17)等回款入账推动结清累计68单。
+    <div class="hr"></div>
+    <p class="mut">汇总三数字(真算):落袋 <b style="color:var(--green)">143.34万</b> / 账面敞口 <b>157.76万</b>(净敞口151.50) / 在外本金 <b>306.48万</b></p>
+  </div></details>
+
+  <details id="m2"><summary>二、🔴 红色风险 <span class="arw">▶</span></summary>
+  <div class="body">
+    <div class="card2 r"><div class="h">① 🚨 彭凌峰 R49 0 回款 92 天</div>
+      <div class="kv">我司37万 / 拖累比 <b class="em">38.44%</b>(彭37÷健康池96.24) / Top1占账面 <b>23.45%</b> / 放款4/13至今0回款、状态字段需核 / 司法决策悬约 <b>53 天</b> → Ⓐ</div></div>
+    <div class="card2 r"><div class="h">② 🚨🆕 钟志强 R107 结清即新借13.13万(6/25)</div>
+      <div class="kv">R23末期结清后6/25立即新借R107 13.13万(2期×30天·0回款·敞13.13)→ 结清即大额复借,Top3;先息后本首期7/24到、集中度高,续贷性质需评估 → Ⓗ</div></div>
+    <div class="card2 r"><div class="h">③ 🚨 杜军昌 整户逾期(R52卡·敞3.76)</div>
+      <div class="kv">R52 敞3.76(4/6期应还6/27逾期"卡了")+R44正常4.18+R60正常1.64=整户聚合9.58万Top5·业务网≥110;整户风险按逾期计 → 硬催 → Ⓙ</div></div>
+    <div class="card2 r"><div class="h">④ 🚨 Top5 占账面 54.24%(真算·破线)</div>
+      <div class="kv">彭23.45+王汉林9.49+钟志强8.32+李林6.89+杜军昌6.07=54.24%;Top3(彭+王汉林+钟志强)41.26%、Top1彭23.45%。王汉林30万入账+钟志强结清即新借推高头部 → Ⓙ</div></div>
+    <div class="card2 r"><div class="h">⑤ 🚨 死账率升至 17.69%</div>
+      <div class="kv">逾期净敞口54.23万/在外本金306.48。较6/29(16.27%)升,因彭凌峰0回款拖长(92天)+在外本金降(329.70→306.48);逾期正敞口60.42、扣6单超收−6.20后净54.23</div></div>
+    <div class="card2 r"><div class="h">⑥ 🚨 陈家川 已报警5.25+协商</div>
+      <div class="kv">R26/R47已超收(−0.57/−0.64),R75欠约1.5万本金(5.14回1期·敞1.50)→ 与律师核实升级;R75跟进 → Ⓒ</div></div>
+    <div class="card2 r"><div class="h">⑦ 🚨 刘娟 高频复贷4笔逾期</div>
+      <div class="kv">R84(敞1.63)/R81(敞1.00)/R77(敞0.42)/R65(超收−0.25),辣条+阿全催;整户停一切新单 → Ⓓ</div></div>
+    <div class="hr"></div>
+    <p class="mut"><b>⑧ 16 风险完整扫描</b>:①真灰区2单:李志雄R89(逾1天·末期尾款)+刘莹R112(逾1天·小微)·②今日到期:李志雄R80末期超收(阿龙-全)·③重点单:彭92天/王汉林大额13.92/钟志强结清即复借13.13/杜军昌R52卡·④敞口红线:彭37+王汉林14.99+钟志强13.13·⑤集中度:Top5 54.24%破线·⑥7天≥2次申请:高频复贷户(刘娟4笔)、追踪外访交接单·⑦风控暂缓后重申:倪伟(续贷待核)·⑧同户多营销并报归口(王红霞外访标不可继续邀约)·⑨在贷/逾期再申请:钟志强结清即复借13.13/彭凌峰逾期不得新单·⑩审批集中多笔·⑪外资多头待核·⑫无新增卡死单·⑬无典型A拒B放·⑭已升红:彭/杜军昌/刘娟/陈家川·⑮口径不一:张诚R101账本16680 vs 工作日报41700=整单40%份额、账实一致(Ⓕ结案)·⑯廖春芳R100新户首期即爆=放款风控失误、须复盘并计提</p>
+  </div></details>
+
+  <details id="m3"><summary>三、🟡 黄色风险(灰区2单)<span class="arw">▶</span></summary>
+  <div class="body">
+    <p class="mut">1. 真灰区(正常在途·过应还日)<b>2 单</b>·正敞口1.09万:</p>
+    <div class="card2 a"><div class="h">🟡 李志雄 R89 — 6/4放(我司2.5万)· 第4期(末期)应还7/13逾1天 · 敞0.28 · 小蒋-胖子</div>
+      <div class="kv">已收3/4期·末期尾款0.28未确认。复借良性小额户(R80今日末期超收、R111在贷)。<b>动作</b>:小蒋盯末期尾款到账即结清·微额低危。</div></div>
+    <div class="card2 a"><div class="h">🟡 刘莹 R112 — 6/30放(我司1.0万)· 第2期应还7/13逾1天 · 敞0.82 · 阿全</div>
+      <div class="kv">小微单8期·已收1期·第2期缓一天(另R104 0.8万在贷·敞0.33)。<b>动作</b>:阿全盯到账·微额低危。</div></div>
+    <div class="hr"></div>
+    <p class="mut">2. 单客户敞口黄区(真算·Top5整户):</p>
+    <div class="kv">🟡 <b>王汉林 14.99万</b>(R114 13.92/R86 1.07)— Top2,R114 6期首期已还、应还7/23,盯还款节奏</div>
+    <div class="kv">🚨 <b>钟志强 13.13万</b>(R107·2期30天·0回款·首期7/24)— Top3,结清即复借 → Ⓗ</div>
+    <div class="kv">🟡 <b>李林 10.88万</b>(R110 6.38/R116 4.50)— Top4,三单全清后复借两笔,盯还款</div>
+    <div class="kv">🟡 <b>杜军昌 9.58万</b>(R44 4.18/R52逾3.76/R60 1.64)— Top5,R52卡·整户逾期 Ⓙ</div>
+    <div class="kv">🟡 <b>陈湘 6.93万</b>(R105·已还2/6期·应还7/21)/ 徐敏R118 8.00 / 朱泽R117 7.00 / 罗杰R108 6.24(明日到期)</div>
+    <div class="hr"></div>
+    <p class="mut">3. 集中度叠加:杜军昌(R52卡+整户)·廖春芳(新户首期爆·唯一真坏账)·钟志强(结清即复借13.13)·王汉林(30万入账推高Top2)·刘娟(4笔逾期高频复贷)</p>
+    <p class="mut">4. 风控分歧:同户多营销并报(王红霞外访标"不可继续邀约")建议归口;倪伟续贷真实性待核</p>
+    <p class="mut">5. 治理/遗留催收:简平起诉·蔡华莹/倪伟黑线·郭俊姝/杨曼大雄线·张平静/刘丹/魏川/刘永东/刘娟/杜军昌/潘磊阿全线·廖春芳豆豆·刘娟/肖光华/罗杰辣条(先收利息)·王飘/黄志炳/杨曼/蒋敏龙哥线</p>
+  </div></details>
+  <details id="m4"><summary>四、当前敞口结构 + 拖累比(真算)<span class="arw">▶</span></summary>
+  <div class="body">
+    <p>在外 48 单 / 我司在外本金 <b>306.48万</b> = 🟢正常26单 165.995万 + 🔴逾期22单 140.48万</p>
+    <p>账面敞口(正敞口)<span class="em">157.76万</span> = 🟢正常 97.34万 + 🔴逾期 60.42万;账面净敞口 <b>151.50万</b>(正常97.27+逾期54.23·超收计负)</p>
+    <div class="hr"></div>
+    <p>🔴 22单逾期净敞口 54.23万 / 死账率 <b class="em">17.69%</b>(逾期净敞口54.23÷在外306.48·↑·彭0回款拖长+在外降)</p>
+    <p>⚠️ 真灰区(正常过期)正敞:李志雄R89 0.28 + 刘莹R112 0.82 = <b>1.09万</b></p>
+    <p class="mut" style="color:var(--green)">✅ 较6/29脱灰:何宗彬/付涛/王汉林回款均已入账,灰区收敛至 2单(李志雄R89 0.28+刘莹R112 0.82)</p>
+    <p>🟡 健康在途24单(正常26−灰区2) 正敞口 <b>96.24万</b> / 灰区2单正敞口1.09独列</p>
+    <p>⚪ 落袋:①结清净利143.27万(68单)+②正常在途超本0.07万 ≈ <b style="color:var(--green)">143.34万</b>。ROI 46.77%</p>
+    <div class="hr"></div>
+    <div class="card2 r"><div class="kv">🚨 拖累比:彭37.00/健康在途正敞口96.24 = <b class="em">38.44%</b>(6/29 37.64→今38.44↑)</div>
+      <div class="kv"><b>归因</b>:彭本身未动(0回款92天)、单点37万仍最大死资金,占账面23.45%。较6/29上升因<b>在外本金/健康池收缩(多单结清移出、在外329.70→306.48)</b>致分母略降,而彭分子未变;属<b>健康池收缩+彭拖长,非新增恶化</b>。</div></div>
+    <p class="mut"><b>Top1/3/5</b>:Top1 彭 <b>23.45%</b> · Top3(彭+王汉林+钟志强)<b>41.26%</b> · Top5(+李林+杜军昌)<b class="em">54.24%</b> 破线;王汉林30万入账、钟志强结清即新借13.13推高头部</p>
+    <div class="hr"></div>
+<div class="hr"></div>
+    <p class="mut"><b>出资人维度 — 名义份额 vs 实际未收回(剔我司/熊猫·别名归一)</b></p>
+    <table><tr><th style="text-align:left">出资人</th><th>名义份额</th><th>实际未收回</th><th style="text-align:left">备注</th></tr>
+    <tr><td style="text-align:left;font-weight:600">黑</td><td>149.27</td><td class="red">74.0</td><td style="text-align:left;font-size:10.5px;color:var(--muted)">最大外部主资</td></tr>
+    <tr><td style="text-align:left;font-weight:600">阿龙</td><td>105.17</td><td class="red">60.7</td><td style="text-align:left;font-size:10.5px;color:var(--muted)">彭凌峰主资(30万)·实际未收最高</td></tr>
+    <tr><td style="text-align:left;font-weight:600">杨超</td><td>45.00</td><td class="red">45.0</td><td style="text-align:left;font-size:10.5px;color:var(--muted)">全额未收(徐敏R118新放主资)</td></tr>
+    <tr><td style="text-align:left;font-weight:600">豹哥</td><td>95.00</td><td class="red">35.1</td><td style="text-align:left;font-size:10.5px;color:var(--muted)">倪伟/罗杰主资</td></tr>
+    <tr><td style="text-align:left;font-weight:600">小蒋</td><td>30.86</td><td>15.5</td><td style="text-align:left;font-size:10.5px;color:var(--muted)"></td></tr>
+    <tr><td style="text-align:left;font-weight:600">茹兰</td><td>27.50</td><td>13.0</td><td style="text-align:left;font-size:10.5px;color:var(--muted)"></td></tr>
+    <tr><td style="text-align:left;font-weight:600">路遥</td><td>21.00</td><td>10.1</td><td style="text-align:left;font-size:10.5px;color:var(--muted)"></td></tr>
+    <tr><td style="text-align:left;font-weight:600">大雄</td><td>18.22</td><td>8.7</td><td style="text-align:left;font-size:10.5px;color:var(--muted)"></td></tr>
+    <tr><td style="text-align:left;font-weight:600">胡子</td><td>14.00</td><td>8.4</td><td style="text-align:left;font-size:10.5px;color:var(--muted)"></td></tr>
+    <tr><td style="text-align:left;font-weight:600">清清</td><td>16.00</td><td>8.2</td><td style="text-align:left;font-size:10.5px;color:var(--muted)"></td></tr>
+    <tr><td style="text-align:left;font-weight:600">小雅</td><td>7.50</td><td>6.5</td><td style="text-align:left;font-size:10.5px;color:var(--muted)"></td></tr>
+    <tr><td style="text-align:left;font-weight:600">甘</td><td>4.50</td><td>3.6</td><td style="text-align:left;font-size:10.5px;color:var(--muted)"></td></tr></table>
+    <p class="mut" style="font-size:11px">口径(单位万):<b>名义份额</b>=该出资人各活单备注分账份额合计;<b>实际未收回</b>=份额×该单未收回比例(我司敞口÷我司出资、假设按份额同步回款)、超收单记0。我司用账本权威值(已剔除)。<b>熊猫幽灵数(R60误写)已剔除</b>。<b>杜军昌全户因R52逾期、整户风险统一计逾期口径</b>。典型:杨超45万(徐敏R118新放主资)全额未收;实际未收最高=阿龙(彭凌峰30万0回款92天)。外部为分账估算、非逐人精确对账。</p>
+  </div></details>
+
+  <details id="m5"><summary>五、明天预警(7/15)+ 未来窗口 <span class="arw">▶</span></summary>
+  <div class="body">
+    <p class="mut">7/15 应收期(账本真算 next-due + 工作日报7/15应收)— <b>明日重点·5单</b>:</p>
+    <div class="kv">🟡 <b>王红霞 R90</b> 6/6放/我司2.0万 第4期(末期)应还7/15·敞0.14 / 小蒋-全 — 末期尾款、结清确认(外访标不可再邀约)</div>
+    <div class="kv">🟡 <b>牟波 R93</b> 6/5放/我司4.5万 第4期应还7/15·敞0.92 已收3期 / 小蒋 — 盯第4期到账</div>
+    <div class="kv">🟡 <b>罗杰 R108</b> 6/26放/我司6.5万 第1期(末期·1期单)应还7/15·敞6.24 / 豹哥-慧 — 先息后本末期大额、盯足额本金</div>
+    <div class="kv">🟡 <b>曾杰 R113</b> 7/1放/我司3.8万 第1期应还7/15·敞3.84 已收0期 / 阿全 — 新单首期首考</div>
+    <div class="kv">🟡 <b>干志林 R115</b> 7/6放/我司6.0万 第1期应还7/15·敞6.00 已收0期 / 阿全 — 新单首期首考、6/13前两笔已结清优质复借</div>
+    <p class="mut"><b>未来窗口(账本真算)</b>:朱泽R117首期应还7/16(敞7.00·阿全) · 李林R116首期7/16(敞4.50·小蒋) · 李建文R102期3 7/16 · 刘莹R104期4 7/16 · 王汉林R86期5 7/16(敞1.07) · <b>钟志强R107首期应还7/24</b>(6/25复借13.13·先息后本·Top3·续贷待核 Ⓗ) · 陈湘R105期3 7/21 · 徐敏R118首期7/25。<b>提示</b>:罗杰R108明日末期6.24若未足额→灰区;钟志强R107首期临近须控新单</p>
+  </div></details>
+  <details id="m5b"><summary>六、考虑追加客户(履约过半·可议追加·8户)<span class="arw">▶</span></summary>
+  <div class="body">
+    <p class="mut">筛选:状态正常在途 + 已还期数÷总期数 ≥ 50% + 非灰区/非卡单。颗粒度对齐"今日到期"。口径基于7/14全量真算的已还期数。</p>
+    <div class="card2 g"><div class="h">罗杰 — 6/26放6.5万(我司6.5万)· 已还1/1期(100%)<span class="p-green">🟢 可追加(末期到账后)</span></div>
+      <div style="font-size:13px;color:var(--ink);line-height:1.55"><b>应还日</b>:第1期(末期·1期单)应还7/15(明日到)。<br><b>历史(全可可1单)</b>:🟡 6/26放/我司6.5万 先息后本1期单、已收利息0.26·末期本金6.24明日到(敞6.24)。<br><b>分账</b>:黑4.5万+龙1.5万+小蒋0.5万+小雅0.5万+清清0.5万+胖子0.5万+大雄0.5万+我司6.5万;豹哥35万。<br><b>4源</b>:账本+工作日报7/15应收"罗杰 豹哥-笑笑"+批单群6/26批文。<br><b>风控落地人/收款</b>:收款豹哥-慧;主资黑(4.5万)+豹哥(35万)。<br><b>🧠 推理/倾向</b>:1期单明日末期即到,<b>倾向:待明日末期6.24足额到账确认后可追加</b>,先收先息后本本金、不叠加在途。</div></div>
+    <div class="card2 r"><div class="h">杜军昌 — 4/10放50万合同(我司16.5万)· 已还56%<span class="p-red">🚫 暂不(整户另有逾期R52+卡单)</span></div>
+      <div style="font-size:13px;color:var(--ink);line-height:1.55"><b>应还日</b>:R44第3期应还8/5(敞4.18·正常)。<br><b>历史(全可可3单)</b>:🟡 R44 4/10放/我司16.5万 已还3/3期(敞4.18);🔴 R52 4/14放/我司16万 <b>逾期·"卡了"</b>(敞3.76);🟡 R60 4/25放/我司3万 已还2/6期(敞1.64)。<br><b>分账(R44)</b>:黑10万+美国15万+龙3.5万+蒋1万+华姐2万+路遥1万+我司16.5万。<br><b>4源</b>:账本+工作日报R52"卡了"·业务网≥110万+批单群批文。<br><b>风控落地人/收款</b>:R44阿全-阿力;R52催阿龙-豆;主资黑+美国。<br><b>🧠 推理/倾向</b>:R44本身过半,但<b>同户R52已逾期"卡了"、整户聚合9.58万Top5</b>。<b>倾向:坚决暂不追加</b>,优先催回R52再谈。</div></div>
+    <div class="card2 a"><div class="h">王亚勤 — 6/10放20万合同(我司9.5万)· 已还3/6期(50%)<span class="p-amber">🟡 谨慎(刚过半·大额)</span></div>
+      <div style="font-size:13px;color:var(--ink);line-height:1.55"><b>应还日</b>:R96第4期应还7/19。<br><b>历史(全可可1单)</b>:🟡 6/10放20万合同/我司9.5万 已还3/6期(敞2.46)。<br><b>分账</b>:黑6万+茹兰2.5万+小蒋1万+清清1万+我司9.5万。<br><b>4源</b>:账本+工作日报各期回款印证+批单群6/10批文。<br><b>风控落地人/收款</b>:收款小蒋-全;主资黑(6万)。<br><b>🧠 推理/倾向</b>:刚过半、单笔9.5万中大额、敞口仍2.46。<b>倾向:谨慎观察</b>,再稳还1-2期、敞口降下来再议。</div></div>
+    <div class="card2 g"><div class="h">李志雄 — 复借良性小额(R80今日末期超收/R89末期灰区/R111在贷)<span class="p-green">🟢 可追加(复借良性·小额)</span></div>
+      <div style="font-size:13px;color:var(--ink);line-height:1.55"><b>应还日</b>:R80末期今日7/14(超收)、R89末期7/13(逾1天)、R111第2期应还7/20。<br><b>历史(全可可3单在贷)</b>:🟡 R80 5/16放/我司3.0万 已还5/6(敞-0.07超收);🟡 R89 6/4放/我司2.5万 已还3/4(敞0.28);🟡 R111 7/1放/我司2.6万 已还1/5(敞1.95)。<br><b>分账(R80)</b>:小蒋0.5+茹兰1+黑1+阿龙2+清清0.5+我司3。<br><b>4源</b>:账本+工作日报7/14应收李志雄6/6期+历史回款印证。<br><b>风控落地人/收款</b>:阿龙-全(R80/R111)、小蒋-胖子(R89);主资黑/阿龙。<br><b>🧠 推理/倾向</b>:复借良性、均小额履约稳、R80已超收。<b>倾向:可追加(小额)</b>,注意总并行不超3笔、阿龙-全统口。</div></div>
+    <div class="card2 g"><div class="h">谢正山 — 6/22放(我司2.0万)· 已还2/3期(67%)<span class="p-green">🟢 可追加(小额履约稳)</span></div>
+      <div style="font-size:13px;color:var(--ink);line-height:1.55"><b>应还日</b>:R109第3期(末期)应还7/21。<br><b>历史(全可可1单)</b>:🟡 6/22放/我司2.0万 已还2/3期(敞1.62)。<br><b>分账</b>:清清1万+黑0.75万+龙0.75万+小蒋0.5万+我司2万。<br><b>4源</b>:账本+工作日报回款印证+批单群6/22批文(此前盲区已补录入账)。<br><b>风控落地人/收款</b>:收款阿全;主资清清+黑。<br><b>🧠 推理/倾向</b>:小额、履约稳、末期临近。<b>倾向:可追加(小额)</b>,阿全线续接、控单户小额。</div></div>
+    <div class="card2 g"><div class="h">张诚 — 6/12放15万合同(我司6.0万)· 已还3/5期(60%)<span class="p-green">🟢 可追加(账实一致Ⓕ结案)</span></div>
+      <div style="font-size:13px;color:var(--ink);line-height:1.55"><b>应还日</b>:R101第4期应还7/21。<br><b>历史(全可可1单在贷)</b>:🟡 6/12放15万合同/我司6.0万 已还3/5期(敞1.00);<b>R101实收核16680=整单41700×我司40%份额、账实一致</b>(此前账实差已核=非差)→ Ⓕ结案。<br><b>分账</b>:金宝4.5万+黑1.5万+小蒋0.5万+路遥0.5万+茹兰0.5万+豆0.5万+大雄0.5万+清清0.5万+我司6万。<br><b>4源</b>:账本收3期+工作日报41700=整单口径+批单群6/12批文。<br><b>风控落地人/收款</b>:收款金宝;主资金宝(4.5万)。<br><b>🧠 推理/倾向</b>:账实差已核实=非差、履约过半、敞口已降至1.00。<b>倾向:可追加</b>,金宝线续接。</div></div>
+    <div class="card2 g"><div class="h">牟波 — 6/5放(我司4.5万)· 已还3/5期(60%)<span class="p-green">🟢 可追加(履约稳)</span></div>
+      <div style="font-size:13px;color:var(--ink);line-height:1.55"><b>应还日</b>:R93第4期应还7/15(明日到)。<br><b>历史(全可可1单)</b>:🟡 6/5放/我司4.5万 已还3/5期(敞0.92)。<br><b>分账</b>:大雄1万+黑2万+小蒋1万+茹兰1万+李小玲0.5万+我司4.5万。<br><b>4源</b>:账本+工作日报各期回款印证+批单群6/5批文。<br><b>风控落地人/收款</b>:收款小蒋;主资黑(2万)。<br><b>🧠 推理/倾向</b>:履约稳、敞口已降至0.92、明日第4期到。<b>倾向:可追加</b>,待明日第4期到账后小蒋线续接。</div></div>
+    <div class="card2 r"><div class="h">王红霞 — 6/6放5万合同(我司2.0万)· 已还3/4期(75%)<span class="p-red">🚫 暂不(外访标"不可继续邀约")</span></div>
+      <div style="font-size:13px;color:var(--ink);line-height:1.55"><b>应还日</b>:R90第4期(末期)应还7/15(明日到)。<br><b>历史(全可可1单)</b>:🟡 6/6放5万合同/我司2.0万 已还3/4期(敞0.14)。新户首借、近结清。<br><b>分账</b>:黑1.5万+茹兰1万+小蒋0.5万+我司2万。<br><b>4源</b>:账本+工作日报各期回款印证+<b>外访交接单"放款未完成·不可继续邀约"</b>。<br><b>风控落地人/收款</b>:收款小蒋-全;<b>外访风控结论"不可继续邀约"</b>。<br><b>🧠 推理/倾向</b>:虽近结清,但<b>外访已明确"不可继续邀约"</b>(在外多头+配合度差)。<b>倾向:暂不追加</b>,现单还完观察、外访红灯解除前不进新单。</div></div>
+    <div class="hr"></div>
+    <p class="mut"><b>小结(共8户过半)</b>:🟢 可追加 5 户(罗杰末期到账后/李志雄复借小额/谢正山小额/张诚账实一致Ⓕ/牟波履约稳)· 🟡 谨慎 1 户(王亚勤刚过半大额)· 🚫 暂不 2 户(<b>杜军昌整户另有逾期R52卡</b>/<b>王红霞外访不可继续邀约</b>)。追加一律走原收款方/风控线、控单户集中度。</p>
+  </div></details>
+  <details id="m6"><summary>七、集中度叠加扫描(收款方五渠道)<span class="arw">▶</span></summary>
+  <div class="body">
+    <p class="mut"><b>收款方渠道占账面敞口</b>:阿全 <b>36.3%</b> / 阿龙 <b>25.1%</b> / 小蒋 <b>6.9%</b> / 杨超 <b>5.1%</b> / 豆豆 <b>4.4%</b> / 豹哥-慧 4.2% / 大雄 4.0%。阿全+阿龙两渠道合计61.4%,头部集中。</p>
+    <p class="mut"><b>业务网总曝光</b>:彭凌峰100(逾92) · 杜军昌≥110(R52卡·整户逾期) · 钟志强(R107结清即新借13.13·Top3) · 王汉林(30万入账·Top2) · 倪伟100(已回敞0.35基本回本) · 廖春芳(新户首期爆·唯一真坏账)</p>
+    <div class="hr"></div>
+    <div class="card2 r"><div class="h">◆ 彭凌峰 🚨 逾期大单Top1 + 0回款92天(阿龙线36.3渠道外·阿龙线)</div>
+      <div class="kv">R49 我司37万/0回款92天/敞37.00;拖累比38.44%·占账面23.45%·阿龙主资(30万);司法决策悬约53天 → 不能再悬 → Ⓐ</div></div>
+    <div class="card2 r"><div class="h">◆ 杜军昌 🚨 整户逾期(R52卡)+ 三单聚合Top5</div>
+      <div class="kv">R44正常4.18+R52逾3.76(50万卡·应还6/27未回)+R60正常1.64=9.58;整户风险按逾期计·阿全遗留 → 硬催 → Ⓙ</div></div>
+    <div class="card2 r"><div class="h">◆ 廖春芳 🚨 唯一真坏账(新户首期即爆)+ 钟志强复借</div>
+      <div class="kv"><b>廖春芳R100 我司3万首期"爆了"0回款</b>(小雅/豆豆催)→ 计提+追 Ⓔ;<b>钟志强R107结清即新借13.13万(6/25)</b>=结清即大额复借·Top3 → Ⓗ;张诚R101账实一致(16680=整单41700×40%)Ⓕ结案</div></div>
+    <div class="card2 a"><div class="h">◆ 钟志强 🆕 R107结清即新借13.13万(2期30天)</div>
+      <div class="kv">R23末期结清后6/25立即新借R107(我司13.13·0回款·先息后本·首期7/24)=结清即大额复借·Top3 → 续贷性质需评估 → Ⓗ</div></div>
+    <div class="card2 a"><div class="h">◆ 刘娟 ⭐高频复贷(4笔逾期)</div>
+      <div class="kv">R84(1.63)/R81(1.00)/R77(0.42)/R65(超收−0.25)逾期·辣条+阿全催 → 立即停一切新单 → Ⓓ</div></div>
+    <p class="mut">◆ 业务网Top5:1.杜军昌≥110(R52卡·整户逾期) 2.倪伟100(已回敞0.35·续贷待核) 3.彭凌峰100(逾92) 4.钟志强(结清即复借13.13) 5.王汉林(30万入账·Top2)</p>
+  </div></details>
+
+  <details id="m7"><summary>八、重点单状态(固定盯单)<span class="arw">▶</span></summary>
+  <div class="body">
+    <p class="mut"><b>红色盯单</b></p>
+    <div class="kv">🚨 <b>彭凌峰</b>:37万/已收0/0回款92天 — 司法悬约53天必须硬动作 Ⓐ</div>
+    <div class="kv">🚨 <b>余兆堂</b>:R54/R55合计逾2.68(0回款·对账归位)— 阿龙/小蒋催收归位</div>
+    <div class="kv">🚨 <b>杜军昌</b>:R52 50万卡(敞3.76)+R60 1.64+R44 4.18=9.58 — 硬催·阿全遗留 Ⓙ</div>
+    <div class="kv">🚨 <b>陈家川</b>:R75欠约1.5万/报警5.25 — 与律师核实升级 Ⓒ</div>
+    <div class="kv">🚨 <b>刘娟</b>:4笔逾期(R84/R81/R77/R65)高频复贷 — 停一切新单 Ⓓ</div>
+    <div class="hr"></div>
+    <p class="mut"><b>黄色盯单</b></p>
+    <div class="kv">🟡 <b>王汉林 R114</b>:新借18万/已还1期/应还7/23(敞13.92)— Top2大额,盯还款节奏</div>
+    <div class="kv">🚨 <b>钟志强 R107</b>:6/25复借13.13万(2期30天·0回款·首期7/24)— 结清即复借,续贷性质评估 → Ⓗ</div>
+    <div class="kv">🚨 <b>廖春芳 R100</b>:首期"爆了"0回款(新户首期即爆·唯一真坏账)— 豆豆催收+计提 → Ⓔ</div>
+    <div class="kv">🟡 <b>罗杰 R108</b>:1期单末期6.24明日7/15到 — 豹哥-慧盯足额本金</div>
+    <div class="kv">🟡 <b>张诚 R101</b>:账本收3期(敞1.00·正常),实收核16680=整单41700×我司40% — 账实一致 → Ⓕ结案</div>
+    <div class="kv">🟢 <b>李志雄 R80</b>:末期今日到、已超收(敞-0.07)— 阿龙-全确认到账即结清</div>
+    <div class="hr"></div>
+    <p class="mut"><b>已脱险(本期对账确认)</b>:🟢 徐敏/陈华玉/薛桢桢/李建文/伍丹/赵靖华/李林/肖乾鸣/何宗彬/刘后英结清 · 🟢 何宗彬/付涛/王汉林脱灰 · 🟢 新放单首期首考陆续过</p>
+  </div></details>
+  <details id="m8"><summary>九、今天该做的事(按收款方)<span class="arw">▶</span></summary>
+  <div class="body">
+    <div class="card2 r"><div class="kv"><b>阿龙</b>:🚨 彭凌峰催收(逾92天·司法悬约53天必须动)Ⓐ;余兆堂R54/R55对账归位催收</div></div>
+    <div class="card2 r"><div class="kv"><b>阿龙-豆 / 阿全</b>:🚨 杜军昌R52 50万"卡了"硬催+落实回款(应还6/27未回·阿全遗留)Ⓙ;R60同步催</div></div>
+    <div class="card2 r"><div class="kv"><b>豹哥 / 黑</b>:🚨 倪伟续贷真实性核实(敞0.35基本回本·续贷待核·黑遗留)Ⓚ;🟡 罗杰R108明日末期6.24盯足额</div></div>
+    <div class="card2 b"><div class="kv"><b>今日7/14收款方分派</b>:🟡 阿龙-全盯李志雄R80末期(超收·到账即结清)· 🟡 小蒋盯李志雄R89末期尾款0.28(灰区逾1天)· 🟡 阿全盯刘莹R112第2期0.82(灰区逾1天)· 🚨 豆豆追廖春芳R100"爆了"(唯一真坏账·计提)→ Ⓔ · ✅ 张诚R101账实一致(16680=整单41700×40%)Ⓕ结案</div></div>
+    <div class="card2 b"><div class="kv"><b>阿全</b>:🟡 刘娟整户停新单+催(R84/R81/R77/R65)· 🟡 陈家川R75跟进(报警协商)· 🟢 魏川/刘永东/刘丹缓慢催收 · 🟢 曾杰R113/干志林R115明日首期首考备盯</div></div>
+    <div class="card2 a"><div class="kv"><b>小蒋</b>:🟡 牟波R93/王红霞R90明日末期盯到账 · 🟡 李建文R102/刘莹R104期到 7/16备催 · 杨云R56/刘娟超收单收尾对账</div></div>
+    <div class="card2 a"><div class="kv"><b>笑笑(对账+更新)</b>:✅ 账本7/14 07:31已更新全量真算;📌 今日李志雄R80末期今晚夜结确认到账;📌 明日7/15 5单到期(王红霞/牟波/罗杰/曾杰/干志林)预盯;✅ 张诚R101账实一致Ⓕ结案</div></div>
+    <div class="card2 a"><div class="kv"><b>营销/外访</b>:⚠️ 彭凌峰/杜军昌/刘娟/钟志强 逾期或结清即复借户一律暂缓+归口 · ⚠️ 王红霞外访标"不可继续邀约"不进新单 · ⚠️ 同户多营销并报归口 · ⚠️ 倪伟续贷真实性未证前暂缓</div></div>
+    <p class="mut">后续窗口:朱泽R117/李林R116/王汉林R86 7/16期到、钟志强R107首期7/24;均需逐单校准</p>
+  </div></details>
+
+  <details id="m9"><summary>十、数据盲区 <span class="arw">▶</span></summary>
+  <div class="body">
+    <p class="mut">1. ✅ <b>账本7/14 07:31更新·全量真算(在贷48单)</b> — 今日已更新=未冻结,敞口157.76/净敞口151.50/落袋143.34/拖累38.44%/Top5 54.24%/死账17.69%均为7/14北京时间真算值;今日李志雄R80末期待今晚夜结确认。所有指标按真实账本重算。</p>
+    <p class="mut">2. ✅ <b>张诚R101账实差已核实=非差</b>:账本收3期、实收核16680=整单41700×(我司6万/合同15万=40%),两边口径不同但一致;敞1.00正常·Ⓕ结案。</p>
+    <p class="mut">3. ⚠️ <b>杜军昌整户口径</b>:loans_detail中R44/R60标"正常"、R52标"逾期";整户风险(R52卡·业务网≥110)按逾期计,与Top5/追加口径一致。</p>
+    <p class="mut">4. ⚠️ <b>今日到期李志雄R80金额口径</b>:工作日报应收记"8万"(合同/期额),账本我司出资3.0万、已收3.10、末期超收敞-0.07 — 以账本我司口径为准。</p>
+    <p class="mut">5. ⚠️ <b>倪伟续贷</b>:R76敞0.35基本回本,但"等外面续贷"真实性未旁证 → Ⓚ;续贷真实性未证前按逾期收尾。</p>
+    <p class="mut">6. ⚠️ <b>牟波R93收款方口径</b>:loans_detail收款小蒋、工作日报预警标甘线;以账本收款方(小蒋)为准、甘线并盯。</p>
+    <p class="mut">7. ⚠️ <b>出资人维度</b>:inv.json为聚合(名义份额/实际未收回),未逐单拆正常/逾期;本表按聚合口径列示、未做池内拆分(避免编造)。熊猫幽灵数(R60误写)已剔除。</p>
+    <p class="mut">8. ⚠️ <b>廖春芳R100</b>:新户首期即"爆了"0回款=放款风控失误,须复盘该笔标准并计提坏账准备 → Ⓔ。</p>
+    <p class="mut">9. ⚠️ <b>彭凌峰状态字段</b>:"30天内有还钱"vs事实0回款92天 需核对;遗留催收(简平起诉/蔡华莹/倪伟/杨曼等)无独立旁证。</p>
+    <p class="mut">10. ⚠️ <b>高频复贷/多头</b>:刘娟4笔逾期、钟志强结清即复借13.13、王汉林大额入账 — 集中度头部须持续盯,新单从严。</p>
+  </div></details>
+
+  <details id="md" open><summary>✅ 待你拍板 Ⓐ–Ⓚ <span class="arw">▶</span></summary>
+  <div class="body">
+    <p class="mut">✅ 账本7/14已更新全量真算(未冻结);本期已结:<span class="p-green">Ⓕ 张诚R101账实差</span>(实收16680=整单41700×我司40%·账实一致·结案)</p>
+    <div class="dec r"><div class="dh">Ⓐ 🚨 彭凌峰司法程序是否立即启动</div>
+      <div class="mut">0回款92天 / 拖累比38.44% / Top1占账面23.45% / 决策已悬约53天</div>
+      <div class="opt">① 立即诉讼+资产保全 &nbsp; ② 抵押权登记+宽限30天 &nbsp; ③ 阿龙最后通牒</div>
+      <div class="rec">建议:① 已严重超期、悬约53天,不能再悬</div></div>
+    <div class="dec r"><div class="dh">Ⓔ 🚨 廖春芳R100"爆了"(唯一真坏账·新户首期即爆·0回款)</div>
+      <div class="mut">廖春芳R100 我司3万首期"爆了"0回款(豆豆催收);新户首期即爆=放款风控失误,须复盘该笔标准</div>
+      <div class="opt">① 豆豆全力追+本周内评估损失计提坏账准备+复盘放款标准 &nbsp; ② 继续常规催收</div>
+      <div class="rec">建议:① 新户首期即"爆"须计提并复盘;真坏账已聚焦此一单</div></div>
+    <div class="dec r"><div class="dh">Ⓗ 🚨 钟志强R107结清即新借13.13万 续贷还是收紧</div>
+      <div class="mut">R23末期结清后6/25立即新借13.13万(2期30天·0回款·首期7/24·Top3)</div>
+      <div class="opt">① 视为高危续贷、首期7/24严盯+暂不再叠加 &nbsp; ② 按正常在途处理</div>
+      <div class="rec">建议:① 结清即大额复借风险高,首期严盯、Top5控新单</div></div>
+    <div class="dec"><div class="dh">Ⓘ 🟢 账本口径校准(只列·已归位·不执行)</div>
+      <div class="mut">余兆堂R54/R55 期数=0/天数=1异常(0回款·合计敞2.68·对账归位待催);熊猫幽灵数R60误写已剔除;付涛/何宗彬历史账实差前期已核=口径差非缺口</div>
+      <div class="rec">建议:口径已归位、无需破坏性操作;余兆堂按逾期催收线跟进</div></div>
+    <div class="dec r"><div class="dh">Ⓙ 🚨 杜军昌R52 50万卡 是否升级</div>
+      <div class="mut">R52敞3.76/4/6期应还6/27至今未回/整户聚合9.58Top5/阿全遗留</div>
+      <div class="opt">① 硬催+落实回款,未回转重度催收+停新 &nbsp; ② 维持观察</div>
+      <div class="rec">建议:① 硬催,周内无进展升级</div></div>
+    <div class="dec r"><div class="dh">Ⓓ 🚨 刘娟 高频复贷(4笔逾期)是否停新单</div>
+      <div class="mut">R84/R81/R77/R65逾期/辣条+阿全催</div>
+      <div class="rec">建议:② 立即停一切新单(高频叠加+已现多笔逾期)</div></div>
+    <div class="dec r"><div class="dh">Ⓚ 🚨 倪伟续贷真实性 续贷还是催收</div>
+      <div class="mut">R76敞0.35基本回本/"等外面续贷"未旁证/黑遗留</div>
+      <div class="opt">① 豹哥/黑先核实续贷真实性,假则转催收+再申暂缓 &nbsp; ② 默认续贷放行</div>
+      <div class="rec">建议:① 不盲目续贷,真实性未证前按逾期收尾</div></div>
+    <div class="dec"><div class="dh">Ⓒ 陈家川 已报警5.25+协商 是否升级法务</div>
+      <div class="mut">R26/R47已超收,R75欠约1.5万本金(敞1.50)</div>
+      <div class="rec">建议:① 本周收R75再评</div></div>
+    <div class="dec"><div class="dh">Ⓖ 申请台账旧档清理(破坏性)</div>
+      <div class="mut">外访交接单历史小时档冗余,旧档堆积</div>
+      <div class="rec">建议:清旧留1,确认后执行(不自动执行)</div></div>
+  </div></details>
+
+  <details><summary>自检 7 项铁律 ✅ <span class="arw">▶</span></summary>
+  <div class="body"><p class="mut">
+    ✅ M1 今日到期1单八件套(李志雄R80·应还日7/14校验+工作日报应收一致·应还日/历史/分账/累计落袋/4源/集中度/判断/动作)+ 结清复盘(约11单)+落袋+汇总三数字<br>
+    ✅ M2-3 红/黄风险带号(交叉16风险扫描)+ 灰区2单(李志雄R89/刘莹R112)<br>
+    ✅ M4 Top1/3/5(真算 54.24%破线)+三层(逾期22/灰区2单/健康24单)+拖累比(真算38.44%↑·归因健康池收缩+彭拖长)+出资人维度(名义/实际未收·剔我司/熊猫·杜军昌全户计逾期)<br>
+    ✅ M5 明天7/15 5单到期(王红霞/牟波/罗杰/曾杰/干志林)+未来窗口(钟志强R107首期7/24/朱泽R117 7/16)<br>
+    ✅ M6 考虑追加8户(每卡6元素·应还日/历史/分账/4源/风控落地人或收款/推理或倾向;杜军昌/王红霞🚫暂不)<br>
+    ✅ M7 四源真读(可可账本7/14 07:31全量真算48单 + 申请台账=外访交接单 + 批单群 + 工作日报笑笑夜结)+ 两池×三口径九宫格(守恒✓)<br>
+    ✅ 全量真算跳变归因(vs6/29:账面敞口148.48→157.76↑、死账16.27→17.69%↑、Top5 57.0→54.24%↓、灰区3→2、在外329.70→306.48↓、拖累37.64→38.44%↑·均逐项归因)+ 破坏性操作只列待拍板(申请台账清旧→Ⓖ),不自动执行
+  </p></div></details>
+
+  <div class="foot">
+    v72 · 四源真读真算(账本已更新7/14 07:31·全量真算48单) · 北京时间 2026.07.14<br>
+    可可账本已更新7/14 07:31(在贷48单全量真算) · 申请台账=外访交接单 · 批单群最新 · 工作日报笑笑夜结<br>
+    (7/14全量真算版:今日已更新未冻结·今日1单到期李志雄R80末期超收·灰区2单·彭凌峰0回款92天最大死资金)<br>
+    txt 底本见 Drive 日报历史夹
+  </div>
+
+</div>
 </body>
 </html>
