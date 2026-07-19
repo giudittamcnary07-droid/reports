@@ -1,0 +1,3141 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>团队流水加密分享</title>
+<style>:root {
+  color-scheme: light dark;
+  background-color: var(--background) !important;
+
+  /* Agent-facing contract; keep in sync with SKILL.md. */
+  --background: light-dark(rgb(255 255 255), rgb(24 24 24));
+  --foreground: light-dark(rgb(26 28 31), rgb(255 255 255));
+  --card: color-mix(in oklab, var(--foreground) 5%, transparent);
+  --card-foreground: var(--foreground);
+  --popover: light-dark(rgb(255 255 255), rgb(45 45 45));
+  --popover-foreground: var(--foreground);
+  --primary: light-dark(rgb(51 156 255), rgb(131 195 255));
+  --primary-foreground: light-dark(rgb(255 255 255), rgb(13 13 13));
+  --secondary: light-dark(rgb(255 255 255 / 96%), rgb(54 54 54 / 96%));
+  --secondary-foreground: var(--foreground);
+  --muted: color-mix(in srgb, var(--foreground) 10%, transparent);
+  --muted-foreground: light-dark(
+    rgb(26 28 31 / 49.4%),
+    rgb(255 255 255 / 49.8%)
+  );
+  --accent: light-dark(rgb(229 242 255), rgb(13 39 63));
+  --accent-foreground: var(--primary);
+  --destructive: light-dark(rgb(226 85 7), rgb(255 133 73));
+  --border: light-dark(rgb(26 28 31 / 8%), rgb(255 255 255 / 8.2%));
+  --input: light-dark(
+    rgb(26 28 31 / 11.8%),
+    color-mix(in oklab, rgb(0 0 0) 10%, transparent)
+  );
+  --ring: light-dark(rgb(51 156 255), rgb(131 195 255 / 76%));
+  --font-size-base: 14px;
+  --viz-series-1: var(--primary);
+  --viz-series-2: light-dark(rgb(243 136 59), rgb(245 154 86));
+  --viz-series-3: light-dark(rgb(93 201 119), rgb(116 213 139));
+  --viz-series-4: light-dark(rgb(235 119 177), rgb(240 143 192));
+  --viz-series-5: light-dark(rgb(155 121 236), rgb(170 145 239));
+  --viz-series-6: light-dark(rgb(58 185 177), rgb(90 203 194));
+
+  /* Internal implementation variables; not part of the agent contract. */
+  --font-sans: -apple-system, system-ui, "Segoe UI", sans-serif;
+  --font-mono:
+    ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono",
+    monospace;
+  --font-size-normal: max(11px, var(--font-size-base));
+  --font-size-tooltip: calc(var(--font-size-base) - 1px);
+  --font-size-small: max(11px, calc(var(--font-size-base) - 2px));
+  --font-size-h1: calc(var(--font-size-normal) * 1.7142857143);
+  --font-size-h2: calc(var(--font-size-normal) * 1.4285714286);
+  --font-size-h3: calc(var(--font-size-normal) * 1.2857142857);
+  --font-weight-normal: 430;
+  --font-weight-medium: 500;
+  --line-height-normal: calc(var(--font-size-normal) * 1.5);
+  --line-height-tooltip: calc(var(--font-size-tooltip) * 1.4285714286);
+  --line-height-small: calc(var(--font-size-small) + 4px);
+  --radius: 12.5px;
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-2xl: calc(var(--radius) * 1.6);
+  --radius-full: 9999px;
+  --shadow-sm: 0 1px 2px -1px rgb(0 0 0 / 8%);
+  --checkmark-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 17 17'%3E%3Cpath d='M12.8961 3.64101C13.1297 3.41418 13.4984 3.37523 13.7779 3.56581C14.0571 3.75635 14.1554 4.11331 14.0299 4.41347L13.9615 4.53847L7.71151 13.7045C7.59411 13.8767 7.4063 13.9877 7.19881 14.0072C6.99136 14.0267 6.78564 13.9533 6.63826 13.806L2.88826 10.056L2.79842 9.9457C2.6192 9.67407 2.64927 9.30496 2.88826 9.06581C3.12738 8.82669 3.49647 8.79676 3.76815 8.97597L3.8785 9.06581L7.03084 12.2182L12.8053 3.74941L12.8961 3.64101Z'/%3E%3C/svg%3E");
+
+  /* Legacy aliases; not part of the current agent contract. */
+  --viz-bg: transparent;
+  --viz-panel: var(--card);
+  --viz-border: var(--border);
+  --viz-text: var(--foreground);
+  --viz-muted: var(--muted-foreground);
+  --viz-accent: var(--primary);
+  --viz-accent-text: var(--primary-foreground);
+  --viz-accent-bg: var(--accent);
+  --viz-font-size: var(--font-size-base);
+  --viz-warning: var(--destructive);
+  --color-background-primary: var(--background);
+  --color-text-primary: var(--foreground);
+  --color-border-secondary: var(--border);
+}
+
+:root[data-theme="light"] {
+  color-scheme: light;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html > body {
+  margin: 0;
+  padding: 5px;
+  color: var(--foreground);
+  background: transparent !important;
+  font-family: var(--font-sans);
+  font-size: var(--font-size-normal);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-normal);
+}
+
+a {
+  color: color-mix(in srgb, var(--viz-accent) 80%, var(--viz-text) 20%);
+  cursor: pointer;
+  font-weight: var(--viz-font-weight-medium);
+  text-decoration: none;
+  text-underline-offset: 2px;
+}
+
+a:is(:hover, :focus-visible) {
+  text-decoration-line: underline;
+  text-decoration-style: dashed;
+  text-decoration-thickness: 0.5px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+h1 {
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h2 {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-size: var(--font-size-h3);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+}
+
+b,
+strong,
+th {
+  font-weight: var(--font-weight-medium);
+}
+
+code:not(pre code) {
+  display: inline;
+  padding: 1px 6px;
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+  overflow-wrap: anywhere;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  word-break: break-word;
+}
+
+#widget {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  padding: 0;
+  background: transparent !important;
+}
+
+.card {
+  min-width: 0;
+  padding: 12px;
+  overflow: hidden;
+  overflow-wrap: break-word;
+  border-radius: var(--radius-2xl);
+  corner-shape: superellipse(1.5);
+  color: var(--card-foreground);
+  background: var(--card);
+}
+
+#widget > :not(.card) {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.tooltip {
+  position: fixed;
+  z-index: 50;
+  top: 0;
+  left: 0;
+  width: max-content;
+  max-width: min(
+    20rem,
+    var(--tooltip-available-width, calc(100vw - 10px)),
+    calc(100vw - 10px)
+  );
+  max-height: min(
+    var(--tooltip-available-height, calc(100vh - 10px)),
+    calc(100vh - 10px)
+  );
+  padding: 4px 8px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--popover-foreground);
+  background: var(--popover);
+  box-shadow: none;
+  font-size: var(--font-size-tooltip);
+  line-height: var(--line-height-tooltip);
+  overflow-wrap: break-word;
+  white-space: normal;
+  pointer-events: none;
+  user-select: none;
+}
+
+.viz-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(max(180px, 24%), 1fr));
+  gap: 10px;
+}
+
+.viz-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.viz-stat-value {
+  font-size: var(--font-size-h2);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.25;
+}
+
+.viz-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.viz-badge {
+  padding: 3px 8px;
+  border-radius: var(--radius-full);
+  color: var(--accent-foreground);
+  background: var(--accent);
+  font-weight: var(--font-weight-medium);
+}
+
+small,
+.text-small,
+.viz-badge {
+  font-size: var(--font-size-small);
+  line-height: var(--line-height-small);
+}
+
+.text-muted {
+  color: var(--muted-foreground);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.viz-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.viz-controls > .form-label {
+  display: grid;
+  min-width: min(100%, 260px);
+  flex: 1 1 280px;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: baseline;
+  gap: 2px 12px;
+  margin-bottom: 0;
+}
+
+.viz-controls > .form-label > :is(.form-control, .form-range, .form-select) {
+  grid-column: 1 / -1;
+}
+
+.btn,
+.form-check-input,
+.form-control,
+.form-range,
+.form-select {
+  font: inherit;
+}
+
+.btn {
+  appearance: button;
+  display: inline-flex;
+  inline-size: fit-content;
+  max-inline-size: 100%;
+  min-height: 28px;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin: 0;
+  padding: 0 8px;
+  -webkit-app-region: no-drag;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: var(--cursor-interaction, pointer);
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+.btn:is(.btn-block, .viz-tile) {
+  inline-size: 100%;
+}
+
+.btn.viz-tile {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+a.btn {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn-primary {
+  border-color: transparent;
+  color: var(--primary-foreground);
+  background: var(--foreground);
+  background-clip: padding-box;
+}
+
+.btn-primary .text-muted {
+  color: color-mix(in srgb, var(--primary-foreground) 50%, transparent);
+}
+
+.btn-primary:not(:disabled):hover {
+  background: color-mix(in srgb, var(--foreground) 80%, transparent);
+  background-clip: padding-box;
+}
+
+.btn-ghost {
+  border-color: transparent;
+  color: var(--muted-foreground);
+  background: transparent;
+}
+
+.btn-ghost:not(:disabled):hover {
+  color: var(--foreground);
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+[data-lucide] {
+  stroke-width: 1.6;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--foreground);
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  padding: 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background: var(--secondary);
+}
+
+.form-control::placeholder {
+  color: var(--muted-foreground);
+}
+
+.form-control[type="file"] {
+  padding: 0;
+  overflow: hidden;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control[type="file"]::file-selector-button {
+  min-height: 26px;
+  margin-right: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-right: 1px solid var(--input);
+  color: var(--secondary-foreground);
+  background: var(--secondary);
+  cursor: inherit;
+  font: inherit;
+}
+
+.form-control[type="file"]:not(:disabled):hover::file-selector-button {
+  background: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-control-color[type="color"] {
+  width: 40px;
+  height: 28px;
+  padding: 3px;
+  cursor: var(--cursor-interaction, pointer);
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+
+.form-control-color[type="color"]::-webkit-color-swatch {
+  border: 0;
+  border-radius: calc(var(--radius-lg) - 4px);
+  corner-shape: superellipse(1.5);
+}
+
+textarea.form-control {
+  height: auto;
+  min-height: 72px;
+  padding: 8px 10px;
+  resize: vertical;
+}
+
+.form-control:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-control:disabled,
+.form-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.form-select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  min-height: 28px;
+  margin: 0;
+  padding: 0 32px 0 8px;
+  outline: none;
+  border: 1px solid var(--input);
+  border-radius: var(--radius-lg);
+  corner-shape: superellipse(1.5);
+  color: var(--foreground);
+  background-color: var(--secondary);
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--muted-foreground) 50%),
+    linear-gradient(135deg, var(--muted-foreground) 50%, transparent 50%);
+  background-position:
+    calc(100% - 14px) 50%,
+    calc(100% - 10px) 50%;
+  background-repeat: no-repeat;
+  background-size: 4px 4px;
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-select:not(:disabled):hover {
+  background-color: color-mix(in srgb, var(--foreground) 6%, var(--secondary));
+}
+
+.form-select:focus-visible {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-check {
+  display: flex;
+  min-height: 20px;
+  align-items: center;
+  gap: 6px;
+}
+
+.form-check-input {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  margin: 0;
+  border: 1px solid var(--input);
+  color: var(--primary-foreground);
+  background-color: transparent;
+  cursor: var(--cursor-interaction, default);
+  transition:
+    background-color 150ms,
+    border-color 150ms,
+    box-shadow 150ms;
+}
+
+.form-check:not(.form-switch) .form-check-input[type="checkbox"] {
+  border-color: var(--input);
+  border-radius: var(--radius-sm);
+  corner-shape: superellipse(1.5);
+  background-color: var(--secondary);
+  box-shadow: var(--shadow-sm);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input:not(:disabled):not(:checked):hover {
+  background-color: var(--card);
+}
+
+.form-check:not(.form-switch) .form-check-input[type="checkbox"]:checked {
+  border-color: var(--primary);
+  background-color: var(--primary);
+}
+
+.form-check:not(.form-switch)
+  .form-check-input[type="checkbox"]:checked::before {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--primary-foreground);
+  content: "";
+  mask: var(--checkmark-image) center / 12px 12px no-repeat;
+}
+
+.form-check-input[type="radio"] {
+  width: 14px;
+  height: 14px;
+  border-radius: var(--radius-full);
+}
+
+.form-check-input[type="radio"]:checked {
+  border: 2px solid var(--primary);
+  background:
+    radial-gradient(circle, var(--primary-foreground) 0 2.5px, transparent 3px),
+    var(--primary);
+}
+
+.form-check:not(.form-switch) .form-check-input:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.form-check:not(.form-switch) .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+}
+
+.form-switch .form-check-input:disabled,
+.form-switch .form-check-input:disabled + .form-check-label {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-check-label {
+  color: var(--foreground);
+  cursor: var(--cursor-interaction, default);
+}
+
+.form-switch .form-check-input {
+  position: relative;
+  width: 32px;
+  height: 20px;
+  border: 0;
+  border-radius: var(--radius-full);
+  background: var(--muted);
+  box-shadow: none;
+  transition: background-color 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input::before {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 16px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 1px solid light-dark(var(--primary-foreground), var(--foreground));
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+  box-shadow: var(--shadow-sm);
+  content: "";
+  transform: translate(2px, -50%);
+  transition: transform 200ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.form-switch .form-check-input:checked {
+  background: var(--primary);
+}
+
+.form-switch .form-check-input:checked::before {
+  transform: translate(14px, -50%);
+}
+
+.form-switch .form-check-input:focus-visible {
+  box-shadow: 0 0 0 2px var(--ring);
+}
+
+.form-range {
+  appearance: none;
+  display: block;
+  width: 100%;
+  height: 28px;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  accent-color: var(--primary);
+  background: linear-gradient(
+      color-mix(in srgb, var(--foreground) 7%, transparent),
+      color-mix(in srgb, var(--foreground) 7%, transparent)
+    )
+    center / 100% 2px no-repeat;
+}
+
+.form-range::-webkit-slider-runnable-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  margin-top: 4px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range::-moz-range-track {
+  height: 28px;
+  background: transparent;
+}
+
+.form-range::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  background: light-dark(var(--primary-foreground), var(--foreground));
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  border-color: var(--ring);
+  box-shadow: inset 0 0 0 1px var(--ring);
+}
+
+.form-range:disabled {
+  cursor: not-allowed;
+  opacity: 0.4;
+}
+
+.btn:not(.btn-primary, .viz-tile):is(
+    [aria-pressed="true"],
+    [aria-selected="true"],
+    .is-selected
+  ) {
+  border-color: var(--primary);
+  color: var(--primary-foreground);
+  background: var(--primary);
+}
+
+.btn.viz-tile:is([aria-pressed="true"], [aria-selected="true"], .is-selected) {
+  border-color: var(--primary);
+  box-shadow: inset 0 0 0 1px var(--primary);
+}
+
+.btn:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+#widget > svg {
+  width: 100%;
+}
+
+.text-warning,
+.text-destructive {
+  color: var(--destructive);
+}
+
+html>body{padding:0}</style>
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta property="og:type" content="website">
+<meta property="og:title" content="团队流水加密分享">
+<meta property="og:description" content="密码访问 · 数据加密">
+<meta property="og:image" content="./og-share.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="团队流水加密分享">
+<meta name="twitter:description" content="密码访问 · 数据加密">
+<meta name="twitter:image" content="./og-share.png">
+</head>
+<body>
+<style>
+#team-flow-drilldown-app {
+  display: grid;
+  gap: 1rem;
+  width: 100%;
+  color: var(--foreground);
+}
+
+#team-flow-drilldown-app > *,
+#team-flow-drilldown-app details,
+#team-flow-drilldown-app .section-block {
+  min-width: 0;
+  max-width: 100%;
+}
+
+#team-flow-drilldown-app .meta-line,
+#team-flow-drilldown-app .legend-line,
+#team-flow-drilldown-app .selected-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#team-flow-drilldown-app .scope-row {
+  justify-content: space-between;
+}
+
+#team-flow-drilldown-app .audit-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem 1.5rem;
+}
+
+#team-flow-drilldown-app .audit-list {
+  display: grid;
+  gap: 0.35rem;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+#team-flow-drilldown-app .pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 0.75rem;
+}
+
+#team-flow-drilldown-app .status-line {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  padding-block: 0.25rem;
+}
+
+#team-flow-drilldown-app .internal-pair-chart {
+  display: grid;
+  gap: 0.3rem;
+}
+
+#team-flow-drilldown-app .internal-pair-row {
+  display: grid;
+  grid-template-columns: minmax(10rem, 15rem) minmax(8rem, 1fr) minmax(7rem, 10rem);
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#team-flow-drilldown-app .internal-pair-track {
+  min-height: 0.8rem;
+  overflow: hidden;
+  background: var(--muted);
+  border-radius: 999px;
+}
+
+#team-flow-drilldown-app .internal-pair-bar {
+  display: block;
+  width: var(--pair-width);
+  min-height: 0.8rem;
+  background: var(--viz-series-3);
+}
+
+#team-flow-drilldown-app .internal-matrix td,
+#team-flow-drilldown-app .internal-matrix th {
+  text-align: center;
+}
+
+#team-flow-drilldown-app .file-name-cell {
+  width: 38%;
+}
+
+#team-flow-drilldown-app .file-status-cell {
+  width: 18%;
+}
+
+#team-flow-drilldown-app .section-block {
+  display: grid;
+  gap: 0.75rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.75rem;
+}
+
+#team-flow-drilldown-app details[data-foldable] {
+  border-top: 1px solid var(--border);
+}
+
+#team-flow-drilldown-app details[data-foldable] > summary {
+  cursor: pointer;
+  padding-block: 0.75rem;
+  color: var(--foreground);
+  font-weight: 500;
+}
+
+#team-flow-drilldown-app .rank-chart {
+  display: grid;
+  gap: 0.25rem;
+}
+
+#team-flow-drilldown-app .rank-row {
+  display: grid;
+  grid-template-columns: minmax(6rem, 12rem) minmax(8rem, 1fr) minmax(7rem, 10rem);
+  align-items: center;
+  gap: 0.5rem;
+  text-align: left;
+}
+
+#team-flow-drilldown-app .rank-name,
+#team-flow-drilldown-app .rank-value {
+  overflow-wrap: anywhere;
+}
+
+#team-flow-drilldown-app .rank-value {
+  text-align: right;
+}
+
+#team-flow-drilldown-app .net-track {
+  position: relative;
+  min-height: 1.25rem;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--muted);
+}
+
+#team-flow-drilldown-app .net-track::after {
+  content: "";
+  position: absolute;
+  inset-block: 0;
+  left: 50%;
+  width: 1px;
+  background: var(--border);
+}
+
+#team-flow-drilldown-app .net-bar {
+  position: absolute;
+  inset-block: 0;
+  width: var(--bar-width);
+}
+
+#team-flow-drilldown-app .net-bar.is-income {
+  left: 50%;
+  background: var(--viz-series-1);
+}
+
+#team-flow-drilldown-app .net-bar.is-expense {
+  right: 50%;
+  background: var(--viz-series-2);
+}
+
+#team-flow-drilldown-app .legend-swatch {
+  display: inline-block;
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 999px;
+}
+
+#team-flow-drilldown-app .legend-swatch.is-income {
+  background: var(--viz-series-1);
+}
+
+#team-flow-drilldown-app .legend-swatch.is-expense {
+  background: var(--viz-series-2);
+}
+
+#team-flow-drilldown-app table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+#team-flow-drilldown-app #object-table,
+#team-flow-drilldown-app #member-breakdown {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+}
+
+#team-flow-drilldown-app #object-table table,
+#team-flow-drilldown-app #member-breakdown table {
+  min-width: 54rem;
+}
+
+#team-flow-drilldown-app th,
+#team-flow-drilldown-app td {
+  padding: 0.55rem 0.45rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+#team-flow-drilldown-app th {
+  color: var(--muted-foreground);
+  font-weight: 500;
+  text-align: left;
+}
+
+#team-flow-drilldown-app th .btn {
+  justify-content: flex-start;
+  width: 100%;
+}
+
+#team-flow-drilldown-app .amount-cell {
+  text-align: right;
+}
+
+#team-flow-drilldown-app tr.is-selected td {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+#team-flow-drilldown-app .tx-expanded td {
+  background: var(--muted);
+  color: var(--foreground);
+}
+
+#team-flow-drilldown-app .tx-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem 1rem;
+}
+
+#team-flow-drilldown-app .tx-grid span {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+#team-flow-drilldown-app .monthly-wrap {
+  width: 100%;
+}
+
+#team-flow-drilldown-app .monthly-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--foreground);
+}
+
+#team-flow-drilldown-app .monthly-svg .axis-line,
+#team-flow-drilldown-app .monthly-svg .grid-line {
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+#team-flow-drilldown-app .monthly-svg .grid-line {
+  opacity: 0.6;
+}
+
+#team-flow-drilldown-app .monthly-svg text {
+  fill: var(--muted-foreground);
+}
+
+#team-flow-drilldown-app .monthly-svg .income-bar {
+  fill: var(--viz-series-1);
+}
+
+#team-flow-drilldown-app .monthly-svg .expense-bar {
+  fill: var(--viz-series-2);
+}
+
+#team-flow-drilldown-app .empty-state {
+  padding-block: 1rem;
+  color: var(--muted-foreground);
+}
+
+#team-flow-drilldown-app .nowrap {
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  #team-flow-drilldown-app .audit-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #team-flow-drilldown-app .internal-pair-row {
+    grid-template-columns: minmax(8rem, 1fr) minmax(6rem, 8rem);
+  }
+
+  #team-flow-drilldown-app .internal-pair-track,
+  #team-flow-drilldown-app .desktop-only {
+    display: none;
+  }
+
+  #team-flow-drilldown-app .rank-row {
+    grid-template-columns: minmax(5rem, 8rem) minmax(6rem, 1fr);
+  }
+
+  #team-flow-drilldown-app .rank-value {
+    grid-column: 1 / -1;
+    text-align: left;
+  }
+
+  #team-flow-drilldown-app .tx-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #team-flow-drilldown-app .hide-medium {
+    display: none;
+  }
+
+  #team-flow-drilldown-app #file-inventory-table thead {
+    display: none;
+  }
+
+  #team-flow-drilldown-app #file-inventory-table tr {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.25rem 0.75rem;
+    padding-block: 0.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  #team-flow-drilldown-app #file-inventory-table td {
+    padding: 0;
+    border-bottom: 0;
+  }
+
+  #team-flow-drilldown-app #file-inventory-table .file-name-cell,
+  #team-flow-drilldown-app #file-inventory-table .file-status-cell {
+    grid-column: 1 / -1;
+    width: auto;
+  }
+
+  #team-flow-drilldown-app #file-inventory-table .file-count-cell {
+    text-align: right;
+  }
+}
+
+@media (max-width: 460px) {
+  #team-flow-drilldown-app .hide-small {
+    display: none;
+  }
+
+  #team-flow-drilldown-app th,
+  #team-flow-drilldown-app td {
+    padding-inline: 0.3rem;
+  }
+}
+</style>
+
+<div id="team-flow-drilldown-app">
+  <div class="meta-line" aria-label="数据口径">
+    <span class="viz-badge">全部交易对象</span>
+    <span class="viz-badge">G列命中可筛选</span>
+    <span class="viz-badge">同名合并</span>
+    <span class="viz-badge">不拆卡号</span>
+    <span class="viz-badge">现金流≠会计盈亏</span>
+    <span id="privacy-mode"></span>
+    <span id="dataset-size" class="text-small text-muted"></span>
+    <span id="internal-dataset-size" class="text-small text-muted"></span>
+    <span id="generated-at" class="text-small text-muted"></span>
+  </div>
+
+  <div class="viz-controls scope-row" aria-label="分析口径">
+    <div class="viz-row">
+      <button type="button" class="btn btn-primary" data-scope="team" aria-pressed="true">团队合并口径</button>
+      <button type="button" class="btn" data-scope="group" aria-pressed="false">关联组口径</button>
+      <button type="button" class="btn" data-scope="personal" aria-pressed="false">个人贡献口径</button>
+      <button type="button" class="btn btn-ghost" data-jump="file-inventory-panel">流水文件清单</button>
+      <button type="button" class="btn btn-ghost" data-jump="internal-network-panel">团队内部网络</button>
+    </div>
+    <div class="viz-row">
+      <button type="button" class="btn btn-ghost" data-fold="expand">全部展开</button>
+      <button type="button" class="btn btn-ghost" data-fold="collapse">全部折叠</button>
+    </div>
+  </div>
+  <div id="scope-explanation" class="status-line" aria-live="polite"></div>
+
+  <div class="viz-controls" aria-label="筛选条件">
+    <label class="form-label" for="flow-search">搜索对象姓名、电话、卡号、银行、类型或涉及成员
+      <input id="flow-search" class="form-control" type="search" autocomplete="off" placeholder="按当前口径筛选">
+    </label>
+    <label class="form-label" for="priority-filter">复核优先级
+      <select id="priority-filter" class="form-select">
+        <option value="all">全部优先级</option>
+        <option value="P0">P0｜最高复核</option>
+        <option value="P1">P1｜重点复核</option>
+        <option value="P2">P2｜结构复核</option>
+        <option value="P3">P3｜常规复核</option>
+        <option value="PX">PX｜未在G列</option>
+      </select>
+    </label>
+    <label class="form-label" for="gmatch-filter">G列身份
+      <select id="gmatch-filter" class="form-select">
+        <option value="all">全部对象</option>
+        <option value="yes">仅G列命中</option>
+        <option value="no">仅未在G列</option>
+      </select>
+    </label>
+    <label class="form-label" for="net-direction-filter">净额方向
+      <select id="net-direction-filter" class="form-select">
+        <option value="all">全部方向</option>
+        <option value="income">仅净收入对象</option>
+        <option value="expense">仅净支出对象</option>
+        <option value="balanced">仅收支平衡对象</option>
+      </select>
+    </label>
+  </div>
+
+  <div class="viz-controls" aria-label="成员筛选">
+    <label id="member-filter-label" class="form-label" for="member-filter">涉及成员（只筛对象，金额仍为全团队）
+      <select id="member-filter" class="form-select"></select>
+    </label>
+    <button type="button" id="reset-filters" class="btn">重置筛选</button>
+    <button type="button" id="export-object-csv" class="btn btn-ghost">导出当前对象CSV</button>
+  </div>
+
+  <div id="current-filter-summary" class="selected-line text-small text-muted" aria-live="polite"></div>
+  <div id="coverage-summary" class="status-line text-small"></div>
+
+  <div class="viz-grid" aria-label="当前筛选金额汇总">
+    <div class="card viz-stat">
+      <span id="summary-income-label" class="text-muted">全部对象总收入</span>
+      <span id="summary-income" class="viz-stat-value">0.0万</span>
+      <span id="summary-income-context" class="text-small text-muted"></span>
+    </div>
+    <div class="card viz-stat">
+      <span id="summary-expense-label" class="text-muted">全部对象总支出</span>
+      <span id="summary-expense" class="viz-stat-value">0.0万</span>
+      <span id="summary-expense-context" class="text-small text-muted"></span>
+    </div>
+    <div class="card viz-stat">
+      <span id="summary-net-income-label" class="text-muted">净收入对象合计</span>
+      <span id="summary-net-income" class="viz-stat-value">0.0万</span>
+      <span id="summary-net-income-context" class="text-small text-muted"></span>
+    </div>
+    <div class="card viz-stat">
+      <span id="summary-net-expense-label" class="text-muted">净支出对象合计</span>
+      <span id="summary-net-expense" class="viz-stat-value">0.0万</span>
+      <span id="summary-net-expense-context" class="text-small text-muted"></span>
+    </div>
+  </div>
+
+  <details data-foldable>
+    <summary>数据范围、优先级与自检</summary>
+    <div class="audit-grid">
+      <div>
+        <strong>覆盖范围</strong>
+        <ul id="coverage-list" class="audit-list text-small"></ul>
+      </div>
+      <div>
+        <strong>复核优先级（不是风险定性）</strong>
+        <ul id="priority-policy-list" class="audit-list text-small"></ul>
+      </div>
+      <div>
+        <strong>方法口径</strong>
+        <ul id="method-note-list" class="audit-list text-small"></ul>
+      </div>
+      <div>
+        <strong>数据自检</strong>
+        <ul id="check-list" class="audit-list text-small"></ul>
+      </div>
+    </div>
+  </details>
+
+  <details id="file-inventory-panel" data-foldable>
+    <summary id="file-inventory-summary">纳入分析的流水文件清单</summary>
+    <div class="section-block">
+      <div id="file-inventory-status" class="status-line text-small" aria-live="polite"></div>
+      <div id="file-member-summary" class="status-line text-small"></div>
+      <div class="legend-line text-small text-muted">
+        <span>清单来自匹配底库构建记录；标为“重复文件”的来源保留用于追溯，但其流水不重复计入唯一底库。</span>
+      </div>
+      <div id="file-inventory-table"></div>
+    </div>
+  </details>
+
+  <section class="section-block" aria-labelledby="net-ranking-title">
+    <h2 id="net-ranking-title">团队/本人净收入与净支出下钻</h2>
+    <div class="legend-line text-small text-muted">
+      <span class="legend-swatch is-expense" aria-hidden="true"></span><span>左侧：净支出</span>
+      <span class="legend-swatch is-income" aria-hidden="true"></span><span>右侧：净收入</span>
+      <span>按当前主体显示净收入或净支出最大的20条；左右分开呈现。这是现金流排序，不是会计盈亏或风险结论。</span>
+    </div>
+    <div id="rank-chart" class="rank-chart" role="group" aria-label="绝对净额排名"></div>
+  </section>
+
+  <details data-foldable open>
+    <summary id="object-list-summary">交易对象列表</summary>
+    <div id="object-table"></div>
+    <div id="object-pager" class="pager" aria-label="对象列表分页"></div>
+  </details>
+
+  <details id="selected-panel" data-foldable open>
+    <summary id="selected-summary">对象下钻</summary>
+    <div class="section-block">
+      <div id="selected-context" class="selected-line"></div>
+
+      <div class="viz-grid" aria-label="所选对象金额汇总">
+        <div class="card viz-stat">
+          <span class="text-muted">总收入</span>
+          <span id="selected-income" class="viz-stat-value">0.0万</span>
+          <span id="selected-income-context" class="text-small text-muted"></span>
+        </div>
+        <div class="card viz-stat">
+          <span class="text-muted">总支出</span>
+          <span id="selected-expense" class="viz-stat-value">0.0万</span>
+          <span id="selected-expense-context" class="text-small text-muted"></span>
+        </div>
+        <div class="card viz-stat">
+          <span id="selected-net-income-label" class="text-muted">净收入</span>
+          <span id="selected-net-income" class="viz-stat-value">0.0万</span>
+          <span id="selected-net-income-context" class="text-small text-muted"></span>
+        </div>
+        <div class="card viz-stat">
+          <span id="selected-net-expense-label" class="text-muted">净支出</span>
+          <span id="selected-net-expense" class="viz-stat-value">0.0万</span>
+          <span id="selected-net-expense-context" class="text-small text-muted"></span>
+        </div>
+      </div>
+
+      <details data-foldable open>
+        <summary>账户本人分解</summary>
+        <div id="member-breakdown"></div>
+      </details>
+
+      <details data-foldable open>
+        <summary id="monthly-summary">收支时间分布</summary>
+        <div class="legend-line text-small text-muted">
+          <span class="legend-swatch is-income" aria-hidden="true"></span><span>收入</span>
+          <span class="legend-swatch is-expense" aria-hidden="true"></span><span>支出</span>
+          <span id="detail-filter-label"></span>
+        </div>
+        <div id="monthly-chart" class="monthly-wrap"></div>
+      </details>
+
+      <details data-foldable open>
+        <summary id="transaction-summary">逐笔交易</summary>
+        <div class="viz-row">
+          <button type="button" id="export-transaction-csv" class="btn btn-ghost">导出当前逐笔CSV</button>
+          <span id="transaction-card-note" class="text-small text-muted">逐笔同时显示x.x万和准确元数；完整卡号保持原样。</span>
+        </div>
+        <div id="transaction-table"></div>
+      </details>
+    </div>
+  </details>
+
+  <details id="internal-network-panel" data-foldable open>
+    <summary>团队内部资金网络（独立口径）</summary>
+    <div class="section-block">
+      <div class="status-line">
+        <span class="viz-badge">内部往来单列</span>
+        <span>团队合并口径下内部净额恒为0；这里保留成员之间的流向、头寸和来源证据，不并入上方全部外部对象收支。</span>
+      </div>
+
+      <div class="viz-grid" aria-label="团队内部资金网络汇总">
+        <div class="card viz-stat">
+          <span class="text-muted">唯一内部转账事件</span>
+          <span id="internal-event-count" class="viz-stat-value">0笔</span>
+          <span id="internal-event-context" class="text-small text-muted"></span>
+        </div>
+        <div class="card viz-stat">
+          <span class="text-muted">双边镜像覆盖</span>
+          <span id="internal-mirror-rate" class="viz-stat-value">0.00%</span>
+          <span id="internal-mirror-context" class="text-small text-muted"></span>
+        </div>
+        <div class="card viz-stat">
+          <span class="text-muted">唯一内部流转额</span>
+          <span id="internal-turnover" class="viz-stat-value">0.0万</span>
+          <span class="text-small text-muted">镜像双方只计一次，不是团队对外收入或支出</span>
+        </div>
+        <div class="card viz-stat">
+          <span class="text-muted">本人账户内部调拨</span>
+          <span id="self-transfer-count" class="viz-stat-value">0笔</span>
+          <span id="self-transfer-context" class="text-small text-muted"></span>
+        </div>
+      </div>
+
+      <div class="viz-controls" aria-label="内部逐笔筛选">
+        <label class="form-label" for="internal-member-filter">成员
+          <select id="internal-member-filter" class="form-select"></select>
+        </label>
+        <label class="form-label" for="internal-status-filter">证据状态
+          <select id="internal-status-filter" class="form-select">
+            <option value="all">全部状态</option>
+            <option value="mirror">双边镜像</option>
+            <option value="single">单边记录</option>
+          </select>
+        </label>
+        <button type="button" id="internal-reset" class="btn">重置内部筛选</button>
+        <button type="button" id="export-internal-csv" class="btn btn-ghost">导出内部逐笔CSV</button>
+      </div>
+      <div id="internal-filter-summary" class="selected-line text-small text-muted" aria-live="polite"></div>
+
+      <section class="section-block" aria-labelledby="internal-pair-title">
+        <h2 id="internal-pair-title">成员关系强度</h2>
+        <div class="legend-line text-small text-muted">
+          <span>按唯一内部事件流转额排序；颜色条只表示相对规模，方向净流见下方关系表。</span>
+        </div>
+        <div id="internal-pair-chart" class="internal-pair-chart" role="group" aria-label="成员关系流转额排名"></div>
+      </section>
+
+      <details data-foldable open>
+        <summary>成员内部头寸</summary>
+        <div id="internal-member-table"></div>
+      </details>
+
+      <details data-foldable open>
+        <summary id="self-transfer-summary">本人账户内部调拨</summary>
+        <div class="status-line text-small">
+          <span class="viz-badge">不计入对外收支</span>
+          <span>对手姓名命中账户本人或团队成员姓名、但未形成成员间配对的原始记录；完整保留逐笔，不做镜像合并。</span>
+        </div>
+        <div id="self-transfer-member-table"></div>
+        <div id="self-transfer-table"></div>
+        <div id="self-transfer-pager" class="pager" aria-label="本人账户内部调拨分页"></div>
+      </details>
+
+      <details data-foldable open>
+        <summary>关联组内部口径</summary>
+        <div class="status-line text-small">
+          <span class="viz-badge">最新分组</span>
+          <span>已按确认的关联组进行合并。组内成员互转及本人调拨不计入该组对外收支。</span>
+        </div>
+        <div id="related-group-internal-table"></div>
+      </details>
+
+      <details data-foldable>
+        <summary>成员关系汇总与方向矩阵</summary>
+        <div id="internal-pair-table"></div>
+        <div id="internal-matrix" class="internal-matrix desktop-only"></div>
+      </details>
+
+      <details data-foldable open>
+        <summary id="internal-relay-summary">与G列对象的24小时资金接力候选</summary>
+        <div class="status-line text-small">
+          <span class="viz-badge">仅是线索</span>
+          <span>金额差不超过5%、间隔不超过24小时的时序相似项；不等同于借贷、代收代付或资金用途结论。</span>
+        </div>
+        <div id="internal-relay-table"></div>
+        <div id="internal-relay-pager" class="pager" aria-label="资金接力候选分页"></div>
+      </details>
+
+      <details data-foldable>
+        <summary id="internal-event-summary">内部唯一事件逐笔下钻</summary>
+        <div id="internal-event-table"></div>
+        <div id="internal-event-pager" class="pager" aria-label="内部事件分页"></div>
+      </details>
+
+      <details data-foldable>
+        <summary>内部网络方法与自检</summary>
+        <div class="audit-grid">
+          <div><strong>方法口径</strong><ul id="internal-method-list" class="audit-list text-small"></ul></div>
+          <div><strong>数据自检</strong><ul id="internal-check-list" class="audit-list text-small"></ul></div>
+        </div>
+      </details>
+    </div>
+  </details>
+</div>
+
+<style>
+#team-flow-drilldown-app{visibility:hidden}
+#secure-share-gate{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;padding:22px;background:radial-gradient(circle at 18% 12%,#173d58 0,#081b2f 45%,#061524 100%);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:#f8f3e8}
+#secure-share-card{width:min(100%,430px);padding:30px 26px;border:1px solid rgba(226,188,116,.35);border-radius:24px;background:rgba(7,28,47,.92);box-shadow:0 26px 80px rgba(0,0,0,.38);backdrop-filter:blur(18px)}
+#secure-share-mark{display:grid;place-items:center;width:56px;height:56px;margin-bottom:18px;border-radius:18px;background:linear-gradient(145deg,#0d7180,#0b425b);font-size:28px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
+#secure-share-card h1{margin:0 0 8px;font-size:26px;letter-spacing:.03em;color:#fff7e8}
+#secure-share-card p{margin:0 0 22px;color:#b9c7d1;line-height:1.7;font-size:14px}
+#secure-share-form label{display:block;margin-bottom:8px;color:#f2d39a;font-weight:700;font-size:14px}
+#secure-share-password{box-sizing:border-box;width:100%;height:50px;padding:0 15px;border:1px solid #49677b;border-radius:13px;background:#061b2d;color:#fff;font:16px/1 system-ui;outline:none}
+#secure-share-password:focus{border-color:#e2bc74;box-shadow:0 0 0 3px rgba(226,188,116,.16)}
+#secure-share-submit{width:100%;height:50px;margin-top:13px;border:0;border-radius:13px;background:linear-gradient(135deg,#e9c781,#c99446);color:#102535;font-weight:800;font-size:16px;cursor:pointer}
+#secure-share-submit:disabled{cursor:wait;opacity:.65}
+#secure-share-status{min-height:23px;margin:12px 0 0!important;color:#a9bac6!important;text-align:center}
+#secure-share-status[data-state="error"]{color:#ffb4ab!important}
+#secure-share-note{display:flex;gap:9px;align-items:flex-start;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);color:#9eb0bd;font-size:12px;line-height:1.6}
+@media(max-width:480px){#secure-share-card{padding:25px 20px;border-radius:20px}#secure-share-card h1{font-size:23px}}
+</style>
+<section id="secure-share-gate" aria-labelledby="secure-share-title">
+  <div id="secure-share-card">
+    <div id="secure-share-mark" aria-hidden="true">🔐</div>
+    <h1 id="secure-share-title">团队流水加密分享</h1>
+    <p>完整分析数据已加密。请输入分享方单独提供的访问密码，数据只会在当前浏览器内解密。</p>
+    <form id="secure-share-form">
+      <label for="secure-share-password">访问密码</label>
+      <input id="secure-share-password" type="password" inputmode="text" autocomplete="current-password" enterkeyhint="go" required>
+      <button id="secure-share-submit" type="submit">解密并查看</button>
+      <p id="secure-share-status" role="status" aria-live="polite"></p>
+    </form>
+    <div id="secure-share-note"><span aria-hidden="true">◈</span><span>银行卡号已脱敏；请勿在公共群聊中同时发送链接和密码。</span></div>
+  </div>
+</section>
+<script>
+(async () => {
+  "use strict";
+
+  const encryptedPayloadPromise = fetch("./share-data.bin?v=1", { cache: "force-cache" }).then((response) => {
+    if (!response.ok) throw new Error("数据文件加载失败");
+    return response.arrayBuffer();
+  });
+
+  async function decryptPayload(password) {
+    if (!window.crypto?.subtle || typeof DecompressionStream === "undefined") {
+      throw new Error("浏览器版本过旧，请使用最新版Chrome");
+    }
+    const bytes = new Uint8Array(await encryptedPayloadPromise);
+    const textDecoder = new TextDecoder();
+    const textEncoder = new TextEncoder();
+    if (textDecoder.decode(bytes.slice(0, 4)) !== "TFS1") throw new Error("数据文件格式错误");
+    const iterations = new DataView(bytes.buffer, bytes.byteOffset + 4, 4).getUint32(0, false);
+    const salt = bytes.slice(8, 24);
+    const iv = bytes.slice(24, 36);
+    const ciphertextWithTag = bytes.slice(36);
+    const keyMaterial = await crypto.subtle.importKey(
+      "raw",
+      textEncoder.encode(password),
+      "PBKDF2",
+      false,
+      ["deriveKey"]
+    );
+    const key = await crypto.subtle.deriveKey(
+      { name: "PBKDF2", hash: "SHA-256", salt, iterations },
+      keyMaterial,
+      { name: "AES-GCM", length: 256 },
+      false,
+      ["decrypt"]
+    );
+    const decrypted = await crypto.subtle.decrypt(
+      {
+        name: "AES-GCM",
+        iv,
+        additionalData: textEncoder.encode("TEAMFLOW-SHARE-v1"),
+        tagLength: 128,
+      },
+      key,
+      ciphertextWithTag
+    );
+    const stream = new Blob([decrypted]).stream().pipeThrough(new DecompressionStream("gzip"));
+    return JSON.parse(await new Response(stream).text());
+  }
+
+  async function unlockEncryptedData() {
+    const gate = document.getElementById("secure-share-gate");
+    const form = document.getElementById("secure-share-form");
+    const input = document.getElementById("secure-share-password");
+    const button = document.getElementById("secure-share-submit");
+    const status = document.getElementById("secure-share-status");
+    if (!gate || !form || !(input instanceof HTMLInputElement) || !(button instanceof HTMLButtonElement) || !status) {
+      throw new Error("密码页面初始化失败");
+    }
+    input.focus();
+    return new Promise((resolve) => {
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        if (!input.value || button.disabled) return;
+        button.disabled = true;
+        status.textContent = "正在校验密码并解密数据…";
+        status.dataset.state = "loading";
+        try {
+          const data = await decryptPayload(input.value);
+          input.value = "";
+          gate.remove();
+          const app = document.getElementById("team-flow-drilldown-app");
+          if (app) app.style.visibility = "visible";
+          resolve(data);
+        } catch (error) {
+          input.value = "";
+          input.focus();
+          status.textContent = error instanceof Error && /浏览器|加载|格式/.test(error.message)
+            ? error.message
+            : "密码错误，请重试。";
+          status.dataset.state = "error";
+          button.disabled = false;
+        }
+      });
+    });
+  }
+
+
+  const DATA = await unlockEncryptedData();
+  const root = document.getElementById("team-flow-drilldown-app");
+  if (!root) return;
+
+  const byId = (id) => root.querySelector(`#${id}`);
+  const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (ch) => {
+    if (ch.charCodeAt(0) === 34) return "&quot;";
+    return ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;" })[ch];
+  });
+  const escapeAttr = escapeHtml;
+  const round4 = (value) => Math.round((Number(value) + Number.EPSILON) * 10000) / 10000;
+  const formatWan = (value) => `${Number(value || 0).toLocaleString("zh-CN", { minimumFractionDigits: 1, maximumFractionDigits: 1 })}万`;
+  const formatYuan = (value) => `${Number(value || 0).toLocaleString("zh-CN", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}元`;
+  const formatWanExact = (value) => {
+    const number = Number(value || 0);
+    const wan = formatWan(number);
+    return number !== 0 && Math.abs(number) < 0.05 ? `${wan}（${formatYuan(number * 10000)}）` : wan;
+  };
+  const formatPercent = (numerator, denominator) => denominator
+    ? `${(Number(numerator) / Number(denominator) * 100).toFixed(2)}%`
+    : "0.00%";
+  const netText = (net) => Number(net) >= 0
+    ? `净收入 ${formatWanExact(Math.abs(net))}`
+    : `净支出 ${formatWanExact(Math.abs(net))}`;
+  const memberOf = (tx) => DATA.dict.members[tx.m] || "";
+  const groupOf = (tx) => DATA.dict.memberGroups[tx.m] || `${memberOf(tx)}组`;
+  const internalMemberOf = (index) => DATA.dict.members[index] || "";
+  const bankOf = (tx) => DATA.dict.banks[tx.b] || "";
+  const fileOf = (tx) => DATA.dict.files[tx.sf] || "";
+  const parserOf = (tx) => DATA.dict.parsers[tx.pa] || "";
+  const priorityOrder = { P0: 0, P1: 1, P2: 2, P3: 3, PX: 4 };
+  const groupExtraKeys = ["n", "d", "t", "m", "b", "a", "z", "x", "y", "bal", "raw", "ca", "cb", "ty", "sm", "no", "sf", "pg", "id", "pa", "q"];
+  const groupExtraTransactions = DATA.groupExtraTx.map((row) => Array.isArray(row)
+    ? Object.fromEntries(groupExtraKeys.map((key, index) => [key, row[index]]))
+    : row);
+
+  const teamByName = new Map(DATA.team.map((row) => [row.n, row]));
+  const groupByKey = new Map(DATA.groups.map((row) => [`${row.m}\u0000${row.n}`, row]));
+  const txByName = new Map();
+  for (const tx of DATA.tx) {
+    if (!txByName.has(tx.n)) txByName.set(tx.n, []);
+    txByName.get(tx.n).push(tx);
+  }
+  const groupTxByName = new Map();
+  for (const tx of [...DATA.tx, ...groupExtraTransactions]) {
+    if (!groupTxByName.has(tx.n)) groupTxByName.set(tx.n, []);
+    groupTxByName.get(tx.n).push(tx);
+  }
+  const internalEventById = new Map(DATA.internal.events.map((row) => [row.id, row]));
+
+  const state = {
+    scope: "team",
+    search: "",
+    priority: "all",
+    gmatch: "all",
+    netDirection: "all",
+    member: "all",
+    sortKey: "absNet",
+    sortDirection: -1,
+    page: 1,
+    pageSize: 25,
+    selectedName: "",
+    selectedMember: "",
+    detailMember: "",
+    openTransaction: "",
+    internalMember: "all",
+    internalStatus: "all",
+    internalPage: 1,
+    internalPageSize: 50,
+    openInternalEvent: "",
+    relayPage: 1,
+    relayPageSize: 25,
+    selfTransferPage: 1,
+    selfTransferPageSize: 50,
+  };
+
+  function restoreState() {
+    try {
+      const params = new URLSearchParams(location.hash.replace(/^#/, ""));
+      if (["team", "group", "personal"].includes(params.get("scope"))) state.scope = params.get("scope");
+      if (["all", "P0", "P1", "P2", "P3", "PX"].includes(params.get("priority"))) state.priority = params.get("priority");
+      if (["all", "yes", "no"].includes(params.get("gmatch"))) state.gmatch = params.get("gmatch");
+      if (["all", "income", "expense", "balanced"].includes(params.get("netDirection"))) state.netDirection = params.get("netDirection");
+      if (params.get("member")) state.member = params.get("member");
+      if (params.get("search")) state.search = params.get("search");
+      if (params.get("name")) state.selectedName = params.get("name");
+      if (params.get("selectedMember")) state.selectedMember = params.get("selectedMember");
+      state.detailMember = state.scope === "personal" ? state.selectedMember : "";
+    } catch {}
+  }
+
+  function persistState() {
+    try {
+      const params = new URLSearchParams();
+      params.set("scope", state.scope);
+      if (state.priority !== "all") params.set("priority", state.priority);
+      if (state.gmatch !== "all") params.set("gmatch", state.gmatch);
+      if (state.netDirection !== "all") params.set("netDirection", state.netDirection);
+      if (state.member !== "all") params.set("member", state.member);
+      if (state.search) params.set("search", state.search);
+      if (state.selectedName) params.set("name", state.selectedName);
+      if (state.selectedMember) params.set("selectedMember", state.selectedMember);
+      history.replaceState(null, "", `${location.pathname}${location.search}#${params}`);
+    } catch {}
+  }
+
+  function csvCell(value) {
+    const text = String(value ?? "");
+    return /[",\r\n]/.test(text) ? `"${text.replaceAll('"', '""')}"` : text;
+  }
+
+  function downloadCsv(filename, columns, rows) {
+    const lines = [columns.map((column) => csvCell(column.label)).join(",")];
+    for (const row of rows) lines.push(columns.map((column) => csvCell(column.value(row))).join(","));
+    const blob = new Blob(["\uFEFF", lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = filename;
+    link.click();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+  }
+
+  async function copyText(value, button) {
+    try {
+      await navigator.clipboard.writeText(value);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = value;
+      document.body.append(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      textarea.remove();
+    }
+    const previous = button.textContent;
+    button.textContent = "已复制";
+    setTimeout(() => { button.textContent = previous; }, 1200);
+  }
+
+  function renderAudit() {
+    const c = DATA.meta.coverage;
+    const passedChecks = DATA.meta.checks.filter((row) => row.status === "通过").length;
+    byId("coverage-summary").innerHTML = `<span class="viz-badge">全对象范围</span><span>外部对象 ${c.allObjectCount}个 / ${c.allObjectTransactions}笔 · G列命中 ${c.matchedNames}个 / ${c.matchedTransactions}笔 · 成员间${c.internalTransactions}条 · 本人调拨${c.selfTransferTransactions}条 · 自检 ${passedChecks}/${DATA.meta.checks.length} 通过</span>`;
+    byId("coverage-list").innerHTML = [
+      `G列：${c.gCells}格；${c.validNameRows}条姓名记录；${c.phoneOnlyRows}条仅手机号记录`,
+      `唯一姓名：${c.uniqueTargetNames}个；精确命中${c.matchedNames}个（${formatPercent(c.matchedNames, c.uniqueTargetNames)}）；未命中${c.unmatchedNames}个`,
+      `全部外部对象：${c.allObjectCount}个、${c.allObjectTransactions}笔；其中G列命中${c.matchedNames}个、${c.matchedTransactions}笔`,
+      `未在G列对象：${c.nonGObjectCount}个；账号对象${c.accountOnlyObjectCount}个；无姓名无账号对象${c.unknownObjectCount}个；中性记录${c.neutralTransactions}笔`,
+      `底库唯一流水：${c.dbUniqueTransactions}笔 = 外部对象${c.allObjectTransactions}笔 + 团队成员间${c.internalTransactions}条 + 本人账户调拨${c.selfTransferTransactions}条`,
+      `重复来源已排除：${c.duplicateRowsExcluded}条；纳入团队账户组：${c.teamAccountGroups}组`,
+    ].map((text) => `<li>${escapeHtml(text)}</li>`).join("");
+    byId("priority-policy-list").innerHTML = DATA.meta.priorityPolicy.map((row) => {
+      const count = DATA.meta.priorityCounts[row.code] || 0;
+      return `<li><strong>${escapeHtml(row.code)}</strong>（${count}个）：${escapeHtml(row.label)}</li>`;
+    }).join("");
+    byId("method-note-list").innerHTML = [...DATA.meta.methodNotes, ...DATA.meta.groupMethodNotes].map((text) => `<li>${escapeHtml(text)}</li>`).join("");
+    byId("check-list").innerHTML = DATA.meta.checks.map((row) => `<li>${escapeHtml(row.status === "通过" ? "通过" : "需复核")}｜${escapeHtml(row.check)}</li>`).join("");
+    byId("generated-at").textContent = `生成：${String(DATA.meta.generated || "").replace("T", " ")}`;
+  }
+
+  function renderFileInventory() {
+    const meta = DATA.files.meta;
+    const rows = DATA.files.rows;
+    byId("file-inventory-summary").textContent = `纳入分析的流水文件清单（${meta.processed}/${meta.total}份已处理）`;
+    byId("file-inventory-status").innerHTML = [
+      `<span class="viz-badge">已处理 ${meta.processed}/${meta.total}份</span>`,
+      `<span class="viz-badge">锁定 ${meta.locked}份</span>`,
+      `<span>原始流水 ${meta.rawRows.toLocaleString("zh-CN")}条 · 唯一来源 ${meta.uniqueRows.toLocaleString("zh-CN")}条 · 排除重复 ${meta.duplicateRows.toLocaleString("zh-CN")}条 · 可检索页面 ${meta.pages.toLocaleString("zh-CN")}页</span>`,
+    ].join("");
+
+    const memberMap = new Map();
+    for (const row of rows) {
+      const member = internalMemberOf(row.m);
+      if (!memberMap.has(member)) memberMap.set(member, { files: 0, rows: 0, duplicateFiles: 0 });
+      const summary = memberMap.get(member);
+      summary.files += 1;
+      summary.rows += row.tx;
+      if (row.dup) summary.duplicateFiles += 1;
+    }
+    byId("file-member-summary").innerHTML = [...memberMap.entries()].map(([member, summary]) => (
+      `<span class="viz-badge">${escapeHtml(member)} ${summary.files}份 · ${summary.rows.toLocaleString("zh-CN")}条${summary.duplicateFiles ? ` · 重复文件${summary.duplicateFiles}份` : ""}</span>`
+    )).join("");
+
+    const body = rows.map((row) => {
+      const file = DATA.dict.files[row.f] || "—";
+      const bank = DATA.dict.banks[row.b] || "—";
+      const member = internalMemberOf(row.m);
+      const account = row.a || "—";
+      const dateRange = row.ds && row.de ? `${row.ds} 至 ${row.de}` : (row.ds || row.de || "—");
+      const typePages = `${row.ty || "—"}${row.pg ? ` · ${row.pg}页` : ""}`;
+      const status = row.dup ? "重复文件｜不重复计入" : "已纳入唯一底库";
+      const statusClass = row.dup ? "text-destructive" : "";
+      return `<tr>
+        <td class="file-name-cell"><strong>${escapeHtml(file)}</strong>${row.sm ? `<br><span class="text-small text-muted">内含：${escapeHtml(row.sm)}</span>` : ""}<br><span class="text-small text-muted">${escapeHtml(member)} · ${escapeHtml(bank)} · ${escapeHtml(account)}</span></td>
+        <td class="file-date-cell">${escapeHtml(dateRange)}</td>
+        <td class="hide-small">${escapeHtml(typePages)}<br><span class="text-small text-muted">${escapeHtml(row.pw || "—")}</span></td>
+        <td class="amount-cell file-count-cell">${row.tx.toLocaleString("zh-CN")}条</td>
+        <td class="file-status-cell ${statusClass}">${escapeHtml(status)}<br><span class="text-small text-muted">${escapeHtml(row.ps || "—")}</span></td>
+      </tr>`;
+    }).join("");
+    byId("file-inventory-table").innerHTML = `<table>
+      <caption class="sr-only">纳入团队流水匹配底库的全部源文件</caption>
+      <thead><tr><th class="file-name-cell">来源文件 / 本人 / 银行 / 账户</th><th>日期范围</th><th class="hide-small">格式 / 页数</th><th class="amount-cell">抽取流水</th><th class="file-status-cell">底库状态</th></tr></thead>
+      <tbody>${body}</tbody>
+    </table>`;
+  }
+
+  function rowMembers(row) {
+    return state.scope === "team" ? row.ms : [row.m];
+  }
+
+  function filteredRows() {
+    const search = state.search.trim().toLowerCase();
+    const base = state.scope === "team" ? DATA.team : (state.scope === "group" ? DATA.groups : DATA.people);
+    const rows = base.filter((row) => {
+      if (state.priority !== "all" && row.p !== state.priority) return false;
+      if (state.gmatch === "yes" && row.gm !== 1) return false;
+      if (state.gmatch === "no" && row.gm === 1) return false;
+      if (state.netDirection === "income" && row.ni <= 0) return false;
+      if (state.netDirection === "expense" && row.ne <= 0) return false;
+      if (state.netDirection === "balanced" && (row.ni > 0 || row.ne > 0)) return false;
+      if (state.member !== "all" && !rowMembers(row).includes(state.member)) return false;
+      if (search && !row.q.includes(search)) return false;
+      return true;
+    });
+    rows.sort((a, b) => compareRows(a, b));
+    return rows;
+  }
+
+  function compareRows(a, b) {
+    const key = state.sortKey;
+    let result = 0;
+    if (key === "name") result = a.n.localeCompare(b.n, "zh-CN") || String(a.m || "").localeCompare(String(b.m || ""), "zh-CN");
+    else if (key === "priority") result = priorityOrder[a.p] - priorityOrder[b.p];
+    else if (key === "income") result = a.i - b.i;
+    else if (key === "expense") result = a.e - b.e;
+    else if (key === "netIncome") result = a.ni - b.ni;
+    else if (key === "netExpense") result = a.ne - b.ne;
+    else if (key === "net") result = a.net - b.net;
+    else if (key === "turnover") result = a.turn - b.turn;
+    else if (key === "transactions") result = a.tx - b.tx;
+    else result = Math.abs(a.net) - Math.abs(b.net);
+    if (result === 0) result = a.n.localeCompare(b.n, "zh-CN");
+    return result * state.sortDirection;
+  }
+
+  function totalsFor(rows) {
+    const totals = rows.reduce((acc, row) => {
+      acc.income += Number(row.i || 0);
+      acc.expense += Number(row.e || 0);
+      acc.netIncome += Number(row.ni || 0);
+      acc.netExpense += Number(row.ne || 0);
+      acc.transactions += Number(row.tx || 0);
+      return acc;
+    }, { income: 0, expense: 0, netIncome: 0, netExpense: 0, transactions: 0 });
+    totals.income = round4(totals.income);
+    totals.expense = round4(totals.expense);
+    totals.netIncome = round4(totals.netIncome);
+    totals.netExpense = round4(totals.netExpense);
+    totals.net = round4(totals.income - totals.expense);
+    return totals;
+  }
+
+  function updateScopeButtons() {
+    root.querySelectorAll("[data-scope]").forEach((button) => {
+      const active = button.dataset.scope === state.scope;
+      button.setAttribute("aria-pressed", String(active));
+      button.classList.toggle("btn-primary", active);
+    });
+    const isTeam = state.scope === "team";
+    const isGroup = state.scope === "group";
+    byId("member-filter-label").firstChild.textContent = isTeam
+      ? "涉及成员（只筛对象，金额仍为全团队）"
+      : (isGroup ? "关联主体（金额按所选组计算）" : "账户本人（金额只计算该成员）");
+    byId("summary-income-label").textContent = isTeam ? "团队总收入" : (isGroup ? "关联组总收入" : "账户本人总收入");
+    byId("summary-expense-label").textContent = isTeam ? "团队总支出" : (isGroup ? "关联组总支出" : "账户本人总支出");
+    byId("summary-net-income-label").textContent = isTeam ? "净收入对象合计" : (isGroup ? "关联组净收入对象合计" : "本人净收入对象合计");
+    byId("summary-net-expense-label").textContent = isTeam ? "净支出对象合计" : (isGroup ? "关联组净支出对象合计" : "本人净支出对象合计");
+    const memberText = state.member === "all" ? "全部成员" : state.member;
+    byId("scope-explanation").innerHTML = isTeam
+      ? `<span class="viz-badge">团队主体</span><span>展示全部外部对象；有姓名按同名合并，不拆卡号。${escapeHtml(memberText)}用于筛对象，金额始终汇总全团队。</span>`
+      : (isGroup
+        ? `<span class="viz-badge">关联组主体</span><span>已按确认的关联组计算；组内互转不计对外收支，不同关联组之间的往来计入各组现金流。${escapeHtml(state.member === "all" ? "全部关联组" : state.member)}。</span>`
+        : `<span class="viz-badge">个人主体</span><span>${escapeHtml(memberText)}；每行和汇总均只计算对应账户本人的现金流。</span>`);
+  }
+
+  function renderSummary(rows) {
+    const totals = totalsFor(rows);
+    const distinctObjects = new Set(rows.map((row) => row.n)).size;
+    const unitLabel = state.scope === "team" ? `${distinctObjects}个对象` : (state.scope === "group" ? `${rows.length}条对象×关联组` : `${rows.length}条对象×本人`);
+    const scopeText = state.scope === "team"
+      ? (state.member === "all" ? "团队主体" : `团队主体；对象涉及${state.member}，金额仍为全团队`)
+      : (state.scope === "group"
+        ? (state.member === "all" ? "关联组贡献合计" : `关联主体：${state.member}`)
+        : (state.member === "all" ? "个人贡献合计" : `账户本人：${state.member}`));
+    byId("current-filter-summary").textContent = `${scopeText} · ${unitLabel} · ${totals.transactions}笔交易 · 净收入对象合计${formatWanExact(totals.netIncome)} · 净支出对象合计${formatWanExact(totals.netExpense)}`;
+    byId("summary-income").textContent = formatWanExact(totals.income);
+    byId("summary-expense").textContent = formatWanExact(totals.expense);
+    byId("summary-net-income").textContent = formatWanExact(totals.netIncome);
+    byId("summary-net-expense").textContent = formatWanExact(totals.netExpense);
+    byId("summary-income-context").textContent = state.scope === "team" ? "团队从对象收到" : (state.scope === "group" ? "关联组从对象收到" : "账户本人从对象收到");
+    byId("summary-expense-context").textContent = state.scope === "team" ? "团队向对象付出" : (state.scope === "group" ? "关联组向对象付出" : "账户本人向对象付出");
+    byId("summary-net-income-context").textContent = "逐对象计算收入大于支出的差额后合计";
+    byId("summary-net-expense-context").textContent = "逐对象计算支出大于收入的差额后合计";
+  }
+
+  function recordLabel(row) {
+    return state.scope === "team" ? row.n : `${row.n} · ${row.m}`;
+  }
+
+  function isRecordSelected(row) {
+    if (row.n !== state.selectedName) return false;
+    return state.scope === "team" || row.m === state.selectedMember;
+  }
+
+  function selectionAttributes(row) {
+    return `data-select-name="${escapeAttr(row.n)}" data-select-member="${escapeAttr(row.m || "")}"`;
+  }
+
+  function renderRankChart(rows) {
+    const chart = byId("rank-chart");
+    const topRows = rows.slice(0, 20);
+    if (!topRows.length) {
+      chart.innerHTML = '<div class="empty-state">当前筛选没有匹配对象。</div>';
+      return;
+    }
+    const maxAbs = Math.max(...topRows.map((row) => Math.abs(row.net)), 0.0001);
+    chart.innerHTML = topRows.map((row) => {
+      const width = Math.min(49, Math.max(0.4, Math.abs(row.net) / maxAbs * 49));
+      const directionClass = row.ne > 0 ? "is-expense" : "is-income";
+      const selected = isRecordSelected(row);
+      const separatedNet = row.ni > 0 ? `净收入 ${formatWanExact(row.ni)}` : (row.ne > 0 ? `净支出 ${formatWanExact(row.ne)}` : "收支平衡");
+      const tip = `总收入 ${formatWanExact(row.i)}；总支出 ${formatWanExact(row.e)}；${separatedNet}`;
+      return `<button type="button" class="btn btn-ghost btn-block rank-row" ${selectionAttributes(row)} aria-pressed="${selected}" data-tooltip="${escapeAttr(tip)}">
+        <span class="rank-name">${escapeHtml(recordLabel(row))}</span>
+        <span class="net-track" aria-hidden="true"><span class="net-bar ${directionClass}" style="--bar-width:${width}%"></span></span>
+        <span class="rank-value">${escapeHtml(separatedNet)}</span>
+      </button>`;
+    }).join("");
+  }
+
+  function sortHeader(label, key, extraClass = "") {
+    const active = state.sortKey === key;
+    const arrow = active ? (state.sortDirection > 0 ? " ↑" : " ↓") : "";
+    return `<th class="${extraClass}"><button type="button" class="btn btn-ghost" data-sort="${key}" aria-label="按${escapeAttr(label)}排序">${escapeHtml(label + arrow)}</button></th>`;
+  }
+
+  function renderObjectTable(rows) {
+    byId("object-list-summary").textContent = `交易对象列表（${rows.length}条）`;
+    const container = byId("object-table");
+    const pager = byId("object-pager");
+    if (!rows.length) {
+      container.innerHTML = '<div class="empty-state">当前筛选没有匹配对象。</div>';
+      pager.innerHTML = "";
+      return;
+    }
+    const pageCount = Math.max(1, Math.ceil(rows.length / state.pageSize));
+    state.page = Math.min(Math.max(1, state.page), pageCount);
+    const start = (state.page - 1) * state.pageSize;
+    const visibleRows = rows.slice(start, start + state.pageSize);
+    const personHeader = state.scope === "personal" ? "账户本人" : (state.scope === "group" ? "关联主体" : "团队成员");
+    const body = visibleRows.map((row) => {
+      const selected = isRecordSelected(row);
+      const members = state.scope === "team" ? row.ms.join("、") : row.m;
+      return `<tr class="${selected ? "is-selected" : ""}">
+        <td class="hide-medium"><span class="viz-badge">${escapeHtml(row.p)}</span></td>
+        <td><strong>${escapeHtml(row.n)}</strong><br><span class="text-small text-muted">${row.gm === 1 ? "G列命中" : "未在G列"} · ${escapeHtml(row.ot || "姓名对象")} · ${escapeHtml(row.c || "无电话")}</span></td>
+        <td class="hide-small">${escapeHtml(members)}</td>
+        <td class="amount-cell">${formatWanExact(row.i)}</td>
+        <td class="amount-cell">${formatWanExact(row.e)}</td>
+        <td class="amount-cell">${formatWanExact(row.ni)}</td>
+        <td class="amount-cell">${formatWanExact(row.ne)}</td>
+        <td class="amount-cell hide-medium">${row.tx}</td>
+        <td><button type="button" class="btn btn-ghost" ${selectionAttributes(row)} aria-label="下钻${escapeAttr(recordLabel(row))}">下钻</button></td>
+      </tr>`;
+    }).join("");
+    container.innerHTML = `<table>
+      <caption class="sr-only">团队或账户本人对全部交易对象的收入、支出、净收入与净支出</caption>
+      <thead><tr>
+        ${sortHeader("优先级", "priority", "hide-medium")}
+        ${sortHeader("交易对象", "name")}
+        <th class="hide-small">${escapeHtml(personHeader)}</th>
+        ${sortHeader("总收入", "income")}
+        ${sortHeader("总支出", "expense")}
+        ${sortHeader("净收入", "netIncome")}
+        ${sortHeader("净支出", "netExpense")}
+        ${sortHeader("笔数", "transactions", "hide-medium")}
+        <th>操作</th>
+      </tr></thead>
+      <tbody>${body}</tbody>
+    </table>`;
+    pager.innerHTML = `<span class="text-small text-muted">第${state.page}/${pageCount}页 · 显示${start + 1}-${Math.min(start + state.pageSize, rows.length)}条</span>
+      <button type="button" class="btn btn-ghost" data-page="prev" ${state.page === 1 ? "disabled" : ""}>上一页</button>
+      <button type="button" class="btn btn-ghost" data-page="next" ${state.page === pageCount ? "disabled" : ""}>下一页</button>`;
+  }
+
+  function selectedTransactions() {
+    const all = state.scope === "group" ? (groupTxByName.get(state.selectedName) || []) : (txByName.get(state.selectedName) || []);
+    if (state.scope === "group" && state.selectedMember) {
+      return all.filter((tx) => groupOf(tx) === state.selectedMember);
+    }
+    if (state.scope === "personal" && state.selectedMember) {
+      return all.filter((tx) => memberOf(tx) === state.selectedMember);
+    }
+    return all;
+  }
+
+  function visibleDetailTransactions() {
+    const all = state.scope === "group" ? (groupTxByName.get(state.selectedName) || []) : (txByName.get(state.selectedName) || []);
+    if (state.detailMember) return all.filter((tx) => memberOf(tx) === state.detailMember);
+    return state.scope === "personal" || state.scope === "group" ? selectedTransactions() : all;
+  }
+
+  function totalsForTransactions(transactions) {
+    const totals = transactions.reduce((acc, tx) => {
+      if (tx.z === 1) acc.income += tx.x;
+      else if (tx.z === -1) acc.expense += tx.x;
+      return acc;
+    }, { income: 0, expense: 0 });
+    totals.income = round4(totals.income);
+    totals.expense = round4(totals.expense);
+    totals.net = round4(totals.income - totals.expense);
+    totals.netIncome = round4(Math.max(totals.net, 0));
+    totals.netExpense = round4(Math.max(-totals.net, 0));
+    return totals;
+  }
+
+  function renderSelectedSummary() {
+    const profile = state.scope === "group"
+      ? groupByKey.get(`${state.selectedMember}\u0000${state.selectedName}`)
+      : teamByName.get(state.selectedName);
+    const transactions = selectedTransactions();
+    if (!profile || !transactions.length) {
+      byId("selected-summary").textContent = "对象下钻";
+      byId("selected-context").innerHTML = '<span class="empty-state">请先选择一个交易对象。</span>';
+      return false;
+    }
+    const totals = totalsForTransactions(transactions);
+    const scopeLabel = state.scope === "team" ? "团队主体" : (state.scope === "group" ? `关联主体：${state.selectedMember}` : `账户本人：${state.selectedMember}`);
+    byId("selected-summary").textContent = `对象下钻｜${state.selectedName}${state.scope === "team" ? "" : ` · ${state.selectedMember}`}`;
+    byId("selected-context").innerHTML = `
+      <span class="viz-badge">${escapeHtml(profile.p)}</span>
+      <span class="viz-badge">${profile.gm === 1 ? "G列命中" : "未在G列"}</span>
+      <strong>${escapeHtml(state.selectedName)}</strong>
+      <span>${escapeHtml(scopeLabel)}</span>
+      <span class="text-small">${escapeHtml(profile.r || "常规复核")}</span>
+      <span class="text-small text-muted">${escapeHtml(profile.ot || "姓名对象")} · ${escapeHtml(profile.nr || "流水对象")} · ${escapeHtml(profile.fd)} 至 ${escapeHtml(profile.ld)} · ${escapeHtml(profile.c || "无电话")}</span>`;
+    byId("selected-income").textContent = formatWanExact(totals.income);
+    byId("selected-expense").textContent = formatWanExact(totals.expense);
+    byId("selected-net-income").textContent = formatWanExact(totals.netIncome);
+    byId("selected-net-expense").textContent = formatWanExact(totals.netExpense);
+    byId("selected-net-income-label").textContent = state.scope === "team" ? "团队净收入" : (state.scope === "group" ? "关联组净收入" : "本人净收入");
+    byId("selected-net-expense-label").textContent = state.scope === "team" ? "团队净支出" : (state.scope === "group" ? "关联组净支出" : "本人净支出");
+    byId("selected-income-context").textContent = state.scope === "team" ? "团队从该对象收到" : (state.scope === "group" ? "关联组从该对象收到" : "本人从该对象收到");
+    byId("selected-expense-context").textContent = state.scope === "team" ? "团队向该对象付出" : (state.scope === "group" ? "关联组向该对象付出" : "本人向该对象付出");
+    byId("selected-net-income-context").textContent = totals.netIncome > 0 ? "总收入减总支出" : "该对象无净收入";
+    byId("selected-net-expense-context").textContent = totals.netExpense > 0 ? "总支出减总收入" : "该对象无净支出";
+    return true;
+  }
+
+  function aggregateMembers(transactions) {
+    const map = new Map();
+    for (const tx of transactions) {
+      const member = memberOf(tx);
+      if (!map.has(member)) map.set(member, { member, transactions: 0, income: 0, expense: 0 });
+      const row = map.get(member);
+      row.transactions += 1;
+      if (tx.z === 1) row.income += tx.x;
+      else if (tx.z === -1) row.expense += tx.x;
+    }
+    return [...map.values()].map((row) => ({
+      ...row,
+      income: round4(row.income),
+      expense: round4(row.expense),
+      net: round4(row.income - row.expense),
+      netIncome: round4(Math.max(row.income - row.expense, 0)),
+      netExpense: round4(Math.max(row.expense - row.income, 0)),
+      turnover: round4(row.income + row.expense),
+    })).sort((a, b) => b.turnover - a.turnover);
+  }
+
+  function renderMemberBreakdown() {
+    const allTransactions = state.scope === "group" ? selectedTransactions() : (txByName.get(state.selectedName) || []);
+    const members = aggregateMembers(allTransactions);
+    const allTotals = totalsForTransactions(allTransactions);
+    const allActive = !state.detailMember && (state.scope === "team" || state.scope === "group");
+    const rows = [
+      `<tr class="${allActive ? "is-selected" : ""}">
+        <td><strong>${state.scope === "group" ? "全关联组" : "全团队"}</strong></td><td class="amount-cell">${allTransactions.length}</td>
+        <td class="amount-cell">${formatWanExact(allTotals.income)}</td><td class="amount-cell">${formatWanExact(allTotals.expense)}</td>
+        <td class="amount-cell">${formatWanExact(allTotals.netIncome)}</td><td class="amount-cell">${formatWanExact(allTotals.netExpense)}</td>
+        <td><button type="button" class="btn btn-ghost" data-member-detail="" aria-pressed="${allActive}">全部明细</button></td>
+      </tr>`,
+      ...members.map((row) => {
+        const active = state.detailMember === row.member || (state.scope === "personal" && state.selectedMember === row.member);
+        const action = state.scope === "personal" ? "切换本人" : "仅看本人";
+        const dataAttribute = state.scope === "personal"
+          ? `data-person-switch="${escapeAttr(row.member)}"`
+          : `data-member-detail="${escapeAttr(row.member)}"`;
+        return `<tr class="${active ? "is-selected" : ""}">
+          <td><strong>${escapeHtml(row.member)}</strong></td><td class="amount-cell">${row.transactions}</td>
+          <td class="amount-cell">${formatWanExact(row.income)}</td><td class="amount-cell">${formatWanExact(row.expense)}</td>
+          <td class="amount-cell">${formatWanExact(row.netIncome)}</td><td class="amount-cell">${formatWanExact(row.netExpense)}</td>
+          <td><button type="button" class="btn btn-ghost" ${dataAttribute} aria-pressed="${active}">${action}</button></td>
+        </tr>`;
+      }),
+    ].join("");
+    byId("member-breakdown").innerHTML = `<table>
+      <caption class="sr-only">所选对象按账户本人分解的收入、支出与净额</caption>
+      <thead><tr><th>账户本人</th><th class="amount-cell">笔数</th><th class="amount-cell">总收入</th><th class="amount-cell">总支出</th><th class="amount-cell">净收入</th><th class="amount-cell">净支出</th><th>明细</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  }
+
+  function periodSeries(transactions) {
+    const monthly = new Map();
+    for (const tx of transactions) {
+      const key = String(tx.d || "").slice(0, 7) || "未知";
+      if (!monthly.has(key)) monthly.set(key, { key, income: 0, expense: 0 });
+      const row = monthly.get(key);
+      if (tx.z === 1) row.income += tx.x;
+      else if (tx.z === -1) row.expense += tx.x;
+    }
+    let rows = [...monthly.values()].sort((a, b) => a.key.localeCompare(b.key));
+    if (rows.length > 24) {
+      const quarterly = new Map();
+      for (const row of rows) {
+        const [year, monthText] = row.key.split("-");
+        const quarter = Math.floor((Number(monthText) - 1) / 3) + 1;
+        const key = `${year}-Q${quarter}`;
+        if (!quarterly.has(key)) quarterly.set(key, { key, income: 0, expense: 0 });
+        quarterly.get(key).income += row.income;
+        quarterly.get(key).expense += row.expense;
+      }
+      rows = [...quarterly.values()].sort((a, b) => a.key.localeCompare(b.key));
+    }
+    return rows.map((row) => ({ ...row, income: round4(row.income), expense: round4(row.expense) }));
+  }
+
+  function renderMonthlyChart(transactions) {
+    const container = byId("monthly-chart");
+    const series = periodSeries(transactions);
+    const filterLabel = state.detailMember
+      ? `明细筛选：账户本人 ${state.detailMember}`
+      : (state.scope === "personal" ? `账户本人 ${state.selectedMember}` : (state.scope === "group" ? `关联主体 ${state.selectedMember}` : "明细筛选：全团队"));
+    byId("detail-filter-label").textContent = filterLabel;
+    byId("monthly-summary").textContent = `收支时间分布（${transactions.length}笔）`;
+    if (!series.length) {
+      container.innerHTML = '<div class="empty-state">当前对象没有可显示的交易。</div>';
+      return;
+    }
+    const width = 900;
+    const height = 300;
+    const margin = { top: 18, right: 18, bottom: 48, left: 72 };
+    const plotWidth = width - margin.left - margin.right;
+    const plotHeight = height - margin.top - margin.bottom;
+    const maxValue = Math.max(...series.flatMap((row) => [row.income, row.expense]), 0.0001);
+    const groupWidth = plotWidth / series.length;
+    const barWidth = Math.max(3, Math.min(18, groupWidth * 0.32));
+    const labelStep = Math.max(1, Math.ceil(series.length / 9));
+    const y = (value) => margin.top + plotHeight - (value / maxValue) * plotHeight;
+    const h = (value) => (value / maxValue) * plotHeight;
+    const grid = [0, 0.5, 1].map((ratio) => {
+      const yy = margin.top + plotHeight - ratio * plotHeight;
+      return `<line class="grid-line" x1="${margin.left}" y1="${yy}" x2="${width - margin.right}" y2="${yy}"></line>
+        <text x="${margin.left - 8}" y="${yy + 4}" text-anchor="end">${escapeHtml(formatWanExact(maxValue * ratio))}</text>`;
+    }).join("");
+    const bars = series.map((row, index) => {
+      const center = margin.left + groupWidth * index + groupWidth / 2;
+      const incomeX = center - barWidth - 1;
+      const expenseX = center + 1;
+      const label = index % labelStep === 0 || index === series.length - 1
+        ? `<text x="${center}" y="${height - 18}" text-anchor="middle">${escapeHtml(row.key)}</text>`
+        : "";
+      return `<g>
+        <rect class="income-bar" x="${incomeX}" y="${y(row.income)}" width="${barWidth}" height="${h(row.income)}"><title>团队流水手机查询｜团队·关联组·个人版</title></rect>
+        <rect class="expense-bar" x="${expenseX}" y="${y(row.expense)}" width="${barWidth}" height="${h(row.expense)}"><title>团队流水手机查询｜团队·关联组·个人版</title></rect>
+        ${label}
+      </g>`;
+    }).join("");
+    const totals = totalsForTransactions(transactions);
+    container.innerHTML = `<svg class="monthly-svg" viewBox="0 0 ${width} ${height}" role="img" aria-label="${escapeAttr(`${series[0].key}至${series.at(-1).key}，收入${formatWanExact(totals.income)}，支出${formatWanExact(totals.expense)}`)}">
+      <title>团队流水手机查询｜团队·关联组·个人版</title>
+      <desc>${escapeHtml(`${filterLabel}；收入${formatWanExact(totals.income)}，支出${formatWanExact(totals.expense)}。`)}</desc>
+      ${grid}
+      <line class="axis-line" x1="${margin.left}" y1="${margin.top + plotHeight}" x2="${width - margin.right}" y2="${margin.top + plotHeight}"></line>
+      ${bars}
+    </svg>`;
+  }
+
+  function transactionDetail(tx) {
+    const direction = tx.z === 1 ? "收入" : (tx.z === -1 ? "支出" : "中性/不计收支");
+    const sourcePage = tx.pg === "" || tx.pg == null ? fileOf(tx) : `${fileOf(tx)} · 第${tx.pg}页`;
+    return `<div class="tx-grid text-small">
+      <span><strong>团队/本人卡号</strong><br>${escapeHtml(tx.a || "—")}</span>
+      <span><strong>团队银行</strong><br>${escapeHtml(bankOf(tx) || "—")}</span>
+       <span><strong>方向与金额</strong><br>${direction} ${formatWan(tx.x)}（${formatYuan(tx.y)}）</span>
+      <span><strong>对手原始姓名</strong><br>${escapeHtml(tx.raw || tx.n)}</span>
+      <span><strong>对手卡号</strong><br>${escapeHtml(tx.ca || "—")}</span>
+      <span><strong>对手银行</strong><br>${escapeHtml(tx.cb || "—")}</span>
+      <span><strong>交易类型</strong><br>${escapeHtml(tx.ty || "—")}</span>
+      <span><strong>余额</strong><br>${tx.bal == null ? "—" : formatWan(tx.bal)}</span>
+      <span><strong>解析质量</strong><br>${escapeHtml(`${tx.q || "—"} · ${parserOf(tx) || "—"}`)}</span>
+      <span><strong>来源</strong><br>${escapeHtml(sourcePage || "—")}<br><button type="button" class="btn btn-ghost" data-copy-source="${escapeAttr(sourcePage || "")}">复制来源</button></span>
+      <span><strong>交易ID</strong><br><code>${escapeHtml(tx.id || "—")}</code></span>
+      <span><strong>附言/备注</strong><br>${escapeHtml(tx.no || tx.sm || "—")}</span>
+    </div>`;
+  }
+
+  function renderTransactions(transactions) {
+    const sorted = [...transactions].sort((a, b) => `${b.d} ${b.t}`.localeCompare(`${a.d} ${a.t}`));
+    byId("transaction-summary").textContent = `逐笔交易（${sorted.length}笔）`;
+    const container = byId("transaction-table");
+    if (!sorted.length) {
+      container.innerHTML = '<div class="empty-state">当前筛选没有逐笔交易。</div>';
+      return;
+    }
+    const directionSubject = state.scope === "personal" ? "本人" : (state.scope === "group" ? "关联组" : "团队");
+    const rows = sorted.map((tx) => {
+      const expanded = state.openTransaction === tx.id;
+      const direction = tx.z === 1 ? `${directionSubject}收入` : (tx.z === -1 ? `${directionSubject}支出` : "中性/不计收支");
+      return `<tr>
+        <td class="nowrap">${escapeHtml(tx.d)}<br><span class="text-small text-muted">${escapeHtml(tx.t)}</span></td>
+        <td>${escapeHtml(memberOf(tx))}</td>
+        <td>${escapeHtml(direction)}</td>
+        <td class="amount-cell">${formatWan(tx.x)}<br><span class="text-small text-muted">${formatYuan(tx.y)}</span></td>
+        <td class="hide-small">${escapeHtml(tx.sm || tx.ty || "—")}</td>
+        <td><button type="button" class="btn btn-ghost" data-tx-id="${escapeAttr(tx.id)}" aria-expanded="${expanded}">${expanded ? "收起" : "展开"}</button></td>
+      </tr>
+      ${expanded ? `<tr class="tx-expanded"><td colspan="6">${transactionDetail(tx)}</td></tr>` : ""}`;
+    }).join("");
+    container.innerHTML = `<table>
+      <caption class="sr-only">所选对象逐笔交易与来源证据</caption>
+      <thead><tr><th>日期时间</th><th>账户本人</th><th>方向</th><th class="amount-cell">金额</th><th class="hide-small">摘要</th><th>详情</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  }
+
+  function renderDetail() {
+    if (!renderSelectedSummary()) return;
+    renderMemberBreakdown();
+    const transactions = visibleDetailTransactions();
+    renderMonthlyChart(transactions);
+    renderTransactions(transactions);
+  }
+
+  function clearDetail(message = "请从排名或对象列表中选择一个对象下钻。") {
+    byId("selected-summary").textContent = "对象下钻";
+    byId("selected-context").innerHTML = `<span class="empty-state">${escapeHtml(message)}</span>`;
+    byId("selected-income").textContent = "0.0万";
+    byId("selected-expense").textContent = "0.0万";
+    byId("selected-net-income").textContent = "0.0万";
+    byId("selected-net-expense").textContent = "0.0万";
+    byId("selected-income-context").textContent = "";
+    byId("selected-expense-context").textContent = "";
+    byId("selected-net-income-context").textContent = "";
+    byId("selected-net-expense-context").textContent = "";
+    byId("member-breakdown").innerHTML = "";
+    byId("monthly-chart").innerHTML = "";
+    byId("transaction-table").innerHTML = "";
+    byId("monthly-summary").textContent = "收支时间分布";
+    byId("transaction-summary").textContent = "逐笔交易";
+    byId("detail-filter-label").textContent = "";
+  }
+
+  function internalNetText(net) {
+    const value = Number(net || 0);
+    if (Math.abs(value) < 0.0001) return "内部净额 0.0万";
+    return value > 0
+      ? `内部净流入 ${formatWanExact(value)}`
+      : `内部净流出 ${formatWanExact(Math.abs(value))}`;
+  }
+
+  function internalFilteredEvents() {
+    return DATA.internal.events.filter((row) => {
+      const payer = internalMemberOf(row.p);
+      const payee = internalMemberOf(row.y);
+      if (state.internalMember !== "all" && payer !== state.internalMember && payee !== state.internalMember) return false;
+      if (state.internalStatus === "mirror" && row.s !== 1) return false;
+      if (state.internalStatus === "single" && row.s !== 0) return false;
+      return true;
+    }).sort((a, b) => `${b.d} ${b.t}`.localeCompare(`${a.d} ${a.t}`) || b.x - a.x);
+  }
+
+  function internalEventDetail(row) {
+    const payer = internalMemberOf(row.p);
+    const payee = internalMemberOf(row.y);
+    const evidence = row.src.map((source, index) => {
+      const owner = internalMemberOf(source[1]);
+      const direction = source[2] === 1 ? "本人收入" : "本人支出";
+      const bank = DATA.dict.banks[source[5]] || "—";
+      const file = DATA.dict.files[source[6]] || "—";
+      const sourcePage = source[7] === "" || source[7] == null ? file : `${file} · 第${source[7]}页`;
+      return `<div class="card">
+        <strong>来源${index + 1}｜${escapeHtml(owner)} ${direction}</strong>
+        <div class="tx-grid text-small">
+          <span><strong>交易时间</strong><br>${escapeHtml(row.d)} ${escapeHtml(source[8] || row.t || "—")}</span>
+          <span><strong>本人账户</strong><br>${escapeHtml(source[3] || "—")}</span>
+          <span><strong>对方账户</strong><br>${escapeHtml(source[4] || "—")}</span>
+          <span><strong>银行/平台</strong><br>${escapeHtml(bank)}</span>
+          <span><strong>来源</strong><br>${escapeHtml(sourcePage)}<br><button type="button" class="btn btn-ghost" data-copy-source="${escapeAttr(sourcePage)}">复制来源</button></span>
+          <span><strong>交易ID</strong><br><code>${escapeHtml(source[0] || "—")}</code></span>
+        </div>
+      </div>`;
+    }).join("");
+    return `<div class="tx-grid text-small">
+      <span><strong>付款成员/账户</strong><br>${escapeHtml(payer)}<br>${escapeHtml(row.pa || "—")}</span>
+      <span><strong>收款成员/账户</strong><br>${escapeHtml(payee)}<br>${escapeHtml(row.ya || "—")}</span>
+      <span><strong>唯一事件金额</strong><br>${formatWan(row.x)}（${formatYuan(row.x * 10000)}）</span>
+      <span><strong>证据状态</strong><br>${row.s === 1 ? "双边镜像：双方流水合并为一笔" : "单边记录：目前仅观察到一方来源"}</span>
+      <span><strong>唯一事件ID</strong><br><code>${escapeHtml(row.id)}</code></span>
+      <span><strong>来源记录数</strong><br>${row.src.length}条</span>
+    </div>${evidence}`;
+  }
+
+  function renderInternalSummary() {
+    const meta = DATA.internal.meta;
+    byId("internal-dataset-size").textContent = `· 内部唯一事件${meta.eventCount}笔`;
+    byId("internal-event-count").textContent = `${meta.eventCount.toLocaleString("zh-CN")}笔`;
+    byId("internal-event-context").textContent = `双边镜像${meta.pairedEvents}笔 · 单边记录${meta.singleEvents}笔`;
+    byId("internal-mirror-rate").textContent = `${(meta.mirrorRecordRate * 100).toFixed(2)}%`;
+    byId("internal-mirror-context").textContent = `双方镜像记录${meta.pairedEvents * 2}/${meta.rawRows}条原始内部记录`;
+    byId("internal-turnover").textContent = formatWanExact(meta.uniqueTurnover);
+    byId("self-transfer-count").textContent = `${meta.selfTransferRows.toLocaleString("zh-CN")}笔`;
+    byId("self-transfer-context").textContent = `记录收入${formatWanExact(meta.selfTransferIncome)} · 记录支出${formatWanExact(meta.selfTransferExpense)}`;
+  }
+
+  function filteredSelfTransfers() {
+    const rows = state.internalMember === "all"
+      ? DATA.internal.selfTransfers
+      : DATA.internal.selfTransfers.filter((row) => internalMemberOf(row.m) === state.internalMember);
+    return [...rows].sort((a, b) => `${b.d} ${b.t}`.localeCompare(`${a.d} ${a.t}`) || b.x - a.x);
+  }
+
+  function renderSelfTransfers() {
+    const all = filteredSelfTransfers();
+    const container = byId("self-transfer-table");
+    const pager = byId("self-transfer-pager");
+    const memberRows = DATA.internal.selfTransferMembers.map((row) => {
+      const member = internalMemberOf(row.m);
+      return `<tr>
+        <td><strong>${escapeHtml(member)}</strong></td><td class="amount-cell">${row.tx}</td>
+        <td class="amount-cell">${formatWanExact(row.i)}</td><td class="amount-cell">${formatWanExact(row.e)}</td>
+        <td class="amount-cell">${formatWanExact(row.ni)}</td><td class="amount-cell">${formatWanExact(row.ne)}</td>
+      </tr>`;
+    }).join("");
+    byId("self-transfer-member-table").innerHTML = `<table>
+      <caption class="sr-only">本人账户内部调拨按成员汇总</caption>
+      <thead><tr><th>账户本人</th><th class="amount-cell">原始记录</th><th class="amount-cell">记录收入</th><th class="amount-cell">记录支出</th><th class="amount-cell">净收入</th><th class="amount-cell">净支出</th></tr></thead>
+      <tbody>${memberRows}</tbody>
+    </table>`;
+    byId("self-transfer-summary").textContent = `本人账户内部调拨（${all.length}笔）`;
+    if (!all.length) {
+      container.innerHTML = '<div class="empty-state">当前成员没有本人账户内部调拨记录。</div>';
+      pager.innerHTML = "";
+      return;
+    }
+    const pageCount = Math.max(1, Math.ceil(all.length / state.selfTransferPageSize));
+    state.selfTransferPage = Math.min(Math.max(1, state.selfTransferPage), pageCount);
+    const start = (state.selfTransferPage - 1) * state.selfTransferPageSize;
+    const visible = all.slice(start, start + state.selfTransferPageSize);
+    const rows = visible.map((row) => {
+      const direction = row.z === 1 ? "记录收入" : (row.z === -1 ? "记录支出" : "中性/不计收支");
+      const source = DATA.dict.files[row.sf] || "—";
+      const sourcePage = row.pg === "" || row.pg == null ? source : `${source} · 第${row.pg}页`;
+      return `<tr>
+        <td class="nowrap">${escapeHtml(row.d)}<br><span class="text-small text-muted">${escapeHtml(row.t || "—")}</span></td>
+        <td><strong>${escapeHtml(internalMemberOf(row.m))}</strong><br><span class="text-small text-muted">${escapeHtml(DATA.dict.banks[row.b] || "—")}</span></td>
+        <td>${escapeHtml(direction)}</td><td class="amount-cell">${formatWan(row.x)}<br><span class="text-small text-muted">${formatYuan(row.y)}</span></td>
+        <td class="hide-small">本人：${escapeHtml(row.a || "—")}<br>对方：${escapeHtml(row.ca || "—")}</td>
+        <td><button type="button" class="btn btn-ghost" data-copy-source="${escapeAttr(sourcePage)}">复制来源</button></td>
+      </tr>`;
+    }).join("");
+    container.innerHTML = `<table>
+      <caption class="sr-only">本人账户内部调拨逐笔记录</caption>
+      <thead><tr><th>日期时间</th><th>账户本人/银行</th><th>方向</th><th class="amount-cell">金额</th><th class="hide-small">本人/对方账号</th><th>来源</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+    pager.innerHTML = `<span class="text-small text-muted">第${state.selfTransferPage}/${pageCount}页 · 显示${start + 1}-${Math.min(start + state.selfTransferPageSize, all.length)}条</span>
+      <button type="button" class="btn btn-ghost" data-self-transfer-page="prev" ${state.selfTransferPage === 1 ? "disabled" : ""}>上一页</button>
+      <button type="button" class="btn btn-ghost" data-self-transfer-page="next" ${state.selfTransferPage === pageCount ? "disabled" : ""}>下一页</button>`;
+  }
+
+  function renderRelatedGroups() {
+    const rows = DATA.internal.relatedGroups.map((row) => {
+      const group = DATA.dict.groups[row.g] || "—";
+      const members = row.ms.map((index) => internalMemberOf(index)).join("＋");
+      return `<tr>
+        <td><strong>${escapeHtml(group)}</strong><br><span class="text-small text-muted">${escapeHtml(members)}</span></td>
+        <td class="amount-cell">${row.ev}笔<br><span class="text-small text-muted">${row.raw}条来源</span></td>
+        <td class="amount-cell">${formatWanExact(row.x)}</td>
+        <td class="amount-cell">${row.sr}笔</td>
+        <td class="amount-cell">${formatWanExact(row.si)}</td>
+        <td class="amount-cell">${formatWanExact(row.se)}</td>
+      </tr>`;
+    }).join("");
+    byId("related-group-internal-table").innerHTML = `<table>
+      <caption class="sr-only">关联组内部成员往来与本人账户调拨</caption>
+      <thead><tr><th>关联主体</th><th class="amount-cell">组内成员事件</th><th class="amount-cell">组内流转额</th><th class="amount-cell">本人调拨记录</th><th class="amount-cell">调拨记录收入</th><th class="amount-cell">调拨记录支出</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  }
+
+  function renderInternalPairChart() {
+    const rows = DATA.internal.pairs;
+    const max = Math.max(...rows.map((row) => row.x), 0.0001);
+    byId("internal-pair-chart").innerHTML = rows.map((row) => {
+      const left = internalMemberOf(row.l);
+      const right = internalMemberOf(row.r);
+      const width = Math.max(1, row.x / max * 100);
+      return `<div class="internal-pair-row">
+        <span><strong>${escapeHtml(left)} ↔ ${escapeHtml(right)}</strong><br><span class="text-small text-muted">${row.ev}笔唯一事件</span></span>
+        <span class="internal-pair-track" aria-hidden="true"><span class="internal-pair-bar" style="--pair-width:${width}%"></span></span>
+        <span class="amount-cell">${formatWanExact(row.x)}</span>
+      </div>`;
+    }).join("");
+  }
+
+  function renderInternalMembers() {
+    const rows = DATA.internal.members.map((row) => {
+      const member = internalMemberOf(row.m);
+      const selected = state.internalMember === member;
+      return `<tr class="${selected ? "is-selected" : ""}">
+        <td><strong>${escapeHtml(member)}</strong></td>
+        <td class="amount-cell">${formatWanExact(row.ix)}<br><span class="text-small text-muted">${row.ie}笔</span></td>
+        <td class="amount-cell">${formatWanExact(row.ox)}<br><span class="text-small text-muted">${row.oe}笔</span></td>
+        <td class="amount-cell">${escapeHtml(internalNetText(row.net))}</td>
+        <td class="amount-cell hide-small">${formatWanExact(row.turn)}</td>
+        <td><button type="button" class="btn btn-ghost" data-internal-member="${escapeAttr(member)}" aria-pressed="${selected}">筛逐笔</button></td>
+      </tr>`;
+    }).join("");
+    byId("internal-member-table").innerHTML = `<table>
+      <caption class="sr-only">团队成员内部流入、流出和净头寸</caption>
+      <thead><tr><th>成员</th><th class="amount-cell">从队友收到</th><th class="amount-cell">向队友付出</th><th class="amount-cell">内部净头寸</th><th class="amount-cell hide-small">内部周转</th><th>操作</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+  }
+
+  function renderInternalPairs() {
+    const rows = DATA.internal.pairs.map((row) => {
+      const left = internalMemberOf(row.l);
+      const right = internalMemberOf(row.r);
+      const net = row.net >= 0
+        ? `${left}→${right}净流 ${formatWanExact(row.net)}`
+        : `${right}→${left}净流 ${formatWanExact(Math.abs(row.net))}`;
+      return `<tr>
+        <td><strong>${escapeHtml(left)} ↔ ${escapeHtml(right)}</strong></td>
+        <td class="amount-cell">${formatWanExact(row.x)}<br><span class="text-small text-muted">${row.ev}笔</span></td>
+        <td class="amount-cell hide-medium">${escapeHtml(left)}→${escapeHtml(right)}<br>${formatWanExact(row.lx)} · ${row.le}笔</td>
+        <td class="amount-cell hide-medium">${escapeHtml(right)}→${escapeHtml(left)}<br>${formatWanExact(row.rx)} · ${row.re}笔</td>
+        <td class="amount-cell">${escapeHtml(net)}</td>
+        <td class="hide-small">镜像${row.mir} · 单边${row.sin}</td>
+      </tr>`;
+    }).join("");
+    byId("internal-pair-table").innerHTML = `<table>
+      <caption class="sr-only">团队成员两两关系的唯一流转额和净方向</caption>
+      <thead><tr><th>成员关系</th><th class="amount-cell">唯一流转额</th><th class="amount-cell hide-medium">正向</th><th class="amount-cell hide-medium">反向</th><th class="amount-cell">方向净流</th><th class="hide-small">证据</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+
+    const members = DATA.internal.members.map((row) => internalMemberOf(row.m));
+    const directed = new Map();
+    for (const row of DATA.internal.pairs) {
+      const left = internalMemberOf(row.l);
+      const right = internalMemberOf(row.r);
+      directed.set(`${left}\u0000${right}`, row.lx);
+      directed.set(`${right}\u0000${left}`, row.rx);
+    }
+    const matrixRows = members.map((from) => `<tr><th>${escapeHtml(from)}付出</th>${members.map((to) => {
+      if (from === to) return "<td>—</td>";
+      const value = directed.get(`${from}\u0000${to}`) || 0;
+      return `<td>${value ? formatWanExact(value) : "0.0万"}</td>`;
+    }).join("")}</tr>`).join("");
+    byId("internal-matrix").innerHTML = `<h3>方向矩阵（行成员付给列成员）</h3><table>
+      <caption class="sr-only">团队内部有向流转金额矩阵</caption>
+      <thead><tr><th>付款\\收款</th>${members.map((member) => `<th>${escapeHtml(member)}</th>`).join("")}</tr></thead>
+      <tbody>${matrixRows}</tbody>
+    </table>`;
+  }
+
+  function relayGapText(seconds) {
+    const value = Number(seconds || 0);
+    if (value === 0) return "0分钟/同日时间缺失";
+    if (value < 3600) return `${Math.round(value / 60)}分钟`;
+    return `${(value / 3600).toFixed(1)}小时`;
+  }
+
+  function filteredRelays() {
+    const rows = state.internalMember === "all"
+      ? DATA.internal.relays
+      : DATA.internal.relays.filter((row) => internalMemberOf(row.m) === state.internalMember);
+    return [...rows].sort((a, b) => Math.max(b.i, b.o) - Math.max(a.i, a.o) || a.gap - b.gap);
+  }
+
+  function renderInternalRelays() {
+    const all = filteredRelays();
+    const container = byId("internal-relay-table");
+    const pager = byId("internal-relay-pager");
+    byId("internal-relay-summary").textContent = `与G列对象的24小时资金接力候选（${all.length}条）`;
+    if (!all.length) {
+      container.innerHTML = '<div class="empty-state">当前成员筛选没有接力候选。</div>';
+      pager.innerHTML = "";
+      return;
+    }
+    const pageCount = Math.max(1, Math.ceil(all.length / state.relayPageSize));
+    state.relayPage = Math.min(Math.max(1, state.relayPage), pageCount);
+    const start = (state.relayPage - 1) * state.relayPageSize;
+    const visible = all.slice(start, start + state.relayPageSize);
+    const rows = visible.map((row) => {
+      const source = DATA.dict.files[row.sf] || "—";
+      const sourcePage = row.pg === "" || row.pg == null ? source : `${source} · 第${row.pg}页`;
+      return `<tr>
+        <td class="nowrap">${escapeHtml(row.d)}</td>
+        <td><strong>${escapeHtml(row.path)}</strong><br><span class="text-small text-muted">${row.k === 1 ? "内部转入→G对象转出" : "G对象转入→内部转出"}</span></td>
+        <td class="amount-cell">${formatWanExact(row.i)}<br><span class="text-small text-muted">→ ${formatWanExact(row.o)}</span></td>
+        <td class="hide-small">差${(row.gap * 100).toFixed(2)}%<br><span class="text-small text-muted">${escapeHtml(relayGapText(row.sec))}</span></td>
+        <td><button type="button" class="btn btn-ghost" data-open-internal-event="${escapeAttr(row.eid)}">内部证据</button><br><button type="button" class="btn btn-ghost" data-copy-source="${escapeAttr(sourcePage)}">复制G来源</button></td>
+      </tr>`;
+    }).join("");
+    container.innerHTML = `<table>
+      <caption class="sr-only">内部往来与G列对象交易之间的时序金额接力候选</caption>
+      <thead><tr><th>日期</th><th>候选路径</th><th class="amount-cell">前后金额</th><th class="hide-small">差额/间隔</th><th>来源</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+    pager.innerHTML = `<span class="text-small text-muted">第${state.relayPage}/${pageCount}页 · 显示${start + 1}-${Math.min(start + state.relayPageSize, all.length)}条</span>
+      <button type="button" class="btn btn-ghost" data-relay-page="prev" ${state.relayPage === 1 ? "disabled" : ""}>上一页</button>
+      <button type="button" class="btn btn-ghost" data-relay-page="next" ${state.relayPage === pageCount ? "disabled" : ""}>下一页</button>`;
+  }
+
+  function renderInternalEvents() {
+    const all = internalFilteredEvents();
+    const container = byId("internal-event-table");
+    const pager = byId("internal-event-pager");
+    const memberLabel = state.internalMember === "all" ? "全部成员" : state.internalMember;
+    const statusLabel = state.internalStatus === "mirror" ? "双边镜像" : (state.internalStatus === "single" ? "单边记录" : "全部状态");
+    const total = all.reduce((sum, row) => sum + row.x, 0);
+    byId("internal-filter-summary").textContent = `逐笔筛选：${memberLabel} · ${statusLabel} · ${all.length}笔唯一事件 · 流转额${formatWanExact(total)}`;
+    byId("internal-event-summary").textContent = `内部唯一事件逐笔下钻（${all.length}笔）`;
+    if (!all.length) {
+      container.innerHTML = '<div class="empty-state">当前筛选没有内部事件。</div>';
+      pager.innerHTML = "";
+      return;
+    }
+    const pageCount = Math.max(1, Math.ceil(all.length / state.internalPageSize));
+    state.internalPage = Math.min(Math.max(1, state.internalPage), pageCount);
+    const start = (state.internalPage - 1) * state.internalPageSize;
+    const visible = all.slice(start, start + state.internalPageSize);
+    const rows = visible.map((row) => {
+      const expanded = state.openInternalEvent === row.id;
+      return `<tr>
+        <td class="nowrap">${escapeHtml(row.d)}<br><span class="text-small text-muted">${escapeHtml(row.t || "—")}</span></td>
+        <td><strong>${escapeHtml(internalMemberOf(row.p))} → ${escapeHtml(internalMemberOf(row.y))}</strong></td>
+        <td>${row.s === 1 ? "双边镜像" : "单边记录"}<br><span class="text-small text-muted">${row.src.length}条来源</span></td>
+        <td class="amount-cell">${formatWan(row.x)}<br><span class="text-small text-muted">${formatYuan(row.x * 10000)}</span></td>
+        <td><button type="button" class="btn btn-ghost" data-internal-event="${escapeAttr(row.id)}" aria-expanded="${expanded}">${expanded ? "收起" : "展开"}</button></td>
+      </tr>
+      ${expanded ? `<tr class="tx-expanded"><td colspan="5">${internalEventDetail(row)}</td></tr>` : ""}`;
+    }).join("");
+    container.innerHTML = `<table>
+      <caption class="sr-only">团队内部唯一转账事件及来源证据</caption>
+      <thead><tr><th>日期时间</th><th>付款 → 收款</th><th>证据状态</th><th class="amount-cell">金额</th><th>详情</th></tr></thead>
+      <tbody>${rows}</tbody>
+    </table>`;
+    pager.innerHTML = `<span class="text-small text-muted">第${state.internalPage}/${pageCount}页 · 显示${start + 1}-${Math.min(start + state.internalPageSize, all.length)}条</span>
+      <button type="button" class="btn btn-ghost" data-internal-page="prev" ${state.internalPage === 1 ? "disabled" : ""}>上一页</button>
+      <button type="button" class="btn btn-ghost" data-internal-page="next" ${state.internalPage === pageCount ? "disabled" : ""}>下一页</button>`;
+  }
+
+  function renderInternalAudit() {
+    byId("internal-method-list").innerHTML = DATA.internal.meta.methodNotes.map((text) => `<li>${escapeHtml(text)}</li>`).join("");
+    byId("internal-check-list").innerHTML = DATA.internal.meta.checks.map((row) => `<li>${escapeHtml(row.status === "通过" ? "通过" : "需复核")}｜${escapeHtml(row.check)}</li>`).join("");
+  }
+
+  function renderInternalAll() {
+    renderInternalSummary();
+    renderInternalPairChart();
+    renderInternalMembers();
+    renderSelfTransfers();
+    renderRelatedGroups();
+    renderInternalPairs();
+    renderInternalRelays();
+    renderInternalEvents();
+    renderInternalAudit();
+  }
+
+  function selectionExists(rows) {
+    if (!state.selectedName) return false;
+    const exists = rows.some((row) => isRecordSelected(row));
+    if (!exists) {
+      state.selectedName = "";
+      state.selectedMember = "";
+      state.detailMember = "";
+      state.openTransaction = "";
+    }
+    return exists;
+  }
+
+  function renderAll() {
+    const rows = filteredRows();
+    const hasSelection = selectionExists(rows);
+    updateScopeButtons();
+    renderSummary(rows);
+    renderRankChart(rows);
+    renderObjectTable(rows);
+    if (hasSelection) renderDetail();
+    else clearDetail(rows.length ? undefined : "当前筛选没有可下钻对象。");
+    persistState();
+  }
+
+  function selectRecord(name, member, scroll) {
+    state.selectedName = name;
+    state.selectedMember = state.scope === "personal" || state.scope === "group" ? member : "";
+    state.detailMember = state.scope === "personal" ? member : "";
+    state.openTransaction = "";
+    renderAll();
+    if (scroll) {
+      byId("selected-panel").open = true;
+      byId("selected-panel").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  }
+
+  restoreState();
+  const memberSelect = byId("member-filter");
+  function updateMemberFilterOptions() {
+    const options = state.scope === "group" ? DATA.dict.groups : DATA.dict.members.filter(Boolean);
+    const allLabel = state.scope === "group" ? "全部关联组" : "全部团队成员";
+    memberSelect.innerHTML = [`<option value="all">${allLabel}</option>`, ...options.map((member) => `<option value="${escapeAttr(member)}">${escapeHtml(member)}</option>`)].join("");
+    memberSelect.value = options.includes(state.member) ? state.member : "all";
+    state.member = memberSelect.value;
+  }
+  updateMemberFilterOptions();
+  const internalMemberSelect = byId("internal-member-filter");
+  const internalMembers = DATA.internal.members.map((row) => internalMemberOf(row.m));
+  internalMemberSelect.innerHTML = ['<option value="all">全部团队成员</option>', ...internalMembers.map((member) => `<option value="${escapeAttr(member)}">${escapeHtml(member)}</option>`)].join("");
+  byId("flow-search").value = state.search;
+  byId("priority-filter").value = state.priority;
+  byId("gmatch-filter").value = state.gmatch;
+  byId("net-direction-filter").value = state.netDirection;
+  byId("dataset-size").textContent = `全部外部对象${DATA.meta.objectCount}个 · ${DATA.meta.groupRowCount}条对象×关联组 · ${DATA.meta.personRowCount}条对象×本人 · ${DATA.meta.transactionCount}笔流水`;
+  if (DATA.meta.maskedCards) {
+    byId("privacy-mode").className = "viz-badge";
+    byId("privacy-mode").textContent = "银行卡中间3位已脱敏";
+    byId("transaction-card-note").textContent = "逐笔同时显示x.x万和准确元数；银行卡中间3位已脱敏。";
+  }
+  renderAudit();
+  renderFileInventory();
+
+  root.addEventListener("click", (event) => {
+    const jumpButton = event.target.closest("[data-jump]");
+    if (jumpButton) {
+      const target = byId(jumpButton.dataset.jump);
+      if (target) {
+        if (target.tagName === "DETAILS") target.open = true;
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+      return;
+    }
+
+    const internalMemberButton = event.target.closest("[data-internal-member]");
+    if (internalMemberButton) {
+      state.internalMember = internalMemberButton.dataset.internalMember || "all";
+      state.internalPage = 1;
+      state.relayPage = 1;
+      state.selfTransferPage = 1;
+      state.openInternalEvent = "";
+      internalMemberSelect.value = state.internalMember;
+      renderInternalAll();
+      return;
+    }
+
+    const internalPageButton = event.target.closest("[data-internal-page]");
+    if (internalPageButton && !internalPageButton.disabled) {
+      state.internalPage += internalPageButton.dataset.internalPage === "next" ? 1 : -1;
+      state.openInternalEvent = "";
+      renderInternalEvents();
+      return;
+    }
+
+    const relayPageButton = event.target.closest("[data-relay-page]");
+    if (relayPageButton && !relayPageButton.disabled) {
+      state.relayPage += relayPageButton.dataset.relayPage === "next" ? 1 : -1;
+      renderInternalRelays();
+      return;
+    }
+
+    const selfTransferPageButton = event.target.closest("[data-self-transfer-page]");
+    if (selfTransferPageButton && !selfTransferPageButton.disabled) {
+      state.selfTransferPage += selfTransferPageButton.dataset.selfTransferPage === "next" ? 1 : -1;
+      renderSelfTransfers();
+      return;
+    }
+
+    const internalEventButton = event.target.closest("[data-internal-event]");
+    if (internalEventButton) {
+      const id = internalEventButton.dataset.internalEvent;
+      state.openInternalEvent = state.openInternalEvent === id ? "" : id;
+      renderInternalEvents();
+      return;
+    }
+
+    const openInternalEventButton = event.target.closest("[data-open-internal-event]");
+    if (openInternalEventButton) {
+      const id = openInternalEventButton.dataset.openInternalEvent;
+      state.internalMember = "all";
+      state.internalStatus = "all";
+      internalMemberSelect.value = "all";
+      byId("internal-status-filter").value = "all";
+      const index = internalFilteredEvents().findIndex((row) => row.id === id);
+      state.internalPage = index >= 0 ? Math.floor(index / state.internalPageSize) + 1 : 1;
+      state.openInternalEvent = internalEventById.has(id) ? id : "";
+      renderInternalAll();
+      const details = byId("internal-event-table").closest("details");
+      if (details) details.open = true;
+      byId("internal-event-table").scrollIntoView({ behavior: "smooth", block: "start" });
+      return;
+    }
+
+    const scopeButton = event.target.closest("[data-scope]");
+    if (scopeButton) {
+      state.scope = scopeButton.dataset.scope;
+      state.member = "all";
+      updateMemberFilterOptions();
+      state.page = 1;
+      state.selectedName = "";
+      state.selectedMember = "";
+      state.detailMember = "";
+      state.openTransaction = "";
+      renderAll();
+      return;
+    }
+
+    const selectButton = event.target.closest("[data-select-name]");
+    if (selectButton) {
+      selectRecord(selectButton.dataset.selectName, selectButton.dataset.selectMember || "", true);
+      return;
+    }
+
+    const sortButton = event.target.closest("[data-sort]");
+    if (sortButton) {
+      const key = sortButton.dataset.sort;
+      if (state.sortKey === key) state.sortDirection *= -1;
+      else {
+        state.sortKey = key;
+        state.sortDirection = key === "name" || key === "priority" ? 1 : -1;
+      }
+      state.page = 1;
+      renderAll();
+      return;
+    }
+
+    const pageButton = event.target.closest("[data-page]");
+    if (pageButton && !pageButton.disabled) {
+      state.page += pageButton.dataset.page === "next" ? 1 : -1;
+      renderObjectTable(filteredRows());
+      return;
+    }
+
+    const memberButton = event.target.closest("[data-member-detail]");
+    if (memberButton) {
+      state.detailMember = memberButton.dataset.memberDetail || "";
+      state.openTransaction = "";
+      renderDetail();
+      return;
+    }
+
+    const personButton = event.target.closest("[data-person-switch]");
+    if (personButton) {
+      state.scope = "personal";
+      state.selectedMember = personButton.dataset.personSwitch;
+      state.detailMember = state.selectedMember;
+      state.member = "all";
+      updateMemberFilterOptions();
+      memberSelect.value = "all";
+      state.openTransaction = "";
+      renderAll();
+      return;
+    }
+
+    const transactionButton = event.target.closest("[data-tx-id]");
+    if (transactionButton) {
+      const id = transactionButton.dataset.txId;
+      state.openTransaction = state.openTransaction === id ? "" : id;
+      renderTransactions(visibleDetailTransactions());
+      return;
+    }
+
+    const copySourceButton = event.target.closest("[data-copy-source]");
+    if (copySourceButton) {
+      copyText(copySourceButton.dataset.copySource || "", copySourceButton);
+      return;
+    }
+
+    const foldButton = event.target.closest("[data-fold]");
+    if (foldButton) {
+      const open = foldButton.dataset.fold === "expand";
+      root.querySelectorAll("details[data-foldable]").forEach((details) => { details.open = open; });
+    }
+  });
+
+  byId("flow-search").addEventListener("input", (event) => {
+    state.search = event.target.value;
+    state.page = 1;
+    renderAll();
+  });
+
+  byId("priority-filter").addEventListener("change", (event) => {
+    state.priority = event.target.value;
+    state.page = 1;
+    renderAll();
+  });
+
+  byId("gmatch-filter").addEventListener("change", (event) => {
+    state.gmatch = event.target.value;
+    state.page = 1;
+    renderAll();
+  });
+
+  byId("net-direction-filter").addEventListener("change", (event) => {
+    state.netDirection = event.target.value;
+    state.page = 1;
+    renderAll();
+  });
+
+  memberSelect.addEventListener("change", (event) => {
+    state.member = event.target.value;
+    state.page = 1;
+    renderAll();
+  });
+
+  internalMemberSelect.addEventListener("change", (event) => {
+    state.internalMember = event.target.value;
+    state.internalPage = 1;
+    state.relayPage = 1;
+    state.selfTransferPage = 1;
+    state.openInternalEvent = "";
+    renderInternalAll();
+  });
+
+  byId("internal-status-filter").addEventListener("change", (event) => {
+    state.internalStatus = event.target.value;
+    state.internalPage = 1;
+    state.openInternalEvent = "";
+    renderInternalEvents();
+  });
+
+  byId("internal-reset").addEventListener("click", () => {
+    state.internalMember = "all";
+    state.internalStatus = "all";
+    state.internalPage = 1;
+    state.relayPage = 1;
+    state.selfTransferPage = 1;
+    state.openInternalEvent = "";
+    internalMemberSelect.value = "all";
+    byId("internal-status-filter").value = "all";
+    renderInternalAll();
+  });
+
+  byId("export-object-csv").addEventListener("click", () => {
+    const rows = filteredRows();
+    downloadCsv(
+      `团队流水_当前对象_${state.scope === "team" ? "团队" : (state.scope === "group" ? "关联组" : "个人")}.csv`,
+      [
+        { label: "复核优先级", value: (row) => row.p },
+        { label: "交易对象", value: (row) => row.n },
+        { label: state.scope === "team" ? "涉及团队成员" : (state.scope === "group" ? "关联主体" : "账户本人"), value: (row) => state.scope === "team" ? row.ms.join("、") : row.m },
+        { label: "总收入(万元)", value: (row) => row.i },
+        { label: "总支出(万元)", value: (row) => row.e },
+        { label: "净收入(万元)", value: (row) => row.ni },
+        { label: "净支出(万元)", value: (row) => row.ne },
+        { label: "G列身份", value: (row) => row.gm === 1 ? "G列命中" : "未在G列" },
+        { label: "对象类型", value: (row) => row.ot },
+        { label: "交易笔数", value: (row) => row.tx },
+        { label: "电话", value: (row) => row.c },
+        { label: "复核原因", value: (row) => row.r || "" },
+      ],
+      rows,
+    );
+  });
+
+  byId("export-transaction-csv").addEventListener("click", () => {
+    const rows = visibleDetailTransactions();
+    downloadCsv(
+      `团队流水_${state.selectedName || "未选择"}_逐笔.csv`,
+      [
+        { label: "日期", value: (tx) => tx.d },
+        { label: "时间", value: (tx) => tx.t },
+        { label: "账户本人", value: (tx) => memberOf(tx) },
+        { label: "方向", value: (tx) => tx.z === 1 ? "收入" : (tx.z === -1 ? "支出" : "中性/不计收支") },
+        { label: "金额(元)", value: (tx) => tx.y },
+        { label: "团队卡号", value: (tx) => tx.a },
+        { label: "团队银行", value: (tx) => bankOf(tx) },
+        { label: "对手原始姓名", value: (tx) => tx.raw || tx.n },
+        { label: "对手卡号", value: (tx) => tx.ca },
+        { label: "对手银行", value: (tx) => tx.cb },
+        { label: "交易类型", value: (tx) => tx.ty },
+        { label: "摘要", value: (tx) => tx.sm },
+        { label: "附言/备注", value: (tx) => tx.no },
+        { label: "来源文件", value: (tx) => fileOf(tx) },
+        { label: "来源页", value: (tx) => tx.pg },
+        { label: "交易ID", value: (tx) => tx.id },
+      ],
+      rows,
+    );
+  });
+
+  byId("export-internal-csv").addEventListener("click", () => {
+    const rows = internalFilteredEvents();
+    downloadCsv(
+      `团队内部唯一事件_${state.internalMember === "all" ? "全部成员" : state.internalMember}_${state.internalStatus}.csv`,
+      [
+        { label: "日期", value: (row) => row.d },
+        { label: "时间", value: (row) => row.t },
+        { label: "付款成员", value: (row) => internalMemberOf(row.p) },
+        { label: "收款成员", value: (row) => internalMemberOf(row.y) },
+        { label: "金额(元)", value: (row) => Math.round((row.x * 10000 + Number.EPSILON) * 100) / 100 },
+        { label: "证据状态", value: (row) => row.s === 1 ? "双边镜像" : "单边记录" },
+        { label: "付款账户", value: (row) => row.pa },
+        { label: "收款账户", value: (row) => row.ya },
+        { label: "来源记录数", value: (row) => row.src.length },
+        { label: "来源文件", value: (row) => row.src.map((source) => DATA.dict.files[source[6]] || "").join("｜") },
+        { label: "来源页", value: (row) => row.src.map((source) => source[7]).join("｜") },
+        { label: "来源交易ID", value: (row) => row.src.map((source) => source[0]).join("｜") },
+        { label: "唯一事件ID", value: (row) => row.id },
+      ],
+      rows,
+    );
+  });
+
+  byId("reset-filters").addEventListener("click", () => {
+    state.search = "";
+    state.priority = "all";
+    state.gmatch = "all";
+    state.netDirection = "all";
+    state.member = "all";
+    state.sortKey = "absNet";
+    state.sortDirection = -1;
+    state.page = 1;
+    state.selectedName = "";
+    state.selectedMember = "";
+    state.detailMember = "";
+    state.openTransaction = "";
+    byId("flow-search").value = "";
+    byId("priority-filter").value = "all";
+    byId("gmatch-filter").value = "all";
+    byId("net-direction-filter").value = "all";
+    memberSelect.value = "all";
+    renderAll();
+  });
+
+  renderAll();
+  renderInternalAll();
+})().catch((error) => {
+  console.error(error);
+  const status = document.getElementById("secure-share-status");
+  if (status) {
+    status.textContent = "页面初始化失败，请刷新重试或改用最新版Chrome。";
+    status.dataset.state = "error";
+  }
+});
+</script>
+
+<script src="https://unpkg.com/@floating-ui/core@1.7.3/dist/floating-ui.core.umd.min.js"></script>
+<script src="https://unpkg.com/@floating-ui/dom@1.7.4/dist/floating-ui.dom.umd.min.js"></script>
+<script>
+(() => {
+  if (window.FloatingUIDOM == null) {
+    return;
+  }
+  const { autoUpdate, computePosition, flip, offset, shift, size } =
+    window.FloatingUIDOM;
+  const tooltipPlacements = new Set(["top", "right", "bottom", "left"]);
+  const tooltipId = `codex-visualization-tooltip-${
+    window.crypto?.randomUUID?.() ?? Date.now().toString(36)
+  }`;
+  const tooltipGap = 5;
+  const hoverDelay = 700;
+  const skipDelay = 300;
+  let activeTrigger = null;
+  let pendingTrigger = null;
+  let tooltip = null;
+  let openTimeout = null;
+  let autoUpdateCleanup = null;
+  let positionRequest = 0;
+  let skipDelayUntil = 0;
+
+  const getTrigger = (target) =>
+    target?.nodeType === Node.ELEMENT_NODE
+      ? target.closest("[data-tooltip]")
+      : null;
+  const containsTarget = (trigger, target) =>
+    target?.nodeType != null && trigger.contains(target);
+  const getContent = (trigger) =>
+    trigger.getAttribute("data-tooltip")?.trim() ?? "";
+  const getPlacement = (trigger) => {
+    const placement = trigger.getAttribute("data-tooltip-placement");
+    return tooltipPlacements.has(placement) ? placement : "top";
+  };
+  const getTooltip = () => {
+    if (tooltip == null) {
+      tooltip = document.createElement("div");
+      tooltip.id = tooltipId;
+      tooltip.className = "tooltip";
+      tooltip.setAttribute("role", "tooltip");
+    }
+    return tooltip;
+  };
+  const setDescribedBy = (trigger, described) => {
+    const ids = new Set(
+      (trigger.getAttribute("aria-describedby") ?? "")
+        .split(/\s+/)
+        .filter(Boolean),
+    );
+    if (described) {
+      ids.add(tooltipId);
+    } else {
+      ids.delete(tooltipId);
+    }
+    if (ids.size === 0) {
+      trigger.removeAttribute("aria-describedby");
+    } else {
+      trigger.setAttribute("aria-describedby", [...ids].join(" "));
+    }
+  };
+  const clearOpenTimeout = () => {
+    if (openTimeout != null) {
+      window.clearTimeout(openTimeout);
+      openTimeout = null;
+    }
+    pendingTrigger = null;
+  };
+  const closeTooltip = (activateSkipDelay = true) => {
+    clearOpenTimeout();
+    positionRequest += 1;
+    autoUpdateCleanup?.();
+    autoUpdateCleanup = null;
+    if (activeTrigger == null) {
+      return;
+    }
+    setDescribedBy(activeTrigger, false);
+    activeTrigger = null;
+    tooltip?.remove();
+    if (activateSkipDelay) {
+      skipDelayUntil = Date.now() + skipDelay;
+    }
+  };
+  const updatePosition = (trigger, floating) => {
+    const request = ++positionRequest;
+    void computePosition(trigger, floating, {
+      middleware: [
+        offset(tooltipGap),
+        flip({ padding: tooltipGap }),
+        shift({ padding: tooltipGap }),
+        size({
+          padding: tooltipGap,
+          apply({ availableHeight, availableWidth, elements }) {
+            elements.floating.style.setProperty(
+              "--tooltip-available-width",
+              `${Math.max(0, availableWidth)}px`,
+            );
+            elements.floating.style.setProperty(
+              "--tooltip-available-height",
+              `${Math.max(0, availableHeight)}px`,
+            );
+          },
+        }),
+      ],
+      placement: getPlacement(trigger),
+      strategy: "fixed",
+    })
+      .then(({ x, y }) => {
+        if (activeTrigger !== trigger || request !== positionRequest) {
+          return;
+        }
+        const scale = window.devicePixelRatio || 1;
+        floating.style.transform = `translate(${Math.round(x * scale) / scale}px, ${Math.round(y * scale) / scale}px)`;
+        floating.style.visibility = "visible";
+      })
+      .catch(() => {
+        if (activeTrigger === trigger && request === positionRequest) {
+          closeTooltip(false);
+        }
+      });
+  };
+  const openTooltip = (trigger) => {
+    const content = getContent(trigger);
+    if (!trigger.isConnected || content.length === 0) {
+      return;
+    }
+    clearOpenTimeout();
+    if (activeTrigger === trigger) {
+      return;
+    }
+    closeTooltip();
+    const floating = getTooltip();
+    floating.textContent = content;
+    floating.style.visibility = "hidden";
+    floating.style.transform = "translate(0, 0)";
+    document.body.appendChild(floating);
+    activeTrigger = trigger;
+    setDescribedBy(trigger, true);
+    autoUpdateCleanup = autoUpdate(trigger, floating, () => {
+      updatePosition(trigger, floating);
+    });
+  };
+  const requestOpen = (trigger, immediate = false) => {
+    if (
+      getContent(trigger).length === 0 ||
+      activeTrigger === trigger ||
+      pendingTrigger === trigger
+    ) {
+      return;
+    }
+    clearOpenTimeout();
+    pendingTrigger = trigger;
+    const delay =
+      immediate || activeTrigger != null || Date.now() < skipDelayUntil
+        ? 0
+        : hoverDelay;
+    if (delay === 0) {
+      openTooltip(trigger);
+      return;
+    }
+    openTimeout = window.setTimeout(() => {
+      openTimeout = null;
+      pendingTrigger = null;
+      openTooltip(trigger);
+    }, delay);
+  };
+  const handlePointerOpen = (event) => {
+    if (event.pointerType === "touch") {
+      return;
+    }
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    requestOpen(trigger);
+  };
+  const handleLeave = (event) => {
+    const trigger = getTrigger(event.target);
+    if (trigger == null || containsTarget(trigger, event.relatedTarget)) {
+      return;
+    }
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const handleFocusIn = (event) => {
+    const trigger = getTrigger(event.target);
+    if (trigger?.matches(":focus-visible")) {
+      requestOpen(trigger, true);
+    }
+  };
+  const handleKeyDown = (event) => {
+    if (event.key === "Escape") {
+      closeTooltip();
+    }
+  };
+  const handleContextMenu = (event) => {
+    const trigger = getTrigger(event.target);
+    if (activeTrigger === trigger || pendingTrigger === trigger) {
+      closeTooltip();
+    }
+  };
+  const destroy = () => {
+    closeTooltip(false);
+    document.removeEventListener("pointerover", handlePointerOpen);
+    document.removeEventListener("pointerout", handleLeave);
+    document.removeEventListener("focusin", handleFocusIn);
+    document.removeEventListener("focusout", handleLeave);
+    document.removeEventListener("keydown", handleKeyDown);
+    document.removeEventListener("contextmenu", handleContextMenu);
+    tooltip = null;
+  };
+
+  document.addEventListener("pointerover", handlePointerOpen);
+  document.addEventListener("pointerout", handleLeave);
+  document.addEventListener("focusin", handleFocusIn);
+  document.addEventListener("focusout", handleLeave);
+  document.addEventListener("keydown", handleKeyDown);
+  document.addEventListener("contextmenu", handleContextMenu);
+  window.addEventListener("pagehide", destroy, { once: true });
+})();
+</script>
+<script id="codex-visualization-lucide" async src="https://unpkg.com/lucide@1.17.0/dist/umd/lucide.js"></script>
+<script>
+(() => {
+  const initialize = () => {
+    globalThis.lucide?.createIcons({ attrs: { width: 16, height: 16 } });
+  };
+  if (globalThis.lucide != null) {
+    initialize();
+    return;
+  }
+  document
+    .getElementById("codex-visualization-lucide")
+    ?.addEventListener("load", initialize, { once: true });
+})();
+</script>
+
+</body>
+</html>
