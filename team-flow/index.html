@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>团队流水加密分享</title>
+<title>团队流水公开分享</title>
 <style>:root {
   color-scheme: light dark;
   background-color: var(--background) !important;
@@ -737,13 +737,11 @@ svg {
 html>body{padding:0}</style>
 <meta name="robots" content="noindex,nofollow,noarchive">
 <meta property="og:type" content="website">
-<meta property="og:title" content="团队流水加密分享">
-<meta property="og:description" content="密码访问 · 数据加密">
-<meta property="og:image" content="./og-share.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="团队流水加密分享">
-<meta name="twitter:description" content="密码访问 · 数据加密">
-<meta name="twitter:image" content="./og-share.png">
+<meta property="og:title" content="团队流水公开分享">
+<meta property="og:description" content="无需密码，直接查看">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="团队流水公开分享">
+<meta name="twitter:description" content="无需密码，直接查看">
 </head>
 <body>
 <style>
@@ -1381,7 +1379,7 @@ html>body{padding:0}</style>
         <summary>关联组内部口径</summary>
         <div class="status-line text-small">
           <span class="viz-badge">最新分组</span>
-          <span>已按确认的关联组进行合并。组内成员互转及本人调拨不计入该组对外收支。</span>
+          <span>吴志发＋黄茹兰；徐贵皇＋李丽芳。组内成员互转及本人调拨不计入该组对外收支。</span>
         </div>
         <div id="related-group-internal-table"></div>
       </details>
@@ -1421,127 +1419,44 @@ html>body{padding:0}</style>
 
 <style>
 #team-flow-drilldown-app{visibility:hidden}
-#secure-share-gate{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;padding:22px;background:radial-gradient(circle at 18% 12%,#173d58 0,#081b2f 45%,#061524 100%);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:#f8f3e8}
-#secure-share-card{width:min(100%,430px);padding:30px 26px;border:1px solid rgba(226,188,116,.35);border-radius:24px;background:rgba(7,28,47,.92);box-shadow:0 26px 80px rgba(0,0,0,.38);backdrop-filter:blur(18px)}
-#secure-share-mark{display:grid;place-items:center;width:56px;height:56px;margin-bottom:18px;border-radius:18px;background:linear-gradient(145deg,#0d7180,#0b425b);font-size:28px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.12)}
-#secure-share-card h1{margin:0 0 8px;font-size:26px;letter-spacing:.03em;color:#fff7e8}
-#secure-share-card p{margin:0 0 22px;color:#b9c7d1;line-height:1.7;font-size:14px}
-#secure-share-form label{display:block;margin-bottom:8px;color:#f2d39a;font-weight:700;font-size:14px}
-#secure-share-password{box-sizing:border-box;width:100%;height:50px;padding:0 15px;border:1px solid #49677b;border-radius:13px;background:#061b2d;color:#fff;font:16px/1 system-ui;outline:none}
-#secure-share-password:focus{border-color:#e2bc74;box-shadow:0 0 0 3px rgba(226,188,116,.16)}
-#secure-share-submit{width:100%;height:50px;margin-top:13px;border:0;border-radius:13px;background:linear-gradient(135deg,#e9c781,#c99446);color:#102535;font-weight:800;font-size:16px;cursor:pointer}
-#secure-share-submit:disabled{cursor:wait;opacity:.65}
-#secure-share-status{min-height:23px;margin:12px 0 0!important;color:#a9bac6!important;text-align:center}
-#secure-share-status[data-state="error"]{color:#ffb4ab!important}
-#secure-share-note{display:flex;gap:9px;align-items:flex-start;margin-top:20px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1);color:#9eb0bd;font-size:12px;line-height:1.6}
-@media(max-width:480px){#secure-share-card{padding:25px 20px;border-radius:20px}#secure-share-card h1{font-size:23px}}
+#public-share-loader{position:fixed;inset:0;z-index:100000;display:grid;place-items:center;padding:22px;background:radial-gradient(circle at 18% 12%,#173d58 0,#081b2f 45%,#061524 100%);font-family:"Microsoft YaHei","PingFang SC",system-ui,sans-serif;color:#f8f3e8}
+#public-share-card{width:min(100%,430px);padding:30px 26px;border:1px solid rgba(226,188,116,.35);border-radius:24px;background:rgba(7,28,47,.92);box-shadow:0 26px 80px rgba(0,0,0,.38);text-align:center}
+#public-share-mark{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 18px;border-radius:18px;background:linear-gradient(145deg,#0d7180,#0b425b);font-size:28px}
+#public-share-card h1{margin:0 0 8px;font-size:25px;color:#fff7e8}
+#public-share-card p{margin:0;color:#b9c7d1;line-height:1.7;font-size:14px}
+#public-share-progress{width:100%;height:5px;margin:22px 0 14px;overflow:hidden;border-radius:99px;background:rgba(255,255,255,.1)}
+#public-share-progress::after{content:"";display:block;width:42%;height:100%;border-radius:inherit;background:linear-gradient(90deg,#0d7180,#e9c781);animation:public-loading 1.25s ease-in-out infinite alternate}
+@keyframes public-loading{from{transform:translateX(-20%)}to{transform:translateX(155%)}}
+@media(prefers-reduced-motion:reduce){#public-share-progress::after{animation:none;width:100%}}
 </style>
-<section id="secure-share-gate" aria-labelledby="secure-share-title">
-  <div id="secure-share-card">
-    <div id="secure-share-mark" aria-hidden="true">🔐</div>
-    <h1 id="secure-share-title">团队流水加密分享</h1>
-    <p>完整分析数据已加密。请输入分享方单独提供的访问密码，数据只会在当前浏览器内解密。</p>
-    <form id="secure-share-form">
-      <label for="secure-share-password">访问密码</label>
-      <input id="secure-share-password" type="password" inputmode="numeric" pattern="[0-9０-９]*" minlength="8" maxlength="8" autocomplete="off" enterkeyhint="go" required>
-      <button id="secure-share-submit" type="submit">解密并查看</button>
-      <p id="secure-share-status" role="status" aria-live="polite">请输入8位数字</p>
-    </form>
-    <div id="secure-share-note"><span aria-hidden="true">◈</span><span>银行卡号已脱敏；请勿在公共群聊中同时发送链接和密码。</span></div>
+<section id="public-share-loader" role="status" aria-live="polite">
+  <div id="public-share-card">
+    <div id="public-share-mark" aria-hidden="true">↻</div>
+    <h1>正在加载团队流水分析</h1>
+    <div id="public-share-progress" aria-hidden="true"></div>
+    <p>无需密码，首次打开需要下载约3 MB数据，请稍候。</p>
   </div>
 </section>
 <script>
 (async () => {
   "use strict";
 
-  const encryptedPayloadPromise = fetch("./share-data-v3.bin", { cache: "force-cache" }).then((response) => {
+  async function loadPublicData() {
+    const response = await fetch("./share-data-public-v4.bin", { cache: "force-cache" });
     if (!response.ok) throw new Error("数据文件加载失败");
-    return response.arrayBuffer();
-  });
-
-  async function decryptPayload(password) {
-    if (!window.crypto?.subtle || typeof DecompressionStream === "undefined") {
-      throw new Error("浏览器版本过旧，请使用最新版Chrome");
+    if (!response.body || typeof DecompressionStream === "undefined") {
+      throw new Error("浏览器版本过旧，请使用最新版Chrome或Safari");
     }
-    const bytes = new Uint8Array(await encryptedPayloadPromise);
-    const textDecoder = new TextDecoder();
-    const textEncoder = new TextEncoder();
-    if (textDecoder.decode(bytes.slice(0, 4)) !== "TFS1") throw new Error("数据文件格式错误");
-    const iterations = new DataView(bytes.buffer, bytes.byteOffset + 4, 4).getUint32(0, false);
-    const salt = bytes.slice(8, 24);
-    const iv = bytes.slice(24, 36);
-    const ciphertextWithTag = bytes.slice(36);
-    const keyMaterial = await crypto.subtle.importKey(
-      "raw",
-      textEncoder.encode(password),
-      "PBKDF2",
-      false,
-      ["deriveKey"]
-    );
-    const key = await crypto.subtle.deriveKey(
-      { name: "PBKDF2", hash: "SHA-256", salt, iterations },
-      keyMaterial,
-      { name: "AES-GCM", length: 256 },
-      false,
-      ["decrypt"]
-    );
-    const decrypted = await crypto.subtle.decrypt(
-      {
-        name: "AES-GCM",
-        iv,
-        additionalData: textEncoder.encode("TEAMFLOW-SHARE-v1"),
-        tagLength: 128,
-      },
-      key,
-      ciphertextWithTag
-    );
-    const stream = new Blob([decrypted]).stream().pipeThrough(new DecompressionStream("gzip"));
-    return JSON.parse(await new Response(stream).text());
-  }
-
-  async function unlockEncryptedData() {
-    const gate = document.getElementById("secure-share-gate");
-    const form = document.getElementById("secure-share-form");
-    const input = document.getElementById("secure-share-password");
-    const button = document.getElementById("secure-share-submit");
-    const status = document.getElementById("secure-share-status");
-    if (!gate || !form || !(input instanceof HTMLInputElement) || !(button instanceof HTMLButtonElement) || !status) {
-      throw new Error("密码页面初始化失败");
-    }
-    input.focus();
-    return new Promise((resolve) => {
-      form.addEventListener("submit", async (event) => {
-        event.preventDefault();
-        if (!input.value || button.disabled) return;
-        button.disabled = true;
-        status.textContent = "正在校验密码并解密数据…";
-        status.dataset.state = "loading";
-        try {
-          const entered = input.value
-            .trim()
-            .replace(/[０-９]/g, (digit) => String.fromCharCode(digit.charCodeAt(0) - 0xfee0))
-            .replace(/\s+/g, "");
-          const data = await decryptPayload(entered);
-          input.value = "";
-          gate.remove();
-          const app = document.getElementById("team-flow-drilldown-app");
-          if (app) app.style.visibility = "visible";
-          resolve(data);
-        } catch (error) {
-          input.value = "";
-          input.focus();
-          status.textContent = error instanceof Error && /浏览器|加载|格式/.test(error.message)
-            ? error.message
-            : "密码不正确，请输入8位数字后重试。";
-          status.dataset.state = "error";
-          button.disabled = false;
-        }
-      });
-    });
+    const stream = response.body.pipeThrough(new DecompressionStream("gzip"));
+    const data = JSON.parse(await new Response(stream).text());
+    document.getElementById("public-share-loader")?.remove();
+    const app = document.getElementById("team-flow-drilldown-app");
+    if (app) app.style.visibility = "visible";
+    return data;
   }
 
 
-  const DATA = await unlockEncryptedData();
+  const DATA = await loadPublicData();
   const root = document.getElementById("team-flow-drilldown-app");
   if (!root) return;
 
@@ -1823,7 +1738,7 @@ html>body{padding:0}</style>
     byId("scope-explanation").innerHTML = isTeam
       ? `<span class="viz-badge">团队主体</span><span>展示全部外部对象；有姓名按同名合并，不拆卡号。${escapeHtml(memberText)}用于筛对象，金额始终汇总全团队。</span>`
       : (isGroup
-        ? `<span class="viz-badge">关联组主体</span><span>已按确认的关联组计算；组内互转不计对外收支，不同关联组之间的往来计入各组现金流。${escapeHtml(state.member === "all" ? "全部关联组" : state.member)}。</span>`
+        ? `<span class="viz-badge">关联组主体</span><span>吴志发+黄茹兰、徐贵皇+李丽芳按组计算；组内互转不计对外收支，不同关联组之间的往来计入各组现金流。${escapeHtml(state.member === "all" ? "全部关联组" : state.member)}。</span>`
         : `<span class="viz-badge">个人主体</span><span>${escapeHtml(memberText)}；每行和汇总均只计算对应账户本人的现金流。</span>`);
   }
 
@@ -2894,11 +2809,8 @@ html>body{padding:0}</style>
   renderInternalAll();
 })().catch((error) => {
   console.error(error);
-  const status = document.getElementById("secure-share-status");
-  if (status) {
-    status.textContent = "页面初始化失败，请刷新重试或改用最新版Chrome。";
-    status.dataset.state = "error";
-  }
+  const loader = document.getElementById("public-share-loader");
+  if (loader) loader.innerHTML = '<div id="public-share-card"><div id="public-share-mark">!</div><h1>数据加载失败</h1><p>请检查网络后刷新，或改用最新版Chrome或Safari。</p></div>';
 });
 </script>
 
