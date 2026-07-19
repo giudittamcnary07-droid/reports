@@ -1437,6 +1437,7 @@ html>body{padding:0}</style>
     <p>无需密码，首次打开需要下载约3 MB数据，请稍候。</p>
   </div>
 </section>
+<script src="./fflate-0.8.3.min.js"></script>
 <script>
 (async () => {
   "use strict";
@@ -1444,11 +1445,12 @@ html>body{padding:0}</style>
   async function loadPublicData() {
     const response = await fetch("./share-data-public-v4.bin", { cache: "force-cache" });
     if (!response.ok) throw new Error("数据文件加载失败");
-    if (!response.body || typeof DecompressionStream === "undefined") {
-      throw new Error("浏览器版本过旧，请使用最新版Chrome或Safari");
+    if (!window.fflate?.gunzipSync || !window.fflate?.strFromU8) {
+      throw new Error("兼容解压组件加载失败");
     }
-    const stream = response.body.pipeThrough(new DecompressionStream("gzip"));
-    const data = JSON.parse(await new Response(stream).text());
+    const compressed = new Uint8Array(await response.arrayBuffer());
+    const text = window.fflate.strFromU8(window.fflate.gunzipSync(compressed));
+    const data = JSON.parse(text);
     document.getElementById("public-share-loader")?.remove();
     const app = document.getElementById("team-flow-drilldown-app");
     if (app) app.style.visibility = "visible";
@@ -2810,7 +2812,11 @@ html>body{padding:0}</style>
 })().catch((error) => {
   console.error(error);
   const loader = document.getElementById("public-share-loader");
-  if (loader) loader.innerHTML = '<div id="public-share-card"><div id="public-share-mark">!</div><h1>数据加载失败</h1><p>请检查网络后刷新，或改用最新版Chrome或Safari。</p></div>';
+  if (loader) {
+    loader.innerHTML = '<div id="public-share-card"><div id="public-share-mark">!</div><h1>数据加载失败</h1><p id="public-share-error-detail">请检查网络后刷新。</p></div>';
+    const detail = document.getElementById("public-share-error-detail");
+    if (detail && error instanceof Error && error.message) detail.textContent = error.message + "，请刷新重试。";
+  }
 });
 </script>
 
