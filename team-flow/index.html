@@ -1443,9 +1443,9 @@ html>body{padding:0}</style>
     <p>完整分析数据已加密。请输入分享方单独提供的访问密码，数据只会在当前浏览器内解密。</p>
     <form id="secure-share-form">
       <label for="secure-share-password">访问密码</label>
-      <input id="secure-share-password" type="password" inputmode="text" autocomplete="current-password" enterkeyhint="go" required>
+      <input id="secure-share-password" type="password" inputmode="numeric" pattern="[0-9０-９]*" minlength="8" maxlength="8" autocomplete="off" enterkeyhint="go" required>
       <button id="secure-share-submit" type="submit">解密并查看</button>
-      <p id="secure-share-status" role="status" aria-live="polite"></p>
+      <p id="secure-share-status" role="status" aria-live="polite">请输入8位数字</p>
     </form>
     <div id="secure-share-note"><span aria-hidden="true">◈</span><span>银行卡号已脱敏；请勿在公共群聊中同时发送链接和密码。</span></div>
   </div>
@@ -1454,7 +1454,7 @@ html>body{padding:0}</style>
 (async () => {
   "use strict";
 
-  const encryptedPayloadPromise = fetch("./share-data.bin?v=2", { cache: "force-cache" }).then((response) => {
+  const encryptedPayloadPromise = fetch("./share-data-v3.bin", { cache: "force-cache" }).then((response) => {
     if (!response.ok) throw new Error("数据文件加载失败");
     return response.arrayBuffer();
   });
@@ -1517,7 +1517,11 @@ html>body{padding:0}</style>
         status.textContent = "正在校验密码并解密数据…";
         status.dataset.state = "loading";
         try {
-          const data = await decryptPayload(input.value);
+          const entered = input.value
+            .trim()
+            .replace(/[０-９]/g, (digit) => String.fromCharCode(digit.charCodeAt(0) - 0xfee0))
+            .replace(/\s+/g, "");
+          const data = await decryptPayload(entered);
           input.value = "";
           gate.remove();
           const app = document.getElementById("team-flow-drilldown-app");
@@ -1528,7 +1532,7 @@ html>body{padding:0}</style>
           input.focus();
           status.textContent = error instanceof Error && /浏览器|加载|格式/.test(error.message)
             ? error.message
-            : "密码错误，请重试。";
+            : "密码不正确，请输入8位数字后重试。";
           status.dataset.state = "error";
           button.disabled = false;
         }
