@@ -1454,7 +1454,7 @@ html>body{padding:0}</style>
 (async () => {
   "use strict";
 
-  const encryptedPayloadPromise = fetch("./share-data.bin?v=1", { cache: "force-cache" }).then((response) => {
+  const encryptedPayloadPromise = fetch("./share-data.bin?v=2", { cache: "force-cache" }).then((response) => {
     if (!response.ok) throw new Error("数据文件加载失败");
     return response.arrayBuffer();
   });
