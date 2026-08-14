@@ -47,6 +47,7 @@
     <p><b>为什么不是04:30？</b>你的要求是09:05起飞、07:05前抵达。倒推45分钟车程＋10分钟Grab接单等车＋10分钟起床下楼，06:00只是零容错的最晚起床时间；05:50多留10分钟，不会过度早起，也不会让路况吃掉机场的两小时。</p>
     <a class="alarmbtn" href="intent:#Intent;action=android.intent.action.SET_ALARM;i.android.intent.extra.alarm.HOUR=5;i.android.intent.extra.alarm.MINUTES=50;S.android.intent.extra.alarm.MESSAGE=KTI%20机场%20-%20起床叫车;B.android.intent.extra.alarm.SKIP_UI=false;end">在Android设置05:50闹钟</a>
     <div class="alarm-note"><b>闹钟标签：</b>KTI机场－起床叫车。手机保持有电、铃声音量打开；如果你睡眠很沉，再加一个05:55备用闹钟。</div>
+    <button class="copy" style="width:100%;margin-top:9px" data-copy="am start -a android.intent.action.SET_ALARM --ei android.intent.extra.alarm.HOUR 5 --ei android.intent.extra.alarm.MINUTES 50 --es android.intent.extra.alarm.MESSAGE 'KTI airport - wake up' --ez android.intent.extra.alarm.SKIP_UI true">复制05:50系统闹钟命令</button>
     <details><summary><b>手机管家备用设置</b></summary><p class="note">当浏览器拦截系统闹钟按钮时，复制下面命令到Termux执行。</p>
       <div class="copyrow"><code>am start -a android.intent.action.SET_ALARM --ei android.intent.extra.alarm.HOUR 5 --ei android.intent.extra.alarm.MINUTES 50 --es android.intent.extra.alarm.MESSAGE 'KTI airport - wake up' --ez android.intent.extra.alarm.SKIP_UI true</code><button class="copy" data-copy="am start -a android.intent.action.SET_ALARM --ei android.intent.extra.alarm.HOUR 5 --ei android.intent.extra.alarm.MINUTES 50 --es android.intent.extra.alarm.MESSAGE 'KTI airport - wake up' --ez android.intent.extra.alarm.SKIP_UI true">复制闹钟命令</button></div>
     </details>
