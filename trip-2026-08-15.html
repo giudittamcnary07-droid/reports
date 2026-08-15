@@ -243,7 +243,7 @@
       dropOffAddress:data.hotel.address,
       dropOffKeywords:data.hotel.grabPoi
     });
-    document.getElementById('openGrab').href=`intent://open?${grabParams.toString()}#Intent;scheme=grab;package=com.grabtaxi.passenger;end`;
+    document.getElementById('openGrab').href=`grab://open?${grabParams.toString()}`;
     document.getElementById('hotelMap').href=`https://www.google.com/maps/dir/?api=1&destination=${hotelQuery}`;
     document.getElementById('trxMap').href=`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(data.places.trx)}`;
 
