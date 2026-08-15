@@ -127,12 +127,13 @@
         <div><b>订单一致</b>Agoda</div><div><b>建筑一致</b>Google</div><div><b>落客点一致</b>Grab POI</div>
       </div>
       <div class="btnrow">
-        <a class="btn dark" id="openGrab" href="https://grab.onelink.me/2695613898?pid=organic_web&amp;c=trip_dashboard&amp;af_channel=trip_dashboard&amp;af_sub1=hotel_booking&amp;is_retargeting=true&amp;af_dp=grab%3A%2F%2Fopen%3FscreenType%3DBOOKING%26vertical%3DCar%26dropOffLatitude%3D3.1375625%26dropOffLongitude%3D101.7134375%26dropOffAddress%3DNo.%2B1%252C%2BJalan%2B1%252F77C%252C%2BOff%2BJalan%2BPudu%252C%2B55100%2BKuala%2BLumpur%252C%2BMalaysia%26dropOffKeywords%3DHotel%2BPudu%2BPlaza&amp;af_force_deeplink=true" aria-label="打开 Grab 并把 Hotel Pudu Plaza 填为目的地">打开 Grab 并填入酒店</a>
+        <a class="btn dark" id="openGrab" href="grab://open?screenType=BOOKING&amp;vertical=Car&amp;dropOffLatitude=3.1375625&amp;dropOffLongitude=101.7134375&amp;dropOffAddress=No.%201%2C%20Jalan%201%2F77C%2C%20Off%20Jalan%20Pudu%2C%2055100%20Kuala%20Lumpur%2C%20Malaysia&amp;dropOffKeywords=Hotel%20Pudu%20Plaza" aria-label="打开 Grab 并把 Hotel Pudu Plaza 填为目的地">打开 Grab 并填入酒店</a>
+        <a class="btn" href="https://giudittamcnary07-droid.github.io/reports/grab-command.html">Termux 保底打开</a>
         <a class="btn" id="hotelMap" href="#">Google Maps 回酒店</a>
         <button class="btn" id="showDriver" type="button">给司机看</button>
         <a class="btn" href="tel:+601155069481">联系酒店</a>
       </div>
-      <p class="muted" style="font-size:13px">按钮会直接进入 Grab 叫车页，并传入 Grab 内的酒店旧名、完整地址和酒店大堂坐标；不再经过 Google，也不再跳转 Play 商店。</p>
+      <p class="muted" style="font-size:13px">首个按钮用手机已安装 Grab 的原生协议直接传入酒店旧名、完整地址和大堂坐标；若浏览器拦截原生协议，使用“Termux 保底打开”。保底链已在本机实测到正确的富都广场酒店目的地。</p>
     </section>
 
     <section class="card" id="evening">
@@ -244,16 +245,7 @@
       dropOffKeywords:data.hotel.grabPoi
     });
     const grabDeepLink=`grab://open?${grabParams.toString()}`;
-    const grabOneLinkParams=new URLSearchParams({
-      pid:'organic_web',
-      c:'trip_dashboard',
-      af_channel:'trip_dashboard',
-      af_sub1:'hotel_booking',
-      is_retargeting:'true',
-      af_dp:grabDeepLink,
-      af_force_deeplink:'true'
-    });
-    document.getElementById('openGrab').href=`https://grab.onelink.me/2695613898?${grabOneLinkParams.toString()}`;
+    document.getElementById('openGrab').href=grabDeepLink;
     document.getElementById('hotelMap').href=`https://www.google.com/maps/dir/?api=1&destination=${hotelQuery}`;
     document.getElementById('trxMap').href=`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(data.places.trx)}`;
 
