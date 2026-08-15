@@ -84,7 +84,10 @@ const mapsInput=document.querySelector('#mapsInput'),asFrom=document.querySelect
 const byId=id=>id==='current'?current:(customPlaces.get(id)||places.find(p=>p.id===id));
 function addOption(select,p){const option=document.createElement('option');option.value=p.id;option.textContent=`${p.type}｜${p.name}`;select.appendChild(option)}
 addOption(from,current);places.forEach(p=>addOption(from,p));places.forEach(p=>addOption(to,p));
-from.value='hotel';to.value='trx';
+const requestedRoute=new URLSearchParams(location.search);
+const requestedFrom=requestedRoute.get('from'),requestedTo=requestedRoute.get('to');
+from.value=places.some(p=>p.id===requestedFrom)?requestedFrom:'hotel';
+to.value=places.some(p=>p.id===requestedTo)?requestedTo:'trx';
 function validPoint(p){return p&&Number.isFinite(p.lat)&&Number.isFinite(p.lng)&&Math.abs(p.lat)<=90&&Math.abs(p.lng)<=180}
 function grabIntent(a,b){const q=new URLSearchParams({screenType:'BOOKING',vertical:'Car',pickUpLatitude:String(a.lat),pickUpLongitude:String(a.lng),pickUpAddress:a.address||a.name,pickUpKeywords:a.grabPoi||a.name,dropOffLatitude:String(b.lat),dropOffLongitude:String(b.lng),dropOffAddress:b.address||b.name,dropOffKeywords:b.grabPoi||b.name});return `intent://open?${q.toString()}#Intent;scheme=grab;package=com.grabtaxi.passenger;end`}
 function mapsRoute(a,b){const q=new URLSearchParams({api:'1',travelmode:'driving',origin:`${a.lat},${a.lng}`,destination:`${b.lat},${b.lng}`});return `https://www.google.com/maps/dir/?${q.toString()}`}
