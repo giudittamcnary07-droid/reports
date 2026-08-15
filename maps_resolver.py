@@ -1,0 +1,99 @@
+#!/data/data/com.termux/files/usr/bin/python
+"""Phone-local resolver for Google Maps share links used by the Grab helper."""
+
+import json
+import urllib.error
+import urllib.parse
+import urllib.request
+from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
+
+HOST = "127.0.0.1"
+PORT = 8767
+ALLOWED_ORIGIN = "https://giudittamcnary07-droid.github.io"
+SHORT_HOSTS = {"maps.app.goo.gl", "goo.gl"}
+
+
+def resolve_short_url(value):
+    value = str(value or "").strip()
+    if not value or len(value) > 2048:
+        raise ValueError("Google Maps 分享链接为空或过长")
+    parsed = urllib.parse.urlsplit(value)
+    host = (parsed.hostname or "").lower()
+    if parsed.scheme != "https" or host not in SHORT_HOSTS:
+        raise ValueError("只支持 Google Maps 官方分享短链接")
+    if host == "goo.gl" and not parsed.path.startswith("/maps"):
+        raise ValueError("只支持 Google Maps 官方分享短链接")
+
+    headers = {"User-Agent": "Mozilla/5.0 PhoneMapsResolver/1.0"}
+    request = urllib.request.Request(value, method="HEAD", headers=headers)
+    try:
+        with urllib.request.urlopen(request, timeout=12) as response:
+            final_url = response.geturl()
+    except urllib.error.HTTPError as exc:
+        if exc.code not in (400, 403, 405):
+            raise
+        request = urllib.request.Request(value, method="GET", headers=headers)
+        with urllib.request.urlopen(request, timeout=12) as response:
+            final_url = response.geturl()
+
+    final = urllib.parse.urlsplit(final_url)
+    final_host = (final.hostname or "").lower()
+    if final_host != "google.com" and not final_host.endswith(".google.com"):
+        raise ValueError("短链接没有展开到 Google Maps 官方地址")
+    if "/maps" not in final.path:
+        raise ValueError("展开结果不是 Google Maps 地点链接")
+    return final_url
+
+
+class Handler(BaseHTTPRequestHandler):
+    server_version = "PhoneMapsResolver/1.0"
+
+    def reply(self, code, body, cors=False):
+        if isinstance(body, (dict, list)):
+            body = json.dumps(body, ensure_ascii=False)
+        payload = body.encode("utf-8")
+        self.send_response(code)
+        self.send_header("Content-Type", "application/json; charset=utf-8")
+        self.send_header("Content-Length", str(len(payload)))
+        self.send_header("Cache-Control", "no-store")
+        self.send_header("X-Content-Type-Options", "nosniff")
+        if cors:
+            origin = self.headers.get("Origin", "")
+            if origin == ALLOWED_ORIGIN:
+                self.send_header("Access-Control-Allow-Origin", origin)
+                self.send_header("Vary", "Origin")
+            self.send_header("Access-Control-Allow-Methods", "GET, OPTIONS")
+            self.send_header("Access-Control-Allow-Headers", "Content-Type")
+            self.send_header("Access-Control-Allow-Private-Network", "true")
+        self.end_headers()
+        self.wfile.write(payload)
+
+    def do_OPTIONS(self):
+        if urllib.parse.urlsplit(self.path).path != "/resolve":
+            return self.reply(404, {"error": "not found"})
+        if self.headers.get("Origin", "") != ALLOWED_ORIGIN:
+            return self.reply(403, {"ok": False, "error": "来源被拒绝"})
+        return self.reply(204, "", cors=True)
+
+    def do_GET(self):
+        parsed_request = urllib.parse.urlsplit(self.path)
+        if parsed_request.path == "/health":
+            return self.reply(200, {"ok": True, "service": "maps-resolver"})
+        if parsed_request.path != "/resolve":
+            return self.reply(404, {"error": "not found"})
+        origin = self.headers.get("Origin", "")
+        if origin and origin != ALLOWED_ORIGIN:
+            return self.reply(403, {"ok": False, "error": "来源被拒绝"})
+        try:
+            query = urllib.parse.parse_qs(parsed_request.query)
+            final_url = resolve_short_url((query.get("url") or [""])[0])
+            return self.reply(200, {"ok": True, "url": final_url}, cors=True)
+        except Exception as exc:
+            return self.reply(400, {"ok": False, "error": str(exc)}, cors=True)
+
+    def log_message(self, _format, *_args):
+        return
+
+
+if __name__ == "__main__":
+    ThreadingHTTPServer((HOST, PORT), Handler).serve_forever()
