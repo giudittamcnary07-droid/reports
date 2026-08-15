@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grab 启动命令</title>
+<style>
+  body{font:16px/1.6 system-ui,sans-serif;max-width:680px;margin:0 auto;padding:24px;background:#f6f7f9;color:#17202a}
+  main{background:#fff;border-radius:18px;padding:22px;box-shadow:0 8px 28px #0001}
+  button{width:100%;padding:16px;border:0;border-radius:12px;background:#00b14f;color:#fff;font-size:18px;font-weight:700}
+  pre{white-space:pre-wrap;word-break:break-all;background:#111;color:#d8ffd8;padding:14px;border-radius:10px;font-size:12px}
+  #status{font-weight:700;color:#087f3b}
+</style>
+<main>
+  <h1>Grab：Hotel Pudu Plaza</h1>
+  <p>点击后复制命令，再切回 Termux 粘贴执行。只打开叫车页，不确认订单。</p>
+  <button id="copy">复制 Termux 命令</button>
+  <p id="status" aria-live="polite"></p>
+  <pre id="command"></pre>
+</main>
+<script>
+const command = `su -c "am start -W -a android.intent.action.VIEW -d 'grab://open?screenType=BOOKING&vertical=Car&dropOffLatitude=3.1375625&dropOffLongitude=101.7134375&dropOffAddress=No.%201%2C%20Jalan%201%2F77C%2C%20Off%20Jalan%20Pudu%2C%2055100%20Kuala%20Lumpur%2C%20Malaysia&dropOffKeywords=Hotel%20Pudu%20Plaza' -p com.grabtaxi.passenger"`;
+document.querySelector('#command').textContent = command;
+document.querySelector('#copy').addEventListener('click', async () => {
+  const status = document.querySelector('#status');
+  try {
+    await navigator.clipboard.writeText(command);
+    status.textContent = '已复制，可以切回 Termux。';
+  } catch (_) {
+    const area = document.createElement('textarea');
+    area.value = command;
+    document.body.appendChild(area);
+    area.select();
+    const ok = document.execCommand('copy');
+    area.remove();
+    status.textContent = ok ? '已复制，可以切回 Termux。' : '复制失败。';
+  }
+});
+</script>
+</html>
