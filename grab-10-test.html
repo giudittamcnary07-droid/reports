@@ -39,7 +39,7 @@ places.forEach((p,i)=>{
     dropOffLatitude:String(p.lat),dropOffLongitude:String(p.lng),
     dropOffAddress:p.address,dropOffKeywords:p.name
   });
-  const card=document.createElement('section');card.className='case';
+  const card=document.createElement('section');card.className='case';card.id=`case-${i+1}`;
   card.innerHTML=`<div class="type">${i+1}. ${p.type}</div><b>${p.name}</b><div class="address">${p.address}</div><a href="intent://open?${params.toString()}#Intent;scheme=grab;package=com.grabtaxi.passenger;end">测试：直接进入车型/价格页</a>`;
   root.appendChild(card);
 });
