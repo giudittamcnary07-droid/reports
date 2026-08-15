@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh-CN">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grab 十类 Google Maps 地址完整测试</title>
+<style>
+  body{font:16px/1.5 system-ui,sans-serif;max-width:680px;margin:auto;padding:18px;background:#f3f5f7;color:#17202a}
+  h1{font-size:24px}.case{background:#fff;margin:14px 0;padding:16px;border-radius:16px;box-shadow:0 5px 20px #0001}
+  .type{color:#087f3b;font-weight:800}.address{font-size:13px;color:#5b6570}
+  a{display:block;margin-top:12px;padding:15px;text-align:center;border-radius:11px;background:#00b14f;color:#fff;font-weight:800;text-decoration:none}
+</style>
+<h1>Grab 十类 Google Maps 地址完整测试</h1>
+<p>固定上车点：Seeds Hotel Premier Pudu TRX Kuala Lumpur。每项必须直接进入车型/价格页才算通过；不预订。</p>
+<main id="cases"></main>
+<script>
+const pickup={
+  lat:3.1375366,lng:101.713483,
+  name:'Seeds Hotel Premier Pudu TRX Kuala Lumpur',
+  address:'2, Jalan 1/77C, off, Jln Pudu, Pudu, 55100 Kuala Lumpur'
+};
+const places=[
+  {type:'酒店',name:'Traders Hotel Kuala Lumpur',address:'Persiaran KLCC, Kuala Lumpur City Centre, 50088 Kuala Lumpur',lat:3.1540569,lng:101.7150575},
+  {type:'机场',name:'Kuala Lumpur International Airport',address:'64000, KLIA, 64000 Sepang, Selangor',lat:2.7417476,lng:101.7015569},
+  {type:'火车站',name:'KL Sentral',address:'Kuala Lumpur Sentral, 50470 Kuala Lumpur',lat:3.13417,lng:101.68611},
+  {type:'商场',name:'Pavilion Kuala Lumpur',address:'168, Jln Bukit Bintang, Bukit Bintang, 55100 Kuala Lumpur',lat:3.1491059,lng:101.7129235},
+  {type:'医院',name:'Universiti Malaya Medical Centre',address:'Lembah Pantai, 59100 Kuala Lumpur',lat:3.1137497,lng:101.6528165},
+  {type:'地标',name:'Petronas Twin Towers',address:'Kuala Lumpur City Centre, 50088 Kuala Lumpur',lat:3.1574693,lng:101.7115639},
+  {type:'宗教景点',name:'Batu Caves',address:'Gombak, 68100 Batu Caves, Selangor',lat:3.2378844,lng:101.6840385},
+  {type:'餐饮街',name:'Jalan Alor Food Street',address:'64, Jln Alor, Bukit Bintang, 50200 Kuala Lumpur',lat:3.146121,lng:101.7092762},
+  {type:'使馆',name:"Embassy of the People's Republic of China in Malaysia",address:'229, Jln Ampang, Taman U Thant, 50450 Kuala Lumpur',lat:3.1595511,lng:101.7278224},
+  {type:'政府机构',name:'DBKL Tower 1',address:'Menara DBKL, 1, Jln Raja Laut, 50350 Kuala Lumpur',lat:3.1523673,lng:101.6939669}
+];
+const root=document.querySelector('#cases');
+places.forEach((p,i)=>{
+  const params=new URLSearchParams({
+    screenType:'BOOKING',vertical:'Car',
+    pickUpLatitude:String(pickup.lat),pickUpLongitude:String(pickup.lng),
+    pickUpAddress:pickup.address,pickUpKeywords:pickup.name,
+    dropOffLatitude:String(p.lat),dropOffLongitude:String(p.lng),
+    dropOffAddress:p.address,dropOffKeywords:p.name
+  });
+  const card=document.createElement('section');card.className='case';
+  card.innerHTML=`<div class="type">${i+1}. ${p.type}</div><b>${p.name}</b><div class="address">${p.address}</div><a href="intent://open?${params.toString()}#Intent;scheme=grab;package=com.grabtaxi.passenger;end">测试：直接进入车型/价格页</a>`;
+  root.appendChild(card);
+});
+</script>
+</html>
