@@ -127,12 +127,12 @@
         <div><b>订单一致</b>Agoda</div><div><b>建筑一致</b>Google</div><div><b>落客点一致</b>Grab POI</div>
       </div>
       <div class="btnrow">
-        <a class="btn dark" id="openGrab" href="https://grab.onelink.me/2695613898?pid=organic_web&amp;c=organic_web&amp;af_adset=grab_website&amp;af_ad=my&amp;af_channel=trip_dashboard&amp;af_sub1=open_grab&amp;is_retargeting=true&amp;af_dp=grab%3A%2F%2Fopen%3FscreenType%3DMAIN&amp;af_force_deeplink=true&amp;af_web_dp=https%3A%2F%2Fplay.google.com%2Fstore%2Fapps%2Fdetails%3Fid%3Dcom.grabtaxi.passenger">打开 Grab 应用</a>
+        <a class="btn dark" id="openGrab" href="#" aria-label="打开 Grab 并把 Hotel Pudu Plaza 填为目的地">打开 Grab 并填入酒店</a>
         <a class="btn" id="hotelMap" href="#">Google Maps 回酒店</a>
         <button class="btn" id="showDriver" type="button">给司机看</button>
         <a class="btn" href="tel:+601155069481">联系酒店</a>
       </div>
-      <p class="muted" style="font-size:13px">这里不再提供“复制 Google 地址到 Grab”。Google 只负责导航；Grab 使用它自己的正确地点名称与落客点。</p>
+      <p class="muted" style="font-size:13px">按钮会直接进入 Grab 叫车页，并传入 Grab 内的酒店旧名、完整地址和酒店大堂坐标；不再经过 Google，也不再跳转 Play 商店。</p>
     </section>
 
     <section class="card" id="evening">
@@ -223,7 +223,9 @@
       "name": "Seeds Hotel Premier Pudu TRX Kuala Lumpur",
       "grabPoi": "Hotel Pudu Plaza",
       "address": "No. 1, Jalan 1/77C, Off Jalan Pudu, 55100 Kuala Lumpur, Malaysia",
-      "phone": "+601155069481"
+      "phone": "+601155069481",
+      "lat": 3.1375625,
+      "lng": 101.7134375
     },
     "places": {
       "trx": "The Exchange TRX, Persiaran TRX, Tun Razak Exchange, 55188 Kuala Lumpur, Malaysia"
@@ -233,6 +235,15 @@
   <script>
     const data=JSON.parse(document.getElementById('tripData').textContent);
     const hotelQuery=encodeURIComponent(`${data.hotel.name}, ${data.hotel.address}`);
+    const grabParams=new URLSearchParams({
+      screenType:'BOOKING',
+      vertical:'Car',
+      dropOffLatitude:String(data.hotel.lat),
+      dropOffLongitude:String(data.hotel.lng),
+      dropOffAddress:data.hotel.address,
+      dropOffKeywords:data.hotel.grabPoi
+    });
+    document.getElementById('openGrab').href=`intent://open?${grabParams.toString()}#Intent;scheme=grab;package=com.grabtaxi.passenger;end`;
     document.getElementById('hotelMap').href=`https://www.google.com/maps/dir/?api=1&destination=${hotelQuery}`;
     document.getElementById('trxMap').href=`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(data.places.trx)}`;
 
