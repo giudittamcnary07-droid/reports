@@ -120,20 +120,20 @@
           <div><h3 id="hotelName">Seeds Hotel Premier Pudu TRX Kuala Lumpur</h3><p class="muted">Pudu · 吉隆坡</p></div>
           <span class="verified">后台已核实</span>
         </div>
-        <p class="address" id="hotelAddress">No. 1, Jalan 1/77C, Off Jalan Pudu, 55100 Kuala Lumpur, Malaysia</p>
+        <p class="address" id="hotelAddress">酒店门牌：No. 1, Jalan 1/77C, Off Jalan Pudu, 55100 Kuala Lumpur, Malaysia<br><span class="muted">Google／Grab 地图针：2, Jalan 1/77C, off Jln Pudu, Pudu</span></p>
         <p class="alias"><b>Grab 内的正确地点：</b><span id="grabPoi">Hotel Pudu Plaza</span><br><span class="muted">这是酒店旧名称；不是 Seeds Hotel - Bukit Bintang，也不是 Taman Maluri 分店。</span></p>
       </div>
       <div class="system-note" aria-label="后台核验状态">
         <div><b>订单一致</b>Agoda</div><div><b>建筑一致</b>Google</div><div><b>落客点一致</b>Grab POI</div>
       </div>
       <div class="btnrow">
-        <a class="btn dark" id="openGrab" href="#" aria-label="读取当前位置并直接进入 Grab 回酒店车型价格页">定位后直接查看回酒店车价</a>
-        <a class="btn" href="https://giudittamcnary07-droid.github.io/reports/grab-command.html">Termux 保底打开</a>
+        <a class="btn dark" id="openGrab" href="#" aria-label="从 TRX 直接进入 Grab 回酒店车型价格页">从 TRX 回酒店 · 直接看车价</a>
+        <a class="btn" id="openGrabCurrent" href="#" aria-label="读取当前位置并直接进入 Grab 回酒店车型价格页">其他地点回酒店 · 定位后看车价</a>
         <a class="btn" id="hotelMap" href="#">Google Maps 回酒店</a>
         <button class="btn" id="showDriver" type="button">给司机看</button>
         <a class="btn" href="tel:+601155069481">联系酒店</a>
       </div>
-      <p class="muted" id="grabStatus" style="font-size:13px">点击首个按钮后，网页只在手机本地读取一次当前位置，同时把上车坐标和已核实的酒店大堂坐标传给 Grab；看到车型与价格后再核对上车点，不会自动预订。</p>
+      <p class="muted" id="grabStatus" style="font-size:13px">TRX 按钮把已核实的上车点和酒店大堂坐标一次传给 Grab，可直接进入车型价格页；“其他地点”按钮会在手机本地读取一次当前位置。两者都不会自动预订。</p>
     </section>
 
     <section class="card" id="evening">
@@ -144,6 +144,7 @@
         <div class="plan-item"><div class="timebox">20:15</div><div><b>回酒店</b><small>第一天不排满；回房整理明天住宿与后续行程。</small></div></div>
       </div>
       <div class="btnrow">
+        <a class="btn dark" id="openGrabToTrx" href="#">从酒店去 TRX · 直接看车价</a>
         <a class="btn dark" id="trxMap" href="#">导航到 TRX</a>
         <button class="btn" id="stayIn" type="button">今晚只在酒店休息</button>
       </div>
@@ -223,13 +224,19 @@
     "hotel": {
       "name": "Seeds Hotel Premier Pudu TRX Kuala Lumpur",
       "grabPoi": "Hotel Pudu Plaza",
-      "address": "No. 1, Jalan 1/77C, Off Jalan Pudu, 55100 Kuala Lumpur, Malaysia",
+      "address": "2, Jalan 1/77C, off Jln Pudu, Jalan Brunei Utara, Pudu, 55100 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
       "phone": "+601155069481",
-      "lat": 3.1375625,
-      "lng": 101.7134375
+      "lat": 3.1375366,
+      "lng": 101.713483
     },
     "places": {
-      "trx": "The Exchange TRX, Persiaran TRX, Tun Razak Exchange, 55188 Kuala Lumpur, Malaysia"
+      "trx": {
+        "name": "The Exchange TRX",
+        "grabPoi": "The Exchange TRX",
+        "address": "Persiaran TRX, Tun Razak Exchange, 55188 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+        "lat": 3.1424073,
+        "lng": 101.7168132
+      }
     }
   }
   </script>
@@ -252,14 +259,23 @@
       return `intent://open?${grabParams.toString()}#Intent;scheme=grab;package=com.grabtaxi.passenger;end`;
     }
     const openGrab=document.getElementById('openGrab');
+    const openGrabCurrent=document.getElementById('openGrabCurrent');
+    const openGrabToTrx=document.getElementById('openGrabToTrx');
     const grabStatus=document.getElementById('grabStatus');
-    openGrab.addEventListener('click',(event)=>{
+    openGrab.href=grabIntent(data.places.trx,data.hotel);
+    openGrabToTrx.href=grabIntent({
+      lat:data.hotel.lat,
+      lng:data.hotel.lng,
+      address:data.hotel.address,
+      name:data.hotel.name
+    },data.places.trx);
+    openGrabCurrent.addEventListener('click',(event)=>{
       event.preventDefault();
       if(!navigator.geolocation){
-        grabStatus.textContent='当前浏览器不支持定位。请使用下方 Termux 保底按钮；不会打开一条缺少上车点的路线。';
+        grabStatus.textContent='当前浏览器不支持定位，因此没有打开一条缺少上车点的路线。可使用本页已经写明出发地的固定路线按钮。';
         return;
       }
-      openGrab.textContent='正在读取上车点…';
+      openGrabCurrent.textContent='正在读取上车点…';
       grabStatus.textContent='正在用手机 GPS 确认上车坐标；首次使用可能出现一次定位授权。';
       navigator.geolocation.getCurrentPosition((position)=>{
         const pickup={
@@ -269,16 +285,16 @@
           name:'My Current Location'
         };
         grabStatus.textContent=`定位完成（精度约 ${Math.round(position.coords.accuracy)} 米），正在进入 Grab 车型与价格页。`;
-        openGrab.textContent='正在打开 Grab…';
+        openGrabCurrent.textContent='正在打开 Grab…';
         window.location.href=grabIntent(pickup,data.hotel);
-        setTimeout(()=>{ openGrab.textContent='重新定位并查看车价'; },1800);
+        setTimeout(()=>{ openGrabCurrent.textContent='重新定位并查看车价'; },1800);
       },(error)=>{
-        openGrab.textContent='重试定位并查看车价';
-        grabStatus.textContent=`没有取得上车点（${error.message || '定位被阻止'}），因此没有打开错误路线。可重新授权定位后再试，或使用 Termux 保底。`;
+        openGrabCurrent.textContent='重试定位并查看车价';
+        grabStatus.textContent=`没有取得上车点（${error.message || '定位被阻止'}），因此没有打开错误路线。可重新授权定位后再试，或使用本页已经写明出发地的固定路线按钮。`;
       },{enableHighAccuracy:true,timeout:12000,maximumAge:30000});
     });
     document.getElementById('hotelMap').href=`https://www.google.com/maps/dir/?api=1&destination=${hotelQuery}`;
-    document.getElementById('trxMap').href=`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(data.places.trx)}`;
+    document.getElementById('trxMap').href=`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(`${data.places.trx.name}, ${data.places.trx.address}`)}`;
 
     const clock=document.getElementById('clock');
     const actionTitle=document.getElementById('actionTitle');
