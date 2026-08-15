@@ -57,7 +57,7 @@
     <h2>已核实的 Google Maps 地点库</h2>
     <div class="place-grid" id="placeGrid"></div>
   </section>
-  <p class="privacy">页面不保存实时位置、订单或付款资料。点击 Grab 后仍由你决定是否预订。</p>
+  <p class="privacy">新增地点仅保存在本机浏览器；页面不保存实时位置、订单或付款资料。点击 Grab 后仍由你决定是否预订。</p>
 </main>
 <script>
 const places=[
@@ -77,18 +77,21 @@ const places=[
 const current={id:'current',type:'实时位置',name:'我的当前位置',address:'Current Location',current:true};
 let customSerial=0;
 const customPlaces=new Map();
+const customStorageKey='maps-to-grab.customPlaces.v1';
 const from=document.querySelector('#from'),to=document.querySelector('#to'),status=document.querySelector('#status');
 const fromName=document.querySelector('#fromName'),fromCoord=document.querySelector('#fromCoord'),toName=document.querySelector('#toName'),toCoord=document.querySelector('#toCoord');
 const openGrab=document.querySelector('#openGrab'),openMaps=document.querySelector('#openMaps'),swap=document.querySelector('#swap');
 const mapsInput=document.querySelector('#mapsInput'),asFrom=document.querySelector('#asFrom'),asTo=document.querySelector('#asTo');
 const byId=id=>id==='current'?current:(customPlaces.get(id)||places.find(p=>p.id===id));
+function validPoint(p){return p&&Number.isFinite(p.lat)&&Number.isFinite(p.lng)&&Math.abs(p.lat)<=90&&Math.abs(p.lng)<=180}
+try{const saved=JSON.parse(localStorage.getItem(customStorageKey)||'[]');saved.slice(0,50).forEach(p=>{if(p&&typeof p.id==='string'&&validPoint(p))customPlaces.set(p.id,{...p,type:'自定义地点'})})}catch(_){}
+function saveCustomPlaces(){try{localStorage.setItem(customStorageKey,JSON.stringify([...customPlaces.values()].slice(-50)))}catch(_){}}
 function addOption(select,p){const option=document.createElement('option');option.value=p.id;option.textContent=`${p.type}｜${p.name}`;select.appendChild(option)}
-addOption(from,current);places.forEach(p=>addOption(from,p));places.forEach(p=>addOption(to,p));
+addOption(from,current);places.forEach(p=>addOption(from,p));places.forEach(p=>addOption(to,p));customPlaces.forEach(p=>{addOption(from,p);addOption(to,p)});
 const requestedRoute=new URLSearchParams(location.search);
 const requestedFrom=requestedRoute.get('from'),requestedTo=requestedRoute.get('to');
 from.value=places.some(p=>p.id===requestedFrom)?requestedFrom:'hotel';
 to.value=places.some(p=>p.id===requestedTo)?requestedTo:'trx';
-function validPoint(p){return p&&Number.isFinite(p.lat)&&Number.isFinite(p.lng)&&Math.abs(p.lat)<=90&&Math.abs(p.lng)<=180}
 function grabIntent(a,b){const q=new URLSearchParams({screenType:'BOOKING',vertical:'Car',pickUpLatitude:String(a.lat),pickUpLongitude:String(a.lng),pickUpAddress:a.address||a.name,pickUpKeywords:a.grabPoi||a.name,dropOffLatitude:String(b.lat),dropOffLongitude:String(b.lng),dropOffAddress:b.address||b.name,dropOffKeywords:b.grabPoi||b.name});return `intent://open?${q.toString()}#Intent;scheme=grab;package=com.grabtaxi.passenger;end`}
 function mapsRoute(a,b){const q=new URLSearchParams({api:'1',travelmode:'driving',origin:`${a.lat},${a.lng}`,destination:`${b.lat},${b.lng}`});return `https://www.google.com/maps/dir/?${q.toString()}`}
 function update(){const a=byId(from.value),b=byId(to.value);fromName.textContent=a?.name||'—';toName.textContent=b?.name||'—';fromCoord.textContent=validPoint(a)?`${a.lat}, ${a.lng}`:(a?.current?'由手机定位':'—');toCoord.textContent=validPoint(b)?`${b.lat}, ${b.lng}`:'—';
@@ -102,8 +105,9 @@ openGrab.addEventListener('click',e=>{if(byId(from.value)?.current){e.preventDef
 openMaps.addEventListener('click',e=>{if(byId(from.value)?.current){e.preventDefault();locateThen(mapsRoute)}});
 from.addEventListener('change',update);to.addEventListener('change',update);swap.addEventListener('click',()=>{if(to.value==='current'){status.textContent='目的地不能使用“当前位置”。';return}const a=from.value,b=to.value;if(b==='current')return;from.value=b;if([...to.options].some(o=>o.value===a))to.value=a;update()});
 function parseMaps(text){let decoded=String(text).trim();try{decoded=decodeURIComponent(decoded)}catch(_){}const patterns=[/@(-?\d{1,2}(?:\.\d+)?),(-?\d{1,3}(?:\.\d+)?)/,/!3d(-?\d{1,2}(?:\.\d+)?)[^!]*!4d(-?\d{1,3}(?:\.\d+)?)/,/(?:query|destination|origin|ll|q)=(-?\d{1,2}(?:\.\d+)?)[,%20\s]+(-?\d{1,3}(?:\.\d+)?)/,/\b(-?\d{1,2}\.\d{4,})[,\s]+(-?\d{1,3}\.\d{4,})\b/];let m;for(const re of patterns){m=decoded.match(re);if(m)break}if(!m)return null;const lat=Number(m[1]),lng=Number(m[2]);if(!validPoint({lat,lng}))return null;let name='Google Maps 自定义地点';const place=decoded.match(/\/place\/([^/@?]+)/);if(place)name=place[1].replace(/\+/g,' ').trim()||name;return {lat,lng,name,address:name}}
-function installCustom(target){const p=parseMaps(mapsInput.value);if(!p){status.textContent='没有识别到坐标。请先打开 Google Maps 短链接，再复制地址栏里的完整链接。';return}p.id=`custom-${++customSerial}`;p.type='自定义地点';customPlaces.set(p.id,p);addOption(from,p);addOption(to,p);if(target==='from')from.value=p.id;else to.value=p.id;status.textContent=`已读取：${p.name}（${p.lat}, ${p.lng}）`;update()}
+function installCustom(target){const p=parseMaps(mapsInput.value);if(!p){status.textContent='没有识别到坐标。请先打开 Google Maps 短链接，再复制地址栏里的完整链接。';return}let saved=[...customPlaces.values()].find(x=>Math.abs(x.lat-p.lat)<1e-7&&Math.abs(x.lng-p.lng)<1e-7);if(!saved){p.id=`custom-${Date.now()}-${++customSerial}`;p.type='自定义地点';customPlaces.set(p.id,p);addOption(from,p);addOption(to,p);appendPlace(p);saveCustomPlaces();saved=p}if(target==='from')from.value=saved.id;else to.value=saved.id;status.textContent=`已保存：${saved.name}（${saved.lat}, ${saved.lng}）`;update()}
 asFrom.addEventListener('click',()=>installCustom('from'));asTo.addEventListener('click',()=>installCustom('to'));
-const grid=document.querySelector('#placeGrid');places.forEach(p=>{const card=document.createElement('article');card.className='place';const tag=document.createElement('span');tag.className='tag';tag.textContent=p.type;const name=document.createElement('b');name.textContent=p.name;const address=document.createElement('small');address.textContent=p.address;const buttons=document.createElement('div');buttons.className='buttons';const grab=document.createElement('a');grab.className='btn grab';grab.textContent='从酒店去这里 · Grab';grab.href=grabIntent(places[0],p);if(p.id==='hotel'){grab.textContent='从 TRX 回酒店 · Grab';grab.href=grabIntent(places[1],p)}const maps=document.createElement('a');maps.className='btn maps';maps.textContent='Google Maps';maps.href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.lat},${p.lng}`)}`;buttons.append(grab,maps);card.append(tag,name,address,buttons);grid.appendChild(card)});
+const grid=document.querySelector('#placeGrid');function appendPlace(p){const card=document.createElement('article');card.className='place';const tag=document.createElement('span');tag.className='tag';tag.textContent=p.type;const name=document.createElement('b');name.textContent=p.name;const address=document.createElement('small');address.textContent=p.address;const buttons=document.createElement('div');buttons.className='buttons';const grab=document.createElement('a');grab.className='btn grab';grab.textContent='从酒店去这里 · Grab';grab.href=grabIntent(places[0],p);if(p.id==='hotel'){grab.textContent='从 TRX 回酒店 · Grab';grab.href=grabIntent(places[1],p)}const maps=document.createElement('a');maps.className='btn maps';maps.textContent='Google Maps';maps.href=`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(`${p.lat},${p.lng}`)}`;buttons.append(grab,maps);card.append(tag,name,address,buttons);grid.appendChild(card)}
+places.forEach(appendPlace);customPlaces.forEach(appendPlace);
 update();
 </script></body></html>
