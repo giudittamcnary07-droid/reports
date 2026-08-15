@@ -31,7 +31,14 @@ const places=[
   {type:'政府机构',name:'DBKL Tower 1',address:'Menara DBKL, 1, Jln Raja Laut, 50350 Kuala Lumpur',lat:3.1523673,lng:101.6939669}
 ];
 const root=document.querySelector('#cases');
-places.forEach((p,i)=>{
+const requested=Number(new URLSearchParams(location.search).get('case'));
+const selected=(Number.isInteger(requested)&&requested>=1&&requested<=places.length)
+  ? [{p:places[requested-1],i:requested-1}]
+  : places.map((p,i)=>({p,i}));
+if(selected.length===1){
+  document.querySelector('h1').textContent=`Grab 完整测试 ${requested}/10`;
+}
+selected.forEach(({p,i})=>{
   const params=new URLSearchParams({
     screenType:'BOOKING',vertical:'Car',
     pickUpLatitude:String(pickup.lat),pickUpLongitude:String(pickup.lng),
