@@ -1,7 +1,9 @@
 #!/data/data/com.termux/files/usr/bin/python
 """Phone-local resolver for Google Maps share links used by the Grab helper."""
 
+import html
 import json
+import re
 import urllib.error
 import urllib.parse
 import urllib.request
@@ -11,6 +13,60 @@ HOST = "127.0.0.1"
 PORT = 8767
 ALLOWED_ORIGIN = "https://giudittamcnary07-droid.github.io"
 SHORT_HOSTS = {"maps.app.goo.gl", "goo.gl"}
+REQUEST_HEADERS = {"User-Agent": "Mozilla/5.0 PhoneMapsResolver/1.1"}
+
+
+def fetch_text(url):
+    request = urllib.request.Request(url, method="GET", headers=REQUEST_HEADERS)
+    with urllib.request.urlopen(request, timeout=15) as response:
+        return response.read(8_000_000).decode("utf-8", errors="replace")
+
+
+def direct_coordinates(url):
+    decoded = urllib.parse.unquote(url)
+    patterns = (
+        r"!3d(-?\d{1,2}(?:\.\d+)?)!4d(-?\d{1,3}(?:\.\d+)?)",
+        r"@(-?\d{1,2}(?:\.\d+)?),(-?\d{1,3}(?:\.\d+)?)",
+    )
+    for pattern in patterns:
+        match = re.search(pattern, decoded)
+        if match:
+            lat, lng = float(match.group(1)), float(match.group(2))
+            if -90 <= lat <= 90 and -180 <= lng <= 180:
+                return lat, lng
+    return None
+
+
+def place_label(final_url):
+    match = re.search(r"/maps/place/([^/?]+)", final_url)
+    if not match:
+        return "Google Maps 地点", ""
+    label = urllib.parse.unquote_plus(match.group(1)).strip()
+    parts = [part.strip() for part in label.split(",") if part.strip()]
+    if not parts:
+        return "Google Maps 地点", ""
+    return parts[0], ", ".join(parts[1:])
+
+
+def preview_coordinates(final_url):
+    page = fetch_text(final_url)
+    preview_match = re.search(r'href=["\'](/maps/preview/place[^"\']+)', page)
+    if not preview_match:
+        raise ValueError("Google Maps 地点页没有提供坐标核对入口")
+    preview_url = urllib.parse.urljoin(
+        "https://www.google.com", html.unescape(preview_match.group(1))
+    )
+    preview = fetch_text(preview_url)
+    center_match = re.search(
+        r"\[\[\s*[0-9.eE+-]+\s*,\s*(-?\d{1,3}\.\d+)\s*,\s*(-?\d{1,2}\.\d+)\s*\]",
+        preview,
+    )
+    if not center_match:
+        raise ValueError("Google Maps 地点 ID 已找到，但没有返回真实坐标")
+    lng, lat = float(center_match.group(1)), float(center_match.group(2))
+    if not (-90 <= lat <= 90 and -180 <= lng <= 180):
+        raise ValueError("Google Maps 返回的地点坐标无效")
+    return lat, lng
 
 
 def resolve_short_url(value):
@@ -24,15 +80,14 @@ def resolve_short_url(value):
     if host == "goo.gl" and not parsed.path.startswith("/maps"):
         raise ValueError("只支持 Google Maps 官方分享短链接")
 
-    headers = {"User-Agent": "Mozilla/5.0 PhoneMapsResolver/1.0"}
-    request = urllib.request.Request(value, method="HEAD", headers=headers)
+    request = urllib.request.Request(value, method="HEAD", headers=REQUEST_HEADERS)
     try:
         with urllib.request.urlopen(request, timeout=12) as response:
             final_url = response.geturl()
     except urllib.error.HTTPError as exc:
         if exc.code not in (400, 403, 405):
             raise
-        request = urllib.request.Request(value, method="GET", headers=headers)
+        request = urllib.request.Request(value, method="GET", headers=REQUEST_HEADERS)
         with urllib.request.urlopen(request, timeout=12) as response:
             final_url = response.geturl()
 
@@ -42,7 +97,15 @@ def resolve_short_url(value):
         raise ValueError("短链接没有展开到 Google Maps 官方地址")
     if "/maps" not in final.path:
         raise ValueError("展开结果不是 Google Maps 地点链接")
-    return final_url
+    coordinates = direct_coordinates(final_url) or preview_coordinates(final_url)
+    name, address = place_label(final_url)
+    return {
+        "url": final_url,
+        "lat": coordinates[0],
+        "lng": coordinates[1],
+        "name": name,
+        "address": address,
+    }
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -86,8 +149,8 @@ class Handler(BaseHTTPRequestHandler):
             return self.reply(403, {"ok": False, "error": "来源被拒绝"})
         try:
             query = urllib.parse.parse_qs(parsed_request.query)
-            final_url = resolve_short_url((query.get("url") or [""])[0])
-            return self.reply(200, {"ok": True, "url": final_url}, cors=True)
+            result = resolve_short_url((query.get("url") or [""])[0])
+            return self.reply(200, {"ok": True, **result}, cors=True)
         except Exception as exc:
             return self.reply(400, {"ok": False, "error": str(exc)}, cors=True)
 
