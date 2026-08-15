@@ -127,13 +127,13 @@
         <div><b>订单一致</b>Agoda</div><div><b>建筑一致</b>Google</div><div><b>落客点一致</b>Grab POI</div>
       </div>
       <div class="btnrow">
-        <a class="btn dark" id="openGrab" href="grab://open?screenType=BOOKING&amp;vertical=Car&amp;dropOffLatitude=3.1375625&amp;dropOffLongitude=101.7134375&amp;dropOffAddress=No.%201%2C%20Jalan%201%2F77C%2C%20Off%20Jalan%20Pudu%2C%2055100%20Kuala%20Lumpur%2C%20Malaysia&amp;dropOffKeywords=Hotel%20Pudu%20Plaza" aria-label="打开 Grab 并把 Hotel Pudu Plaza 填为目的地">打开 Grab 并填入酒店</a>
+        <a class="btn dark" id="openGrab" href="#" aria-label="读取当前位置并直接进入 Grab 回酒店车型价格页">定位后直接查看回酒店车价</a>
         <a class="btn" href="https://giudittamcnary07-droid.github.io/reports/grab-command.html">Termux 保底打开</a>
         <a class="btn" id="hotelMap" href="#">Google Maps 回酒店</a>
         <button class="btn" id="showDriver" type="button">给司机看</button>
         <a class="btn" href="tel:+601155069481">联系酒店</a>
       </div>
-      <p class="muted" style="font-size:13px">首个按钮用手机已安装 Grab 的原生协议直接传入酒店旧名、完整地址和大堂坐标；若浏览器拦截原生协议，使用“Termux 保底打开”。保底链已在本机实测到正确的富都广场酒店目的地。</p>
+      <p class="muted" id="grabStatus" style="font-size:13px">点击首个按钮后，网页只在手机本地读取一次当前位置，同时把上车坐标和已核实的酒店大堂坐标传给 Grab；看到车型与价格后再核对上车点，不会自动预订。</p>
     </section>
 
     <section class="card" id="evening">
@@ -236,16 +236,47 @@
   <script>
     const data=JSON.parse(document.getElementById('tripData').textContent);
     const hotelQuery=encodeURIComponent(`${data.hotel.name}, ${data.hotel.address}`);
-    const grabParams=new URLSearchParams({
-      screenType:'BOOKING',
-      vertical:'Car',
-      dropOffLatitude:String(data.hotel.lat),
-      dropOffLongitude:String(data.hotel.lng),
-      dropOffAddress:data.hotel.address,
-      dropOffKeywords:data.hotel.grabPoi
+    function grabIntent(pickup, destination){
+      const grabParams=new URLSearchParams({
+        screenType:'BOOKING',
+        vertical:'Car',
+        pickUpLatitude:String(pickup.lat),
+        pickUpLongitude:String(pickup.lng),
+        pickUpAddress:pickup.address,
+        pickUpKeywords:pickup.name,
+        dropOffLatitude:String(destination.lat),
+        dropOffLongitude:String(destination.lng),
+        dropOffAddress:destination.address,
+        dropOffKeywords:destination.grabPoi || destination.name
+      });
+      return `intent://open?${grabParams.toString()}#Intent;scheme=grab;package=com.grabtaxi.passenger;end`;
+    }
+    const openGrab=document.getElementById('openGrab');
+    const grabStatus=document.getElementById('grabStatus');
+    openGrab.addEventListener('click',(event)=>{
+      event.preventDefault();
+      if(!navigator.geolocation){
+        grabStatus.textContent='当前浏览器不支持定位。请使用下方 Termux 保底按钮；不会打开一条缺少上车点的路线。';
+        return;
+      }
+      openGrab.textContent='正在读取上车点…';
+      grabStatus.textContent='正在用手机 GPS 确认上车坐标；首次使用可能出现一次定位授权。';
+      navigator.geolocation.getCurrentPosition((position)=>{
+        const pickup={
+          lat:position.coords.latitude,
+          lng:position.coords.longitude,
+          address:'Current Location',
+          name:'My Current Location'
+        };
+        grabStatus.textContent=`定位完成（精度约 ${Math.round(position.coords.accuracy)} 米），正在进入 Grab 车型与价格页。`;
+        openGrab.textContent='正在打开 Grab…';
+        window.location.href=grabIntent(pickup,data.hotel);
+        setTimeout(()=>{ openGrab.textContent='重新定位并查看车价'; },1800);
+      },(error)=>{
+        openGrab.textContent='重试定位并查看车价';
+        grabStatus.textContent=`没有取得上车点（${error.message || '定位被阻止'}），因此没有打开错误路线。可重新授权定位后再试，或使用 Termux 保底。`;
+      },{enableHighAccuracy:true,timeout:12000,maximumAge:30000});
     });
-    const grabDeepLink=`grab://open?${grabParams.toString()}`;
-    document.getElementById('openGrab').href=grabDeepLink;
     document.getElementById('hotelMap').href=`https://www.google.com/maps/dir/?api=1&destination=${hotelQuery}`;
     document.getElementById('trxMap').href=`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(data.places.trx)}`;
 
