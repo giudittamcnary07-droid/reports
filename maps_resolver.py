@@ -48,6 +48,42 @@ def place_label(final_url):
     return parts[0], ", ".join(parts[1:])
 
 
+def translate_address_zh(address):
+    address = str(address or "").strip()
+    if not address:
+        return ""
+    query = urllib.parse.urlencode(
+        {
+            "client": "gtx",
+            "sl": "auto",
+            "tl": "zh-CN",
+            "dt": "t",
+            "q": address,
+        }
+    )
+    try:
+        payload = json.loads(
+            fetch_text(f"https://translate.googleapis.com/translate_a/single?{query}")
+        )
+        translated = "".join(
+            segment[0]
+            for segment in (payload[0] or [])
+            if isinstance(segment, list) and segment and isinstance(segment[0], str)
+        ).strip()
+    except Exception:
+        translated = address
+    replacements = (
+        (r"\bLevel\s+(\d+[A-Za-z]?)\b", r"第\1层"),
+        (r"\bFloor\s+(\d+[A-Za-z]?)\b", r"第\1层"),
+        (r"\bKuala Lumpur City Centre\b", "吉隆坡市中心"),
+        (r"\bFederal Territory of Kuala Lumpur\b", "吉隆坡联邦直辖区"),
+        (r"\bKuala Lumpur\b", "吉隆坡"),
+    )
+    for pattern, replacement in replacements:
+        translated = re.sub(pattern, replacement, translated, flags=re.IGNORECASE)
+    return re.sub(r"\s*,\s*", "，", translated).strip(" ，")
+
+
 def preview_coordinates(final_url):
     page = fetch_text(final_url)
     preview_match = re.search(r'href=["\'](/maps/preview/place[^"\']+)', page)
@@ -105,6 +141,7 @@ def resolve_short_url(value):
         "lng": coordinates[1],
         "name": name,
         "address": address,
+        "addressZh": translate_address_zh(address),
     }
 
 
