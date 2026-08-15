@@ -243,7 +243,17 @@
       dropOffAddress:data.hotel.address,
       dropOffKeywords:data.hotel.grabPoi
     });
-    document.getElementById('openGrab').href=`grab://open?${grabParams.toString()}`;
+    const grabDeepLink=`grab://open?${grabParams.toString()}`;
+    const grabOneLinkParams=new URLSearchParams({
+      pid:'organic_web',
+      c:'trip_dashboard',
+      af_channel:'trip_dashboard',
+      af_sub1:'hotel_booking',
+      is_retargeting:'true',
+      af_dp:grabDeepLink,
+      af_force_deeplink:'true'
+    });
+    document.getElementById('openGrab').href=`https://grab.onelink.me/2695613898?${grabOneLinkParams.toString()}`;
     document.getElementById('hotelMap').href=`https://www.google.com/maps/dir/?api=1&destination=${hotelQuery}`;
     document.getElementById('trxMap').href=`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(data.places.trx)}`;
 
