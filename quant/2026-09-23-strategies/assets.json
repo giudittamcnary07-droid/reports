@@ -1,0 +1,259 @@
+{
+  "schema": "exchange.daily.assets.v1",
+  "name": "货币交易所日报",
+  "report_date": "2026-09-23",
+  "as_of": "2026-09-23T19:04:46.894000+08:00",
+  "collection_window": "北京时间19:01—19:05；价格19:05—19:06",
+  "unit": "USDT等值",
+  "stablecoin_basis": "USDT=1；Hyperliquid USDC按1 USDT展示；Gate美股按平台USD兑USDT=1口径。不是实时可成交兑换价。",
+  "total": "9328.02784984",
+  "total_label": "已核实范围资产小计",
+  "total_complete": false,
+  "daily_net_profit": null,
+  "venues": [
+    {
+      "venue": "币安",
+      "value": "4878.70192023",
+      "time": "2026-09-23T19:04:46.894000+08:00",
+      "basis": "10类钱包总览各计一次；不加理财凭证、机器人网页或合约分项。",
+      "parts": [
+        {
+          "name": "现货钱包",
+          "value": "949.94293318"
+        },
+        {
+          "name": "资金钱包",
+          "value": "2863.9861645"
+        },
+        {
+          "name": "U本位合约（含LDUSDT）",
+          "value": "514.04754839"
+        },
+        {
+          "name": "币本位合约",
+          "value": "292.34653937"
+        },
+        {
+          "name": "理财",
+          "value": "5.68657335"
+        },
+        {
+          "name": "平台机器人",
+          "value": "252.69216144"
+        }
+      ]
+    },
+    {
+      "venue": "Gate",
+      "value": "4263.29951561",
+      "time": "2026-09-23T19:01:51.472000+08:00",
+      "basis": "全钱包total.amount；借款为0；美股权益已含85.95美元浮盈，不再加回。",
+      "parts": [
+        {
+          "name": "理财",
+          "value": "546.9520708"
+        },
+        {
+          "name": "量化账户",
+          "value": "34.74143094"
+        },
+        {
+          "name": "现货",
+          "value": "2795.61601387"
+        },
+        {
+          "name": "美股 / ETF",
+          "value": "885.99"
+        }
+      ]
+    },
+    {
+      "venue": "Hyperliquid",
+      "value": "186.026414",
+      "time": "2026-09-23T19:03:16.075000+08:00",
+      "basis": "接口返回unifiedAccount；以统一spot余额为准，不再加各DEX account_value与hold。USDC按1 USDT估值。",
+      "parts": [
+        {
+          "name": "统一账户余额（含占用）",
+          "value": "186.026414"
+        }
+      ]
+    },
+    {
+      "venue": "Bitget",
+      "value": "0E-8",
+      "time": "2026-09-23T19:01:51.672000+08:00",
+      "basis": "经典账户现货/合约/资金/理财/机器人/杠杆六桶总览均为0；不能据此判断转账是否发出或在途。",
+      "parts": [
+        {
+          "name": "spot",
+          "value": "0"
+        },
+        {
+          "name": "futures",
+          "value": "0"
+        },
+        {
+          "name": "funding",
+          "value": "0.00000000"
+        },
+        {
+          "name": "earn",
+          "value": "0"
+        },
+        {
+          "name": "bots",
+          "value": "0"
+        },
+        {
+          "name": "margin",
+          "value": "0"
+        }
+      ]
+    }
+  ],
+  "coins": [
+    {
+      "venue": "Gate",
+      "asset": "BTC",
+      "bucket": "现货 + 活期理财",
+      "classification": "未匹配登记对冲",
+      "current_price": "85871.3",
+      "value": "546.5627675394062",
+      "day_price_pct": "-0.6312429990464817026318956500",
+      "unrealized_pnl": null,
+      "realized_pnl": null,
+      "today_actual_pnl": null,
+      "static_price_effect": null,
+      "cost_status": "待核：无完整取得成本及手续费链",
+      "note": "理财BTC仍承担币价涨跌；这部分未匹配已有对冲组。利息与价差盈亏分开。",
+      "price_at": "2026-09-23T11:05:56.873310+00:00",
+      "price_source": "https://api.gateio.ws/api/v4/spot/tickers",
+      "reference_source": "https://api.gateio.ws/api/v4/spot/candlesticks"
+    },
+    {
+      "venue": "Gate",
+      "asset": "ETH5S",
+      "bucket": "现货",
+      "classification": "未匹配登记对冲",
+      "current_price": "0.31931",
+      "value": "0.0000024331422",
+      "day_price_pct": "0.585919042368876988502126300",
+      "unrealized_pnl": null,
+      "realized_pnl": null,
+      "today_actual_pnl": null,
+      "static_price_effect": null,
+      "cost_status": "待核：无完整取得成本及手续费链",
+      "note": "5倍做空ETH杠杆代币的极小余额，不是普通ETH现货。",
+      "price_at": "2026-09-23T11:05:56.673322+00:00",
+      "price_source": "https://api.gateio.ws/api/v4/spot/tickers",
+      "reference_source": "https://api.gateio.ws/api/v4/spot/candlesticks"
+    },
+    {
+      "venue": "Gate",
+      "asset": "GT",
+      "bucket": "现货",
+      "classification": "未匹配登记对冲",
+      "current_price": "10.85",
+      "value": "0.099506457785",
+      "day_price_pct": "-2.252252252252252252252252250",
+      "unrealized_pnl": null,
+      "realized_pnl": null,
+      "today_actual_pnl": null,
+      "static_price_effect": null,
+      "cost_status": "待核：无完整取得成本及手续费链",
+      "note": "今天有两条奖励入账，不能把期末数量乘全天涨跌当真实收益。",
+      "price_at": "2026-09-23T11:05:55.949823+00:00",
+      "price_source": "https://api.gateio.ws/api/v4/spot/tickers",
+      "reference_source": "https://api.gateio.ws/api/v4/spot/candlesticks"
+    },
+    {
+      "venue": "币安",
+      "asset": "ETH",
+      "bucket": "活期理财",
+      "classification": "对冲归属待核",
+      "current_price": "2735.18000000",
+      "value": "5.6829381896000000",
+      "day_price_pct": "-0.3177958380407449251066000900",
+      "unrealized_pnl": null,
+      "realized_pnl": null,
+      "today_actual_pnl": null,
+      "static_price_effect": null,
+      "cost_status": "待核：无完整取得成本及手续费链",
+      "note": "与币本位保证金分开列；不将LDETH凭证再加一次。对冲归属尚未匹配，不能直接认定全部为独立现货。",
+      "price_at": "2026-09-23T11:05:54.539015+00:00",
+      "price_source": "https://api.binance.com/api/v3/ticker/price",
+      "reference_source": "https://api.binance.com/api/v3/klines"
+    }
+  ],
+  "stocks": [
+    {
+      "asset": "MU",
+      "venue": "Gate美股",
+      "value": "569.0932",
+      "platform_unrealized_pnl": "74.72",
+      "platform_pnl_pct": "15.11",
+      "today_platform_pnl": "0",
+      "state": "pre_market",
+      "note": "交易所持仓浮盈字段，未独立核验全部费用；不是币圈现货，非今日利润。盘前今日字段为0不代表全天无变化。"
+    },
+    {
+      "asset": "SPY",
+      "venue": "Gate美股",
+      "value": "255.2187",
+      "platform_unrealized_pnl": "-0.27",
+      "platform_pnl_pct": "-0.1",
+      "today_platform_pnl": "0",
+      "state": "pre_market",
+      "note": "交易所持仓浮盈字段，未独立核验全部费用；不是币圈现货，非今日利润。盘前今日字段为0不代表全天无变化。"
+    },
+    {
+      "asset": "TSLG",
+      "venue": "Gate美股",
+      "value": "51.60",
+      "platform_unrealized_pnl": "11.5",
+      "platform_pnl_pct": "28.67",
+      "today_platform_pnl": "0",
+      "state": "pre_market",
+      "note": "交易所持仓浮盈字段，未独立核验全部费用；不是币圈现货，非今日利润。盘前今日字段为0不代表全天无变化。"
+    }
+  ],
+  "stock_platform_unrealized_pnl": "85.95",
+  "cost_complete": false,
+  "market_note": "涨跌百分比为各交易所现价对北京时间00:00第一分钟开盘价；行情变化，不是你的持仓盈利。缺完整成本与当日流量，真实现货盈亏与静态价格影响均不填数。",
+  "gaps": [
+    "全账户总资产待补齐：币安PM独立接口未通过（-2015），平台机器人仅按钱包总览纳入，未独立核对PM负债。",
+    "已覆盖币安、Gate、Hyperliquid、Bitget的当前返回范围；未纳入未接入交易所、子账户、外部钱包和跨所转账在途核对。",
+    "Gate量化账户34.74 USDT已含在总览中，内部币种/对冲属性未拆解；ETH理财对冲归属待核。",
+    "缺日初权益、完整转账和取得成本，不能给出当天全账户净利润或各币真实累计收益。",
+    "各接口非同一秒快照；币安钱包总览U本位值与直接合约接口有约0.55 USDT时点/估值差，按钱包总览统一口径，未强行平差。"
+  ],
+  "excluded_from_spot": [
+    "币安ETH币本位保证金及合约仓",
+    "币安BTC套利机器人资产",
+    "跨所机器人多空双腿",
+    "稳定币、LDUSDT凭证",
+    "LDETH只作为理财凭证，不在持仓中重复加总"
+  ],
+  "sources": [
+    {
+      "name": "Binance钱包总览官方字段",
+      "url": "https://developers.binance.com/en/docs/catalog/core-trading-wallet/api/rest-api/asset"
+    },
+    {
+      "name": "Hyperliquid统一账户去重规则",
+      "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/account-abstraction-modes"
+    },
+    {
+      "name": "Gate总资产接口",
+      "url": "https://www.gate.com/docs/developers/apiv4/en/wallet/"
+    }
+  ],
+  "evidence_hashes": {
+    "ASSET_RAW.json": "bbc32bf22f6fc07a41a9bc41188e748a265da362e892c52dba5714e0d9b2eee2",
+    "BINANCE_HL_RAW.json": "30d376bb514c2610a7115488fce230722cd5e201d59c514dfddabda49073614d",
+    "BINANCE_DETAILS.json": "cdcb7d6393de5a958bf3007097ccc8b58fdc9bdca7c0bc036114533179d2f5f9",
+    "GATE_DETAILS.json": "853f16df3e9da0b8924eb87cedfdcafc04a03abce6a55da026142f603428cdd1",
+    "MARKET.json": "56956bdb874a7b865dcb6a4006a497ffa0f509fb914ac3e79153142b907b907e"
+  }
+}
