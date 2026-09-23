@@ -1,0 +1,471 @@
+{
+  "schema": "tokyo.daily.process.v1",
+  "date": "2026-09-23",
+  "start_at": "2026-09-23T00:00:00+08:00",
+  "as_of": "2026-09-23T18:33:31.216000+08:00",
+  "is_intraday": true,
+  "scope": "跨所机器人逐笔账本；ETH保存的账户观察；其他产品覆盖缺口明确列出",
+  "summary": {
+    "new_position_groups": 2,
+    "closed_position_groups": 0,
+    "open_position_groups": 5,
+    "submitted_orders": 5,
+    "filled_orders": 4,
+    "unfilled_cancelled_orders": 1,
+    "funding_records": 79,
+    "eth_funding_records": 3,
+    "daily_total_profit": null
+  },
+  "income": [
+    {
+      "venue": "binance",
+      "count": 2,
+      "received": "0",
+      "paid": "0.03917941",
+      "net": "-0.03917941",
+      "currency": null,
+      "currency_basis": "asset field was not preserved in bot ledger; currency remains unverified",
+      "source": "bot SQLite funding_rows"
+    },
+    {
+      "venue": "hyperliquid",
+      "count": 77,
+      "received": "0.178850",
+      "paid": "0.003958",
+      "net": "0.174892",
+      "currency": "USDC",
+      "currency_basis": "reader maps delta.usdc; independently exchanged cash not reconciled",
+      "source": "bot SQLite funding_rows"
+    },
+    {
+      "venue": "Binance ETH 币本位",
+      "count": 3,
+      "received": "0.00002307",
+      "paid": "0",
+      "net": "0.00002307",
+      "currency": "ETH",
+      "currency_basis": "asset field in saved account income observation",
+      "source_checked_at": "2026-09-23T18:33:26.541000+08:00",
+      "source": "ETH account_observation; returned rows cover today, historical list capped to 30"
+    }
+  ],
+  "fees": [
+    {
+      "venue": "binance",
+      "currency": "USDT",
+      "amount": "0.0",
+      "filled_orders": 2,
+      "missing_fee": 0,
+      "time_basis": "orders created today; not exchange execution timestamps"
+    },
+    {
+      "venue": "hyperliquid",
+      "currency": "USDC",
+      "amount": "0.047336",
+      "filled_orders": 2,
+      "missing_fee": 0,
+      "time_basis": "orders created today; not exchange execution timestamps"
+    }
+  ],
+  "order_records": [
+    {
+      "venue": "binance",
+      "symbol": "BMNRUSDT",
+      "side": "BUY",
+      "purpose": "entry_maker",
+      "status": "CANCELED",
+      "qty": 1.74,
+      "filled_qty": 0.0,
+      "avg_price": 0.0,
+      "reduce_only": 0,
+      "fee": null,
+      "fee_ccy": null,
+      "submitted_at": "2026-09-23T03:00:31.885000+08:00",
+      "last_status_at": "2026-09-23T03:00:33.929000+08:00"
+    },
+    {
+      "venue": "binance",
+      "symbol": "BMNRUSDT",
+      "side": "BUY",
+      "purpose": "entry_maker",
+      "status": "FILLED",
+      "qty": 1.74,
+      "filled_qty": 1.74,
+      "avg_price": 28.69,
+      "reduce_only": 0,
+      "fee": 0.0,
+      "fee_ccy": "USDT",
+      "submitted_at": "2026-09-23T03:00:33.936000+08:00",
+      "last_status_at": "2026-09-23T03:00:40.667000+08:00"
+    },
+    {
+      "venue": "hyperliquid",
+      "symbol": "xyz:BMNR",
+      "side": "SELL",
+      "purpose": "entry",
+      "status": "FILLED",
+      "qty": 1.74,
+      "filled_qty": 1.74,
+      "avg_price": 28.698,
+      "reduce_only": 0,
+      "fee": 0.043143,
+      "fee_ccy": "USDC",
+      "submitted_at": "2026-09-23T03:00:37.998000+08:00",
+      "last_status_at": "2026-09-23T03:00:40.649000+08:00"
+    },
+    {
+      "venue": "binance",
+      "symbol": "IRENUSDT",
+      "side": "BUY",
+      "purpose": "entry_maker",
+      "status": "FILLED",
+      "qty": 1.0,
+      "filled_qty": 1.0,
+      "avg_price": 48.53,
+      "reduce_only": 0,
+      "fee": 0.0,
+      "fee_ccy": "USDT",
+      "submitted_at": "2026-09-23T13:48:32.484000+08:00",
+      "last_status_at": "2026-09-23T13:48:37.112000+08:00"
+    },
+    {
+      "venue": "hyperliquid",
+      "symbol": "xyz:IREN",
+      "side": "SELL",
+      "purpose": "entry",
+      "status": "FILLED",
+      "qty": 1.0,
+      "filled_qty": 1.0,
+      "avg_price": 48.531,
+      "reduce_only": 0,
+      "fee": 0.004193,
+      "fee_ccy": "USDC",
+      "submitted_at": "2026-09-23T13:48:34.519000+08:00",
+      "last_status_at": "2026-09-23T13:48:37.096000+08:00"
+    }
+  ],
+  "entry_groups": [
+    {
+      "symbol": "BMNR",
+      "opened_at": "2026-09-23T03:00:39.939000+08:00",
+      "status": "OPEN",
+      "long_venue": "binance",
+      "short_venue": "hyperliquid",
+      "qty": 1.74,
+      "orders": [
+        {
+          "venue": "binance",
+          "symbol": "BMNRUSDT",
+          "side": "BUY",
+          "purpose": "entry_maker",
+          "status": "CANCELED",
+          "qty": 1.74,
+          "filled_qty": 0.0,
+          "avg_price": 0.0,
+          "reduce_only": 0,
+          "fee": null,
+          "fee_ccy": null,
+          "submitted_at": "2026-09-23T03:00:31.885000+08:00",
+          "last_status_at": "2026-09-23T03:00:33.929000+08:00"
+        },
+        {
+          "venue": "binance",
+          "symbol": "BMNRUSDT",
+          "side": "BUY",
+          "purpose": "entry_maker",
+          "status": "FILLED",
+          "qty": 1.74,
+          "filled_qty": 1.74,
+          "avg_price": 28.69,
+          "reduce_only": 0,
+          "fee": 0.0,
+          "fee_ccy": "USDT",
+          "submitted_at": "2026-09-23T03:00:33.936000+08:00",
+          "last_status_at": "2026-09-23T03:00:40.667000+08:00"
+        },
+        {
+          "venue": "hyperliquid",
+          "symbol": "xyz:BMNR",
+          "side": "SELL",
+          "purpose": "entry",
+          "status": "FILLED",
+          "qty": 1.74,
+          "filled_qty": 1.74,
+          "avg_price": 28.698,
+          "reduce_only": 0,
+          "fee": 0.043143,
+          "fee_ccy": "USDC",
+          "submitted_at": "2026-09-23T03:00:37.998000+08:00",
+          "last_status_at": "2026-09-23T03:00:40.649000+08:00"
+        }
+      ],
+      "reason": {
+        "recorded_eligible": true,
+        "passed_checks": [
+          "当前费率差达到下限",
+          "历史数据足够",
+          "过去窗口平均费率差达到下限",
+          "方向持续性",
+          "盘口深度与冲击成本可估",
+          "预期资金费覆盖成本",
+          "两所价差在范围内",
+          "空头腿价格不明显低于多头腿",
+          "深度足够",
+          "币安合约非新上线",
+          "币安合约无下架交割日",
+          "HL 未下架且持仓未满",
+          "币安费率未撞上下限",
+          "两所标的价格一致（映射校验）",
+          "单腿金额满足两所最小下单额",
+          "成交额足够",
+          "不在财报/公司行为禁开窗口",
+          "非盘前/IPO 前合约",
+          "分红日历已获取",
+          "不在除息禁开窗口",
+          "处于允许的交易时段",
+          "距离长休市足够远",
+          "币安结算间隔近 48 小时未变",
+          "xyz 盘口价差 <0.1%",
+          "两所数量步长可对齐"
+        ],
+        "failed_checks": [],
+        "entry_spread_apr_model": 0.811910964,
+        "expected_funding_fraction_model": 0.011744968825159302,
+        "round_trip_cost_fraction_model": 0.00387994221973979,
+        "note": "入场理由来自当时机器人候选记录；预测不代表实收，不是本次重新批准策略"
+      },
+      "explanation": "两边同数量反向开仓，目标是收取资金费差；账本记录双腿已成交，仍在持有，未完成平仓兑现。"
+    },
+    {
+      "symbol": "IREN",
+      "opened_at": "2026-09-23T13:48:36.343000+08:00",
+      "status": "OPEN",
+      "long_venue": "binance",
+      "short_venue": "hyperliquid",
+      "qty": 1.0,
+      "orders": [
+        {
+          "venue": "binance",
+          "symbol": "IRENUSDT",
+          "side": "BUY",
+          "purpose": "entry_maker",
+          "status": "FILLED",
+          "qty": 1.0,
+          "filled_qty": 1.0,
+          "avg_price": 48.53,
+          "reduce_only": 0,
+          "fee": 0.0,
+          "fee_ccy": "USDT",
+          "submitted_at": "2026-09-23T13:48:32.484000+08:00",
+          "last_status_at": "2026-09-23T13:48:37.112000+08:00"
+        },
+        {
+          "venue": "hyperliquid",
+          "symbol": "xyz:IREN",
+          "side": "SELL",
+          "purpose": "entry",
+          "status": "FILLED",
+          "qty": 1.0,
+          "filled_qty": 1.0,
+          "avg_price": 48.531,
+          "reduce_only": 0,
+          "fee": 0.004193,
+          "fee_ccy": "USDC",
+          "submitted_at": "2026-09-23T13:48:34.519000+08:00",
+          "last_status_at": "2026-09-23T13:48:37.096000+08:00"
+        }
+      ],
+      "reason": {
+        "recorded_eligible": true,
+        "passed_checks": [
+          "当前费率差达到下限",
+          "历史数据足够",
+          "过去窗口平均费率差达到下限",
+          "方向持续性",
+          "盘口深度与冲击成本可估",
+          "预期资金费覆盖成本",
+          "两所价差在范围内",
+          "空头腿价格不明显低于多头腿",
+          "深度足够",
+          "币安合约非新上线",
+          "币安合约无下架交割日",
+          "HL 未下架且持仓未满",
+          "币安费率未撞上下限",
+          "两所标的价格一致（映射校验）",
+          "单腿金额满足两所最小下单额",
+          "成交额足够",
+          "不在财报/公司行为禁开窗口",
+          "非盘前/IPO 前合约",
+          "分红日历已获取",
+          "不在除息禁开窗口",
+          "处于允许的交易时段",
+          "盘外：该标的方向能撑到开盘",
+          "距离长休市足够远",
+          "币安结算间隔近 48 小时未变",
+          "xyz 盘口价差 <0.1%",
+          "两所数量步长可对齐"
+        ],
+        "failed_checks": [],
+        "entry_spread_apr_model": 0.508987536,
+        "expected_funding_fraction_model": 0.005554893662626146,
+        "round_trip_cost_fraction_model": 0.0016636842523428865,
+        "note": "入场理由来自当时机器人候选记录；预测不代表实收，不是本次重新批准策略"
+      },
+      "explanation": "两边同数量反向开仓，目标是收取资金费差；账本记录双腿已成交，仍在持有，未完成平仓兑现。",
+      "reentry_note": "此前一组IREN于09-22 02:39因保证金占用记录平仓；本次是重新开仓，不是旧仓续持。"
+    }
+  ],
+  "open_holdings": [
+    {
+      "symbol": "USAR",
+      "status": "OPEN",
+      "qty": 2.55,
+      "long_venue": "binance",
+      "short_venue": "hyperliquid",
+      "opened_at": "2026-09-12T01:22:42.942000+08:00",
+      "new_today": false,
+      "source": "bot positions ledger, not independent per-venue position reconciliation"
+    },
+    {
+      "symbol": "NET",
+      "status": "OPEN",
+      "qty": 0.09,
+      "long_venue": "binance",
+      "short_venue": "hyperliquid",
+      "opened_at": "2026-09-14T23:39:46.843000+08:00",
+      "new_today": false,
+      "source": "bot positions ledger, not independent per-venue position reconciliation"
+    },
+    {
+      "symbol": "SMH",
+      "status": "OPEN",
+      "qty": 0.05,
+      "long_venue": "binance",
+      "short_venue": "hyperliquid",
+      "opened_at": "2026-09-15T22:03:13.526000+08:00",
+      "new_today": false,
+      "source": "bot positions ledger, not independent per-venue position reconciliation"
+    },
+    {
+      "symbol": "BMNR",
+      "status": "OPEN",
+      "qty": 1.74,
+      "long_venue": "binance",
+      "short_venue": "hyperliquid",
+      "opened_at": "2026-09-23T03:00:39.939000+08:00",
+      "new_today": true,
+      "source": "bot positions ledger, not independent per-venue position reconciliation"
+    },
+    {
+      "symbol": "IREN",
+      "status": "OPEN",
+      "qty": 1.0,
+      "long_venue": "binance",
+      "short_venue": "hyperliquid",
+      "opened_at": "2026-09-23T13:48:36.343000+08:00",
+      "new_today": true,
+      "source": "bot positions ledger, not independent per-venue position reconciliation"
+    }
+  ],
+  "eth": {
+    "positions": [
+      {
+        "symbol": "ETHUSD_PERP",
+        "positionSide": "SHORT",
+        "positionAmt": "-28",
+        "entryPrice": "2506.50513700",
+        "markPrice": "2729.22573314",
+        "unRealizedProfit": "-0.00911612",
+        "liquidationPrice": "0",
+        "leverage": "1",
+        "marginType": "isolated",
+        "isolatedMargin": "0.10278391",
+        "updateTime": 1790150400188
+      }
+    ],
+    "coin": [
+      {
+        "asset": "ETH",
+        "walletBalance": "0.11616902",
+        "availableBalance": "0.00426899",
+        "marginBalance": "0.10705290",
+        "unrealizedProfit": "-0.00911612"
+      }
+    ],
+    "position_checked_at": "2026-09-23T18:33:26.529000+08:00",
+    "funding_records": [
+      {
+        "symbol": "ETHUSD_PERP",
+        "asset": "ETH",
+        "incomeType": "FUNDING_FEE",
+        "income": "0.00000540",
+        "time": 1790092800000
+      },
+      {
+        "symbol": "ETHUSD_PERP",
+        "asset": "ETH",
+        "incomeType": "FUNDING_FEE",
+        "income": "0.00001017",
+        "time": 1790121600000
+      },
+      {
+        "symbol": "ETHUSD_PERP",
+        "asset": "ETH",
+        "incomeType": "FUNDING_FEE",
+        "income": "0.00000750",
+        "time": 1790150400000
+      }
+    ],
+    "trade_coverage": "此快照没有当天委托/成交明细，不能据此称今日没有交易"
+  },
+  "btc": {
+    "website_snapshot": [
+      {
+        "perp": "BTCUSD",
+        "position_size": "-2 Cont",
+        "position_qty": 0.00291,
+        "position_ccy": "BTC",
+        "market_value": 251.21,
+        "market_value_ccy": "USDT",
+        "status": "Working"
+      }
+    ],
+    "received_at": "2026-09-23T18:33:21.071000+08:00",
+    "scope": "网页转录；接收时间不是交易所更新保证；CLASSIC账户空仓不能否定平台机器人仓位",
+    "trade_coverage": "没有该平台机器人今日交易明细"
+  },
+  "coverage_gaps": [
+    "跨所账本不是全账户流水；资金费零记录不等于零资金费。",
+    "订单创建与最后更新时点不是交易所逐笔成交时点；4单成交不是4笔独立策略。",
+    "币安资金费原asset未保存，币种仍待核；不能合成美元净利润。",
+    "ETH无今日交易明细；BTC仅网页观察；Gate、Bitget和活期理财未取得今日日内完整流水。",
+    "缺日初权益、全账户资产与资金流对账，不能计算账户今日总净利润。"
+  ],
+  "sources": [
+    {
+      "file": "xvenue_status",
+      "sha256": "277f71654e4aa601d0ec8955c07d27a81381176a6aac607f26f5ccedf4242032"
+    },
+    {
+      "file": "eth_observation",
+      "sha256": "10eccb4402ebe2cf3ffe387301e34c109038dabda9a9d5309c06bce8def36c45"
+    },
+    {
+      "file": "btc_observation",
+      "sha256": "a1d96808e11b7a0a8e2a4f28cd0a6eb64eb84e57a90e8cb3fdecfac9e08ef807"
+    },
+    {
+      "file": "bot_snapshot",
+      "sha256": "639728f293cf092c1d80bb6109fbca740d3e52d747731af47af751df10fd56f3"
+    },
+    {
+      "file": "capital_ledger",
+      "sha256": "c66567566610d90e0d465982ce02a40c9abc413e009dc6eafe7cd18a2a860b44"
+    },
+    {
+      "file": "ledger",
+      "sha256": "2a7acf03a63c342f0d69e23a5471f1cf4b41cd8be11c1a88865f320449a484fc"
+    }
+  ],
+  "funding_scope_note": "币安账本记录2条，与公开费率中持仓时段的两个非零结算点数量及金额相符；零费率结算点未见到账记录。金额与USDT口径复算一致，但账本未保存币种字段，仍待核；未完成独立账户分页对账。"
+}
