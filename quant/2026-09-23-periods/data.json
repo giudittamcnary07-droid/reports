@@ -1,0 +1,3227 @@
+{
+  "schema": "tokyo.daily.decision.v2",
+  "meta": {
+    "report_date": "2026-09-22",
+    "report_timezone": "Asia/Shanghai",
+    "window_start": "2026-09-22T00:00:00+08:00",
+    "window_end": "2026-09-23T00:00:00+08:00",
+    "original_tokyo_read_at": "2026-09-23T05:50:57+08:00",
+    "original_local_read_at": "2026-09-23T05:52:17+08:00",
+    "current_observations_read_at": "2026-09-23T08:05:06.662813+00:00",
+    "generated_at": "2026-09-23T08:26:54.475160+00:00",
+    "original_approval_at": "2026-09-22T22:16:08.587584+00:00",
+    "original_task": "tokyo-daily-report-20260922-v2",
+    "published_at": null,
+    "delivery_state": "GitHub Pages 公开阅读版；本期为 09-22 历史日报，含 09-23 补充观察",
+    "execution_authority": "用户要求按已终审改进方向修改；本轮工程执行，不冒称新增策略终审",
+    "prior_review": "tokyo-daily-critique-20260923-v1 / claude-fable-5-1 high",
+    "original_report_sha256": "beb59c52de25f43c33248e9556ecec714462bb99f3088fab87b5beb7e5288848"
+  },
+  "accounting": {
+    "schema": "daily-accounting.v1",
+    "scope_id": "tokyo-declared-scope-not-exhaustive",
+    "accounts": [
+      "binance-um",
+      "hyperliquid",
+      "eth-cm",
+      "btc-platform",
+      "gate",
+      "bitget",
+      "earn"
+    ],
+    "report_date": "2026-09-22",
+    "timezone": "+08:00",
+    "currency": "USD",
+    "window_start": "2026-09-22T00:00:00+08:00",
+    "window_end_exclusive": "2026-09-23T00:00:00+08:00",
+    "quality": "incomplete",
+    "net_pnl": null,
+    "start_nav": null,
+    "end_nav": null,
+    "external_net_flow": null,
+    "observed_external_net_flow": "0",
+    "coverage": {
+      "nav_expected": 14,
+      "nav_complete": 0,
+      "flow_accounts_expected": 7,
+      "flow_accounts_complete": 0
+    },
+    "internal_transfers_matched": 0,
+    "pending_transfers": [],
+    "missing": [
+      {
+        "code": "missing_nav",
+        "account_id": "binance-um",
+        "boundary": "start"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "binance-um",
+        "boundary": "end"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "hyperliquid",
+        "boundary": "start"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "hyperliquid",
+        "boundary": "end"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "eth-cm",
+        "boundary": "start"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "eth-cm",
+        "boundary": "end"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "btc-platform",
+        "boundary": "start"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "btc-platform",
+        "boundary": "end"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "gate",
+        "boundary": "start"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "gate",
+        "boundary": "end"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "bitget",
+        "boundary": "start"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "bitget",
+        "boundary": "end"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "earn",
+        "boundary": "start"
+      },
+      {
+        "code": "missing_nav",
+        "account_id": "earn",
+        "boundary": "end"
+      },
+      {
+        "code": "missing_flow_coverage",
+        "account_id": "binance-um"
+      },
+      {
+        "code": "missing_flow_coverage",
+        "account_id": "hyperliquid"
+      },
+      {
+        "code": "missing_flow_coverage",
+        "account_id": "eth-cm"
+      },
+      {
+        "code": "missing_flow_coverage",
+        "account_id": "btc-platform"
+      },
+      {
+        "code": "missing_flow_coverage",
+        "account_id": "gate"
+      },
+      {
+        "code": "missing_flow_coverage",
+        "account_id": "bitget"
+      },
+      {
+        "code": "missing_flow_coverage",
+        "account_id": "earn"
+      }
+    ],
+    "attribution_total": null,
+    "attribution_difference": null,
+    "attribution_missing": [],
+    "fee_policy": "Fees already reflected in NAV are not deducted again."
+  },
+  "coverage": [
+    {
+      "id": "binance-um",
+      "name": "币安U本位／跨所",
+      "state": "partial",
+      "gap": "缺日界全净资产、资金费完整分页、外部现金流",
+      "nav_complete": false
+    },
+    {
+      "id": "hyperliquid",
+      "name": "Hyperliquid／跨所",
+      "state": "partial",
+      "gap": "缺日界净资产、转账配对及独立完整账单",
+      "nav_complete": false
+    },
+    {
+      "id": "eth-cm",
+      "name": "ETH现货＋币本位",
+      "state": "partial",
+      "gap": "缺初始成本、现货与合约整套日界权益、费用及仓位归属",
+      "nav_complete": false
+    },
+    {
+      "id": "btc-platform",
+      "name": "BTC平台机器人",
+      "state": "missing",
+      "gap": "旧浏览器快照；CLASSIC账户无仓不代表UTA机器人无仓",
+      "nav_complete": false
+    },
+    {
+      "id": "gate",
+      "name": "Gate账户",
+      "state": "missing",
+      "gap": "连接验收不等于日报账本；本期无账户级日界流水",
+      "nav_complete": false
+    },
+    {
+      "id": "bitget",
+      "name": "Bitget账户",
+      "state": "missing",
+      "gap": "连接验收不等于日报账本；本期无账户级日界流水",
+      "nav_complete": false
+    },
+    {
+      "id": "earn",
+      "name": "LDUSDT／ETH活期",
+      "state": "missing",
+      "gap": "缺申赎、利息、余额及与主账户转账配对",
+      "nav_complete": false
+    }
+  ],
+  "funding": {
+    "xvenue": {
+      "rows": 91,
+      "sum_usdt": "0.06062044",
+      "by_venue": {
+        "binance": "-0.00726456",
+        "hyperliquid": "0.067885"
+      },
+      "dedup_key": "position_id,venue,t_ms,symbol",
+      "coverage": "saved bot records only; no independent private API full pagination audit"
+    },
+    "eth": {
+      "rows": 3,
+      "sum_eth": "0.00001942",
+      "last30d_summary": {
+        "count": 52,
+        "total_eth": "0.00021232",
+        "complete": true
+      },
+      "last30d_visible_rows": 30
+    }
+  },
+  "ledger": {
+    "business_date_bjt": "2026-09-22",
+    "read_at": "2026-09-23T08:05:06.662813+00:00",
+    "scope": "existing bot ledger aggregates only; not exchange-wide reconciliation; current read is not a day-end valuation",
+    "day_funding": [
+      {
+        "venue": "binance",
+        "n": 5,
+        "amount": -0.00726456
+      },
+      {
+        "venue": "hyperliquid",
+        "n": 86,
+        "amount": 0.067885
+      }
+    ],
+    "day_orders": [
+      {
+        "venue": "binance",
+        "fee_ccy": "USDT",
+        "orders": 3,
+        "fills": 3,
+        "fees": 0.0220137,
+        "missing_fee": 0
+      },
+      {
+        "venue": "hyperliquid",
+        "fee_ccy": "USDC",
+        "orders": 3,
+        "fills": 3,
+        "fees": 0.02108,
+        "missing_fee": 0
+      }
+    ]
+  },
+  "readiness": [
+    {
+      "id": "01",
+      "name": "01 快进快出套息",
+      "state": "not_ready",
+      "decision": "未获实盘放行",
+      "gates": [
+        {
+          "name": "正式有效样本",
+          "current": "0轮；无正式执行闭环",
+          "threshold": "原观察3～4周；回本≤12小时",
+          "state": "not_met"
+        },
+        {
+          "name": "标的身份与准入",
+          "current": "不能以账面数量代替合格样本",
+          "threshold": "每笔入场当时的准入证据",
+          "state": "missing"
+        },
+        {
+          "name": "成交价格及费用",
+          "current": "标记价代理或费用假设仍在",
+          "threshold": "可成交报价、真实费档和数量精度",
+          "state": "missing"
+        },
+        {
+          "name": "订单—成交—持仓—现金",
+          "current": "缺完整策略闭环",
+          "threshold": "四层记录逐笔对账",
+          "state": "missing"
+        },
+        {
+          "name": "净收益与压力测试",
+          "current": "当前不能据旧模型累计数放行",
+          "threshold": "原冻结收益/损失门；成本与退出压力",
+          "state": "missing"
+        }
+      ],
+      "next_action": "继续既定门槛观察，保留未入场原因",
+      "owner": "GPT取证／Claude裁决",
+      "old_formal_count": 0,
+      "observed_formal_count": 0,
+      "new_records": 0,
+      "current_sample_note": "0轮模型记录；不等于模拟成交",
+      "observed_at": "2026-09-23T08:04:06.232000+00:00",
+      "old_model_total": 0.0,
+      "observed_model_total": 0.0,
+      "model_disclaimer": "研究计量累计；非当日收益，非真实成交；两个时点变化不是策略利润",
+      "original_source": "../../DAILY_REPORT_20260922/REPORT.html"
+    },
+    {
+      "id": "02",
+      "name": "02 慢进慢出套息",
+      "state": "not_ready",
+      "decision": "未获实盘放行",
+      "gates": [
+        {
+          "name": "正式有效样本",
+          "current": "旧历史双腿现金缺失",
+          "threshold": "原观察3～4周；完整净收益核算",
+          "state": "not_met"
+        },
+        {
+          "name": "标的身份与准入",
+          "current": "不能以账面数量代替合格样本",
+          "threshold": "每笔入场当时的准入证据",
+          "state": "missing"
+        },
+        {
+          "name": "成交价格及费用",
+          "current": "标记价代理或费用假设仍在",
+          "threshold": "可成交报价、真实费档和数量精度",
+          "state": "missing"
+        },
+        {
+          "name": "订单—成交—持仓—现金",
+          "current": "缺完整策略闭环",
+          "threshold": "四层记录逐笔对账",
+          "state": "missing"
+        },
+        {
+          "name": "净收益与压力测试",
+          "current": "当前不能据旧模型累计数放行",
+          "threshold": "原冻结收益/损失门；成本与退出压力",
+          "state": "missing"
+        }
+      ],
+      "next_action": "补历史现金；不能重建的标缺口",
+      "owner": "GPT取证／Claude裁决",
+      "old_formal_count": 2,
+      "observed_formal_count": 2,
+      "new_records": 0,
+      "current_sample_note": "2轮模型记录；不等于模拟成交",
+      "observed_at": "2026-09-23T08:04:06.232000+00:00",
+      "old_model_total": 0.12272742321016517,
+      "observed_model_total": 0.28427103501329243,
+      "model_disclaimer": "研究计量累计；非当日收益，非真实成交；两个时点变化不是策略利润",
+      "original_source": "../../DAILY_REPORT_20260922/REPORT.html"
+    },
+    {
+      "id": "03a",
+      "name": "03a 新币裸空",
+      "state": "not_ready",
+      "decision": "未获实盘放行",
+      "gates": [
+        {
+          "name": "正式有效样本",
+          "current": "正式0笔",
+          "threshold": "原8周＋至少10笔正式完整退出；原损益门不变",
+          "state": "not_met"
+        },
+        {
+          "name": "标的身份与准入",
+          "current": "不能以账面数量代替合格样本",
+          "threshold": "每笔入场当时的准入证据",
+          "state": "missing"
+        },
+        {
+          "name": "成交价格及费用",
+          "current": "标记价代理或费用假设仍在",
+          "threshold": "可成交报价、真实费档和数量精度",
+          "state": "missing"
+        },
+        {
+          "name": "订单—成交—持仓—现金",
+          "current": "缺完整策略闭环",
+          "threshold": "四层记录逐笔对账",
+          "state": "missing"
+        },
+        {
+          "name": "净收益与压力测试",
+          "current": "当前不能据旧模型累计数放行",
+          "threshold": "原冻结收益/损失门；成本与退出压力",
+          "state": "missing"
+        }
+      ],
+      "next_action": "保留03b对照；获取合格前向样本",
+      "owner": "GPT取证／Claude裁决",
+      "old_formal_count": 0,
+      "observed_formal_count": 0,
+      "new_records": 0,
+      "current_sample_note": "正式账面0笔／已退出0笔；资格及成交尚未全部核实",
+      "observed_at": "2026-09-23T07:10:03.980000+00:00",
+      "old_model_total": -67.78993158708938,
+      "observed_model_total": -54.28788284013869,
+      "model_disclaimer": "研究计量累计；非当日收益，非真实成交；两个时点变化不是策略利润",
+      "original_source": "../../DAILY_REPORT_20260922/REPORT.html"
+    },
+    {
+      "id": "03b",
+      "name": "03b 新币对冲",
+      "state": "not_ready",
+      "decision": "未获实盘放行",
+      "gates": [
+        {
+          "name": "正式有效样本",
+          "current": "正式0笔",
+          "threshold": "原8周＋至少10笔正式完整退出；原损益门不变",
+          "state": "not_met"
+        },
+        {
+          "name": "标的身份与准入",
+          "current": "不能以账面数量代替合格样本",
+          "threshold": "每笔入场当时的准入证据",
+          "state": "missing"
+        },
+        {
+          "name": "成交价格及费用",
+          "current": "标记价代理或费用假设仍在",
+          "threshold": "可成交报价、真实费档和数量精度",
+          "state": "missing"
+        },
+        {
+          "name": "订单—成交—持仓—现金",
+          "current": "缺完整策略闭环",
+          "threshold": "四层记录逐笔对账",
+          "state": "missing"
+        },
+        {
+          "name": "净收益与压力测试",
+          "current": "当前不能据旧模型累计数放行",
+          "threshold": "原冻结收益/损失门；成本与退出压力",
+          "state": "missing"
+        }
+      ],
+      "next_action": "按同一快照对照；不调参凑收益",
+      "owner": "GPT取证／Claude裁决",
+      "old_formal_count": 0,
+      "observed_formal_count": 0,
+      "new_records": 0,
+      "current_sample_note": "正式账面0笔／已退出0笔；资格及成交尚未全部核实",
+      "observed_at": "2026-09-23T07:10:03.980000+00:00",
+      "old_model_total": -17.97546516961291,
+      "observed_model_total": -3.960530366547518,
+      "model_disclaimer": "研究计量累计；非当日收益，非真实成交；两个时点变化不是策略利润",
+      "original_source": "../../DAILY_REPORT_20260922/REPORT.html"
+    },
+    {
+      "id": "03-bybit",
+      "name": "03 Bybit扩样本",
+      "state": "not_ready",
+      "decision": "未获实盘放行",
+      "gates": [
+        {
+          "name": "正式有效样本",
+          "current": "账面正式1笔，资格待核",
+          "threshold": "双向身份/准入核验；扩样本不独立毕业",
+          "state": "not_met"
+        },
+        {
+          "name": "标的身份与准入",
+          "current": "Bybit资格待核",
+          "threshold": "每笔入场当时的准入证据",
+          "state": "missing"
+        },
+        {
+          "name": "成交价格及费用",
+          "current": "标记价代理或费用假设仍在",
+          "threshold": "可成交报价、真实费档和数量精度",
+          "state": "missing"
+        },
+        {
+          "name": "订单—成交—持仓—现金",
+          "current": "缺完整策略闭环",
+          "threshold": "四层记录逐笔对账",
+          "state": "missing"
+        },
+        {
+          "name": "净收益与压力测试",
+          "current": "当前不能据旧模型累计数放行",
+          "threshold": "原冻结收益/损失门；成本与退出压力",
+          "state": "missing"
+        }
+      ],
+      "next_action": "核LONGXIA/NIULAI身份及真实费档",
+      "owner": "GPT取证／Claude裁决",
+      "old_formal_count": 1,
+      "observed_formal_count": 1,
+      "new_records": 0,
+      "current_sample_note": "正式账面1笔／已退出1笔；资格及成交尚未全部核实",
+      "observed_at": "2026-09-23T07:10:03.980000+00:00",
+      "old_model_total": 91.88612238331956,
+      "observed_model_total": 89.54187604322719,
+      "model_disclaimer": "研究计量累计；非当日收益，非真实成交；两个时点变化不是策略利润",
+      "original_source": "../../DAILY_REPORT_20260922/REPORT.html"
+    },
+    {
+      "id": "03-gate",
+      "name": "03 Gate扩样本",
+      "state": "not_ready",
+      "decision": "未获实盘放行",
+      "gates": [
+        {
+          "name": "正式有效样本",
+          "current": "原正式6笔；流动性合格0笔",
+          "threshold": "原成交额≥100万U；扩样本不独立毕业",
+          "state": "not_met"
+        },
+        {
+          "name": "标的身份与准入",
+          "current": "不能以账面数量代替合格样本",
+          "threshold": "每笔入场当时的准入证据",
+          "state": "missing"
+        },
+        {
+          "name": "成交价格及费用",
+          "current": "标记价代理或费用假设仍在",
+          "threshold": "可成交报价、真实费档和数量精度",
+          "state": "missing"
+        },
+        {
+          "name": "订单—成交—持仓—现金",
+          "current": "缺完整策略闭环",
+          "threshold": "四层记录逐笔对账",
+          "state": "missing"
+        },
+        {
+          "name": "净收益与压力测试",
+          "current": "当前不能据旧模型累计数放行",
+          "threshold": "原冻结收益/损失门；成本与退出压力",
+          "state": "missing"
+        }
+      ],
+      "next_action": "补流动性与可成交价格，不拿全样本盈利晋级",
+      "owner": "GPT取证／Claude裁决",
+      "old_formal_count": 6,
+      "observed_formal_count": 7,
+      "new_records": 1,
+      "current_sample_note": "正式账面7笔／已退出1笔；资格及成交尚未全部核实",
+      "observed_at": "2026-09-23T07:10:03.980000+00:00",
+      "old_model_total": 249.31388689008986,
+      "observed_model_total": 218.5518765459645,
+      "model_disclaimer": "研究计量累计；非当日收益，非真实成交；两个时点变化不是策略利润",
+      "original_source": "../../DAILY_REPORT_20260922/REPORT.html"
+    }
+  ],
+  "risks": [
+    {
+      "id": "net-exposure",
+      "name": "双腿净方向敞口",
+      "value": "不可核",
+      "state": "unknown",
+      "threshold": "两腿真实数量、合约乘数与方向配对",
+      "as_of": "2026-09-23T08:04:51.158000+00:00",
+      "impact": "单腿风险不能用机器人OPEN或单个qty排除",
+      "action": "补两所逐腿持仓，核对数量与估值；不触发自动交易",
+      "owner": "GPT取证／Claude处置",
+      "alert_mode": "日报观察，不是实时告警服务"
+    },
+    {
+      "id": "margin-bn",
+      "name": "币安保证金使用比例",
+      "value": "20.18%",
+      "state": "observed",
+      "threshold": "未获取本任务可执行阈值；此值不等于清算距离",
+      "as_of": "2026-09-23T08:02:07.004000+00:00",
+      "impact": "仅对应跨所合约钱包，不代表全账户",
+      "action": "与既定运行阈值核对，补可靠清算及可用保证金口径",
+      "owner": "GPT取证／Claude处置",
+      "alert_mode": "日报观察，不是实时告警服务"
+    },
+    {
+      "id": "margin-hl",
+      "name": "HL保证金使用比例",
+      "value": "48.32%",
+      "state": "observed",
+      "threshold": "未获取本任务可执行阈值；此值不等于清算距离",
+      "as_of": "2026-09-23T08:02:07.004000+00:00",
+      "impact": "集中度及双腿风险仍需核",
+      "action": "与既定运行阈值核对，缺失标未知",
+      "owner": "GPT取证／Claude处置",
+      "alert_mode": "日报观察，不是实时告警服务"
+    },
+    {
+      "id": "liquidity",
+      "name": "双腿退出深度／滑点",
+      "value": "缺同步可成交深度",
+      "state": "unknown",
+      "threshold": "同数量、同时点、双腿bid/ask",
+      "as_of": "2026-09-23T08:04:51.158000+00:00",
+      "impact": "账面估值不代表退出可得金额",
+      "action": "取得公开盘口与持仓数量后重算净退出成本",
+      "owner": "GPT取证／Claude处置",
+      "alert_mode": "日报观察，不是实时告警服务"
+    },
+    {
+      "id": "measurement",
+      "name": "新旧计量快照错位",
+      "value": "修正内核早于当前主视图",
+      "state": "attention",
+      "threshold": "对比必须同输入时点与版本",
+      "as_of": "2026-09-22T19:10:06.237000+00:00",
+      "impact": "不能把不同快照差额称为改版收益",
+      "action": "同快照重放并保留旧账，不替换或回填历史",
+      "owner": "GPT取证／Claude处置",
+      "alert_mode": "日报观察，不是实时告警服务"
+    },
+    {
+      "id": "nav",
+      "name": "日净资产与转账",
+      "value": "日界证据缺失",
+      "state": "unknown",
+      "threshold": "同范围日初日末净资产＋全部外部现金流",
+      "as_of": "2026-09-23T08:05:06.662813+00:00",
+      "impact": "全日利润和年化不可核",
+      "action": "复用既有采集补证；不能恢复的历史明确保留缺口",
+      "owner": "GPT取证／Claude处置",
+      "alert_mode": "日报观察，不是实时告警服务"
+    }
+  ],
+  "projects": [
+    {
+      "id": "持仓-1",
+      "name": "③ 美股/商品跨所",
+      "group": "持仓",
+      "basis": "资金费实收/预测约21.40%，未过原50%门；成本/资金费41.42%，暂过50%门；约11.19天，未满14天",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "持仓-2",
+      "name": "② 长尾币跨所",
+      "group": "持仓",
+      "basis": "累计费用0.051317 U已超过资金费0.038617 U；成本占资金费155.17%，盈利假设尚未兑现",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "持仓-3",
+      "name": "ETH持币＋币本位空单",
+      "group": "持仓",
+      "basis": "浮亏仅合约腿，不能直接称整个持币套利亏损；缺初始买币成本、所有费用及机器人/手工仓拆分",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "持仓-4",
+      "name": "BTC平台套利机器人",
+      "group": "持仓",
+      "basis": "旧浏览器快照不是完整API对账；CLASSIC接口BTC无仓不等于统一账户机器人无仓。当前数量匹配/敞口待核",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "持仓-5",
+      "name": "Gate、Bitget",
+      "group": "持仓",
+      "basis": "不能据API连通宣称这两个交易所已盈利、无持仓或资金安全",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "持仓-6",
+      "name": "活期理财/LDUSDT、ETH活期",
+      "group": "持仓",
+      "basis": "不当成0收益；未并入上述资金费或机器人业绩",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "路测-1",
+      "name": "01 快进快出套息",
+      "group": "路测",
+      "basis": "无收益证据；继续原门槛观察，不为凑成交放宽规则",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "路测-2",
+      "name": "02 慢进慢出套息",
+      "group": "路测",
+      "basis": "完整历史双腿现金缺失，两个正数均不能称已验证利润；并行值绝不能当200U回报",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "路测-3",
+      "name": "03a 币安新币裸空",
+      "group": "路测",
+      "basis": "保留作为03b对照，无正式有效新证据",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "路测-4",
+      "name": "03b 新币空＋BTC/ETH多",
+      "group": "路测",
+      "basis": "对冲缓解部分市场方向，无法对冲新币个体上涨；不提升实盘优先级",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "路测-5",
+      "name": "03 Bybit扩样本，对冲版",
+      "group": "路测",
+      "basis": "当前没有已确认合格的正式独有样本；先核资产身份、创新区费率和未来准入日志",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "路测-6",
+      "name": "03 Gate扩样本，对冲版",
+      "group": "路测",
+      "basis": "成交额≥100万U的正式子集0笔；全样本累计盈利不能证明可成交或前向盈利",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-1",
+      "name": "pair_shadow 四组合",
+      "group": "车间",
+      "basis": "这些不是扣全成本账户年化；HOOD/Bitget正小时82.46%仍未过85%；Aster28期对冲费为0需核。优先HOOD/Bitget固定数量完整现金模拟；还差108有效样本，不保证108小时后完成",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-2",
+      "name": "加密币扩对手盘 crypto_hedge",
+      "group": "车间",
+      "basis": "“可用”是扫描条件，不是实盘合格。先逐币身份、相同数量深度及费率；不合并重叠候选",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-3",
+      "name": "美股对手盘 tradfi_venue_probe",
+      "group": "车间",
+      "basis": "供研究扩展，不能把当期费率折年当持续收益；冻结同标的规格、公司行动和真实盘口后再筛",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-4",
+      "name": "时段差 session_gate_probe",
+      "group": "车间",
+      "basis": "只有时段统计，不证明择时策略净收益；下一步固定进出时段并计跳价/费用，未执行",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-5",
+      "name": "股票对冲所 hedge_scan",
+      "group": "车间",
+      "basis": "须先核标的等价及公司行动；报价更好不代表保证金更安全，不据扫描迁移现仓",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-6",
+      "name": "黄金现货＋永续 gold_hedge",
+      "group": "车间",
+      "basis": "仅模型情景、非账户可得年化；暂低优先级，先核全部资金占用和成本，不用PM假设放大回报",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-7",
+      "name": "币本位/U本位 cmum",
+      "group": "车间",
+      "basis": "模型对持有期敏感；未纳入完整保证金/币本位非线性风险，不靠加杠杆制造吸引力",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-8",
+      "name": "永续/交割轮换 basis_roll",
+      "group": "车间",
+      "basis": "未出现原模型成本门足够优势；保留观察，不强行轮换",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-9",
+      "name": "crypto阈值影子",
+      "group": "车间",
+      "basis": "重复事件不是独立交易；不能据此调低实盘阈值，等待独立周期与全成本",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-10",
+      "name": "1000U BTC币本位纸上账户",
+      "group": "车间",
+      "basis": "收入不等于净利；费用部分假设、历史46段缺口。此次权益接口只给22日13:10以后，无法覆盖完整日，日净收益不可核",
+      "historical": false,
+      "recommendation": "维持原报告取舍；新证据待裁决",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-11",
+      "name": "basis_v3历史回测",
+      "group": "车间",
+      "basis": "旧研究参考，不是今天进展，不以历史回报替代新行情验证",
+      "historical": true,
+      "recommendation": "历史索引",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-12",
+      "name": "ETF工程演示/旧纸上入口",
+      "group": "车间",
+      "basis": "均陈旧。缓存中的snapshot_stale=false是当时结果，不代表现在新鲜；股票mission归属独立，不迁移、不代评其当前后台进度",
+      "historical": true,
+      "recommendation": "历史索引",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-13",
+      "name": "Prediction旧入口",
+      "group": "车间",
+      "basis": "本轮没有新交易底稿，不给盈利或运行结论，保留历史索引",
+      "historical": true,
+      "recommendation": "历史索引",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    },
+    {
+      "id": "车间-14",
+      "name": "XAU马丁归档",
+      "group": "车间",
+      "basis": "不复活、不把旧回测结论当本日报新实验；只保留可追溯记录",
+      "historical": true,
+      "recommendation": "历史索引",
+      "evidence_quality": "原已批准日报／来源时点见原文",
+      "capital_capacity": "不同策略资金口径不可相加；未做统一容量验证",
+      "risk": "见该项目原限制；缺失不得当0",
+      "experiment_cost": "尚未核算工时及数据成本，不伪造ROI"
+    }
+  ],
+  "actions": [
+    {
+      "id": "D02",
+      "title": "路测资格与统一计量",
+      "owner": "GPT路测取证／Claude裁决",
+      "trigger": "新增准入证据或同快照计量结果",
+      "acceptance": "身份、费档、准入日志及同输入原/过滤/同步退出对照",
+      "state": "waiting_data",
+      "note": "已更新六项路测观察并分列修正计量时间；新账面记录不等于合格成交，资格与同快照核验仍缺。",
+      "evidence": "D:\\量化交易\\quant_setup\\reviews\\DAILY_UPGRADE_20260923\\current_observations\\COMPACT.json",
+      "at": "2026-09-23T08:14:02.945061+00:00",
+      "sha256": "2c95e1974aae6295e53d03500202eb9f8a23e7fd46cf3d6412ce5953e3f48ba1"
+    },
+    {
+      "id": "D01",
+      "title": "账户范围与日界账务",
+      "owner": "GPT账务核对／Claude裁决",
+      "trigger": "下期日报前；缺失历史可明确无法重建",
+      "acceptance": "账户产品范围、日界、转账、理财缺口及账务核验",
+      "state": "waiting_data",
+      "note": "完成09-22只读账本复核及按原币手续费补证；数据库无日界权益/转账历史，完整利润仍待证据。",
+      "evidence": "D:\\量化交易\\quant_setup\\reviews\\DAILY_UPGRADE_20260923\\current_observations\\ledger_aggregates.json",
+      "at": "2026-09-23T08:14:02.870050+00:00",
+      "sha256": "10daee9c12510b921bfaab73db2058ddfd0000f86f3ea79289f51ef0f75a85e3"
+    },
+    {
+      "id": "D03",
+      "title": "车间与外部新线索",
+      "owner": "GPT来源核验／Claude取舍",
+      "trigger": "新的可核数据、来源或实验回执",
+      "acceptance": "HOOD/Bitget现金缺口及前沿假设、反证、最小实验",
+      "state": "waiting_data",
+      "note": "已建来源目录并实际抓取3类信息流；原件核验和最小实验未完成，未新增盈利判断。",
+      "evidence": "D:\\量化交易\\quant_setup\\reviews\\DAILY_UPGRADE_20260923\\frontier_observations\\watch-20260923T080607933561Z.json",
+      "at": "2026-09-23T08:14:03.018047+00:00",
+      "sha256": "15a0652aed8ed719be0d556aca2a0e65aef9805d4928a801bec68bf033d7032b"
+    }
+  ],
+  "action_history": [
+    {
+      "id": "D01",
+      "state": "waiting_data",
+      "owner": "GPT账务核对／Claude裁决",
+      "note": "完成09-22只读账本复核及按原币手续费补证；数据库无日界权益/转账历史，完整利润仍待证据。",
+      "at": "2026-09-23T08:14:02.870050+00:00",
+      "evidence": "D:\\量化交易\\quant_setup\\reviews\\DAILY_UPGRADE_20260923\\current_observations\\ledger_aggregates.json",
+      "sha256": "10daee9c12510b921bfaab73db2058ddfd0000f86f3ea79289f51ef0f75a85e3"
+    },
+    {
+      "id": "D02",
+      "state": "waiting_data",
+      "owner": "GPT路测取证／Claude裁决",
+      "note": "已更新六项路测观察并分列修正计量时间；新账面记录不等于合格成交，资格与同快照核验仍缺。",
+      "at": "2026-09-23T08:14:02.945061+00:00",
+      "evidence": "D:\\量化交易\\quant_setup\\reviews\\DAILY_UPGRADE_20260923\\current_observations\\COMPACT.json",
+      "sha256": "2c95e1974aae6295e53d03500202eb9f8a23e7fd46cf3d6412ce5953e3f48ba1"
+    },
+    {
+      "id": "D03",
+      "state": "waiting_data",
+      "owner": "GPT来源核验／Claude取舍",
+      "note": "已建来源目录并实际抓取3类信息流；原件核验和最小实验未完成，未新增盈利判断。",
+      "at": "2026-09-23T08:14:03.018047+00:00",
+      "evidence": "D:\\量化交易\\quant_setup\\reviews\\DAILY_UPGRADE_20260923\\frontier_observations\\watch-20260923T080607933561Z.json",
+      "sha256": "15a0652aed8ed719be0d556aca2a0e65aef9805d4928a801bec68bf033d7032b"
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "N1",
+      "group": "news",
+      "title": "币安公告投资Circle 1亿美元，USDC合作续期五年",
+      "source": "https://www.binance.com/en/blog/ecosystem/167890448134073062",
+      "author": "Binance（官方机构署名，页面未署个人作者）",
+      "event_at": "官网9月22日公告；成交9月17日仅媒体引述，8-K未读到",
+      "published_at": "2026-09-22，官网未给时分/时区",
+      "checked_at": "2026-09-22T21:50:03Z/2026-09-22T21:54:28Z（工具时钟确认的读取及整理区间；各网页未单独记录毫秒时戳）",
+      "finding": "币安官网宣布向Circle投资1亿美元，USDC推广合作续期五年，并称私募价较交割前市场价折让5%。",
+      "hypothesis": "推断：USDC交易对和分发补贴可能改变报价深度、费用及稳定币集中度；公告本身不证明套利收益。",
+      "test": "只读比较同标的USDC与USDT盘口点差/深度、最新费率及30日稳定性；使用真实可成交bid/ask，先不接账户。",
+      "counter": "币安是交易和营销当事方；官网无精确时刻；SEC accession 0001876042-26-000276来自社群线索，原件访问失败；股数、月费和锁定细项不作原件已核结论。",
+      "limitations": "币安是交易和营销当事方；官网无精确时刻；SEC accession 0001876042-26-000276来自社群线索，原件访问失败；股数、月费和锁定细项不作原件已核结论。",
+      "evidence_tier": "A 官方公告内容已读；窗口由媒体时间辅助",
+      "state": "事实/线索等级见证据",
+      "outcome": null,
+      "owner": "GPT公开来源核验／Claude取舍",
+      "review": "整份日报的分类与表述已审核；不代表Claude逐条联网或待核原件已补齐"
+    },
+    {
+      "id": "N2",
+      "group": "news",
+      "title": "ESCB据报建议修改MiCA稳定币准备金存款规则",
+      "source": "https://new.streetinsider.com/Reuters/ECB%2C%2BEU%2Bcentral%2Bbanks%2Bsuggest%2Bdropping%2Bstablecoin%C2%A0deposits%C2%A0rule/27087188.html",
+      "author": "Elizabeth Howcroft / Reuters（转载）",
+      "event_at": "2026-09-22，据报道为咨询回复发布日",
+      "published_at": "2026-09-22 06:20 EDT = 10:20 UTC，搜索索引显示",
+      "checked_at": "2026-09-22T21:50:03Z/2026-09-22T21:54:28Z（工具时钟确认的读取及整理区间；各网页未单独记录毫秒时戳）",
+      "finding": "路透转载摘要称ESCB建议取消稳定币准备金最低银行存款比例，改用短期限流动性要求。此为咨询建议，非已生效修法。",
+      "hypothesis": "推断：若最终采纳，将影响稳定币准备金构成和尾部流动性风险；当前不能据此更换抵押品或推断任何用户适用法律。",
+      "test": "取得ESCB咨询原件并核页码、建议与现行法的差别；再看具体发行人的审计与准备金组合。",
+      "counter": "媒体摘要可遗漏条件；央行有维护货币和银行稳定的政策职责；建议尚不等于法律。收益禁令扩围细项未读取原件，不列确证。",
+      "limitations": "媒体摘要可遗漏条件；央行有维护货币和银行稳定的政策职责；建议尚不等于法律。收益禁令扩围细项未读取原件，不列确证。",
+      "evidence_tier": "C 媒体线索，原件待核",
+      "state": "事实/线索等级见证据",
+      "outcome": null,
+      "owner": "GPT公开来源核验／Claude取舍",
+      "review": "整份日报的分类与表述已审核；不代表Claude逐条联网或待核原件已补齐"
+    },
+    {
+      "id": "N3",
+      "group": "news",
+      "title": "Pontes正式启动（跨日背景）",
+      "source": "https://www.ecb.europa.eu/press/pr/date/2026/html/ecb.pr260921~e754847a7b.en.html",
+      "author": "European Central Bank / Directorate General Communications",
+      "event_at": "2026-09-21",
+      "published_at": "2026-09-21，HTML article:published_time也仅为日期",
+      "checked_at": "2026-09-22T21:50:03Z/2026-09-22T21:54:28Z（工具时钟确认的读取及整理区间；各网页未单独记录毫秒时戳）",
+      "finding": "ECB宣布Pontes启动，让批发代币化资产交易以央行货币结算；已有首批参与机构，功能和时段将逐步扩展，预计2028年完整实施。",
+      "hypothesis": "推断：RWA可研究结算时段与交割摩擦，但银行批发基础设施启动不能推成散户可直接套利机会。",
+      "test": "查参与资格、实际结算时段、可公开报价的证券与DvP费率；没有可参与及报价证据则只跟踪。",
+      "counter": "ECB是运营者；报道没有交易量或执行收益；精确窗口不明。",
+      "limitations": "ECB是运营者；报道没有交易量或执行收益；精确窗口不明。",
+      "evidence_tier": "A 官方已读；跨日背景",
+      "state": "事实/线索等级见证据",
+      "outcome": null,
+      "owner": "GPT公开来源核验／Claude取舍",
+      "review": "整份日报的分类与表述已审核；不代表Claude逐条联网或待核原件已补齐"
+    },
+    {
+      "id": "N4",
+      "group": "news",
+      "title": "Hyperliquid BVIV挂牌与交易启动不能混为一谈（窗口外核验）",
+      "source": "https://www.coindesk.com/markets/2026/09/21/perp-futures-linked-to-bitcoin-vix-debut-on-hyperliquid",
+      "author": "Omkar Godbole；编辑Shaurya Malwa",
+      "event_at": "据媒体称9月21日挂牌；实际交易启动未核",
+      "published_at": "2026-09-21T11:30:00.000Z",
+      "checked_at": "2026-09-22T21:50:03Z/2026-09-22T21:54:28Z（工具时钟确认的读取及整理区间；各网页未单独记录毫秒时戳）",
+      "finding": "CoinDesk当前正文引Volmex称BVIV期货已挂牌，实际交易预计未来几天开始；标题的debut不足以证明已成交。",
+      "hypothesis": "推断：纯波动率产品可作新研究线索；没有市场状态和成交证据时不进入可交易候选。",
+      "test": "只读官方合约状态、最近真实成交、盘口和预言机更新时间，核首笔成交时刻；未完成。",
+      "counter": "媒体属Bullish集团；Volmex为产品利益相关方；官方Volmex venues页面读取时未列该Hyperliquid市场。不得把修订内容回填为截止前已知。",
+      "limitations": "媒体属Bullish集团；Volmex为产品利益相关方；官方Volmex venues页面读取时未列该Hyperliquid市场。不得把修订内容回填为截止前已知。",
+      "evidence_tier": "B 媒体正文及HTML时戳已读；官方交易状态未核",
+      "state": "事实/线索等级见证据",
+      "outcome": null,
+      "owner": "GPT公开来源核验／Claude取舍",
+      "review": "整份日报的分类与表述已审核；不代表Claude逐条联网或待核原件已补齐"
+    },
+    {
+      "id": "F1",
+      "group": "frontier",
+      "title": "波动率指数—期权报价偏差和尾部保护：非资金费率/非新币做空",
+      "source": "https://volmex.finance/papers/Volmex-IV-paper.pdf",
+      "author": "Kadir Gökhan Babaoğlu, PhD / Volmex Labs",
+      "event_at": "方法版本日期；本日报新发现，非当日发布",
+      "published_at": "2026-07-08（论文首页）",
+      "checked_at": "2026-09-22T21:50:03Z/2026-09-22T21:54:28Z（工具时钟确认的读取及整理区间；各网页未单独记录毫秒时戳）",
+      "finding": "方法论文将跨所期权报价汇总过滤，用方差互换复制与EWMA生成隐含波动率。指数依赖可用报价与平滑参数。",
+      "hypothesis": "推断：研究BTC现货跌幅、真实期权bid/ask和BVIV变动的可复现关系，评估尾部保护/相对价格，而非继续复制资金费收益逻辑。",
+      "test": "先取一个交易日同步期权bid/ask、BVIV和BTC价格，核时间戳与覆盖率；计算指数重建误差，再用可成交价评估保护成本。新数据实验仅为下一步建议，本轮未执行。",
+      "counter": "产品方也说明该敞口是线性且无法匹配具体期限/行权价的期权vega；保护是否值得成本需要证据。",
+      "limitations": "Volmex拥有指数与许可业务；指数组合/平滑不等于可交易报价；跨所时差、基差和价格跳跃可能消灭优势；Hyperliquid实际交易未核。研究线索，不是策略晋级。",
+      "evidence_tier": "A 原始方法论文与产品说明已读",
+      "state": "待验证",
+      "outcome": null,
+      "owner": "GPT公开来源核验／Claude取舍",
+      "review": "整份日报的分类与表述已审核；不代表Claude逐条联网或待核原件已补齐"
+    },
+    {
+      "id": "F2",
+      "group": "frontier",
+      "title": "AMM动态费率与有毒订单流：做市净收益能否覆盖逆向选择",
+      "source": "https://arxiv.org/html/2606.23070v1",
+      "author": "Daniele Maria Di Nosse；Fabrizio Lillo / Scuola Normale Superiore",
+      "event_at": "历史研究，本日报新发现",
+      "published_at": "arXiv v1提交2026-06-22T09:18:56Z；HTML扉页另写2026-08-24，版本日期存在差异须冻结原稿",
+      "checked_at": "2026-09-22T21:50:03Z/2026-09-22T21:54:28Z（工具时钟确认的读取及整理区间；各网页未单独记录毫秒时戳）",
+      "finding": "论文模拟发现动态费率可通过增加手续费补偿LVR，不能等同消除LVR；加入JIT流动性后，普通LP收益改善会被削弱。",
+      "hypothesis": "推断：将手续费收入与被信息优势交易者抽走的价值分别记账，可能发现流动性提供的条件性机会。",
+      "test": "先选单个公开池与一日链上swap/mint/burn日志，冻结静态费和动态费两个规则；逐块核LP库存/手续费/LVR，另扣gas、优先费与对冲成本，并测试JIT情景。未运行或部署。",
+      "counter": "Wen-Ting Wang的原始论文摘要指出固定费池历史无法识别交易端动态费率的反事实保护；未发现大响应不等于精确零。",
+      "limitations": "预印本、模拟设定及校准依赖；作者研究经费见正文，未证实商业利益；不因模型正收益直接建真实LP。",
+      "evidence_tier": "A 原始预印本文本已读；结果未经本地复现",
+      "state": "待验证",
+      "outcome": null,
+      "owner": "GPT公开来源核验／Claude取舍",
+      "review": "整份日报的分类与表述已审核；不代表Claude逐条联网或待核原件已补齐"
+    },
+    {
+      "id": "C1",
+      "group": "community",
+      "title": "公开社群既欢迎功能，也质疑极端行情执行",
+      "source": "https://www.reddit.com/r/defi/comments/1wmt9ct/comment/pb9o4fu/",
+      "author": "Background-Moose-593（疑虑）；Bluejumprabbit（主帖）；krymson（乐观评论）",
+      "event_at": "社区讨论时间待核",
+      "published_at": "索引主帖2026-09-21；页面相对时间先显示3h/2h，后显示22h，精确UTC待核",
+      "checked_at": "2026-09-22T21:50:03Z/2026-09-22T21:54:28Z（工具时钟确认的读取及整理区间；各网页未单独记录毫秒时戳）",
+      "finding": "可读评论欢迎追踪止损，同时担忧快速行情下止损与清算引擎的配合；另有评论乐观看待基本面。仅证明这些意见被公开表达。",
+      "hypothesis": "推断：执行层脆弱性值得作为研究反证，不能用社群热度推断策略收益。",
+      "test": "若采用追踪止损，只在仿真重放快速跳价、断流和流动性枯竭，检查触发、委托、成交、持仓全过程；功能是否上线先读官方文档。",
+      "counter": "匿名、自选样本、可能营销或机器内容；身份/持仓/历史业绩未知；仅一条讨论，不代表总体民意；时间存在缓存差异。",
+      "limitations": "匿名、自选样本、可能营销或机器内容；身份/持仓/历史业绩未知；仅一条讨论，不代表总体民意；时间存在缓存差异。",
+      "evidence_tier": "公开社区原帖可读，观点而非已证事实",
+      "state": "待验证",
+      "outcome": null,
+      "owner": "GPT公开来源核验／Claude取舍",
+      "review": "整份日报的分类与表述已审核；不代表Claude逐条联网或待核原件已补齐"
+    }
+  ],
+  "watch": {
+    "schema": "tokyo.frontier-watch.v1",
+    "observed_at": "2026-09-23T08:06:07.933561+00:00",
+    "mode": "one_shot_public_read",
+    "sources": [
+      {
+        "id": "binance-rules",
+        "kind": "官方规则",
+        "url": "https://www.binance.com/en/support/faq/detail/360033525031",
+        "format": "page",
+        "checked_at": "2026-09-23T08:06:06.092711+00:00",
+        "status": "content_unverified",
+        "items": [],
+        "continuous_monitoring": false,
+        "http_status": 202,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "finished_at": "2026-09-23T08:06:06.942599+00:00"
+      },
+      {
+        "id": "coindesk",
+        "kind": "行业媒体",
+        "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+        "format": "rss",
+        "checked_at": "2026-09-23T08:06:06.102726+00:00",
+        "status": "feed_observed",
+        "items": [
+          {
+            "id": "5e6d0bfd73a2f3657031",
+            "title": "Coinbase users can now borrow USDC against bitcoin at a fixed rate",
+            "url": "https://www.coindesk.com/markets/2026/09/23/coinbase-users-can-now-borrow-usdc-against-bitcoin-at-a-fixed-rate",
+            "source_published_at": "2026-09-23T07:49:23+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "361666313a5b489155c4",
+            "title": "XRP Ledger retries upgrade that lets banks split payment and compliance duties",
+            "url": "https://www.coindesk.com/tech/2026/09/23/xrp-ledger-retries-upgrade-that-lets-banks-split-payment-and-compliance-duties",
+            "source_published_at": "2026-09-23T07:37:46+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "83a47bc73a15c386d909",
+            "title": "Solana starts testing upgrade that could cut finality from 12.8 seconds to 150 milliseconds",
+            "url": "https://www.coindesk.com/tech/2026/09/23/solana-starts-testing-upgrade-that-could-cut-finality-from-12-8-seconds-to-150-milliseconds",
+            "source_published_at": "2026-09-23T05:16:22+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "0b54c18780a3b5459a68",
+            "title": "Bitcoin's on a streak it hasn't hit since 2012",
+            "url": "https://www.coindesk.com/markets/2026/09/23/bitcoin-s-on-a-streak-it-hasn-t-hit-since-2012",
+            "source_published_at": "2026-09-23T05:12:42+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "9843a6941c9abd7032ec",
+            "title": "Zcash leads crypto majors with a 10% gain as bitcoin holds near $87,000",
+            "url": "https://www.coindesk.com/markets/2026/09/23/zcash-leads-crypto-majors-with-a-10-gain-as-bitcoin-holds-near-usd87-000",
+            "source_published_at": "2026-09-23T04:10:08+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "d6e63e8bff12540ba7a5",
+            "title": "U.S. regulator warns about cheating risks in 'mention markets' on prediction platforms",
+            "url": "https://www.coindesk.com/policy/2026/09/22/u-s-regulator-warns-about-cheating-risks-in-mention-markets-on-prediction-platforms",
+            "source_published_at": "2026-09-23T00:00:45+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "38ad92200f4ef01a43c8",
+            "title": "Democrats 'chose visceral hatred for' Donald Trump over crypto Clarity Act, Lummis says",
+            "url": "https://www.coindesk.com/policy/2026/09/22/democrats-chose-visceral-hatred-for-donald-trump-over-crypto-clarity-act-lummis-says",
+            "source_published_at": "2026-09-22T21:29:05+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "c639b6befb3cc0fdc0e2",
+            "title": "Crypto market structure can't wait for shot at post-election Clarity Act surge: White House",
+            "url": "https://www.coindesk.com/policy/2026/09/22/crypto-market-structure-can-t-wait-for-shot-at-post-election-clarity-act-surge-white-house",
+            "source_published_at": "2026-09-22T20:31:02+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "a6dc73afd8521cfd53fd",
+            "title": "Canada's 'Big Six' banks to launch interbank tokenized deposit initiative",
+            "url": "https://www.coindesk.com/business/2026/09/22/canada-s-big-six-banks-unite-to-launch-interbank-tokenized-deposit-initiative",
+            "source_published_at": "2026-09-22T17:34:03+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "7b05c358059ea803b32f",
+            "title": "Next for the U.S. SEC: Agency's chief crypto counsel illuminates path for custody",
+            "url": "https://www.coindesk.com/policy/2026/09/22/next-for-the-u-s-sec-agency-s-chief-crypto-counsel-illuminates-path-for-custody",
+            "source_published_at": "2026-09-22T15:21:28+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "783901f0c16ebd0eef4b",
+            "title": "European central banks push to expand stablecoin yield ban to crypto lending and staking",
+            "url": "https://www.coindesk.com/policy/2026/09/22/european-central-banks-push-to-expand-stablecoin-yield-ban-to-crypto-lending-and-staking",
+            "source_published_at": "2026-09-22T14:32:59+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "3d6c1b1afba4abfdc288",
+            "title": "Bitcoin, ether perpetual volumes on Kalshi are dominated by an unusual, repetitive trade, data shows",
+            "url": "https://www.coindesk.com/markets/2026/09/21/bitcoin-ether-perpetual-volumes-on-kalshi-are-dominated-by-an-unusual-repetitive-trade-data-shows",
+            "source_published_at": "2026-09-22T12:32:15+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "22ec07588db9907b96ef",
+            "title": "Why Payward-backed Reap is betting on non-USD stablecoins for 24/7 cross-border FX settlement",
+            "url": "https://www.coindesk.com/business/2026/09/22/visa-partner-reap-eyes-local-currency-stablecoins-in-several-countries-for-24-7-onchain-fx",
+            "source_published_at": "2026-09-22T12:05:55+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "a3eb4a463cfdfbf51b32",
+            "title": "A $3.2 million 'bitcoin butterfly' option trade bets on $95,000 by the end of October",
+            "url": "https://www.coindesk.com/daybook-us/2026/09/22/a-usd3-2-million-bitcoin-butterfly-option-trade-bets-on-usd95-000-by-the-end-of-october",
+            "source_published_at": "2026-09-22T11:35:43+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "ee598ac6139dae8bc531",
+            "title": "Binance buys $100 million Circle stake in five-year USDC promotion deal",
+            "url": "https://www.coindesk.com/policy/2026/09/22/binance-buys-usd100-million-circle-stake-in-five-year-usdc-promotion-deal",
+            "source_published_at": "2026-09-22T11:07:23+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "cdc61186058513836973",
+            "title": "Bitcoin recovers from Asian-session lows as falling oil price supports risk appetite",
+            "url": "https://www.coindesk.com/markets/2026/09/22/bitcoin-recovers-from-asian-session-lows-as-falling-oil-price-supports-risk-appetite",
+            "source_published_at": "2026-09-22T10:59:03+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "2ae7e6b97dfca000c645",
+            "title": "Live updates: Bitcoin trades near $86,000 as U.S. stocks post small gains",
+            "url": "https://www.coindesk.com/markets/2026/09/22/live-updates-oil-falls-as-iran-signals-possible-hormuz-reopening-bitcoin-holds-near-usd86-000",
+            "source_published_at": "2026-09-22T10:20:12+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "3cb255eccbb60f926e52",
+            "title": "Binance probed by U.S. federal prosecutors for sanctions violations: Bloomberg",
+            "url": "https://www.coindesk.com/policy/2026/09/22/binance-probed-by-u-s-federal-prosecutors-for-sanctions-violations-bloomberg",
+            "source_published_at": "2026-09-22T10:07:52+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "80c25545d2f5f8fceae9",
+            "title": "Animoca Brands delays IPO plans, suspends merger talks with Currenc",
+            "url": "https://www.coindesk.com/business/2026/09/22/animoca-brands-delays-ipo-plans-suspends-merger-talks-with-currenc",
+            "source_published_at": "2026-09-22T09:47:15+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "0dcbca396725af9671c3",
+            "title": "Spot bitcoin ETFs attracted nearly $1 billion on Monday, the 9th largest inflow ever",
+            "url": "https://www.coindesk.com/markets/2026/09/22/spot-bitcoin-etfs-attracted-nearly-usd1-billion-on-monday-the-9th-largest-inflow-ever",
+            "source_published_at": "2026-09-22T07:40:41+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "d9fff60be2560b1066b5",
+            "title": "Whitehats move 52 bitcoin from the Coldcard hack to a recovery trust",
+            "url": "https://www.coindesk.com/markets/2026/09/22/whitehats-move-52-bitcoin-from-the-coldcard-hack-to-a-recovery-trust",
+            "source_published_at": "2026-09-22T06:27:28+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "cc73bcc3751a8860b95d",
+            "title": "Elon Musk's X brings crypto and stock trading via Coinbase, Kraken and Interactive Brokers partnership",
+            "url": "https://www.coindesk.com/markets/2026/09/22/elon-musk-s-x-brings-bitcoin-and-stock-trading-closer-to-the-timeline",
+            "source_published_at": "2026-09-22T05:26:00+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "abb882cacbcd8c436e70",
+            "title": "Dogecoin leads market rebound with 15% pump, bitcoin steady above $85,000",
+            "url": "https://www.coindesk.com/markets/2026/09/22/dogecoin-leads-market-rebound-with-15-pump-bitcoin-steady-above-usd85-000",
+            "source_published_at": "2026-09-22T04:33:11+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "d0c80474f3c45dd2f889",
+            "title": "Cardano joins Solana, XRP Ledger in race to power AI agent payments",
+            "url": "https://www.coindesk.com/tech/2026/09/21/cardano-joins-solana-xrp-ledger-in-race-to-power-ai-agent-payments",
+            "source_published_at": "2026-09-22T04:15:45+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "c5149aa3bd762fbb3d61",
+            "title": "Bitcoin could test $90,000 after shorts get squeezed, but traders warn leverage is building",
+            "url": "https://www.coindesk.com/markets/2026/09/21/bitcoin-could-test-usd90-000-after-shorts-get-squeezed-but-traders-warn-leverage-is-building",
+            "source_published_at": "2026-09-21T20:39:39+00:00",
+            "discovered_at": "2026-09-23T08:06:06.102726+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          }
+        ],
+        "continuous_monitoring": false,
+        "http_status": 200,
+        "sha256": "981dbfd37531158cb8313fc8ce969de35e773049479a64331a4584eddf5ca834",
+        "finished_at": "2026-09-23T08:06:07.932648+00:00"
+      },
+      {
+        "id": "defi-community",
+        "kind": "公开社群",
+        "url": "https://www.reddit.com/r/defi/new/.rss",
+        "format": "atom",
+        "checked_at": "2026-09-23T08:06:06.117237+00:00",
+        "status": "feed_observed",
+        "items": [
+          {
+            "id": "af3da84055b6fbc9d808",
+            "title": "People who use crypto cards: what actually matters most to you: KYC, fees, limits, country support or merchant acceptance?",
+            "url": "https://www.reddit.com/r/defi/comments/1wnxs34/people_who_use_crypto_cards_what_actually_matters/",
+            "source_published_at": "2026-09-23T06:06:54+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "8d52e93aa6e4a1e18d33",
+            "title": "CLARITY Act hits another roadblock!",
+            "url": "https://www.reddit.com/r/defi/comments/1wnuaii/clarity_act_hits_another_roadblock/",
+            "source_published_at": "2026-09-23T03:03:35+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "5e218cd3ddf4c099df17",
+            "title": "Could a ranking where visibility is bought on-chain be more honest than an opaque algorithm?",
+            "url": "https://www.reddit.com/r/defi/comments/1wnt28v/could_a_ranking_where_visibility_is_bought/",
+            "source_published_at": "2026-09-23T02:06:18+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "c4b315d0b0f68a63be54",
+            "title": "Best Principal Token (PT) Stablecoin Yields (2026-09-22)",
+            "url": "https://www.reddit.com/r/defi/comments/1wngxca/best_principal_token_pt_stablecoin_yields_20260922/",
+            "source_published_at": "2026-09-22T18:02:31+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "ca239460a643dd34d380",
+            "title": "Are tokenized Treasuries good DeFi collateral?",
+            "url": "https://www.reddit.com/r/defi/comments/1wne677/are_tokenized_treasuries_good_defi_collateral/",
+            "source_published_at": "2026-09-22T16:24:34+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "2b4bf093c1e69e565f90",
+            "title": "Borrowing against SOL instead of selling it, does the math work?",
+            "url": "https://www.reddit.com/r/defi/comments/1wnbv3r/borrowing_against_sol_instead_of_selling_it_does/",
+            "source_published_at": "2026-09-22T14:59:41+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "55ccfe64d3e40250de43",
+            "title": "Maker Fees Are Going Negative: A Guide to How Trading Venues Compare",
+            "url": "https://www.reddit.com/r/defi/comments/1wn5khv/maker_fees_are_going_negative_a_guide_to_how/",
+            "source_published_at": "2026-09-22T10:19:24+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "246752354e894f55a233",
+            "title": "DeFi picked up again this week: Aave crossed $1B in V4 deposits, Hyperliquid hit a fresh TVL high, and the SEC just cleared Uniswap's tokenized stock pools to trade",
+            "url": "https://www.reddit.com/r/defi/comments/1wmt9ct/defi_picked_up_again_this_week_aave_crossed_1b_in/",
+            "source_published_at": "2026-09-21T23:38:09+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "b472e40bb8eeeab702af",
+            "title": "Where to play Online Poker without KYC?",
+            "url": "https://www.reddit.com/r/defi/comments/1wmj3kn/where_to_play_online_poker_without_kyc/",
+            "source_published_at": "2026-09-21T17:18:11+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "2bafdd1b37b08d0f19b1",
+            "title": "Is Towns good for building a DeFi community?",
+            "url": "https://www.reddit.com/r/defi/comments/1wmibjj/is_towns_good_for_building_a_defi_community/",
+            "source_published_at": "2026-09-21T16:51:02+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "d712e4832ec05744bf18",
+            "title": "Circle now lets institutions borrow USDC against Bitcoin without selling it. Bullish for BTC or just more wrapped-token risk?",
+            "url": "https://www.reddit.com/r/defi/comments/1wmgnju/circle_now_lets_institutions_borrow_usdc_against/",
+            "source_published_at": "2026-09-21T15:51:44+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "100d99cf83227c56b032",
+            "title": "Are crypto cards actually useful for DeFi users?",
+            "url": "https://www.reddit.com/r/defi/comments/1wmfv6b/are_crypto_cards_actually_useful_for_defi_users/",
+            "source_published_at": "2026-09-21T15:23:10+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "f814df4f305d41a04363",
+            "title": "A case demonstrating how a DTF works: mint, redeem and rebalance on Reserve",
+            "url": "https://www.reddit.com/r/defi/comments/1wm1906/a_case_demonstrating_how_a_dtf_works_mint_redeem/",
+            "source_published_at": "2026-09-21T03:16:23+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "721c560b3f2a9defa989",
+            "title": "Weekly DeFi discussion. What are your moves for this week?",
+            "url": "https://www.reddit.com/r/defi/comments/1wlk2kn/weekly_defi_discussion_what_are_your_moves_for/",
+            "source_published_at": "2026-09-20T15:30:08+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "da0f3332f6b02dd03830",
+            "title": "Can distributed signing actually remove DeFi’s single key failure mode?",
+            "url": "https://www.reddit.com/r/defi/comments/1wlhrqu/can_distributed_signing_actually_remove_defis/",
+            "source_published_at": "2026-09-20T13:56:55+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "ee580d6e8bd982a20fe5",
+            "title": "Red flags I've seen from both sides. Hiring a crypto marketing agency and working in one.",
+            "url": "https://www.reddit.com/r/defi/comments/1wleqb9/red_flags_ive_seen_from_both_sides_hiring_a/",
+            "source_published_at": "2026-09-20T11:35:29+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "b2fa0a8a0c4415365221",
+            "title": "A DeFi vault changes strategy after you deposit. Do you treat it as a new investment?",
+            "url": "https://www.reddit.com/r/defi/comments/1wldpf6/a_defi_vault_changes_strategy_after_you_deposit/",
+            "source_published_at": "2026-09-20T10:39:47+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "00591a26565d73ad0294",
+            "title": "What would you like to see in a lending market curator that doesn't exist today?",
+            "url": "https://www.reddit.com/r/defi/comments/1wl2dm2/what_would_you_like_to_see_in_a_lending_market/",
+            "source_published_at": "2026-09-20T00:34:48+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "99182588cb24cea9726d",
+            "title": "Why is CEX volume still dominating DEXs despite constant exchange collapses?",
+            "url": "https://www.reddit.com/r/defi/comments/1wkxvgk/why_is_cex_volume_still_dominating_dexs_despite/",
+            "source_published_at": "2026-09-19T21:16:22+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "230553a510caa493a0eb",
+            "title": "why is defi still allergic to real world assets?",
+            "url": "https://www.reddit.com/r/defi/comments/1wkutcw/why_is_defi_still_allergic_to_real_world_assets/",
+            "source_published_at": "2026-09-19T19:13:43+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "815e56da593d67f7c783",
+            "title": "Perp traders: what actually stops you from trying a DEX on a chain you don't already use?",
+            "url": "https://www.reddit.com/r/defi/comments/1wkrwe2/perp_traders_what_actually_stops_you_from_trying/",
+            "source_published_at": "2026-09-19T17:19:04+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "2f9fa7793d8181d48d7d",
+            "title": "What Technical Challenges Come With Building a DeFi Trading Bot?",
+            "url": "https://www.reddit.com/r/defi/comments/1wkf6cu/what_technical_challenges_come_with_building_a/",
+            "source_published_at": "2026-09-19T07:04:32+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "7b86199df879344ac6d5",
+            "title": "Bitcoin Poker",
+            "url": "https://www.reddit.com/r/defi/comments/1wkbmps/bitcoin_poker/",
+            "source_published_at": "2026-09-19T03:56:18+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "02fcd1bf37618354314c",
+            "title": "Everytime BTC surges. I hate it",
+            "url": "https://www.reddit.com/r/defi/comments/1wk3ao9/everytime_btc_surges_i_hate_it/",
+            "source_published_at": "2026-09-18T21:39:20+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "cb3991569f13bcb513c0",
+            "title": "I accidentally burned my KYSOL token account and Kyros now says I have no KYSOL — can it be recovered?",
+            "url": "https://www.reddit.com/r/defi/comments/1wjx3hp/i_accidentally_burned_my_kysol_token_account_and/",
+            "source_published_at": "2026-09-18T17:46:13+00:00",
+            "discovered_at": "2026-09-23T08:06:06.117237+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          }
+        ],
+        "continuous_monitoring": false,
+        "http_status": 200,
+        "sha256": "79fdc4007f8c0505e377752690646d3947826556ba257cc45116f77687d399c9",
+        "finished_at": "2026-09-23T08:06:07.371623+00:00"
+      },
+      {
+        "id": "arxiv-finance",
+        "kind": "原始研究",
+        "url": "https://rss.arxiv.org/rss/q-fin",
+        "format": "rss",
+        "checked_at": "2026-09-23T08:06:06.120720+00:00",
+        "status": "feed_observed",
+        "items": [
+          {
+            "id": "21db8f8164d9c5623156",
+            "title": "Modeling interest rate swap volatility with GARCH processes",
+            "url": "https://arxiv.org/abs/2609.25965",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "3a7d786f1ed877b5503d",
+            "title": "The Elasticity of Substitution between Native and Immigrant Labor: A Meta-Analysis",
+            "url": "https://arxiv.org/abs/2609.26062",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "a3b48d63da9a15af9935",
+            "title": "Trust, Rule of Law, and the Size Premium: Evidence from a Meta-Analysis",
+            "url": "https://arxiv.org/abs/2609.26212",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "49548a6b19a3c50d414b",
+            "title": "Optimal Investment and Consumption in Financial Markets with Integrated Variance Clocks",
+            "url": "https://arxiv.org/abs/2609.26349",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "e1bd8108f2051dfa16b4",
+            "title": "The network advantage: benefits of interregional scientific knowledge spillovers on AI patenting",
+            "url": "https://arxiv.org/abs/2609.26604",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "910a6fd9f6bb54f6f8ad",
+            "title": "Liquidity Provision and Rebate Design in Option Markets",
+            "url": "https://arxiv.org/abs/2609.26606",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "51e19e0f7b6754faf652",
+            "title": "The Informational Content in Lepto-Variance and Its Relation to Higher Moments",
+            "url": "https://arxiv.org/abs/2609.25144",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "29e4e79427759326ff7a",
+            "title": "Risk diversification for infinitely divisible distributions",
+            "url": "https://arxiv.org/abs/2609.25452",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "e14e74ff5abf8a2af8c2",
+            "title": "Hierarchical Multi-Task Learning with Liquidity-Aware Signals for Stock Forecasting",
+            "url": "https://arxiv.org/abs/2609.25617",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "d0cf92a50502f6e892e6",
+            "title": "Seeing Is Not Perceiving: When Synthetic Consumers Can and Cannot Pretest Visual Marketing",
+            "url": "https://arxiv.org/abs/2609.25677",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "03a5b246a73e46e32ad5",
+            "title": "Can You Delete a Year of Market Data? Machine Unlearning Against Exact Retraining Oracles",
+            "url": "https://arxiv.org/abs/2609.26242",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "775a65741a491796ab8c",
+            "title": "Target alignment, dilution and forecast selection when cross-sectional forecasts share a common target",
+            "url": "https://arxiv.org/abs/2609.26303",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "02679edde369e8795d17",
+            "title": "A Practical Guide on Graphical Model Validation",
+            "url": "https://arxiv.org/abs/2609.26445",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "ac652d4bfe0e5927f1cb",
+            "title": "First order Martingale model risk and semi-static hedging",
+            "url": "https://arxiv.org/abs/2410.06906",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "beb936f6fcacd7de735f",
+            "title": "The Marginal Effects of Ethereum Network MEV Transaction Re-Ordering",
+            "url": "https://arxiv.org/abs/2508.04003",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "9b64b844a45039410c50",
+            "title": "Computable Countermarkets and the Limits of Universal Trading",
+            "url": "https://arxiv.org/abs/2604.13334",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "a72e9bf0e337f3de6688",
+            "title": "The Virtue of Sparsity in Complexity",
+            "url": "https://arxiv.org/abs/2604.17166",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "20e5914222515a54080b",
+            "title": "Little Impact of ChatGPT on High School Test Scores",
+            "url": "https://arxiv.org/abs/2605.08812",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "b583f270b1f465df8c58",
+            "title": "When Do Type-Specific Wages Buffer Distributional Incidence in TANK?",
+            "url": "https://arxiv.org/abs/2605.15614",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "f78f037e2f914fd79550",
+            "title": "Financially Guided Deep Portfolio Optimization",
+            "url": "https://arxiv.org/abs/2605.28853",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "c5d321294dd3900bb547",
+            "title": "Boundary-Induced Apparent Risk Aversion in Nonergodic Multiplicative Growth",
+            "url": "https://arxiv.org/abs/2607.28230",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "9097dd277646fa40d2e3",
+            "title": "Data-Driven Measures of High-Frequency Trading",
+            "url": "https://arxiv.org/abs/2608.00858",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "c7233b65d2ad62fb7cea",
+            "title": "Data-Driven Mechanism Design via Multi-Agent Revealed Preferences",
+            "url": "https://arxiv.org/abs/2404.15391",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "e25b6ad61b837727e3ca",
+            "title": "Polynomial Scaling is Possible For Neural Operator Approximations of Structured Families of BSDEs",
+            "url": "https://arxiv.org/abs/2410.14788",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "7a6ae54baac9cb0c8f02",
+            "title": "Optimal threshold resetting in collective diffusive search",
+            "url": "https://arxiv.org/abs/2603.25338",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "30263f31d9629ce5e0e9",
+            "title": "Beyond Agent Architecture: Execution Assumptions and Reproducibility in LLM-Based Trading Systems",
+            "url": "https://arxiv.org/abs/2606.08285",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          },
+          {
+            "id": "5e8c0c840b166ba1e5c6",
+            "title": "Printed but not benchmarkable: most building-decarbonisation disclosure cannot be matched to the pathways that stranding regulation assumes",
+            "url": "https://arxiv.org/abs/2607.22006",
+            "source_published_at": "2026-09-23T00:00:00-04:00",
+            "discovered_at": "2026-09-23T08:06:06.120720+00:00",
+            "verification": "标题线索待核；未读原文，不是事实结论",
+            "existing_strategy_required": false,
+            "new_since_previous_run": true
+          }
+        ],
+        "continuous_monitoring": false,
+        "http_status": 200,
+        "sha256": "2a23b28211a308facc5b078ff9df77d12e1d4092bf499062346aa6f4172ac9d6",
+        "finished_at": "2026-09-23T08:06:07.184162+00:00"
+      }
+    ],
+    "history_runs": 0,
+    "limits": "RSS/page retrieval does not prove factual accuracy, full coverage or community membership. No automatic research promotion."
+  },
+  "changes": [
+    {
+      "title": "账务补证",
+      "detail": "已补09-22所见订单费；USDT与USDC分列，created_ms非独立成交时刻，不据此宣布全日利润。"
+    },
+    {
+      "title": "当前观察与日报分层",
+      "detail": "09-23只读观察单列；模型样本变化不是合格成交或实盘晋级。"
+    },
+    {
+      "title": "来源更新",
+      "detail": "公开信息源已做一次新抓取；标题待核，有失败/无内容状态，未声称24小时持续覆盖。"
+    }
+  ],
+  "known_unmirrored_links": [],
+  "limits": [
+    "没有完整账户/产品范围和日界权益，net_pnl保持null",
+    "本地快照及查询回执不能替代交易所完整分页与账务审计",
+    "没有新交易、账户写操作或自动实盘准入",
+    "外网隐私方式、Discord凭据授权及日更时间仍待确定"
+  ],
+  "today": {
+    "schema": "tokyo.daily.process.v1",
+    "date": "2026-09-23",
+    "start_at": "2026-09-23T00:00:00+08:00",
+    "as_of": "2026-09-23T18:33:31.216000+08:00",
+    "is_intraday": true,
+    "scope": "跨所机器人逐笔账本；ETH保存的账户观察；其他产品覆盖缺口明确列出",
+    "summary": {
+      "new_position_groups": 2,
+      "closed_position_groups": 0,
+      "open_position_groups": 5,
+      "submitted_orders": 5,
+      "filled_orders": 4,
+      "unfilled_cancelled_orders": 1,
+      "funding_records": 79,
+      "eth_funding_records": 3,
+      "daily_total_profit": null
+    },
+    "income": [
+      {
+        "venue": "binance",
+        "count": 2,
+        "received": "0",
+        "paid": "0.03917941",
+        "net": "-0.03917941",
+        "currency": null,
+        "currency_basis": "asset field was not preserved in bot ledger; currency remains unverified",
+        "source": "bot SQLite funding_rows"
+      },
+      {
+        "venue": "hyperliquid",
+        "count": 77,
+        "received": "0.178850",
+        "paid": "0.003958",
+        "net": "0.174892",
+        "currency": "USDC",
+        "currency_basis": "reader maps delta.usdc; independently exchanged cash not reconciled",
+        "source": "bot SQLite funding_rows"
+      },
+      {
+        "venue": "Binance ETH 币本位",
+        "count": 3,
+        "received": "0.00002307",
+        "paid": "0",
+        "net": "0.00002307",
+        "currency": "ETH",
+        "currency_basis": "asset field in saved account income observation",
+        "source_checked_at": "2026-09-23T18:33:26.541000+08:00",
+        "source": "ETH account_observation; returned rows cover today, historical list capped to 30"
+      }
+    ],
+    "fees": [
+      {
+        "venue": "binance",
+        "currency": "USDT",
+        "amount": "0.0",
+        "filled_orders": 2,
+        "missing_fee": 0,
+        "time_basis": "orders created today; not exchange execution timestamps"
+      },
+      {
+        "venue": "hyperliquid",
+        "currency": "USDC",
+        "amount": "0.047336",
+        "filled_orders": 2,
+        "missing_fee": 0,
+        "time_basis": "orders created today; not exchange execution timestamps"
+      }
+    ],
+    "order_records": [
+      {
+        "venue": "binance",
+        "symbol": "BMNRUSDT",
+        "side": "BUY",
+        "purpose": "entry_maker",
+        "status": "CANCELED",
+        "qty": 1.74,
+        "filled_qty": 0.0,
+        "avg_price": 0.0,
+        "reduce_only": 0,
+        "fee": null,
+        "fee_ccy": null,
+        "submitted_at": "2026-09-23T03:00:31.885000+08:00",
+        "last_status_at": "2026-09-23T03:00:33.929000+08:00"
+      },
+      {
+        "venue": "binance",
+        "symbol": "BMNRUSDT",
+        "side": "BUY",
+        "purpose": "entry_maker",
+        "status": "FILLED",
+        "qty": 1.74,
+        "filled_qty": 1.74,
+        "avg_price": 28.69,
+        "reduce_only": 0,
+        "fee": 0.0,
+        "fee_ccy": "USDT",
+        "submitted_at": "2026-09-23T03:00:33.936000+08:00",
+        "last_status_at": "2026-09-23T03:00:40.667000+08:00"
+      },
+      {
+        "venue": "hyperliquid",
+        "symbol": "xyz:BMNR",
+        "side": "SELL",
+        "purpose": "entry",
+        "status": "FILLED",
+        "qty": 1.74,
+        "filled_qty": 1.74,
+        "avg_price": 28.698,
+        "reduce_only": 0,
+        "fee": 0.043143,
+        "fee_ccy": "USDC",
+        "submitted_at": "2026-09-23T03:00:37.998000+08:00",
+        "last_status_at": "2026-09-23T03:00:40.649000+08:00"
+      },
+      {
+        "venue": "binance",
+        "symbol": "IRENUSDT",
+        "side": "BUY",
+        "purpose": "entry_maker",
+        "status": "FILLED",
+        "qty": 1.0,
+        "filled_qty": 1.0,
+        "avg_price": 48.53,
+        "reduce_only": 0,
+        "fee": 0.0,
+        "fee_ccy": "USDT",
+        "submitted_at": "2026-09-23T13:48:32.484000+08:00",
+        "last_status_at": "2026-09-23T13:48:37.112000+08:00"
+      },
+      {
+        "venue": "hyperliquid",
+        "symbol": "xyz:IREN",
+        "side": "SELL",
+        "purpose": "entry",
+        "status": "FILLED",
+        "qty": 1.0,
+        "filled_qty": 1.0,
+        "avg_price": 48.531,
+        "reduce_only": 0,
+        "fee": 0.004193,
+        "fee_ccy": "USDC",
+        "submitted_at": "2026-09-23T13:48:34.519000+08:00",
+        "last_status_at": "2026-09-23T13:48:37.096000+08:00"
+      }
+    ],
+    "entry_groups": [
+      {
+        "symbol": "BMNR",
+        "opened_at": "2026-09-23T03:00:39.939000+08:00",
+        "status": "OPEN",
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "qty": 1.74,
+        "orders": [
+          {
+            "venue": "binance",
+            "symbol": "BMNRUSDT",
+            "side": "BUY",
+            "purpose": "entry_maker",
+            "status": "CANCELED",
+            "qty": 1.74,
+            "filled_qty": 0.0,
+            "avg_price": 0.0,
+            "reduce_only": 0,
+            "fee": null,
+            "fee_ccy": null,
+            "submitted_at": "2026-09-23T03:00:31.885000+08:00",
+            "last_status_at": "2026-09-23T03:00:33.929000+08:00"
+          },
+          {
+            "venue": "binance",
+            "symbol": "BMNRUSDT",
+            "side": "BUY",
+            "purpose": "entry_maker",
+            "status": "FILLED",
+            "qty": 1.74,
+            "filled_qty": 1.74,
+            "avg_price": 28.69,
+            "reduce_only": 0,
+            "fee": 0.0,
+            "fee_ccy": "USDT",
+            "submitted_at": "2026-09-23T03:00:33.936000+08:00",
+            "last_status_at": "2026-09-23T03:00:40.667000+08:00"
+          },
+          {
+            "venue": "hyperliquid",
+            "symbol": "xyz:BMNR",
+            "side": "SELL",
+            "purpose": "entry",
+            "status": "FILLED",
+            "qty": 1.74,
+            "filled_qty": 1.74,
+            "avg_price": 28.698,
+            "reduce_only": 0,
+            "fee": 0.043143,
+            "fee_ccy": "USDC",
+            "submitted_at": "2026-09-23T03:00:37.998000+08:00",
+            "last_status_at": "2026-09-23T03:00:40.649000+08:00"
+          }
+        ],
+        "reason": {
+          "recorded_eligible": true,
+          "passed_checks": [
+            "当前费率差达到下限",
+            "历史数据足够",
+            "过去窗口平均费率差达到下限",
+            "方向持续性",
+            "盘口深度与冲击成本可估",
+            "预期资金费覆盖成本",
+            "两所价差在范围内",
+            "空头腿价格不明显低于多头腿",
+            "深度足够",
+            "币安合约非新上线",
+            "币安合约无下架交割日",
+            "HL 未下架且持仓未满",
+            "币安费率未撞上下限",
+            "两所标的价格一致（映射校验）",
+            "单腿金额满足两所最小下单额",
+            "成交额足够",
+            "不在财报/公司行为禁开窗口",
+            "非盘前/IPO 前合约",
+            "分红日历已获取",
+            "不在除息禁开窗口",
+            "处于允许的交易时段",
+            "距离长休市足够远",
+            "币安结算间隔近 48 小时未变",
+            "xyz 盘口价差 <0.1%",
+            "两所数量步长可对齐"
+          ],
+          "failed_checks": [],
+          "entry_spread_apr_model": 0.811910964,
+          "expected_funding_fraction_model": 0.011744968825159302,
+          "round_trip_cost_fraction_model": 0.00387994221973979,
+          "note": "入场理由来自当时机器人候选记录；预测不代表实收，不是本次重新批准策略"
+        },
+        "explanation": "两边同数量反向开仓，目标是收取资金费差；账本记录双腿已成交，仍在持有，未完成平仓兑现。"
+      },
+      {
+        "symbol": "IREN",
+        "opened_at": "2026-09-23T13:48:36.343000+08:00",
+        "status": "OPEN",
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "qty": 1.0,
+        "orders": [
+          {
+            "venue": "binance",
+            "symbol": "IRENUSDT",
+            "side": "BUY",
+            "purpose": "entry_maker",
+            "status": "FILLED",
+            "qty": 1.0,
+            "filled_qty": 1.0,
+            "avg_price": 48.53,
+            "reduce_only": 0,
+            "fee": 0.0,
+            "fee_ccy": "USDT",
+            "submitted_at": "2026-09-23T13:48:32.484000+08:00",
+            "last_status_at": "2026-09-23T13:48:37.112000+08:00"
+          },
+          {
+            "venue": "hyperliquid",
+            "symbol": "xyz:IREN",
+            "side": "SELL",
+            "purpose": "entry",
+            "status": "FILLED",
+            "qty": 1.0,
+            "filled_qty": 1.0,
+            "avg_price": 48.531,
+            "reduce_only": 0,
+            "fee": 0.004193,
+            "fee_ccy": "USDC",
+            "submitted_at": "2026-09-23T13:48:34.519000+08:00",
+            "last_status_at": "2026-09-23T13:48:37.096000+08:00"
+          }
+        ],
+        "reason": {
+          "recorded_eligible": true,
+          "passed_checks": [
+            "当前费率差达到下限",
+            "历史数据足够",
+            "过去窗口平均费率差达到下限",
+            "方向持续性",
+            "盘口深度与冲击成本可估",
+            "预期资金费覆盖成本",
+            "两所价差在范围内",
+            "空头腿价格不明显低于多头腿",
+            "深度足够",
+            "币安合约非新上线",
+            "币安合约无下架交割日",
+            "HL 未下架且持仓未满",
+            "币安费率未撞上下限",
+            "两所标的价格一致（映射校验）",
+            "单腿金额满足两所最小下单额",
+            "成交额足够",
+            "不在财报/公司行为禁开窗口",
+            "非盘前/IPO 前合约",
+            "分红日历已获取",
+            "不在除息禁开窗口",
+            "处于允许的交易时段",
+            "盘外：该标的方向能撑到开盘",
+            "距离长休市足够远",
+            "币安结算间隔近 48 小时未变",
+            "xyz 盘口价差 <0.1%",
+            "两所数量步长可对齐"
+          ],
+          "failed_checks": [],
+          "entry_spread_apr_model": 0.508987536,
+          "expected_funding_fraction_model": 0.005554893662626146,
+          "round_trip_cost_fraction_model": 0.0016636842523428865,
+          "note": "入场理由来自当时机器人候选记录；预测不代表实收，不是本次重新批准策略"
+        },
+        "explanation": "两边同数量反向开仓，目标是收取资金费差；账本记录双腿已成交，仍在持有，未完成平仓兑现。",
+        "reentry_note": "此前一组IREN于09-22 02:39因保证金占用记录平仓；本次是重新开仓，不是旧仓续持。"
+      }
+    ],
+    "open_holdings": [
+      {
+        "symbol": "USAR",
+        "status": "OPEN",
+        "qty": 2.55,
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-12T01:22:42.942000+08:00",
+        "new_today": false,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      },
+      {
+        "symbol": "NET",
+        "status": "OPEN",
+        "qty": 0.09,
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-14T23:39:46.843000+08:00",
+        "new_today": false,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      },
+      {
+        "symbol": "SMH",
+        "status": "OPEN",
+        "qty": 0.05,
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-15T22:03:13.526000+08:00",
+        "new_today": false,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      },
+      {
+        "symbol": "BMNR",
+        "status": "OPEN",
+        "qty": 1.74,
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-23T03:00:39.939000+08:00",
+        "new_today": true,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      },
+      {
+        "symbol": "IREN",
+        "status": "OPEN",
+        "qty": 1.0,
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-23T13:48:36.343000+08:00",
+        "new_today": true,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      }
+    ],
+    "eth": {
+      "positions": [
+        {
+          "symbol": "ETHUSD_PERP",
+          "positionSide": "SHORT",
+          "positionAmt": "-28",
+          "entryPrice": "2506.50513700",
+          "markPrice": "2729.22573314",
+          "unRealizedProfit": "-0.00911612",
+          "liquidationPrice": "0",
+          "leverage": "1",
+          "marginType": "isolated",
+          "isolatedMargin": "0.10278391",
+          "updateTime": 1790150400188
+        }
+      ],
+      "coin": [
+        {
+          "asset": "ETH",
+          "walletBalance": "0.11616902",
+          "availableBalance": "0.00426899",
+          "marginBalance": "0.10705290",
+          "unrealizedProfit": "-0.00911612"
+        }
+      ],
+      "position_checked_at": "2026-09-23T18:33:26.529000+08:00",
+      "funding_records": [
+        {
+          "symbol": "ETHUSD_PERP",
+          "asset": "ETH",
+          "incomeType": "FUNDING_FEE",
+          "income": "0.00000540",
+          "time": 1790092800000
+        },
+        {
+          "symbol": "ETHUSD_PERP",
+          "asset": "ETH",
+          "incomeType": "FUNDING_FEE",
+          "income": "0.00001017",
+          "time": 1790121600000
+        },
+        {
+          "symbol": "ETHUSD_PERP",
+          "asset": "ETH",
+          "incomeType": "FUNDING_FEE",
+          "income": "0.00000750",
+          "time": 1790150400000
+        }
+      ],
+      "trade_coverage": "此快照没有当天委托/成交明细，不能据此称今日没有交易"
+    },
+    "btc": {
+      "website_snapshot": [
+        {
+          "perp": "BTCUSD",
+          "position_size": "-2 Cont",
+          "position_qty": 0.00291,
+          "position_ccy": "BTC",
+          "market_value": 251.21,
+          "market_value_ccy": "USDT",
+          "status": "Working"
+        }
+      ],
+      "received_at": "2026-09-23T18:33:21.071000+08:00",
+      "scope": "网页转录；接收时间不是交易所更新保证；CLASSIC账户空仓不能否定平台机器人仓位",
+      "trade_coverage": "没有该平台机器人今日交易明细"
+    },
+    "coverage_gaps": [
+      "跨所账本不是全账户流水；资金费零记录不等于零资金费。",
+      "订单创建与最后更新时点不是交易所逐笔成交时点；4单成交不是4笔独立策略。",
+      "币安资金费原asset未保存，币种仍待核；不能合成美元净利润。",
+      "ETH无今日交易明细；BTC仅网页观察；Gate、Bitget和活期理财未取得今日日内完整流水。",
+      "缺日初权益、全账户资产与资金流对账，不能计算账户今日总净利润。"
+    ],
+    "sources": [
+      {
+        "file": "xvenue_status",
+        "sha256": "277f71654e4aa601d0ec8955c07d27a81381176a6aac607f26f5ccedf4242032"
+      },
+      {
+        "file": "eth_observation",
+        "sha256": "10eccb4402ebe2cf3ffe387301e34c109038dabda9a9d5309c06bce8def36c45"
+      },
+      {
+        "file": "btc_observation",
+        "sha256": "a1d96808e11b7a0a8e2a4f28cd0a6eb64eb84e57a90e8cb3fdecfac9e08ef807"
+      },
+      {
+        "file": "bot_snapshot",
+        "sha256": "639728f293cf092c1d80bb6109fbca740d3e52d747731af47af751df10fd56f3"
+      },
+      {
+        "file": "capital_ledger",
+        "sha256": "c66567566610d90e0d465982ce02a40c9abc413e009dc6eafe7cd18a2a860b44"
+      },
+      {
+        "file": "ledger",
+        "sha256": "2a7acf03a63c342f0d69e23a5471f1cf4b41cd8be11c1a88865f320449a484fc"
+      }
+    ],
+    "funding_scope_note": "币安账本记录2条，与公开费率中持仓时段的两个非零结算点数量及金额相符；零费率结算点未见到账记录。金额与USDT口径复算一致，但账本未保存币种字段，仍待核；未完成独立账户分页对账。"
+  },
+  "assets": {
+    "schema": "exchange.daily.assets.v1",
+    "name": "货币交易所日报",
+    "report_date": "2026-09-23",
+    "as_of": "2026-09-23T19:04:46.894000+08:00",
+    "collection_window": "北京时间19:01—19:05；价格19:05—19:06",
+    "unit": "USDT等值",
+    "stablecoin_basis": "USDT=1；Hyperliquid USDC按1 USDT展示；Gate美股按平台USD兑USDT=1口径。不是实时可成交兑换价。",
+    "total": "9328.02784984",
+    "total_label": "已核实范围资产小计",
+    "total_complete": false,
+    "daily_net_profit": null,
+    "venues": [
+      {
+        "venue": "币安",
+        "value": "4878.70192023",
+        "time": "2026-09-23T19:04:46.894000+08:00",
+        "basis": "10类钱包总览各计一次；不加理财凭证、机器人网页或合约分项。",
+        "parts": [
+          {
+            "name": "现货钱包",
+            "value": "949.94293318"
+          },
+          {
+            "name": "资金钱包",
+            "value": "2863.9861645"
+          },
+          {
+            "name": "U本位合约（含LDUSDT）",
+            "value": "514.04754839"
+          },
+          {
+            "name": "币本位合约",
+            "value": "292.34653937"
+          },
+          {
+            "name": "理财",
+            "value": "5.68657335"
+          },
+          {
+            "name": "平台机器人",
+            "value": "252.69216144"
+          }
+        ]
+      },
+      {
+        "venue": "Gate",
+        "value": "4263.29951561",
+        "time": "2026-09-23T19:01:51.472000+08:00",
+        "basis": "全钱包total.amount；借款为0；美股权益已含85.95美元浮盈，不再加回。",
+        "parts": [
+          {
+            "name": "理财",
+            "value": "546.9520708"
+          },
+          {
+            "name": "量化账户",
+            "value": "34.74143094"
+          },
+          {
+            "name": "现货",
+            "value": "2795.61601387"
+          },
+          {
+            "name": "美股 / ETF",
+            "value": "885.99"
+          }
+        ]
+      },
+      {
+        "venue": "Hyperliquid",
+        "value": "186.026414",
+        "time": "2026-09-23T19:03:16.075000+08:00",
+        "basis": "接口返回unifiedAccount；以统一spot余额为准，不再加各DEX account_value与hold。USDC按1 USDT估值。",
+        "parts": [
+          {
+            "name": "统一账户余额（含占用）",
+            "value": "186.026414"
+          }
+        ]
+      },
+      {
+        "venue": "Bitget",
+        "value": "0E-8",
+        "time": "2026-09-23T19:01:51.672000+08:00",
+        "basis": "经典账户现货/合约/资金/理财/机器人/杠杆六桶总览均为0；不能据此判断转账是否发出或在途。",
+        "parts": [
+          {
+            "name": "spot",
+            "value": "0"
+          },
+          {
+            "name": "futures",
+            "value": "0"
+          },
+          {
+            "name": "funding",
+            "value": "0.00000000"
+          },
+          {
+            "name": "earn",
+            "value": "0"
+          },
+          {
+            "name": "bots",
+            "value": "0"
+          },
+          {
+            "name": "margin",
+            "value": "0"
+          }
+        ]
+      }
+    ],
+    "coins": [
+      {
+        "venue": "Gate",
+        "asset": "BTC",
+        "bucket": "现货 + 活期理财",
+        "classification": "未匹配登记对冲",
+        "current_price": "85871.3",
+        "value": "546.5627675394062",
+        "day_price_pct": "-0.6312429990464817026318956500",
+        "unrealized_pnl": null,
+        "realized_pnl": null,
+        "today_actual_pnl": null,
+        "static_price_effect": null,
+        "cost_status": "待核：无完整取得成本及手续费链",
+        "note": "理财BTC仍承担币价涨跌；这部分未匹配已有对冲组。利息与价差盈亏分开。",
+        "price_at": "2026-09-23T11:05:56.873310+00:00",
+        "price_source": "https://api.gateio.ws/api/v4/spot/tickers",
+        "reference_source": "https://api.gateio.ws/api/v4/spot/candlesticks"
+      },
+      {
+        "venue": "Gate",
+        "asset": "ETH5S",
+        "bucket": "现货",
+        "classification": "未匹配登记对冲",
+        "current_price": "0.31931",
+        "value": "0.0000024331422",
+        "day_price_pct": "0.585919042368876988502126300",
+        "unrealized_pnl": null,
+        "realized_pnl": null,
+        "today_actual_pnl": null,
+        "static_price_effect": null,
+        "cost_status": "待核：无完整取得成本及手续费链",
+        "note": "5倍做空ETH杠杆代币的极小余额，不是普通ETH现货。",
+        "price_at": "2026-09-23T11:05:56.673322+00:00",
+        "price_source": "https://api.gateio.ws/api/v4/spot/tickers",
+        "reference_source": "https://api.gateio.ws/api/v4/spot/candlesticks"
+      },
+      {
+        "venue": "Gate",
+        "asset": "GT",
+        "bucket": "现货",
+        "classification": "未匹配登记对冲",
+        "current_price": "10.85",
+        "value": "0.099506457785",
+        "day_price_pct": "-2.252252252252252252252252250",
+        "unrealized_pnl": null,
+        "realized_pnl": null,
+        "today_actual_pnl": null,
+        "static_price_effect": null,
+        "cost_status": "待核：无完整取得成本及手续费链",
+        "note": "今天有两条奖励入账，不能把期末数量乘全天涨跌当真实收益。",
+        "price_at": "2026-09-23T11:05:55.949823+00:00",
+        "price_source": "https://api.gateio.ws/api/v4/spot/tickers",
+        "reference_source": "https://api.gateio.ws/api/v4/spot/candlesticks"
+      },
+      {
+        "venue": "币安",
+        "asset": "ETH",
+        "bucket": "活期理财",
+        "classification": "对冲归属待核",
+        "current_price": "2735.18000000",
+        "value": "5.6829381896000000",
+        "day_price_pct": "-0.3177958380407449251066000900",
+        "unrealized_pnl": null,
+        "realized_pnl": null,
+        "today_actual_pnl": null,
+        "static_price_effect": null,
+        "cost_status": "待核：无完整取得成本及手续费链",
+        "note": "与币本位保证金分开列；不将LDETH凭证再加一次。对冲归属尚未匹配，不能直接认定全部为独立现货。",
+        "price_at": "2026-09-23T11:05:54.539015+00:00",
+        "price_source": "https://api.binance.com/api/v3/ticker/price",
+        "reference_source": "https://api.binance.com/api/v3/klines"
+      }
+    ],
+    "stocks": [
+      {
+        "asset": "MU",
+        "venue": "Gate美股",
+        "value": "569.0932",
+        "platform_unrealized_pnl": "74.72",
+        "platform_pnl_pct": "15.11",
+        "today_platform_pnl": "0",
+        "state": "pre_market",
+        "note": "交易所持仓浮盈字段，未独立核验全部费用；不是币圈现货，非今日利润。盘前今日字段为0不代表全天无变化。"
+      },
+      {
+        "asset": "SPY",
+        "venue": "Gate美股",
+        "value": "255.2187",
+        "platform_unrealized_pnl": "-0.27",
+        "platform_pnl_pct": "-0.1",
+        "today_platform_pnl": "0",
+        "state": "pre_market",
+        "note": "交易所持仓浮盈字段，未独立核验全部费用；不是币圈现货，非今日利润。盘前今日字段为0不代表全天无变化。"
+      },
+      {
+        "asset": "TSLG",
+        "venue": "Gate美股",
+        "value": "51.60",
+        "platform_unrealized_pnl": "11.5",
+        "platform_pnl_pct": "28.67",
+        "today_platform_pnl": "0",
+        "state": "pre_market",
+        "note": "交易所持仓浮盈字段，未独立核验全部费用；不是币圈现货，非今日利润。盘前今日字段为0不代表全天无变化。"
+      }
+    ],
+    "stock_platform_unrealized_pnl": "85.95",
+    "cost_complete": false,
+    "market_note": "涨跌百分比为各交易所现价对北京时间00:00第一分钟开盘价；行情变化，不是你的持仓盈利。缺完整成本与当日流量，真实现货盈亏与静态价格影响均不填数。",
+    "gaps": [
+      "全账户总资产待补齐：币安PM独立接口未通过（-2015），平台机器人仅按钱包总览纳入，未独立核对PM负债。",
+      "已覆盖币安、Gate、Hyperliquid、Bitget的当前返回范围；未纳入未接入交易所、子账户、外部钱包和跨所转账在途核对。",
+      "Gate量化账户34.74 USDT已含在总览中，内部币种/对冲属性未拆解；ETH理财对冲归属待核。",
+      "缺日初权益、完整转账和取得成本，不能给出当天全账户净利润或各币真实累计收益。",
+      "各接口非同一秒快照；币安钱包总览U本位值与直接合约接口有约0.55 USDT时点/估值差，按钱包总览统一口径，未强行平差。"
+    ],
+    "excluded_from_spot": [
+      "币安ETH币本位保证金及合约仓",
+      "币安BTC套利机器人资产",
+      "跨所机器人多空双腿",
+      "稳定币、LDUSDT凭证",
+      "LDETH只作为理财凭证，不在持仓中重复加总"
+    ],
+    "sources": [
+      {
+        "name": "Binance钱包总览官方字段",
+        "url": "https://developers.binance.com/en/docs/catalog/core-trading-wallet/api/rest-api/asset"
+      },
+      {
+        "name": "Hyperliquid统一账户去重规则",
+        "url": "https://hyperliquid.gitbook.io/hyperliquid-docs/trading/account-abstraction-modes"
+      },
+      {
+        "name": "Gate总资产接口",
+        "url": "https://www.gate.com/docs/developers/apiv4/en/wallet/"
+      }
+    ],
+    "evidence_hashes": {
+      "ASSET_RAW.json": "bbc32bf22f6fc07a41a9bc41188e748a265da362e892c52dba5714e0d9b2eee2",
+      "BINANCE_HL_RAW.json": "30d376bb514c2610a7115488fce230722cd5e201d59c514dfddabda49073614d",
+      "BINANCE_DETAILS.json": "cdcb7d6393de5a958bf3007097ccc8b58fdc9bdca7c0bc036114533179d2f5f9",
+      "GATE_DETAILS.json": "853f16df3e9da0b8924eb87cedfdcafc04a03abce6a55da026142f603428cdd1",
+      "MARKET.json": "56956bdb874a7b865dcb6a4006a497ffa0f509fb914ac3e79153142b907b907e"
+    }
+  },
+  "strategies": {
+    "schema": "exchange.daily.strategies.v1",
+    "as_of": "2026-09-23T19:18:49.786000+08:00",
+    "groups": [
+      {
+        "number": "①",
+        "name": "币本位资金费套利",
+        "cards": [
+          {
+            "key": "eth",
+            "name": "ETH 币本位套利",
+            "state": "持仓中",
+            "headline": "0.6278044486551788",
+            "headline_label": "窗口累计资金费收入 · 未扣交易费用",
+            "income_native": "0.00022999",
+            "currency": "ETH",
+            "income_count": 54,
+            "count_basis": "观察器返回的近30天总条数，明细仅保留最近30条",
+            "window": "2026-08-24T19:18:27.734000+08:00 至 2026-09-23T19:18:27.734000+08:00",
+            "income_usd": "0.6278044486551788",
+            "fee": null,
+            "fee_note": "未取得全窗口已付手续费，不能据此给净收入",
+            "net_income": null,
+            "position_text": "ETHUSD_PERP 对冲仓；当前对冲面值280 USD，整体持币成本及策略净盈亏待核。",
+            "face_usd": "280",
+            "capital": "317.1069505279031224",
+            "capital_label": "当前ETH钱包市值，非历史投入成本",
+            "capital_days": "3172.890000000000000000000001",
+            "rate_income": "0.581141",
+            "rate_label": "资金费年化估算 · 推算面值时间，非钱包余额",
+            "rate_note": "与看板一致：51期收入按当期标记价折USD，除以各期推算面值×8/24天。面值由到账×标记价÷公开费率反推，剔除Special等不能换算行。54条收入与51期年化样本不同，年化分子为0.581141 USD，不是上方现价折算值。未扣手续费、非净回报，不是承诺年化。 51期来自接口独立字段settlement_capital.rows（原文件settlement_capital.json），不是components.income.data.rows的最近30条；该派生表不是账户流水。其生成时间为北京19:13:05，与窗口收入采样不同。51期折17个结算日，平均推算面值约186.64 USD。30天为检索窗口，不代表满窗持续持仓。",
+            "basis": "到账总额来自只读观察器；现价折算会随ETH价格变化。",
+            "position_list": [],
+            "source_time": "2026-09-23T19:18:27.729000+08:00",
+            "monthly_pct": "0.5494747690591227555950568723",
+            "annual_pct": "6.685276356885993526406525280",
+            "main_note": "年化分母≈186.64 USD推算面值 × 17个结算日，不是钱包317.11 USD。近30天为查询窗口，不代表全程持续持仓。"
+          },
+          {
+            "key": "btc",
+            "name": "BTC 币安套利机器人",
+            "state": "网页显示运行中 · 仓位时效待核",
+            "headline": "0.37545000",
+            "headline_label": "累计资金费推算 · 非实际到账",
+            "currency": "USD",
+            "income_native": null,
+            "income_usd": null,
+            "income_count": null,
+            "estimate_count": 24,
+            "estimate_usd": "0.37545000",
+            "window": "2026-09-15T19:38:19+08:00 至 2026-09-23T19:18:49.786000+08:00",
+            "fee": null,
+            "fee_note": "未取得机器人完整实际费用账单",
+            "net_income": null,
+            "position_text": "BTCUSD 机器人；按固定200 USD面值推算，实际变仓与网页业务时效未核。",
+            "face_usd": "200",
+            "capital": "250",
+            "capital_label": "机器人页面投入",
+            "capital_days": "1597.293486111111111111111111",
+            "rate_income": "0.37545000",
+            "rate_label": "公开费率推算年化 · 200 USD面值",
+            "rate_note": "从创建时间后公开已结算费率逐期×当前200 USD面值；假设期间面值始终不变。网页资金费0.0000 BTC不能证明实际收入为0；接收时间不等于网页业务数据更新时间。未扣费用，不是实收/净回报。",
+            "basis": "创建本地时间按看板Europe/Tirane（此日UTC+2）解析；费率历史覆盖创建时点。",
+            "position_list": [],
+            "source_time": "2026-09-23T19:18:20.002000+08:00",
+            "market_source_time": "2026-09-23T19:14:23.848000+08:00",
+            "investment_annual_pct": "6.863572721811864202824133126",
+            "monthly_pct": "0.7051615810080682400161780608",
+            "annual_pct": "8.579465902264830253530166406"
+          }
+        ]
+      },
+      {
+        "number": "②",
+        "name": "长尾币跨所套利",
+        "cards": [
+          {
+            "key": "crypto",
+            "name": "长尾币跨所套利",
+            "state": "当前空仓 · 扫描中",
+            "headline": "-0.018794000000000165",
+            "headline_label": "累计盈亏 · 已实现及持仓估算",
+            "income_usd": "0.038617489999999989",
+            "fee": "0.05131749",
+            "fee_recorded": "0.05131749",
+            "fee_note": "主显示沿用看板fees_est；账本fees_real另列，未做交易所佣金独立对账。费用记录含已平仓位的已付费用，不一概称开仓手续费。 两笔底层仓位均有fees_real字段且各自与fees_est相等；字段存在不证明其来源独立，独立实际费用仍待核。",
+            "net_income": "-0.012700000000000011",
+            "total_pnl": "-0.018794000000000165",
+            "realized_pnl": "-0.018794000000000165",
+            "open_pnl": "0.0",
+            "currency": "USD等值",
+            "capital": "2.606367384922172",
+            "capital_label": "历史平均占用保证金 · 两腿合计",
+            "capital_days": "11.155536453245789",
+            "rate_income": "-0.018794000000000165",
+            "rate_label": "含价差累计盈亏年化 · 极短样本",
+            "rate_note": "看板分子÷Σ(各仓两腿估计保证金×持有天数)×365；当前配置2倍杠杆，按notional/2×2。②用累计盈亏；③用资金费减fees_est，未计持仓浮动和未来平仓费用。两者口径不同，不能直接相加或视为整个账户年化；配置杠杆非逐笔历史验证。",
+            "window": "2026-09-19T12:35:28.411000+08:00 至 2026-09-23T19:18:49.786000+08:00",
+            "open_count": 0,
+            "closed_count": 2,
+            "position_list": [
+              {
+                "asset": "AZTEC",
+                "state": "已平",
+                "funding": "0.006758999999999999",
+                "fee_est": "0.02482099",
+                "display_id": "crypto-1"
+              },
+              {
+                "asset": "NIL",
+                "state": "已平",
+                "funding": "0.03185848999999999",
+                "fee_est": "0.0264965",
+                "display_id": "crypto-2"
+              }
+            ],
+            "source_time": "2026-09-23T19:18:38.460000+08:00",
+            "monthly_pct": "-5.054172001167699928451391723",
+            "annual_pct": "-61.49242601420701579615859930",
+            "main_note": "观察中：约2.61 USD平均占用、约4.28天。年化值仅为看板算式结果，短样本噪声很大，不作收益结论。"
+          }
+        ]
+      },
+      {
+        "number": "③",
+        "name": "股票 / 黄金等商品永续套利",
+        "cards": [
+          {
+            "key": "tradfi",
+            "name": "股票 / 商品永续套利",
+            "state": "持仓中 · 5组",
+            "headline": "0.4273782069399998299",
+            "headline_label": "累计资金费减手续费估计",
+            "income_usd": "0.51628548999999983",
+            "fee": "0.0889072830600000001",
+            "fee_recorded": "0.08672712",
+            "fee_note": "主显示沿用看板fees_est；账本fees_real另列，未做交易所佣金独立对账。费用记录含已平仓位的已付费用，不一概称开仓手续费。",
+            "net_income": "0.4273782069399998299",
+            "total_pnl": "0.3219841538799991",
+            "realized_pnl": "0.04421653999999922",
+            "open_pnl": "0.27776761387999993",
+            "currency": "USD等值",
+            "capital": "99.41428169449942",
+            "capital_label": "历史平均占用保证金 · 两腿合计",
+            "capital_days": "1167.8495812034562",
+            "rate_income": "0.4273782069399998299",
+            "rate_label": "资金费减估计费年化 · 不含浮动盈亏",
+            "rate_note": "看板分子÷Σ(各仓两腿估计保证金×持有天数)×365；当前配置2倍杠杆，按notional/2×2。②用累计盈亏；③用资金费减fees_est，未计持仓浮动和未来平仓费用。两者口径不同，不能直接相加或视为整个账户年化；配置杠杆非逐笔历史验证。",
+            "window": "2026-09-12T01:22:42.942000+08:00 至 2026-09-23T19:18:49.786000+08:00",
+            "open_count": 5,
+            "closed_count": 1,
+            "position_list": [
+              {
+                "asset": "USAR",
+                "state": "持仓",
+                "funding": "0.06553586000000006",
+                "fee_est": "0.0035955305999999998",
+                "display_id": "tradfi-1"
+              },
+              {
+                "asset": "NET",
+                "state": "持仓",
+                "funding": "0.11666994000000006",
+                "fee_est": "0.01441975446",
+                "display_id": "tradfi-2"
+              },
+              {
+                "asset": "SMH",
+                "state": "持仓",
+                "funding": "0.1347790099999998",
+                "fee_est": "0.0024629400000000003",
+                "display_id": "tradfi-3"
+              },
+              {
+                "asset": "IREN",
+                "state": "已平",
+                "funding": "0.07523673999999991",
+                "fee_est": "0.0191202",
+                "display_id": "tradfi-4"
+              },
+              {
+                "asset": "BMNR",
+                "state": "持仓",
+                "funding": "0.10775594",
+                "fee_est": "0.044941068",
+                "display_id": "tradfi-5"
+              },
+              {
+                "asset": "IREN",
+                "state": "持仓",
+                "funding": "0.016308",
+                "fee_est": "0.00436779",
+                "display_id": "tradfi-6"
+              }
+            ],
+            "source_time": "2026-09-23T19:18:38.460000+08:00",
+            "monthly_pct": "1.097859383139713770614479303",
+            "annual_pct": "13.35728916153318420914283152",
+            "main_note": "若改用含价差与持仓估算的总盈亏，年化参考为 10.06%；与上方资金费口径分别列示。"
+          }
+        ]
+      }
+    ],
+    "shared_capital": 699.44,
+    "shared_capital_note": "②③共用资金台账699.44 USD，初始650由历史余额回推待核，非当前总资产，不重复计两份。",
+    "other_losses": -0.2952156,
+    "bot_total_pnl": 0.007974553879998958,
+    "other_loss_note": "看板单列的3笔旧规则/执行损耗仍是真实历史亏损；②③策略口径排除了这些，本区继续单列。跨所含其他损耗总盈亏是账本估算，不是全部交易所账户利润。",
+    "valuation_note": "跨所币安/Hyperliquid账本沿用USD等值口径；USDT/USDC按1。不合并ETH到账、BTC推算与跨所资金费为一个总利润。",
+    "source_hash": "b9319cece020db5b483eb85016be23f04b3341abe267916313c91d502d640a9e",
+    "source": "东京既有live看板只读接口和同机live.js公式；本轮未调用交易所私有接口、未交易。",
+    "model_receipt": "本轮会计展示方案经Claude Fable 5.1 / high主控、独立复核与终审批准（同模型、不同复核会话）；GPT执行源数据核对、页面实现和必要验证。Claude批准的是展示方案，不是账户逐笔审计或已完成工程的证明。"
+  },
+  "periods": {
+    "schema": "exchange.daily.periods.v1",
+    "report_date": "2026-09-23",
+    "timezone": "Asia/Shanghai",
+    "cutoff": "2026-09-23T00:00:00+08:00",
+    "read_at": "2026-09-23T19:56:13.829000+08:00",
+    "source_hash": "5a6f881169f0a6875e5c947b6c46a1ea559beb1e71ecd64b5c9e2135023cea0c",
+    "windows": [
+      {
+        "id": "yesterday",
+        "label": "昨天",
+        "days": 1,
+        "start": "2026-09-22T00:00:00+08:00",
+        "end_exclusive": "2026-09-23T00:00:00+08:00",
+        "date_label": "2026-09-22 — 2026-09-22",
+        "net_profit": null,
+        "status": "待补历史权益与资金流",
+        "funding": [
+          {
+            "name": "币安跨所机器人",
+            "venue": "binance",
+            "currency": null,
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 5,
+            "received": "0",
+            "paid": "0.00726456",
+            "net": "-0.00726456",
+            "first": "2026-09-22T00:00:00+08:00",
+            "last": "2026-09-22T20:00:00+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "原行没有币种字段，保持待核；不与其他币种相加。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "Hyperliquid跨所机器人",
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 86,
+            "received": "0.077383",
+            "paid": "0.009498",
+            "net": "0.067885",
+            "first": "2026-09-22T00:00:00.108000+08:00",
+            "last": "2026-09-22T23:00:00+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "USDC依据既有读取器delta.usdc映射；原账本行未保留币种，未完成交易所独立对账。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "ETH币本位账户",
+            "venue": "eth",
+            "currency": "ETH",
+            "coverage": "已取得到账明细 · 非完整账户收益",
+            "count": 3,
+            "received": "0.00001942",
+            "paid": "0",
+            "net": "0.00001942",
+            "first": "2026-09-22T00:00:00+08:00",
+            "last": "2026-09-22T16:00:00+08:00",
+            "source": "saved account_observation.components.income.data.rows",
+            "note": "观察器54条窗口汇总只保存最近30条明细。本表只聚合实际保存行；27条历史不能充当完整30/90天。没有用推算面值表补齐收入。"
+          }
+        ],
+        "fees": [
+          {
+            "venue": "binance",
+            "currency": "USDT",
+            "amount": "0.02201370",
+            "orders": 3,
+            "known_fee_orders": 3,
+            "unverified_orders": 0,
+            "first": "2026-09-22T02:39:09.532000+08:00",
+            "last": "2026-09-22T20:14:40.639000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          },
+          {
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "amount": "0.021080000000000001",
+            "orders": 3,
+            "known_fee_orders": 3,
+            "unverified_orders": 0,
+            "first": "2026-09-22T02:39:09.540000+08:00",
+            "last": "2026-09-22T20:14:42.680000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          }
+        ],
+        "gaps": [
+          "全账户期初、期末净权益：未取得",
+          "外部入金、出金及内部划转抵销：未齐",
+          "现货及合约已实现价差：跨账户记录未齐",
+          "未实现盈亏变化：缺期初与期末同口径估值",
+          "活期理财、奖励及其他收益：未齐",
+          "BTC平台机器人、Gate、Bitget及其他产品：期间实际流水未纳入；不拿账户余额或推算收益代替"
+        ]
+      },
+      {
+        "id": "d30",
+        "label": "最近30天",
+        "days": 30,
+        "start": "2026-08-24T00:00:00+08:00",
+        "end_exclusive": "2026-09-23T00:00:00+08:00",
+        "date_label": "2026-08-24 — 2026-09-22",
+        "net_profit": null,
+        "status": "待补历史权益与资金流",
+        "funding": [
+          {
+            "name": "币安跨所机器人",
+            "venue": "binance",
+            "currency": null,
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 16,
+            "received": "0",
+            "paid": "0.13738161",
+            "net": "-0.13738161",
+            "first": "2026-09-15T00:00:00+08:00",
+            "last": "2026-09-22T20:00:00+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "原行没有币种字段，保持待核；不与其他币种相加。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "Hyperliquid跨所机器人",
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 786,
+            "received": "0.794865",
+            "paid": "0.218409",
+            "net": "0.576456",
+            "first": "2026-09-12T02:00:00.021000+08:00",
+            "last": "2026-09-22T23:00:00+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "USDC依据既有读取器delta.usdc映射；原账本行未保留币种，未完成交易所独立对账。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "ETH币本位账户",
+            "venue": "eth",
+            "currency": "ETH",
+            "coverage": "已取得到账明细 · 非完整账户收益",
+            "count": 27,
+            "received": "0.00017063",
+            "paid": "0.00001485",
+            "net": "0.00015578",
+            "first": "2026-09-14T00:00:00+08:00",
+            "last": "2026-09-22T16:00:00+08:00",
+            "source": "saved account_observation.components.income.data.rows",
+            "note": "观察器54条窗口汇总只保存最近30条明细。本表只聚合实际保存行；27条历史不能充当完整30/90天。没有用推算面值表补齐收入。"
+          }
+        ],
+        "fees": [
+          {
+            "venue": "binance",
+            "currency": "USDT",
+            "amount": "0.10278941",
+            "orders": 13,
+            "known_fee_orders": 13,
+            "unverified_orders": 0,
+            "first": "2026-09-11T22:29:15.800000+08:00",
+            "last": "2026-09-22T20:14:40.639000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          },
+          {
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "amount": "0.132015000000000001",
+            "orders": 15,
+            "known_fee_orders": 15,
+            "unverified_orders": 0,
+            "first": "2026-09-11T21:36:31.834000+08:00",
+            "last": "2026-09-22T20:14:42.680000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          }
+        ],
+        "gaps": [
+          "全账户期初、期末净权益：未取得",
+          "外部入金、出金及内部划转抵销：未齐",
+          "现货及合约已实现价差：跨账户记录未齐",
+          "未实现盈亏变化：缺期初与期末同口径估值",
+          "活期理财、奖励及其他收益：未齐",
+          "BTC平台机器人、Gate、Bitget及其他产品：期间实际流水未纳入；不拿账户余额或推算收益代替"
+        ]
+      },
+      {
+        "id": "d90",
+        "label": "最近90天",
+        "days": 90,
+        "start": "2026-06-25T00:00:00+08:00",
+        "end_exclusive": "2026-09-23T00:00:00+08:00",
+        "date_label": "2026-06-25 — 2026-09-22",
+        "net_profit": null,
+        "status": "待补历史权益与资金流",
+        "funding": [
+          {
+            "name": "币安跨所机器人",
+            "venue": "binance",
+            "currency": null,
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 16,
+            "received": "0",
+            "paid": "0.13738161",
+            "net": "-0.13738161",
+            "first": "2026-09-15T00:00:00+08:00",
+            "last": "2026-09-22T20:00:00+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "原行没有币种字段，保持待核；不与其他币种相加。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "Hyperliquid跨所机器人",
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 786,
+            "received": "0.794865",
+            "paid": "0.218409",
+            "net": "0.576456",
+            "first": "2026-09-12T02:00:00.021000+08:00",
+            "last": "2026-09-22T23:00:00+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "USDC依据既有读取器delta.usdc映射；原账本行未保留币种，未完成交易所独立对账。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "ETH币本位账户",
+            "venue": "eth",
+            "currency": "ETH",
+            "coverage": "已取得到账明细 · 非完整账户收益",
+            "count": 27,
+            "received": "0.00017063",
+            "paid": "0.00001485",
+            "net": "0.00015578",
+            "first": "2026-09-14T00:00:00+08:00",
+            "last": "2026-09-22T16:00:00+08:00",
+            "source": "saved account_observation.components.income.data.rows",
+            "note": "观察器54条窗口汇总只保存最近30条明细。本表只聚合实际保存行；27条历史不能充当完整30/90天。没有用推算面值表补齐收入。"
+          }
+        ],
+        "fees": [
+          {
+            "venue": "binance",
+            "currency": "USDT",
+            "amount": "0.10278941",
+            "orders": 13,
+            "known_fee_orders": 13,
+            "unverified_orders": 0,
+            "first": "2026-09-11T22:29:15.800000+08:00",
+            "last": "2026-09-22T20:14:40.639000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          },
+          {
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "amount": "0.132015000000000001",
+            "orders": 15,
+            "known_fee_orders": 15,
+            "unverified_orders": 0,
+            "first": "2026-09-11T21:36:31.834000+08:00",
+            "last": "2026-09-22T20:14:42.680000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          }
+        ],
+        "gaps": [
+          "全账户期初、期末净权益：未取得",
+          "外部入金、出金及内部划转抵销：未齐",
+          "现货及合约已实现价差：跨账户记录未齐",
+          "未实现盈亏变化：缺期初与期末同口径估值",
+          "活期理财、奖励及其他收益：未齐",
+          "BTC平台机器人、Gate、Bitget及其他产品：期间实际流水未纳入；不拿账户余额或推算收益代替"
+        ]
+      }
+    ],
+    "method": "账户总净利润 = 期末净权益 − 期初净权益 − 外部净入金。内部划转抵销；已含在权益变化中的费用不再重复扣。需同一账户覆盖、币种估值及负债口径。",
+    "scope_note": "只有已取得部分流水，未完成全账户历史净利润对账。三个窗口重叠，不能相加；不影响下方今日交易和①—③累计卡各自的时段。",
+    "coverage_note": "90天与30天部分流水金额相同，是因为留存历史较短，不代表较早60天收益为0。",
+    "model_receipt": "Claude Fable 5.1/high主控、独立复核与终审批准周期展示方案；GPT执行只读取证、日期聚合和页面验证，另有GPT只读代理复算。方案审核不等于全账户历史审计。"
+  }
+}
