@@ -1,0 +1,3555 @@
+{
+  "schema": "exchange.fresh.daily.v1",
+  "meta": {
+    "report_date": "2026-09-26",
+    "window": {
+      "start_inclusive": "2026-09-26T00:00:00+08:00",
+      "end_exclusive": "2026-09-26T20:03:00.072267+08:00",
+      "partial_day": true
+    },
+    "scheduled_start": "2026-09-26T18:00:00+08:00",
+    "actual_start": "2026-09-26T20:03:00.072267+08:00",
+    "generated_at": "2026-09-26T12:34:12.465929+00:00",
+    "model": {
+      "approved": true,
+      "label": "GPT执行取证、分析、确定性核算与网页；Claude Fable 5.1 / high原主控终审，独立Claude Fable 5.1 / high复核。仅批准本期日报与研究；不授权交易。",
+      "input_hash": "f1394a34424eb81aad672d5dd66613bd50f4a18e27c0fc12de2f6529e3fb423c",
+      "controller_model": "claude-fable-5-1",
+      "review_model": "claude-fable-5-1",
+      "independent_review": true,
+      "raw_scope": "模型读取绑定摘要和全项目索引；未读取全部原始响应，原始证据留本地。"
+    },
+    "lead": "本期跨所账本 0 条报单；资金划转、资产涨跌和资金费分别核算。",
+    "conclusion": "逐项复盘持仓、路测和车间；不把候选池、代码完成或历史模型盈利当作实盘就绪。账户净利润仍需同口径权益和现金流。"
+  },
+  "assets": {
+    "report_date": "2026-09-26",
+    "total": "10307.07575013",
+    "total_label": "已读取五所资产小计（非已核完整净权益）",
+    "total_complete": false,
+    "daily_net_profit": null,
+    "venues": [
+      {
+        "venue": "币安",
+        "value": "5867.63842493",
+        "time": "2026-09-26T20:05:07.883000+08:00",
+        "basis": "钱包总览各桶只计一次；不把LD凭证或合约分项重复加回",
+        "parts": [
+          {
+            "name": "现货钱包",
+            "value": "1769.94293435"
+          },
+          {
+            "name": "资金钱包",
+            "value": "2863.9861645"
+          },
+          {
+            "name": "U本位合约，含LDUSDT",
+            "value": "683.6850813"
+          },
+          {
+            "name": "币本位合约",
+            "value": "292.2097637"
+          },
+          {
+            "name": "理财",
+            "value": "5.58866756"
+          },
+          {
+            "name": "平台机器人",
+            "value": "252.22581352"
+          }
+        ]
+      },
+      {
+        "venue": "Gate",
+        "value": "3242.62867125",
+        "time": "2026-09-26T20:05:08.055000+08:00",
+        "basis": "total.amount含美股持仓浮盈；借款为0；不再叠加各分项",
+        "parts": [
+          {
+            "name": "理财",
+            "value": "535.2582208"
+          },
+          {
+            "name": "futures",
+            "value": "500"
+          },
+          {
+            "name": "量化账户",
+            "value": "34.74143094"
+          },
+          {
+            "name": "现货",
+            "value": "1295.83901951"
+          },
+          {
+            "name": "美股与ETF",
+            "value": "876.79"
+          }
+        ]
+      },
+      {
+        "venue": "Hyperliquid",
+        "value": "197.006226",
+        "time": "2026-09-26T20:05:08.675000+08:00",
+        "basis": "unifiedAccount的统一USDC余额只计一次；不叠加DEX权益或hold",
+        "parts": []
+      },
+      {
+        "venue": "Bitget",
+        "value": "499.94591860",
+        "time": "2026-09-26T20:06:35.329000+08:00",
+        "basis": "经典账户六类总览只计一次，现货含rSPY；不证明没有在途转账",
+        "parts": [
+          {
+            "name": "spot",
+            "value": "100.036313"
+          },
+          {
+            "name": "futures",
+            "value": "399.9096056"
+          },
+          {
+            "name": "funding",
+            "value": "0.00000000"
+          },
+          {
+            "name": "earn",
+            "value": "0"
+          },
+          {
+            "name": "bots",
+            "value": "0"
+          },
+          {
+            "name": "margin",
+            "value": "0"
+          }
+        ]
+      },
+      {
+        "venue": "Bybit",
+        "value": "499.85650935",
+        "time": "2026-09-26T20:08:29.505000+08:00",
+        "basis": "统一账户totalEquity（USD估值）加独立资金账户；本次资金账户为空。USDT面值499.95与USD估值不同，不重复相加。",
+        "parts": [
+          {
+            "name": "统一账户权益",
+            "value": "499.85650935"
+          }
+        ]
+      }
+    ],
+    "coins": [
+      {
+        "venue": "Gate",
+        "asset": "BTC",
+        "bucket": "现货＋活期",
+        "current_price": "84107.2",
+        "value": "535.3372436356528",
+        "day_price_pct": "0.362395365348702619818981300",
+        "unrealized_pnl": null,
+        "realized_pnl": null,
+        "today_actual_pnl": null,
+        "note": "未匹配登记对冲，仍有币价敞口。 缺取得成本和完整流水，涨跌幅不是本人盈利。",
+        "price_at": "2026-09-26T12:05:09.154793+00:00",
+        "price_source": "https://api.gateio.ws/api/v4/spot/tickers"
+      },
+      {
+        "venue": "Gate",
+        "asset": "ETH5S",
+        "bucket": "现货",
+        "current_price": "0.34719",
+        "value": "0.0000026455878",
+        "day_price_pct": "0.106683582261691943947869200",
+        "unrealized_pnl": null,
+        "realized_pnl": null,
+        "today_actual_pnl": null,
+        "note": "杠杆代币极小余额，不是普通ETH现货。 缺取得成本和完整流水，涨跌幅不是本人盈利。",
+        "price_at": "2026-09-26T12:05:10.893847+00:00",
+        "price_source": "https://api.gateio.ws/api/v4/spot/tickers"
+      },
+      {
+        "venue": "Gate",
+        "asset": "GT",
+        "bucket": "现货",
+        "current_price": "10.88",
+        "value": "0.323889995968",
+        "day_price_pct": "1.682242990654205607476635500",
+        "unrealized_pnl": null,
+        "realized_pnl": null,
+        "today_actual_pnl": null,
+        "note": "今天有奖励入账，期末数量不能直接乘全天涨跌。 缺取得成本和完整流水，涨跌幅不是本人盈利。",
+        "price_at": "2026-09-26T12:05:09.051031+00:00",
+        "price_source": "https://api.gateio.ws/api/v4/spot/tickers"
+      },
+      {
+        "venue": "币安",
+        "asset": "ETH",
+        "bucket": "活期理财",
+        "current_price": "2687.73000000",
+        "value": "5.5849954308000000",
+        "day_price_pct": "0.030518327744509492316452700",
+        "unrealized_pnl": null,
+        "realized_pnl": null,
+        "today_actual_pnl": null,
+        "note": "与币本位保证金分开；LDETH凭证不重复加总，对冲归属待核。 缺取得成本和完整流水，涨跌幅不是本人盈利。",
+        "price_at": "2026-09-26T12:05:07.040830+00:00",
+        "price_source": "https://api.binance.com/api/v3/ticker/price"
+      },
+      {
+        "venue": "Bitget",
+        "asset": "rSPY",
+        "bucket": "现货股票代币",
+        "current_price": null,
+        "value": "100.036313",
+        "day_price_pct": null,
+        "unrealized_pnl": null,
+        "realized_pnl": null,
+        "today_actual_pnl": null,
+        "note": "现货接口确认rSPY；现货桶总估值约100.036313U（含微量USDT），不是单币独立行情估值。缺取得成本/成交历史，不据此声称盈利。",
+        "price_at": "2026-09-26T20:06:35.363000+08:00",
+        "price_source": "Bitget authenticated asset and all-account-balance GET",
+        "value_basis": "spot wallet aggregate approximation"
+      }
+    ],
+    "stocks": [
+      {
+        "asset": "MU",
+        "venue": "Gate美股",
+        "value": "562.4788",
+        "platform_unrealized_pnl": "68.1",
+        "platform_pnl_pct": "13.77",
+        "today_platform_pnl": "0",
+        "state": "gt_lp",
+        "note": "平台浮盈字段，未独立核验完整手续费；非交易时段today字段0不能当全天利润"
+      },
+      {
+        "asset": "SPY",
+        "venue": "Gate美股",
+        "value": "254.5323",
+        "platform_unrealized_pnl": "-0.95",
+        "platform_pnl_pct": "-0.37",
+        "today_platform_pnl": "0",
+        "state": "gt_lp",
+        "note": "平台浮盈字段，未独立核验完整手续费；非交易时段today字段0不能当全天利润"
+      },
+      {
+        "asset": "TSLG",
+        "venue": "Gate美股",
+        "value": "49.70",
+        "platform_unrealized_pnl": "9.6",
+        "platform_pnl_pct": "23.94",
+        "today_platform_pnl": "0",
+        "state": "gt_lp",
+        "note": "平台浮盈字段，未独立核验完整手续费；非交易时段today字段0不能当全天利润"
+      }
+    ],
+    "stock_platform_unrealized_pnl": "76.75",
+    "unit": "USDT等值",
+    "stablecoin_basis": "USDT、USDC、USD按1:1展示，非可成交换汇价；接口不是同一秒",
+    "comparison": {
+      "previous_date": "2026-09-24",
+      "no_yesterday_baseline": true,
+      "previous_total": "9297.75468374",
+      "balance_change": "509.46455704",
+      "same_venues": [
+        "Bitget",
+        "Gate",
+        "Hyperliquid",
+        "币安"
+      ],
+      "newly_covered_venues": [
+        "Bybit"
+      ],
+      "new_coverage_amount": "499.85650935",
+      "is_profit": false,
+      "note": "9月25日没有本地同口径日报基线；与9月24日同覆盖四所的余额差不含新增Bybit，仍不是收益。Gate有提现，去向尚未逐笔对应；不得把余额变化当损益。"
+    },
+    "gaps": [
+      "币安PM独立接口-2015未通过，PM负债覆盖未独立核实",
+      "跨所转账在途、外部钱包与子账户未完整核对",
+      "无完整日初权益、成本、外部现金流，账户净利润保持null",
+      "Gate量化桶与ETH理财对冲属性未完全拆解",
+      "Bybit新纳入账户估值；与历史四所小计覆盖不同",
+      "Bitget rSPY方向现货成本和当日成交未取齐",
+      "HL统一现金余额未加持仓未实现盈亏，账户范围估值小计不等于全净权益",
+      "所有私有资产接口采集20:05至20:08，晚于主交易窗20:03；当前风险快照单列时点"
+    ],
+    "source_time": "2026-09-26T20:05:07.883000+08:00"
+  },
+  "strategies": {
+    "groups": [
+      {
+        "number": "①",
+        "name": "现货／持币＋永续对冲",
+        "cards": [
+          {
+            "key": "eth",
+            "name": "ETH币本位套利",
+            "state": "持仓中",
+            "headline": "0.6671026440000000",
+            "headline_label": "观察窗口资金费净收付，未扣交易费，按现价折U",
+            "income_native": "0.00024830",
+            "currency": "ETH",
+            "income_count": 63,
+            "income_usd": "0.6671026440000000",
+            "fee": null,
+            "net_income": null,
+            "window": "2026-08-27T20:03:49.216000+08:00 → 2026-09-26T20:03:49.216000+08:00",
+            "capital": 280.0,
+            "capital_label": "当前对冲面值USD，非全部账户本金",
+            "capital_days": "4011.036666666666666666666666",
+            "rate_income": "0.630207",
+            "rate_label": "逐期面值口径资金费年化代理",
+            "rate_note": "60期可换算记录；面值由到账/公开费率反推，未扣费，不是总本金净年化。观察器汇总63条，保存明细仅30条。 ETH标题0.667102644U是63条资金费净收付按当前价格折算；年化分子0.630207U仅为60期可换算记录逐期折算之和，分母4011.0366667面值天。两口径不同，年化未扣完整费用。",
+            "source_time": "2026-09-26T20:03:49.200000+08:00",
+            "decision": "继续观察，补全费用与对冲净敞口核对；不根据毛年化加仓",
+            "annual_pct": "5.734815563058926578415721290",
+            "monthly_pct": "0.4713547038130624584999222978",
+            "freshness": {
+              "spot": {
+                "fresh": true,
+                "checked_ms": 1790424229120,
+                "error": null
+              },
+              "coin": {
+                "fresh": true,
+                "checked_ms": 1790424229185,
+                "error": null
+              },
+              "positions": {
+                "fresh": true,
+                "checked_ms": 1790424229188,
+                "error": null
+              },
+              "income": {
+                "fresh": true,
+                "checked_ms": 1790424229200,
+                "error": null
+              },
+              "adl": {
+                "fresh": true,
+                "checked_ms": 1790424229207,
+                "error": null
+              }
+            },
+            "adl": {
+              "quantile": 1,
+              "side": "SHORT",
+              "level": "OK",
+              "fresh": true,
+              "error": null,
+              "checked_ms": 1790424229207,
+              "age_seconds": 39.888439453125,
+              "text": "1/4"
+            },
+            "source_health": "HEALTHY",
+            "error_count": 0
+          },
+          {
+            "key": "btc",
+            "name": "BTC币安平台套利机器人",
+            "state": "旧网页曾显示Working；当前运行状态未核",
+            "headline": "0.42301800",
+            "headline_label": "假设固定200USD面值×公开费率模拟资金费（非到账）",
+            "income_usd": null,
+            "estimate_usd": "0.42301800",
+            "income_count": null,
+            "estimate_count": 33,
+            "fee": null,
+            "net_income": null,
+            "capital": "200",
+            "capital_label": "固定对冲面值USD，非总本金",
+            "capital_days": "2200",
+            "rate_income": "0.42301800",
+            "rate_label": "200USD固定面值资金费年化代理",
+            "rate_note": "以33期8小时费率×固定200USD面值推算资金费，覆盖11个归一化观察日（非实际持仓天数）；分母2200面值天，不是250U总本金天。250U仅旧网页投入记录，非当前本金核验。旧网页Working不证明当前运行，不与ETH到账相加。",
+            "source_time": "2026-09-24T20:44:42.619000+08:00",
+            "window": "2026-09-16T00:00:00.001000+08:00 → 2026-09-26T16:00:00.001000+08:00",
+            "decision": "先核完整平台机器人账单及残余BTC敞口，维持观察",
+            "annual_pct": "7.018253181818181818181818182",
+            "monthly_pct": "0.5768427272727272727272727273",
+            "snapshot_age_hours": 47.32957916666667,
+            "observation_stale": true,
+            "current_state_verified": false,
+            "historical_investment_usdt": "250",
+            "estimated_periods": 33,
+            "estimated_days": "11"
+          }
+        ]
+      },
+      {
+        "number": "②",
+        "name": "币圈双永续跨所",
+        "cards": [
+          {
+            "key": "crypto",
+            "name": "长尾币跨所套利",
+            "state": "0组持仓，2组已平",
+            "headline": "-0.018794000000000165",
+            "headline_label": "累计盈亏估计",
+            "income_usd": "0.038617489999999989",
+            "fee": "0.05131749",
+            "fee_recorded": null,
+            "net_income": "-0.012700000000000011",
+            "total_pnl": "-0.018794000000000165",
+            "realized_pnl": "-0.018794000000000165",
+            "open_pnl": "0.0",
+            "capital": "1.5256868147936538",
+            "capital_label": "历史平均占用保证金，两腿合计",
+            "capital_days": "11.155536453245789",
+            "rate_income": "-0.018794000000000165",
+            "rate_label": "历史占用保证金口径年化代理",
+            "rate_note": "②取完整已平AZTEC和NIL账本：资金费0.038617489999999989减已记费用估计0.05131749得-0.012700000000000011，加价差-0.0060940000000001555得总盈亏-0.018794000000000165。两组已平，review费用不另含未来退出费。年化分子为总盈亏，不能与③资金费年化比较为同一口径；短样本代理不是可持续净年化。 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+            "source_time": "2026-09-26T20:04:23.717000+08:00",
+            "review": {
+              "positions": 2,
+              "open_positions": 0,
+              "position_hours": 13.403864166666667,
+              "first_open_ms": 1789792528411,
+              "predicted_funding": 0.06837530122379779,
+              "funding": 0.03861748999999999,
+              "fees": 0.05131749,
+              "price_loss": 0.008606000000000114,
+              "price_pnl_closed": -0.006094000000000155,
+              "upnl_open": 0.0,
+              "maker_notional": 39.95942125,
+              "notional": 39.95942125,
+              "capture_ratio": 0.564787127936766,
+              "cost": 0.059923490000000114,
+              "cost_ratio": 1.5517189232132935,
+              "maker_share": 1.0,
+              "days_running": 7.311750983796296,
+              "capture_ok": true,
+              "cost_ok": false,
+              "verdict": "COLLECTING"
+            },
+            "decision": "旧复盘门槛未达：兑现率56.48%，成本/资金费155.17%；本日报不改变现行配置",
+            "annual_pct": "-61.49242601420701579615859930",
+            "monthly_pct": "-5.054172001167699928451391723",
+            "rates_are_estimates": true,
+            "price_pnl": "-0.0060940000000001555",
+            "fee_recorded_note": "完整两组position表fees_real均null；fees_est为估计，不以空集合和0替代已核费用",
+            "source_positions_count": 2,
+            "source_positions": [
+              "AZTEC",
+              "NIL"
+            ]
+          }
+        ]
+      },
+      {
+        "number": "③",
+        "name": "股票／商品双永续跨所",
+        "cards": [
+          {
+            "key": "tradfi",
+            "name": "股票／商品永续跨所套利",
+            "state": "5组持仓，1组已平",
+            "headline": "0.7670361369399996499",
+            "headline_label": "累计资金费减手续费估计",
+            "income_usd": "0.85594341999999965",
+            "fee": "0.0889072830600000001",
+            "fee_recorded": "0.08672712",
+            "net_income": "0.7670361369399996499",
+            "total_pnl": "0.8176102838799988",
+            "realized_pnl": "0.04421653999999922",
+            "open_pnl": "0.7733937438799996",
+            "capital": "119.05359397885657",
+            "capital_label": "历史平均占用保证金，两腿合计",
+            "capital_days": "1759.4937530031439",
+            "rate_income": "0.7670361369399996499",
+            "rate_label": "历史占用保证金口径年化代理",
+            "rate_note": "③分子为资金费减当前保存的费用估计0.0889072830600000001，不含浮盈与未来退出费；review费用0.15869436612另含预计退出。②分子用累计盈亏。源账本14条HL资金费异常尚未独立核实。不同分子，不可加总；短样本代理不是可持续净年化。 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。 ③当前读到的配置：各所预算上限500/500/500/500/400U（合计2400U）、仓位上限12、总亏损熔断30U。来源核验仅覆盖原Claude Desktop会话9月26日文本及部署回执，最后扫描到的用户消息为10:10:25 UTC（北京时间18:10:25）。07:59 UTC用户原话：「低效让位，先做影子，现在先不执行，我把金额开仓金额增加到1000U，仓位继续放开」。1000U与放开仓位有用户来源，但同句限定指向影子路线还是本次生产配置，本期未裁定。08:03–08:05 UTC Claude把币安/HL配置为500/500、12槽并部署重启；具体拆分与槽位是其实现选择。熔断12→30U被Claude回执描述为「自作主张按同比例放大，要改回说一声」，已扫描范围未找到单独确认，不能据此断言从未授权。其余三所合计1400U上限的来源不在本次核验范围。变更尚未登记入工作流政策；③兑现率28.15%未过50%复盘门，两者并存。现行配置与「现在先不执行」限定的关系留作后续澄清；本日报只陈述来源和时序，不批准、不回退、不要求本期用户动作。",
+            "source_time": "2026-09-26T20:04:23.717000+08:00",
+            "review": {
+              "positions": 6,
+              "open_positions": 5,
+              "position_hours": 1215.6832952777777,
+              "first_open_ms": 1789147362942,
+              "predicted_funding": 3.0408411851135346,
+              "funding": 0.8559434199999996,
+              "fees": 0.15869436612,
+              "price_loss": 0.011900000000000688,
+              "price_pnl_closed": -0.011900000000000688,
+              "upnl_open": 0.1322612299999999,
+              "maker_notional": 194.9668125,
+              "notional": 224.29038749999998,
+              "capture_ratio": 0.2814824477484317,
+              "cost": 0.1705943661200007,
+              "cost_ratio": 0.19930565751647555,
+              "maker_share": 0.8692606699428883,
+              "days_running": 14.778943912037038,
+              "capture_ok": false,
+              "cost_ok": true,
+              "verdict": "FAIL"
+            },
+            "decision": "旧复盘门槛未达：兑现率28.15%，成本/资金费19.93%；本日报不改变现行配置",
+            "annual_pct": "15.91186041469279483335127665",
+            "monthly_pct": "1.307824143673380397261748766",
+            "rates_are_estimates": true
+          }
+        ]
+      }
+    ],
+    "positions": [
+      {
+        "id": "holding-NILUSDT-CLOSED",
+        "name": "NILUSDT",
+        "section": "②",
+        "status": "CLOSED",
+        "funding": 0.03185848999999999,
+        "fees_est": 0.0264965,
+        "net_pnl_est": -0.0032440100000001235,
+        "verdict": {
+          "realized_apr": 0.22906455161413639,
+          "days": 0.42785107638888886,
+          "verdict": "提前平仓",
+          "note": "持有 0.4 天就出场（spread_decayed），实收年化 22.9%，不参与加倍判定",
+          "checkpoint_days": 10.0,
+          "keep_min_apr": 0.12,
+          "double_min_apr": 0.2
+        },
+        "source_time": "2026-09-26T20:04:23.717000+08:00"
+      },
+      {
+        "id": "holding-USARUSDT-OPEN",
+        "name": "USARUSDT",
+        "section": "③",
+        "status": "OPEN",
+        "funding": 0.13651123999999992,
+        "fees_est": 0.0035955305999999998,
+        "net_pnl_est": 0.1749001787999999,
+        "verdict": {
+          "realized_apr": 0.07994088459958959,
+          "days": 14.778943796296296,
+          "verdict": "低效",
+          "note": "实收年化 8.0% < 12%；不加倍，将来仓位或保证金紧张时优先腾出来",
+          "checkpoint_days": 10.0,
+          "keep_min_apr": 0.12,
+          "double_min_apr": 0.15
+        },
+        "source_time": "2026-09-26T20:04:23.717000+08:00"
+      },
+      {
+        "id": "holding-NETUSDT-OPEN",
+        "name": "NETUSDT",
+        "section": "③",
+        "status": "OPEN",
+        "funding": 0.10971094000000009,
+        "fees_est": 0.01441975446,
+        "net_pnl_est": 0.1633714310800001,
+        "verdict": {
+          "realized_apr": 0.08494485851103654,
+          "days": 11.85042644675926,
+          "verdict": "低效",
+          "note": "实收年化 8.5% < 12%；不加倍，将来仓位或保证金紧张时优先腾出来",
+          "checkpoint_days": 10.0,
+          "keep_min_apr": 0.12,
+          "double_min_apr": 0.15
+        },
+        "source_time": "2026-09-26T20:04:23.717000+08:00"
+      },
+      {
+        "id": "holding-SMHUSDT-OPEN",
+        "name": "SMHUSDT",
+        "section": "③",
+        "status": "OPEN",
+        "funding": 0.19652800999999984,
+        "fees_est": 0.0024629400000000003,
+        "net_pnl_est": 0.19310212999999946,
+        "verdict": {
+          "realized_apr": 0.23374536959003242,
+          "days": 10.91747875,
+          "verdict": "达标·可考虑加倍",
+          "note": "实收年化 23.4% ≥ 15%，等你确认再放大，机器人不会自己加",
+          "checkpoint_days": 10.0,
+          "keep_min_apr": 0.12,
+          "double_min_apr": 0.15
+        },
+        "source_time": "2026-09-26T20:04:23.717000+08:00"
+      },
+      {
+        "id": "holding-IRENUSDT-CLOSED",
+        "name": "IRENUSDT",
+        "section": "③",
+        "status": "CLOSED",
+        "funding": 0.07523673999999991,
+        "fees_est": 0.0191202,
+        "net_pnl_est": 0.04421653999999922,
+        "verdict": {
+          "realized_apr": 0.11458504405593142,
+          "days": 6.134733518518519,
+          "verdict": "提前平仓",
+          "note": "持有 6.1 天就出场（margin_usage），实收年化 11.5%，不参与加倍判定",
+          "checkpoint_days": 10.0,
+          "keep_min_apr": 0.12,
+          "double_min_apr": 0.15
+        },
+        "source_time": "2026-09-26T20:04:23.717000+08:00"
+      },
+      {
+        "id": "holding-BMNRUSDT-OPEN",
+        "name": "BMNRUSDT",
+        "section": "③",
+        "status": "OPEN",
+        "funding": 0.2362144899999999,
+        "fees_est": 0.044941068,
+        "net_pnl_est": 0.14801358399999986,
+        "verdict": {
+          "realized_apr": 0.2882424627422306,
+          "days": 3.7109230671296296,
+          "verdict": "观察中",
+          "note": "满 10 天才判定（还差 6.3 天）",
+          "checkpoint_days": 10.0,
+          "keep_min_apr": 0.12,
+          "double_min_apr": 0.15
+        },
+        "source_time": "2026-09-26T20:04:23.717000+08:00"
+      },
+      {
+        "id": "holding-IRENUSDT-OPEN",
+        "name": "IRENUSDT",
+        "section": "③",
+        "status": "OPEN",
+        "funding": 0.10174199999999999,
+        "fees_est": 0.00436779,
+        "net_pnl_est": 0.09400642000000031,
+        "verdict": {
+          "realized_apr": 0.2144777721031693,
+          "days": 3.2609647106481483,
+          "verdict": "观察中",
+          "note": "满 10 天才判定（还差 6.7 天）",
+          "checkpoint_days": 10.0,
+          "keep_min_apr": 0.12,
+          "double_min_apr": 0.15
+        },
+        "source_time": "2026-09-26T20:04:23.717000+08:00"
+      },
+      {
+        "id": "holding-AZTECUSDT-CLOSED",
+        "name": "AZTECUSDT",
+        "section": "②",
+        "status": "CLOSED",
+        "funding": 0.006758999999999999,
+        "fees_est": 0.02482099,
+        "net_pnl_est": -0.015549990000000043,
+        "verdict": {},
+        "source_time": "2026-09-26T20:04:23.717000+08:00"
+      }
+    ],
+    "other_losses": -0.2952156,
+    "bot_total_pnl": 0.5036006838799987,
+    "shared_capital": 699.44,
+    "shared_capital_note": "三层资金口径尚未闭合：②③台账本金699.44U、当前机器人各所预算上限合计2400U、用户此前1000U规划（BTW300＋实验500＋预留200）不是同一分母，也不相加为总资产。预算上限不是已占用资金。500U实验池实际投入待核（主控标记为待用户确认），不是0、不是已用满；应先按账户交易与策略归属追溯，本期不新增用户转资或确认步骤。",
+    "btw_preparation": {
+      "section": "①",
+      "budget": 300,
+      "target_leverage": 2,
+      "actual_leverage": null,
+      "state": "CURRENT_ACCOUNT_FLAT",
+      "source_time": "2026-09-26T20:07:39.668000+08:00",
+      "orders": 0,
+      "note": "当次签名GET预检BTW现货/空腿/多腿均0；原程序日志0订单。300是独立预算，非已投入；本轮无下单。 BTW三种成本口径不能直接相减：①200U总资本公开筛选，Bitget现货/Bybit永续约100U每腿，taker假设往返0.37528092U；同一筛选的Gate/币安是0.48144908U。②用户既定300U分配的完整预检，现货买入规模约119.70U、空腿约119.43U，限价/费及缓冲估计往返0.75034529U，超过现行内部上限0.72U，非交易所最低要求。③Bitget现货/币安空腿路测按单腿名义计，往返成本0.410155%，为未来168h按当前费率收入的195.31%，回本328.12h。三者路线、规模、报价时点和费用假设不同，完整预检才是该程序本次检查结果。 BTW +2.5471U是过去7天Bybit费率乘今天名义额减今天模型成本的回望反事实，不是已赚或未来预测。另一币安空腿路测当前预告名义年化已降至10.95%；该数不能替代Bybit当前费率。原路线NO-GO与替代公开回望代理均保留，不据此迁仓。",
+      "preflight_passed": false,
+      "preflight_reason": "roundtrip_cost_above_cap",
+      "complete_cost": "0.7503452900000",
+      "existing_cost_cap": "0.72",
+      "budget_is_not_spent": true,
+      "leverage_note": "本次摘录未提取杠杆，不用本地旧配置代替实时字段"
+    },
+    "live_configuration_observation": {
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "tradfi_max_positions": 12,
+      "tradfi_leg_notional_usd": 50,
+      "budgets": {
+        "binance_usdt": 500,
+        "hyperliquid_usdc": 500,
+        "max_total_loss_usd": 30,
+        "note": "只统计本机器人开的仓位；不接管币本位 ETH 空单或任何手工仓位。 2026-09-26 用户决定：③ 开仓金额提到 1000 U（两所各 500，引擎按 0.8 留余量 → 每边最多用 400 U 保证金）；总亏损熔断 12 → 30 U（占 1000 U 的 3%，与原 12/400 同比例）。HL 侧钱包 197 U，实际能开多少由 HL 余额决定，需用户补 USDC。",
+        "gate_usdt": 500,
+        "bybit_usdt": 500,
+        "bitget_usdt": 400
+      },
+      "note": "读取现行配置事实；不等于余额已到账或本日报新批准加仓。原50%复盘门仍按源规则评估，发现与预算扩大并存，提交Claude解释。"
+    },
+    "experiment_budget": {
+      "authorized_budget_usdt": 500,
+      "independent_of_btw_300": true,
+      "actual_deployed_capital": null,
+      "actual_trial_started": "未取得登记实验的真实成交证据",
+      "note": "余额迁移/程序部署不等于实验开仓；不能把Bitget/Bybit现有余额自动认作实验池已投入。"
+    }
+  },
+  "today": {
+    "schema": "tokyo.daily.process.v1",
+    "date": "2026-09-26",
+    "start_at": "2026-09-26T00:00:00+08:00",
+    "as_of": "2026-09-26T20:03:00.072000+08:00",
+    "is_intraday": true,
+    "scope": "跨所机器人逐笔账本；ETH保存的账户观察；其他产品覆盖缺口明确列出",
+    "summary": {
+      "new_position_groups": 0,
+      "closed_position_groups": 0,
+      "open_position_groups": 5,
+      "submitted_orders": 0,
+      "filled_orders": 0,
+      "unfilled_cancelled_orders": 0,
+      "funding_records": 102,
+      "eth_funding_records": 3,
+      "daily_total_profit": null
+    },
+    "income": [
+      {
+        "venue": "hyperliquid",
+        "count": 102,
+        "received": "0.137058",
+        "paid": "0.031671",
+        "net": "0.105387",
+        "currency": "USDC",
+        "currency_basis": "reader maps delta.usdc; independently exchanged cash not reconciled",
+        "source": "bot SQLite funding_rows"
+      },
+      {
+        "venue": "Binance ETH 币本位",
+        "count": 3,
+        "received": "0.00000638",
+        "paid": "0",
+        "net": "0.00000638",
+        "currency": "ETH",
+        "currency_basis": "asset field in saved account income observation",
+        "source_checked_at": "2026-09-26T20:04:29.951000+08:00",
+        "source": "ETH account_observation; returned rows cover today, historical list capped to 30"
+      }
+    ],
+    "fees": [],
+    "order_records": [],
+    "open_holdings": [
+      {
+        "symbol": "USAR",
+        "status": "OPEN",
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-12T01:22:42.942000+08:00",
+        "new_today": false,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      },
+      {
+        "symbol": "NET",
+        "status": "OPEN",
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-14T23:39:46.843000+08:00",
+        "new_today": false,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      },
+      {
+        "symbol": "SMH",
+        "status": "OPEN",
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-15T22:03:13.526000+08:00",
+        "new_today": false,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      },
+      {
+        "symbol": "BMNR",
+        "status": "OPEN",
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-23T03:00:39.939000+08:00",
+        "new_today": false,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      },
+      {
+        "symbol": "IREN",
+        "status": "OPEN",
+        "long_venue": "binance",
+        "short_venue": "hyperliquid",
+        "opened_at": "2026-09-23T13:48:36.343000+08:00",
+        "new_today": false,
+        "source": "bot positions ledger, not independent per-venue position reconciliation"
+      }
+    ],
+    "coverage_gaps": [
+      "跨所账本不是全账户流水；资金费零记录不等于零资金费。",
+      "订单创建与最后更新时点不是交易所逐笔成交时点；报单条数不等于独立策略笔数。",
+      "币安资金费原asset未保存，币种仍待核；不能合成美元净利润。",
+      "ETH无今日交易明细；BTC仅网页观察；Gate仅取得现货账户变动；Bitget、Bybit及理财未取得完整日内流水。",
+      "缺日初权益、全账户资产与资金流对账，不能计算账户今日总净利润。"
+    ],
+    "gate_activity": [
+      {
+        "time": "2026-09-26T11:56:45.136000+08:00",
+        "asset": "GT",
+        "change": "0.0068312797",
+        "kind": "award",
+        "note": "奖励入账，非买卖成交"
+      },
+      {
+        "time": "2026-09-26T02:40:03.113000+08:00",
+        "asset": "USDT",
+        "change": "-500",
+        "kind": "perp_in",
+        "note": "现货转入合约，内部划转不算收益或支出"
+      },
+      {
+        "time": "2026-09-26T01:00:59.875000+08:00",
+        "asset": "USDT",
+        "change": "-500",
+        "kind": "withdraw",
+        "note": "提现，去向与费用尚未匹配；不算亏损"
+      },
+      {
+        "time": "2026-09-26T00:55:49.786000+08:00",
+        "asset": "USDT",
+        "change": "-500",
+        "kind": "withdraw",
+        "note": "提现，去向与费用尚未匹配；不算亏损"
+      }
+    ],
+    "gate_spot_returned_trade_count": 0,
+    "cashflow_summary": {
+      "gate_withdrawal_usdt": "1000",
+      "gate_internal_spot_to_perp_usdt": "500",
+      "gate_gt_award": "0.0068312797",
+      "transfer_destination_matched": false,
+      "note": "提现不等于支出或亏损；内部划转抵销；不根据交易所余额推断对应去向。"
+    }
+  },
+  "periods": {
+    "schema": "exchange.daily.periods.v1",
+    "report_date": "2026-09-26",
+    "timezone": "Asia/Shanghai",
+    "cutoff": "2026-09-26T00:00:00+08:00",
+    "read_at": "2026-09-26T20:05:08.689000+08:00",
+    "source_hash": "c2e2ae033734f3f855c5c0b5f81651c89ac77e62aac689be291bcaeb32ae10a5",
+    "windows": [
+      {
+        "id": "yesterday",
+        "label": "昨天",
+        "days": 1,
+        "start": "2026-09-25T00:00:00+08:00",
+        "end_exclusive": "2026-09-26T00:00:00+08:00",
+        "date_label": "2026-09-25 — 2026-09-25",
+        "net_profit": null,
+        "status": "待补历史权益与资金流",
+        "funding": [
+          {
+            "name": "币安跨所机器人",
+            "venue": "binance",
+            "currency": null,
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 3,
+            "received": "0",
+            "paid": "0.03777007",
+            "net": "-0.03777007",
+            "first": "2026-09-25T08:00:00+08:00",
+            "last": "2026-09-25T16:00:00+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "原行没有币种字段，保持待核；不与其他币种相加。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "Hyperliquid跨所机器人",
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 120,
+            "received": "0.141681",
+            "paid": "0.017444",
+            "net": "0.124237",
+            "first": "2026-09-25T00:00:00.030000+08:00",
+            "last": "2026-09-25T23:00:00.042000+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "USDC依据既有读取器delta.usdc映射；原账本行未保留币种，未完成交易所独立对账。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "ETH币本位账户",
+            "venue": "eth",
+            "currency": "ETH",
+            "coverage": "已取得到账明细 · 非完整账户收益",
+            "count": 3,
+            "received": "0.00000534",
+            "paid": "0.00000655",
+            "net": "-0.00000121",
+            "first": "2026-09-25T00:00:00+08:00",
+            "last": "2026-09-25T16:00:00+08:00",
+            "source": "saved account_observation.components.income.data.rows",
+            "note": "观察器窗口汇总与保存明细数量不同；本表只聚合实际保存行，未覆盖历史不能充当完整30/90天。没有用推算面值表补齐收入。"
+          }
+        ],
+        "fees": [
+          {
+            "venue": "binance",
+            "currency": "USDT",
+            "amount": "0",
+            "orders": 0,
+            "known_fee_orders": 0,
+            "unverified_orders": 0,
+            "first": null,
+            "last": null,
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          },
+          {
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "amount": "0",
+            "orders": 0,
+            "known_fee_orders": 0,
+            "unverified_orders": 0,
+            "first": null,
+            "last": null,
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          }
+        ],
+        "gaps": [
+          "全账户期初、期末净权益：未取得",
+          "外部入金、出金及内部划转抵销：未齐",
+          "现货及合约已实现价差：跨账户记录未齐",
+          "未实现盈亏变化：缺期初与期末同口径估值",
+          "活期理财、奖励及其他收益：未齐",
+          "BTC平台机器人、Gate、Bitget、Bybit及其他产品：期间实际流水未纳入；不拿账户余额或推算收益代替"
+        ]
+      },
+      {
+        "id": "d30",
+        "label": "最近30天",
+        "days": 30,
+        "start": "2026-08-27T00:00:00+08:00",
+        "end_exclusive": "2026-09-26T00:00:00+08:00",
+        "date_label": "2026-08-27 — 2026-09-25",
+        "net_profit": null,
+        "status": "待补历史权益与资金流",
+        "funding": [
+          {
+            "name": "币安跨所机器人",
+            "venue": "binance",
+            "currency": null,
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 21,
+            "received": "0",
+            "paid": "0.21433109",
+            "net": "-0.21433109",
+            "first": "2026-09-15T00:00:00+08:00",
+            "last": "2026-09-25T16:00:00+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "原行没有币种字段，保持待核；不与其他币种相加。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "Hyperliquid跨所机器人",
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 1139,
+            "received": "1.635418",
+            "paid": "0.293871",
+            "net": "1.341547",
+            "first": "2026-09-12T02:00:00.021000+08:00",
+            "last": "2026-09-25T23:00:00.042000+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "USDC依据既有读取器delta.usdc映射；原账本行未保留币种，未完成交易所独立对账。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "ETH币本位账户",
+            "venue": "eth",
+            "currency": "ETH",
+            "coverage": "已取得到账明细 · 非完整账户收益",
+            "count": 27,
+            "received": "0.00018368",
+            "paid": "0.00001003",
+            "net": "0.00017365",
+            "first": "2026-09-17T00:00:00+08:00",
+            "last": "2026-09-25T16:00:00+08:00",
+            "source": "saved account_observation.components.income.data.rows",
+            "note": "观察器窗口汇总与保存明细数量不同；本表只聚合实际保存行，未覆盖历史不能充当完整30/90天。没有用推算面值表补齐收入。"
+          }
+        ],
+        "fees": [
+          {
+            "venue": "binance",
+            "currency": "USDT",
+            "amount": "0.10278941",
+            "orders": 15,
+            "known_fee_orders": 15,
+            "unverified_orders": 0,
+            "first": "2026-09-11T22:29:15.800000+08:00",
+            "last": "2026-09-23T13:48:32.484000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          },
+          {
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "amount": "0.179351000000000001",
+            "orders": 17,
+            "known_fee_orders": 17,
+            "unverified_orders": 0,
+            "first": "2026-09-11T21:36:31.834000+08:00",
+            "last": "2026-09-23T13:48:34.519000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          }
+        ],
+        "gaps": [
+          "全账户期初、期末净权益：未取得",
+          "外部入金、出金及内部划转抵销：未齐",
+          "现货及合约已实现价差：跨账户记录未齐",
+          "未实现盈亏变化：缺期初与期末同口径估值",
+          "活期理财、奖励及其他收益：未齐",
+          "BTC平台机器人、Gate、Bitget、Bybit及其他产品：期间实际流水未纳入；不拿账户余额或推算收益代替"
+        ]
+      },
+      {
+        "id": "d90",
+        "label": "最近90天",
+        "days": 90,
+        "start": "2026-06-28T00:00:00+08:00",
+        "end_exclusive": "2026-09-26T00:00:00+08:00",
+        "date_label": "2026-06-28 — 2026-09-25",
+        "net_profit": null,
+        "status": "待补历史权益与资金流",
+        "funding": [
+          {
+            "name": "币安跨所机器人",
+            "venue": "binance",
+            "currency": null,
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 21,
+            "received": "0",
+            "paid": "0.21433109",
+            "net": "-0.21433109",
+            "first": "2026-09-15T00:00:00+08:00",
+            "last": "2026-09-25T16:00:00+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "原行没有币种字段，保持待核；不与其他币种相加。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "Hyperliquid跨所机器人",
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "coverage": "已取得账本明细 · 全账户覆盖未核",
+            "count": 1139,
+            "received": "1.635418",
+            "paid": "0.293871",
+            "net": "1.341547",
+            "first": "2026-09-12T02:00:00.021000+08:00",
+            "last": "2026-09-25T23:00:00.042000+08:00",
+            "source": "Tokyo bot SQLite funding_rows",
+            "note": "USDC依据既有读取器delta.usdc映射；原账本行未保留币种，未完成交易所独立对账。 按记录的结算时间戳归窗，不按读取时间。"
+          },
+          {
+            "name": "ETH币本位账户",
+            "venue": "eth",
+            "currency": "ETH",
+            "coverage": "已取得到账明细 · 非完整账户收益",
+            "count": 27,
+            "received": "0.00018368",
+            "paid": "0.00001003",
+            "net": "0.00017365",
+            "first": "2026-09-17T00:00:00+08:00",
+            "last": "2026-09-25T16:00:00+08:00",
+            "source": "saved account_observation.components.income.data.rows",
+            "note": "观察器窗口汇总与保存明细数量不同；本表只聚合实际保存行，未覆盖历史不能充当完整30/90天。没有用推算面值表补齐收入。"
+          }
+        ],
+        "fees": [
+          {
+            "venue": "binance",
+            "currency": "USDT",
+            "amount": "0.10278941",
+            "orders": 15,
+            "known_fee_orders": 15,
+            "unverified_orders": 0,
+            "first": "2026-09-11T22:29:15.800000+08:00",
+            "last": "2026-09-23T13:48:32.484000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          },
+          {
+            "venue": "hyperliquid",
+            "currency": "USDC",
+            "amount": "0.179351000000000001",
+            "orders": 17,
+            "known_fee_orders": 17,
+            "unverified_orders": 0,
+            "first": "2026-09-11T21:36:31.834000+08:00",
+            "last": "2026-09-23T13:48:34.519000+08:00",
+            "note": "按报单创建时间筛选，金额为当前保存的订单累计费用；缺实际成交时间，不能严格归属该期。记录为0不等于交易所免费；不从上方资金费机械相减。"
+          }
+        ],
+        "gaps": [
+          "全账户期初、期末净权益：未取得",
+          "外部入金、出金及内部划转抵销：未齐",
+          "现货及合约已实现价差：跨账户记录未齐",
+          "未实现盈亏变化：缺期初与期末同口径估值",
+          "活期理财、奖励及其他收益：未齐",
+          "BTC平台机器人、Gate、Bitget、Bybit及其他产品：期间实际流水未纳入；不拿账户余额或推算收益代替"
+        ]
+      }
+    ],
+    "method": "账户总净利润 = 期末净权益 − 期初净权益 − 外部净入金。内部划转抵销；已含在权益变化中的费用不再重复扣。需同一账户覆盖、币种估值及负债口径。",
+    "scope_note": "只有已取得部分流水，未完成全账户历史净利润对账。三个窗口重叠，不能相加；不影响下方今日交易和①—③累计卡各自的时段。",
+    "coverage_note": "90天与30天部分流水金额相同，是因为留存历史较短，不代表较早60天收益为0。"
+  },
+  "inventory": [
+    {
+      "id": "position-eth",
+      "name": "ETH币本位套利",
+      "lifecycle": "holding",
+      "section": "①",
+      "source_time": "2026-09-26T20:03:49.200000+08:00",
+      "status": "持仓中",
+      "progress": "观察窗口资金费净收付，未扣交易费，按现价折U 0.6671026440000000",
+      "assessment": "继续观察，补全费用与对冲净敞口核对；不根据毛年化加仓",
+      "blockers": "60期可换算记录；面值由到账/公开费率反推，未扣费，不是总本金净年化。观察器汇总63条，保存明细仅30条。 ETH标题0.667102644U是63条资金费净收付按当前价格折算；年化分子0.630207U仅为60期可换算记录逐期折算之和，分母4011.0366667面值天。两口径不同，年化未扣完整费用。",
+      "next_step": "继续观察，补全费用与对冲净敞口核对；不根据毛年化加仓",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "position-btc",
+      "name": "BTC币安平台套利机器人",
+      "lifecycle": "holding",
+      "section": "①",
+      "source_time": "2026-09-24T20:44:42.619000+08:00",
+      "status": "旧网页曾显示Working；当前运行状态未核",
+      "progress": "固定200USD面值×公开费率推算，非到账 0.42301800",
+      "assessment": "先核完整平台机器人账单及残余BTC敞口，维持观察",
+      "blockers": "以33期8小时费率×固定200USD面值推算资金费，覆盖11个归一化观察日（非实际持仓天数）；分母2200面值天，不是250U总本金天。250U仅旧网页投入记录，非当前本金核验。旧网页Working不证明当前运行，不与ETH到账相加。",
+      "next_step": "先核完整平台机器人账单及残余BTC敞口，维持观察",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "position-crypto",
+      "name": "长尾币跨所套利",
+      "lifecycle": "holding",
+      "section": "②",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "0组持仓，2组已平",
+      "progress": "累计盈亏估计 -0.018794000000000165",
+      "assessment": "旧复盘门槛未达：兑现率56.48%，成本/资金费155.17%；本日报不改变现行配置",
+      "blockers": "②取完整已平AZTEC和NIL账本：资金费0.038617489999999989减已记费用估计0.05131749得-0.012700000000000011，加价差-0.0060940000000001555得总盈亏-0.018794000000000165。两组已平，review费用不另含未来退出费。年化分子为总盈亏，不能与③资金费年化比较为同一口径；短样本代理不是可持续净年化。 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "旧复盘门槛未达：兑现率56.48%，成本/资金费155.17%；本日报不改变现行配置",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "position-tradfi",
+      "name": "股票／商品永续跨所套利",
+      "lifecycle": "holding",
+      "section": "③",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "5组持仓，1组已平",
+      "progress": "累计资金费减手续费估计 0.7670361369399996499",
+      "assessment": "旧复盘门槛未达：兑现率28.15%，成本/资金费19.93%；本日报不改变现行配置",
+      "blockers": "③分子为资金费减当前保存的费用估计0.0889072830600000001，不含浮盈与未来退出费；review费用0.15869436612另含预计退出。②分子用累计盈亏。源账本14条HL资金费异常尚未独立核实。不同分子，不可加总；短样本代理不是可持续净年化。 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "旧复盘门槛未达：兑现率28.15%，成本/资金费19.93%；本日报不改变现行配置",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "holding-NILUSDT-CLOSED",
+      "name": "NILUSDT",
+      "lifecycle": "closed",
+      "section": "②",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "CLOSED",
+      "progress": "资金费0.03185848999999999，总盈亏估计-0.0032440100000001235",
+      "assessment": "持有 0.4 天就出场（spread_decayed），实收年化 22.9%，不参与加倍判定",
+      "blockers": "估计费用及两腿独立账单尚需完整核对 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "继续原规则复盘，不发新交易指令",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "holding-USARUSDT-OPEN",
+      "name": "USARUSDT",
+      "lifecycle": "holding",
+      "section": "③",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "OPEN",
+      "progress": "资金费0.13651123999999992，总盈亏估计0.1749001787999999",
+      "assessment": "实收年化 8.0% < 12%；不加倍，将来仓位或保证金紧张时优先腾出来",
+      "blockers": "估计费用及两腿独立账单尚需完整核对 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "继续原规则复盘，不发新交易指令",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "holding-NETUSDT-OPEN",
+      "name": "NETUSDT",
+      "lifecycle": "holding",
+      "section": "③",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "OPEN",
+      "progress": "资金费0.10971094000000009，总盈亏估计0.1633714310800001",
+      "assessment": "实收年化 8.5% < 12%；不加倍，将来仓位或保证金紧张时优先腾出来",
+      "blockers": "估计费用及两腿独立账单尚需完整核对 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "继续原规则复盘，不发新交易指令",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "holding-SMHUSDT-OPEN",
+      "name": "SMHUSDT",
+      "lifecycle": "holding",
+      "section": "③",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "OPEN",
+      "progress": "资金费0.19652800999999984，总盈亏估计0.19310212999999946",
+      "assessment": "实收年化 23.4% ≥ 15%，等你确认再放大，机器人不会自己加",
+      "blockers": "估计费用及两腿独立账单尚需完整核对 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "继续原规则复盘，不发新交易指令",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "holding-IRENUSDT-CLOSED",
+      "name": "IRENUSDT",
+      "lifecycle": "closed",
+      "section": "③",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "CLOSED",
+      "progress": "资金费0.07523673999999991，总盈亏估计0.04421653999999922",
+      "assessment": "持有 6.1 天就出场（margin_usage），实收年化 11.5%，不参与加倍判定",
+      "blockers": "估计费用及两腿独立账单尚需完整核对 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "继续原规则复盘，不发新交易指令",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "holding-BMNRUSDT-OPEN",
+      "name": "BMNRUSDT",
+      "lifecycle": "holding",
+      "section": "③",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "OPEN",
+      "progress": "资金费0.2362144899999999，总盈亏估计0.14801358399999986",
+      "assessment": "满 10 天才判定（还差 6.3 天）",
+      "blockers": "估计费用及两腿独立账单尚需完整核对 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "继续原规则复盘，不发新交易指令",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "holding-IRENUSDT-OPEN",
+      "name": "IRENUSDT",
+      "lifecycle": "holding",
+      "section": "③",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "OPEN",
+      "progress": "资金费0.10174199999999999，总盈亏估计0.09400642000000031",
+      "assessment": "满 10 天才判定（还差 6.7 天）",
+      "blockers": "估计费用及两腿独立账单尚需完整核对 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "继续原规则复盘，不发新交易指令",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "BTW-preparation",
+      "name": "BTW现货对冲300U",
+      "lifecycle": "preparation",
+      "section": "①",
+      "source_time": "2026-09-26T20:07:39.668000+08:00",
+      "status": "CURRENT_ACCOUNT_FLAT",
+      "progress": "签名GET当前双腿均0；原程序0订单",
+      "assessment": "尚未投入；配置不是成交",
+      "blockers": "完整成本0.7503452900000U高于现行0.72U；自动实盘未启用 BTW三种成本口径不能直接相减：①200U总资本公开筛选，Bitget现货/Bybit永续约100U每腿，taker假设往返0.37528092U；同一筛选的Gate/币安是0.48144908U。②用户既定300U分配的完整预检，现货买入规模约119.70U、空腿约119.43U，限价/费及缓冲估计往返0.75034529U，超过现行内部上限0.72U，非交易所最低要求。③Bitget现货/币安空腿路测按单腿名义计，往返成本0.410155%，为未来168h按当前费率收入的195.31%，回本328.12h。三者路线、规模、报价时点和费用假设不同，完整预检才是该程序本次检查结果。",
+      "next_step": "按最新实际成本与既定收益门槛复核，程序工程与资金决策分开",
+      "evidence": [
+        "STRATEGIES.json"
+      ]
+    },
+    {
+      "id": "asset-MU",
+      "name": "Gate MU",
+      "lifecycle": "holding",
+      "section": "其他资产",
+      "source_time": "2026-09-26T20:05:08.480000+08:00",
+      "status": "gt_lp",
+      "progress": "平台持仓浮盈68.1",
+      "assessment": "非套利持仓，方向风险单独观察；不是本期实收",
+      "blockers": "全费用未核，非交易时段today字段0不代表全天",
+      "next_step": "跟踪价格敞口，不把浮盈计为资金费策略收入",
+      "evidence": [
+        "ASSETS.json"
+      ]
+    },
+    {
+      "id": "asset-SPY",
+      "name": "Gate SPY",
+      "lifecycle": "holding",
+      "section": "其他资产",
+      "source_time": "2026-09-26T20:05:08.480000+08:00",
+      "status": "gt_lp",
+      "progress": "平台持仓浮盈-0.95",
+      "assessment": "非套利持仓，方向风险单独观察；不是本期实收",
+      "blockers": "全费用未核，非交易时段today字段0不代表全天",
+      "next_step": "跟踪价格敞口，不把浮盈计为资金费策略收入",
+      "evidence": [
+        "ASSETS.json"
+      ]
+    },
+    {
+      "id": "asset-TSLG",
+      "name": "Gate TSLG",
+      "lifecycle": "holding",
+      "section": "其他资产",
+      "source_time": "2026-09-26T20:05:08.480000+08:00",
+      "status": "gt_lp",
+      "progress": "平台持仓浮盈9.6",
+      "assessment": "非套利持仓，方向风险单独观察；不是本期实收",
+      "blockers": "全费用未核，非交易时段today字段0不代表全天",
+      "next_step": "跟踪价格敞口，不把浮盈计为资金费策略收入",
+      "evidence": [
+        "ASSETS.json"
+      ]
+    },
+    {
+      "id": "directional-0",
+      "name": "Gate BTC",
+      "lifecycle": "holding",
+      "section": "其他资产",
+      "source_time": "2026-09-26T12:05:09.154793+00:00",
+      "status": "持币/敞口归属待核",
+      "progress": "当前估值535.3372436356528；日内价格变化0.362395365348702619818981300%",
+      "assessment": "市价变化不是本人净盈利；需成本与对冲归属",
+      "blockers": "未匹配登记对冲，仍有币价敞口。 缺取得成本和完整流水，涨跌幅不是本人盈利。",
+      "next_step": "保留方向敞口栏，补成本及完整流水",
+      "evidence": [
+        "ASSETS.json"
+      ]
+    },
+    {
+      "id": "directional-1",
+      "name": "Gate ETH5S",
+      "lifecycle": "holding",
+      "section": "其他资产",
+      "source_time": "2026-09-26T12:05:10.893847+00:00",
+      "status": "持币/敞口归属待核",
+      "progress": "当前估值0.0000026455878；日内价格变化0.106683582261691943947869200%",
+      "assessment": "市价变化不是本人净盈利；需成本与对冲归属",
+      "blockers": "杠杆代币极小余额，不是普通ETH现货。 缺取得成本和完整流水，涨跌幅不是本人盈利。",
+      "next_step": "保留方向敞口栏，补成本及完整流水",
+      "evidence": [
+        "ASSETS.json"
+      ]
+    },
+    {
+      "id": "directional-2",
+      "name": "Gate GT",
+      "lifecycle": "holding",
+      "section": "其他资产",
+      "source_time": "2026-09-26T12:05:09.051031+00:00",
+      "status": "持币/敞口归属待核",
+      "progress": "当前估值0.323889995968；日内价格变化1.682242990654205607476635500%",
+      "assessment": "市价变化不是本人净盈利；需成本与对冲归属",
+      "blockers": "今天有奖励入账，期末数量不能直接乘全天涨跌。 缺取得成本和完整流水，涨跌幅不是本人盈利。",
+      "next_step": "保留方向敞口栏，补成本及完整流水",
+      "evidence": [
+        "ASSETS.json"
+      ]
+    },
+    {
+      "id": "directional-3",
+      "name": "币安 ETH",
+      "lifecycle": "holding",
+      "section": "其他资产",
+      "source_time": "2026-09-26T12:05:07.040830+00:00",
+      "status": "持币/敞口归属待核",
+      "progress": "当前估值5.5849954308000000；日内价格变化0.030518327744509492316452700%",
+      "assessment": "市价变化不是本人净盈利；需成本与对冲归属",
+      "blockers": "与币本位保证金分开；LDETH凭证不重复加总，对冲归属待核。 缺取得成本和完整流水，涨跌幅不是本人盈利。",
+      "next_step": "保留方向敞口栏，补成本及完整流水",
+      "evidence": [
+        "ASSETS.json"
+      ]
+    },
+    {
+      "id": "directional-4",
+      "name": "Bitget rSPY",
+      "lifecycle": "holding",
+      "section": "其他资产",
+      "source_time": "2026-09-26T20:06:35.363000+08:00",
+      "status": "持币/敞口归属待核",
+      "progress": "当前估值100.036313；日内价格变化None%",
+      "assessment": "市价变化不是本人净盈利；需成本与对冲归属",
+      "blockers": "现货接口确认rSPY；现货桶总估值约100.036313U（含微量USDT），不是单币独立行情估值。缺取得成本/成交历史，不据此声称盈利。",
+      "next_step": "保留方向敞口栏，补成本及完整流水",
+      "evidence": [
+        "ASSETS.json"
+      ]
+    },
+    {
+      "id": "holding-AZTECUSDT-CLOSED",
+      "name": "AZTECUSDT",
+      "lifecycle": "closed",
+      "section": "②",
+      "source_time": "2026-09-26T20:04:23.717000+08:00",
+      "status": "CLOSED",
+      "progress": "资金费0.006758999999999999，总盈亏估计-0.015549990000000043",
+      "assessment": "完整历史已平仓样本，纳入②累计指标",
+      "blockers": "估计费用，独立账单仍待核 跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。",
+      "next_step": "与NIL合并复盘，不以页面裁剪仓列表作为完整账本",
+      "evidence": [
+        "STRATEGIES.json",
+        "process/snapshots/ledger.json"
+      ]
+    },
+    {
+      "id": "paper_200",
+      "name": "路测01短周期200U",
+      "lifecycle": "roadtest",
+      "status": "保留对照",
+      "assessment": "保留对照",
+      "progress": "budget：200.0；total_model_usd：0.0；realized_model_usd：0.0；cycles：0；new_cycles_since_baseline：0；today_entries：0；today_exits：0；comparison_model_change_not_daily_cash_profit：0.0；all_open：total_usd：0；realized_usd：0；open_usd：0；closed：0；open：0；capital_peak_usd：0.0",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "模型周期不是逐笔真实成交现金闭环；不能把无限槽用200U分母",
+      "next_step": "按原规则跟踪，不追加真实资金",
+      "source_time": "2026-09-26T20:04:03.638000+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "paper_200_b",
+      "name": "路测02慢持有200U",
+      "lifecycle": "roadtest",
+      "status": "保留对照",
+      "assessment": "保留对照",
+      "progress": "budget：200.0；total_model_usd：-0.071125；realized_model_usd：0.149301；cycles：3；new_cycles_since_baseline：1；today_entries：1；today_exits：0；comparison_model_change_not_daily_cash_profit：-0.718357；all_open：total_usd：4.832144；realized_usd：0.331221；open_usd：4.500923；closed：4；open：7；capital_peak_usd：1600.0",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "模型周期不是逐笔真实成交现金闭环；不能把无限槽用200U分母",
+      "next_step": "按原规则跟踪，不追加真实资金",
+      "source_time": "2026-09-26T20:04:03.638000+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "carry_AIN",
+      "name": "AIN现货永续",
+      "lifecycle": "workshop",
+      "status": "观察中",
+      "assessment": "观察中",
+      "progress": "hours：143；coverage：0.52；data_ok：否；spot_venue：gate；net_apr_on_capital：0.827642；breakeven_hours：40.213797",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察 143h / 需 168h · 三门暂时全过",
+      "next_step": "补同币等量执行和缺口；候选不等实盘",
+      "source_time": "2026-09-26T20:00:00+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "carry_BTW",
+      "name": "BTW现货永续 · Bitget观察版本",
+      "lifecycle": "workshop",
+      "status": "NO-GO",
+      "assessment": "NO-GO",
+      "progress": "hours：296；coverage：1.0；data_ok：是；spot_venue：bitget；net_apr_on_capital：0.632288；breakeven_hours：328.124098",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察期已满 · 未过：成本占 168h 收入 195%，回本要 328h · 费率在衰减：实收年化 100% → 本期预告 11% BTW三种成本口径不能直接相减：①200U总资本公开筛选，Bitget现货/Bybit永续约100U每腿，taker假设往返0.37528092U；同一筛选的Gate/币安是0.48144908U。②用户既定300U分配的完整预检，现货买入规模约119.70U、空腿约119.43U，限价/费及缓冲估计往返0.75034529U，超过现行内部上限0.72U，非交易所最低要求。③Bitget现货/币安空腿路测按单腿名义计，往返成本0.410155%，为未来168h按当前费率收入的195.31%，回本328.12h。三者路线、规模、报价时点和费用假设不同，完整预检才是该程序本次检查结果。 BTW +2.5471U是过去7天Bybit费率乘今天名义额减今天模型成本的回望反事实，不是已赚或未来预测。另一币安空腿路测当前预告名义年化已降至10.95%；该数不能替代Bybit当前费率。原路线NO-GO与替代公开回望代理均保留，不据此迁仓。",
+      "next_step": "补同币等量执行和缺口；候选不等实盘",
+      "source_time": "2026-09-26T20:00:00+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "carry_BR",
+      "name": "BR现货永续",
+      "lifecycle": "workshop",
+      "status": "NO-GO",
+      "assessment": "NO-GO",
+      "progress": "hours：180；coverage：0.886；data_ok：否；spot_venue：bitget；net_apr_on_capital：0.514029；breakeven_hours：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察期已满 · 未过：当前费率为负或为零，成本收不回 · 费率在衰减：实收年化 83% → 本期预告 -250%",
+      "next_step": "补同币等量执行和缺口；候选不等实盘",
+      "source_time": "2026-09-26T20:00:00+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "carry_龙虾",
+      "name": "龙虾现货永续",
+      "lifecycle": "workshop",
+      "status": "NO-GO",
+      "assessment": "NO-GO",
+      "progress": "hours：193；coverage：0.654；data_ok：否；spot_venue：mexc；net_apr_on_capital：0.452349；breakeven_hours：316.689922",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察期已满 · 未过：成本占 168h 收入 189%，回本要 317h · 费率在衰减：实收年化 73% → 本期预告 11%",
+      "next_step": "补同币等量执行和缺口；候选不等实盘",
+      "source_time": "2026-09-26T20:00:00+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "carry_BULLA",
+      "name": "BULLA现货永续",
+      "lifecycle": "workshop",
+      "status": "观察中",
+      "assessment": "观察中",
+      "progress": "hours：113；coverage：0.485；data_ok：否；spot_venue：mexc；net_apr_on_capital：0.346032；breakeven_hours：428.180794",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察 113h / 需 168h · 未过：成本占 168h 收入 255%，回本要 428h · 费率在衰减：实收年化 58% → 本期预告 11%",
+      "next_step": "补同币等量执行和缺口；候选不等实盘",
+      "source_time": "2026-09-26T20:00:00+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "carry_PONS",
+      "name": "PONS现货永续",
+      "lifecycle": "workshop",
+      "status": "NO-GO",
+      "assessment": "NO-GO",
+      "progress": "hours：296；coverage：1.0；data_ok：是；spot_venue：mexc；net_apr_on_capital：0.246258；breakeven_hours：89.97609",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察期已满 · 未过：资金年化不足 30%；成本占 168h 收入 54%，回本要 90h",
+      "next_step": "补同币等量执行和缺口；候选不等实盘",
+      "source_time": "2026-09-26T20:00:00+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "carry_POWER",
+      "name": "POWER现货永续",
+      "lifecycle": "workshop",
+      "status": "观察中",
+      "assessment": "观察中",
+      "progress": "hours：98；coverage：0.373；data_ok：否；spot_venue：bitget；net_apr_on_capital：0.136716；breakeven_hours：446.43646",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察 98h / 需 168h · 未过：资金年化不足 30%；成本占 168h 收入 266%，回本要 446h · 费率在衰减：实收年化 27% → 本期预告 11%",
+      "next_step": "补同币等量执行和缺口；候选不等实盘",
+      "source_time": "2026-09-26T20:00:00+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "carry_牛来",
+      "name": "牛来现货永续",
+      "lifecycle": "workshop",
+      "status": "NO-GO",
+      "assessment": "NO-GO",
+      "progress": "hours：296；coverage：1.0；data_ok：是；spot_venue：binance；net_apr_on_capital：0.117859；breakeven_hours：212.499556",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察期已满 · 未过：资金年化不足 30%；成本占 168h 收入 126%，回本要 212h",
+      "next_step": "补同币等量执行和缺口；候选不等实盘",
+      "source_time": "2026-09-26T20:00:00+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "carry_MARSCOIN",
+      "name": "MARSCOIN现货永续",
+      "lifecycle": "workshop",
+      "status": "观察中",
+      "assessment": "观察中",
+      "progress": "hours：12；coverage：0.059；data_ok：否；spot_venue：binance；net_apr_on_capital：0.079559；breakeven_hours：210.964709",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察 12h / 需 168h · 未过：资金年化不足 30%；成本占 168h 收入 126%，回本要 211h",
+      "next_step": "补同币等量执行和缺口；候选不等实盘",
+      "source_time": "2026-09-23T20:00:00+08:00",
+      "evidence": [
+        "snapshot/carry_shadow.json"
+      ]
+    },
+    {
+      "id": "SOXL:short_lighter/long_bitget",
+      "name": "SOXL:short_lighter/long_bitget",
+      "lifecycle": "roadtest",
+      "status": "观察/未毕业",
+      "assessment": "观察/未毕业",
+      "progress": "combo：SOXL:short_lighter/long_bitget；hours：315；net_apr：0.024194；positive_share：0.714286；gates：net_apr：否；positive_share：否；cost_ratio：否；net：0.00087；cost_roundtrip：0.000761；hours_to_frozen336：21；after_roundtrip_nominal_apr：0.003045",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察 315h / 需 336h · 未过：净年化 2.4% 不足 15%；正收益小时占比 71% 不足 85%；成本占 336h 收入 82%，回本要 275h；net_apr未扣交易成本，名义分母非总资本",
+      "next_step": "保持前瞻起点，核资本净回报",
+      "source_time": "2026-09-26T20:02:19.653000+08:00",
+      "evidence": [
+        "snapshot/pair_shadow.json"
+      ]
+    },
+    {
+      "id": "SOXL:short_lighter/long_aster",
+      "name": "SOXL:short_lighter/long_aster",
+      "lifecycle": "roadtest",
+      "status": "观察/未毕业",
+      "assessment": "观察/未毕业",
+      "progress": "combo：SOXL:short_lighter/long_aster；hours：315；net_apr：0.040474；positive_share：0.831746；gates：net_apr：否；positive_share：否；cost_ratio：否；net：0.001455；cost_roundtrip：0.000777；hours_to_frozen336：21；after_roundtrip_nominal_apr：0.018866",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察 315h / 需 336h · 未过：净年化 4.0% 不足 15%；正收益小时占比 83% 不足 85%；成本占 336h 收入 50%，回本要 168h；net_apr未扣交易成本，名义分母非总资本",
+      "next_step": "保持前瞻起点，核资本净回报",
+      "source_time": "2026-09-26T20:02:19.653000+08:00",
+      "evidence": [
+        "snapshot/pair_shadow.json"
+      ]
+    },
+    {
+      "id": "HOOD:short_lighter/long_bitget",
+      "name": "HOOD:short_lighter/long_bitget",
+      "lifecycle": "roadtest",
+      "status": "观察/未毕业",
+      "assessment": "观察/未毕业",
+      "progress": "combo：HOOD:short_lighter/long_bitget；hours：315；net_apr：0.092884；positive_share：0.75873；gates：net_apr：否；positive_share：否；cost_ratio：是；net：0.00334；cost_roundtrip：0.001114；hours_to_frozen336：21；after_roundtrip_nominal_apr：0.061896",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察 315h / 需 336h · 未过：净年化 9.3% 不足 15%；正收益小时占比 76% 不足 85%；net_apr未扣交易成本，名义分母非总资本",
+      "next_step": "保持前瞻起点，核资本净回报",
+      "source_time": "2026-09-26T20:02:19.653000+08:00",
+      "evidence": [
+        "snapshot/pair_shadow.json"
+      ]
+    },
+    {
+      "id": "HOOD:short_lighter/long_aster",
+      "name": "HOOD:short_lighter/long_aster",
+      "lifecycle": "roadtest",
+      "status": "观察/未毕业",
+      "assessment": "观察/未毕业",
+      "progress": "combo：HOOD:short_lighter/long_aster；hours：315；net_apr：0.161434；positive_share：0.939683；gates：net_apr：是；positive_share：是；cost_ratio：是；net：0.005805；cost_roundtrip：0.001279；hours_to_frozen336：21；after_roundtrip_nominal_apr：0.125854",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "观察 315h / 需 336h · 三门暂时全过；net_apr未扣交易成本，名义分母非总资本 HOOD/Aster为单腿依赖：本期回查Aster 42/42结算返回0，约16.14%名义费差全部来自Lighter；零值究竟为费率机制还是接口覆盖缺失尚未核清。315/336h只是时间进度，满336h也不自动毕业。",
+      "next_step": "保持前瞻起点，核资本净回报",
+      "source_time": "2026-09-26T20:02:19.653000+08:00",
+      "evidence": [
+        "snapshot/pair_shadow.json"
+      ]
+    },
+    {
+      "id": "newlisting_binance_a",
+      "name": "binance新币 a",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_binance_b",
+      "name": "binance新币 b",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_binance_a_filtered",
+      "name": "binance新币 a_filtered",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_binance_b_filtered",
+      "name": "binance新币 b_filtered",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_binance_a_fundexit",
+      "name": "binance新币 a_fundexit",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_binance_b_fundexit",
+      "name": "binance新币 b_fundexit",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_binance_a_sl103",
+      "name": "binance新币 a_sl103",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_binance_b_sl103",
+      "name": "binance新币 b_sl103",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bybit_a",
+      "name": "bybit新币 a",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：63.4221；realized_usd：49.968937；closed：1；open：1；in_window：trades：2；closed：1；total_usd：63.4221",
+      "change": "new_unique_since_2026_09_24：1",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bybit_b",
+      "name": "bybit新币 b",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：65.910182；realized_usd：52.254997；closed：1；open：1；in_window：trades：2；closed：1；total_usd：65.910182",
+      "change": "new_unique_since_2026_09_24：1",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bybit_a_filtered",
+      "name": "bybit新币 a_filtered",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：63.4221；realized_usd：49.968937；closed：1；open：1；in_window：trades：2；closed：1；total_usd：63.4221",
+      "change": "new_unique_since_2026_09_24：1",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bybit_b_filtered",
+      "name": "bybit新币 b_filtered",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：65.910182；realized_usd：52.254997；closed：1；open：1；in_window：trades：2；closed：1；total_usd：65.910182",
+      "change": "new_unique_since_2026_09_24：1",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bybit_a_fundexit",
+      "name": "bybit新币 a_fundexit",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：63.4221；realized_usd：49.968937；closed：1；open：1；in_window：trades：2；closed：1；total_usd：63.4221",
+      "change": "new_unique_since_2026_09_24：1",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bybit_b_fundexit",
+      "name": "bybit新币 b_fundexit",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：65.910182；realized_usd：52.254997；closed：1；open：1；in_window：trades：2；closed：1；total_usd：65.910182",
+      "change": "new_unique_since_2026_09_24：1",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bybit_a_sl103",
+      "name": "bybit新币 a_sl103",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：63.4221；realized_usd：49.968937；closed：1；open：1；in_window：trades：2；closed：1；total_usd：63.4221",
+      "change": "new_unique_since_2026_09_24：1",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bybit_b_sl103",
+      "name": "bybit新币 b_sl103",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：65.910182；realized_usd：52.254997；closed：1；open：1；in_window：trades：2；closed：1；total_usd：65.910182",
+      "change": "new_unique_since_2026_09_24：1",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_a",
+      "name": "gate新币 a",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-208.408003；realized_usd：-219.9642；closed：8；open：5；in_window：trades：13；closed：8；total_usd：-208.408003",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_b",
+      "name": "gate新币 b",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-186.60378；realized_usd：-214.762169；closed：8；open：5；in_window：trades：13；closed：8；total_usd：-186.60378",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_a_filtered",
+      "name": "gate新币 a_filtered",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-269.446507；realized_usd：-269.8192；closed：7；open：4；in_window：trades：11；closed：7；total_usd：-269.446507",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_b_filtered",
+      "name": "gate新币 b_filtered",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-257.752512；realized_usd：-265.429503；closed：7；open：4；in_window：trades：11；closed：7；total_usd：-257.752512",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_a_fundexit",
+      "name": "gate新币 a_fundexit",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-159.043951；realized_usd：-144.626391；closed：8；open：5；in_window：trades：13；closed：8；total_usd：-159.043951",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_b_fundexit",
+      "name": "gate新币 b_fundexit",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-137.239728；realized_usd：-139.42436；closed：8；open：5；in_window：trades：13；closed：8；total_usd：-137.239728",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_a_liquid",
+      "name": "gate新币 a_liquid",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：49.855；realized_usd：49.855；closed：1；open：0；in_window：trades：1；closed：1；total_usd：49.855",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_b_liquid",
+      "name": "gate新币 b_liquid",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：50.667334；realized_usd：50.667334；closed：1；open：0；in_window：trades：1；closed：1；total_usd：50.667334",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_a_liquid300k",
+      "name": "gate新币 a_liquid300k",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-6.384733；realized_usd：-0.7887；closed：2；open：1；in_window：trades：3；closed：2；total_usd：-6.384733",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_b_liquid300k",
+      "name": "gate新币 b_liquid300k",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-5.654995；realized_usd：0.107761；closed：2；open：1；in_window：trades：3；closed：2；total_usd：-5.654995",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_a_sl103",
+      "name": "gate新币 a_sl103",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-208.408003；realized_usd：-219.9642；closed：8；open：5；in_window：trades：13；closed：8；total_usd：-208.408003",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_gate_b_sl103",
+      "name": "gate新币 b_sl103",
+      "lifecycle": "roadtest",
+      "status": "纸上对照",
+      "assessment": "纸上对照",
+      "progress": "total_usd：-186.60378；realized_usd：-214.762169；closed：8；open：5；in_window：trades：13；closed：8；total_usd：-186.60378",
+      "change": "new_unique_since_2026_09_24：2",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准 Gate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:01.370000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_hyperliquid_a",
+      "name": "hyperliquid新币 a",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_hyperliquid_b",
+      "name": "hyperliquid新币 b",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_okx_a",
+      "name": "okx新币 a",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_okx_b",
+      "name": "okx新币 b",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bitget_a",
+      "name": "bitget新币 a",
+      "lifecycle": "roadtest",
+      "status": "observing",
+      "assessment": "observing",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_bitget_b",
+      "name": "bitget新币 b",
+      "lifecycle": "roadtest",
+      "status": "observing",
+      "assessment": "observing",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_mexc_a",
+      "name": "mexc新币 a",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_mexc_b",
+      "name": "mexc新币 b",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_aster_a",
+      "name": "aster新币 a",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_aster_b",
+      "name": "aster新币 b",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_lighter_a",
+      "name": "lighter新币 a",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "newlisting_lighter_b",
+      "name": "lighter新币 b",
+      "lifecycle": "roadtest",
+      "status": "blocked",
+      "assessment": "blocked",
+      "progress": "total_usd：0；realized_usd：0；closed：0；open：0；in_window：trades：0；closed：0；total_usd：0",
+      "change": "new_unique_since_2026_09_24：0",
+      "blockers": "旧聚合变体开平标记不是同步三腿；以前瞻独立事件与本期重算为准",
+      "next_step": "保留基线，未完成实盘验收",
+      "source_time": "2026-09-26T19:10:20.603000+08:00",
+      "evidence": [
+        "snapshot/newlisting_short.json"
+      ]
+    },
+    {
+      "id": "tradfi_all",
+      "name": "全所股票商品费差",
+      "lifecycle": "workshop",
+      "status": "已新筛全池、深核4组",
+      "assessment": "已新筛全池、深核4组",
+      "progress": "source_ms：1790422746290；tradfi_pairs：3978；tradfi_price_volume_apr15_pairs：106；of_these_selected_in_same_snapshot：3；not_selected_from_same_snapshot：103；carry_records：4010；explicit_carry_pairs：17260；pair_records：15183；candidate_entry_allowed：否",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "身份、私人费率与交易时段/公司行动未核，4组均有经济门失败",
+      "next_step": "按阻塞排序继续公开研究",
+      "source_time": "2026-09-26T20:06:31.955000+08:00",
+      "evidence": [
+        "research_extra/tradfi/RESULTS.json"
+      ]
+    },
+    {
+      "id": "crypto_hedge_scan",
+      "name": "②加密双永续全所探针",
+      "lifecycle": "workshop",
+      "status": "只读研究/未实盘",
+      "assessment": "只读研究/未实盘",
+      "progress": "t_ms：1790421611269；candidates：45；usable_now：0；persistent：",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "缺口不能替零；历史测量器已用本期Gate重算补充",
+      "next_step": "维持原门槛",
+      "source_time": "2026-09-26T19:20:11.269000+08:00",
+      "evidence": [
+        "snapshot/crypto_hedge_scan.json"
+      ]
+    },
+    {
+      "id": "radar",
+      "name": "全所新品与收益雷达",
+      "lifecycle": "workshop",
+      "status": "只读研究/未实盘",
+      "assessment": "只读研究/未实盘",
+      "progress": "t_ms：1790422746222",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "缺口不能替零；历史测量器已用本期Gate重算补充",
+      "next_step": "维持原门槛",
+      "source_time": "2026-09-26T19:39:06.222000+08:00",
+      "evidence": [
+        "snapshot/radar.json"
+      ]
+    },
+    {
+      "id": "research_measurement_v2",
+      "name": "按需测量器历史快照",
+      "lifecycle": "workshop",
+      "status": "只读研究/未实盘",
+      "assessment": "只读研究/未实盘",
+      "progress": "measurement_ms：1790107574570；carry_depth_count：6；cash_check_count：6；trade_ready：否",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "缺口不能替零；历史测量器已用本期Gate重算补充",
+      "next_step": "维持原门槛",
+      "source_time": "2026-09-23T04:06:14.570000+08:00",
+      "evidence": [
+        "snapshot/research_measurement_v2.json"
+      ]
+    },
+    {
+      "id": "gold_hedge",
+      "name": "黄金现货对冲",
+      "lifecycle": "workshop",
+      "status": "降级参考/未新投入",
+      "assessment": "降级参考/未新投入",
+      "progress": "token：XAUT；perp：XAUTUSDT；funding_30d：n：180；interval_h：4.0；days：29.8；zero_share：0.0；pos：167；neg：13；apr：0.062561；sd_apr：0.041316；top5_share：0.046；funding_all：n：500；interval_h：4.0；days：83.2；zero_share：0.0；pos：445；neg：55；apr：0.057321；sd_apr：0.046963；top5_share：0.018；basis_perp_minus_spot_bps：-4.04；spot_depth：bid_usd：354840；ask_usd：614662；spread_bps：0.02；mid：4279.965；perp_depth：bid_usd：105415；ask_usd：608710；spread_bps：0.02；mid：4278.235；spot_volume_24h：23536311.631133；perp_volume_24h：29579417.09；roundtrip_cost：0.0038；net_apr_notional_hold90：0.04715；on_capital_no_pm：0.023575；on_capital_pm：0.04715、token：PAXG；perp：PAXGUSDT；funding_30d：n：180；interval_h：4.0；days：29.8；zero_share：0.0；pos：165；neg：15；apr：0.07074；sd_apr：0.043777；top5_share：0.041；funding_all：n：500；interval_h：4.0；days：83.2；zero_share：0.0；pos：400；neg：100；apr：0.048478；sd_apr：0.063005；top5_share：0.026；basis_perp_minus_spot_bps：-3.6；spot_depth：bid_usd：405120；ask_usd：507975；spread_bps：0.02；mid：4278.775；perp_depth：bid_usd：173940；ask_usd：210647；spread_bps：0.02；mid：4277.235；spot_volume_24h：10874789.545221；perp_volume_24h：47872779.8284；roundtrip_cost：0.0038；net_apr_notional_hold90：0.055329；on_capital_no_pm：0.027665；on_capital_pm：0.055329",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "估算净年化非本金实收；合约临交割须看绝对收益",
+      "next_step": "只读对照",
+      "source_time": "2026-09-26T17:31:59.773000+08:00",
+      "evidence": [
+        "snapshot/hedge_scan.json"
+      ]
+    },
+    {
+      "id": "cmum",
+      "name": "币本位/U本位差",
+      "lifecycle": "workshop",
+      "status": "降级参考/未新投入",
+      "assessment": "降级参考/未新投入",
+      "progress": "base：AVAX；cm_symbol：AVAXUSD_PERP；um_symbol：AVAXUSDT；cm_volume_24h_usd：5783824；um_volume_24h_usd：236307872；min_volume_24h_usd：5783824；cm_7d：0.098875；um_7d：0.077993；spread_7d：0.020882；cm_30d：0.086784；um_30d：0.057267；spread_30d：0.029516；cm_90d：0.092491；um_90d：0.042483；spread_90d：0.050008；gross_apr_90d：0.050008；fee_drag_apr：0.011356；net_apr_after_fee：0.038652；gross_2x：0.050008；net_2x：0.038652；net_2x_maker：0.043519；gross_5x：0.125019；net_5x：0.09663；net_5x_maker：0.108797；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：是、base：SUI；cm_symbol：SUIUSD_PERP；um_symbol：SUIUSDT；cm_volume_24h_usd：14250063；um_volume_24h_usd：865184834；min_volume_24h_usd：14250063；cm_7d：0.049022；um_7d：0.086548；spread_7d：-0.037526；cm_30d：0.088835；um_30d：0.055932；spread_30d：0.032903；cm_90d：0.086942；um_90d：0.048133；spread_90d：0.038809；gross_apr_90d：0.038809；fee_drag_apr：0.011356；net_apr_after_fee：0.027454；gross_2x：0.038809；net_2x：0.027454；net_2x_maker：0.032321；gross_5x：0.097024；net_5x：0.068635；net_5x_maker：0.080801；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：否、base：XRP；cm_symbol：XRPUSD_PERP；um_symbol：XRPUSDT；cm_volume_24h_usd：92818335；um_volume_24h_usd：1760254657；min_volume_24h_usd：92818335；cm_7d：0.075708；um_7d：0.076225；spread_7d：-0.000517；cm_30d：0.053794；um_30d：0.038886；spread_30d：0.014908；cm_90d：0.066054；um_90d：0.03259；spread_90d：0.033465；gross_apr_90d：0.033465；fee_drag_apr：0.011356；net_apr_after_fee：0.022109；gross_2x：0.033465；net_2x：0.022109；net_2x_maker：0.026976；gross_5x：0.083662；net_5x：0.055273；net_5x_maker：0.067439；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：否、base：BNB；cm_symbol：BNBUSD_PERP；um_symbol：BNBUSDT；cm_volume_24h_usd：30460255；um_volume_24h_usd：298405270；min_volume_24h_usd：30460255；cm_7d：0.121352；um_7d：0.054543；spread_7d：0.066809；cm_30d：0.09498；um_30d：0.039278；spread_30d：0.055703；cm_90d：0.080617；um_90d：0.051886；spread_90d：0.028732；gross_apr_90d：0.028732；fee_drag_apr：0.011356；net_apr_after_fee：0.017376；gross_2x：0.028732；net_2x：0.017376；net_2x_maker：0.022243；gross_5x：0.071829；net_5x：0.04344；net_5x_maker：0.055607；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：是、base：DOGE；cm_symbol：DOGEUSD_PERP；um_symbol：DOGEUSDT；cm_volume_24h_usd：46753845；um_volume_24h_usd：630383661；min_volume_24h_usd：46753845；cm_7d：0.09225；um_7d：0.093319；spread_7d：-0.001068；cm_30d：0.081241；um_30d：0.072354；spread_30d：0.008887；cm_90d：0.083341；um_90d：0.064038；spread_90d：0.019303；gross_apr_90d：0.019303；fee_drag_apr：0.011356；net_apr_after_fee：0.007947；gross_2x：0.019303；net_2x：0.007947；net_2x_maker：0.012814；gross_5x：0.048256；net_5x：0.019867；net_5x_maker：0.032034；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：否、base：LINK；cm_symbol：LINKUSD_PERP；um_symbol：LINKUSDT；cm_volume_24h_usd：6138216；um_volume_24h_usd：374825799；min_volume_24h_usd：6138216；cm_7d：0.09991；um_7d：0.093397；spread_7d：0.006513；cm_30d：0.083329；um_30d：0.061237；spread_30d：0.022092；cm_90d：0.081867；um_90d：0.06611；spread_90d：0.015757；gross_apr_90d：0.015757；fee_drag_apr：0.011356；net_apr_after_fee：0.004402；gross_2x：0.015757；net_2x：0.004402；net_2x_maker：0.009268；gross_5x：0.039393；net_5x：0.011004；net_5x_maker：0.023171；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：是、base：SOL；cm_symbol：SOLUSD_PERP；um_symbol：SOLUSDT；cm_volume_24h_usd：83222732；um_volume_24h_usd：3280599820；min_volume_24h_usd：83222732；cm_7d：0.073989；um_7d：0.068581；spread_7d：0.005408；cm_30d：0.039824；um_30d：0.028178；spread_30d：0.011647；cm_90d：0.047612；um_90d：0.035173；spread_90d：0.012439；gross_apr_90d：0.012439；fee_drag_apr：0.011356；net_apr_after_fee：0.001083；gross_2x：0.012439；net_2x：0.001083；net_2x_maker：0.00595；gross_5x：0.031097；net_5x：0.002708；net_5x_maker：0.014875；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：是、base：ADA；cm_symbol：ADAUSD_PERP；um_symbol：ADAUSDT；cm_volume_24h_usd：21302518；um_volume_24h_usd：296077089；min_volume_24h_usd：21302518；cm_7d：0.060625；um_7d：0.108025；spread_7d：-0.047399；cm_30d：0.058731；um_30d：0.056432；spread_30d：0.002299；cm_90d：0.048077；um_90d：0.039305；spread_90d：0.008772；gross_apr_90d：0.008772；fee_drag_apr：0.011356；net_apr_after_fee：-0.002583；gross_2x：0.008772；net_2x：-0.002583；net_2x_maker：0.002283；gross_5x：0.02193；net_5x：-0.006459；net_5x_maker：0.005708；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：否、base：ETH；cm_symbol：ETHUSD_PERP；um_symbol：ETHUSDT；cm_volume_24h_usd：448443935；um_volume_24h_usd：7846741846；min_volume_24h_usd：448443935；cm_7d：0.053933；um_7d：0.069286；spread_7d：-0.015353；cm_30d：0.056365；um_30d：0.045558；spread_30d：0.010808；cm_90d：0.055678；um_90d：0.047444；spread_90d：0.008234；gross_apr_90d：0.008234；fee_drag_apr：0.011356；net_apr_after_fee：-0.003121；gross_2x：0.008234；net_2x：-0.003121；net_2x_maker：0.001745；gross_5x：0.020585；net_5x：-0.007804；net_5x_maker：0.004363；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：否、base：UNI；cm_symbol：UNIUSD_PERP；um_symbol：UNIUSDT；cm_volume_24h_usd：9994274；um_volume_24h_usd：621665673；min_volume_24h_usd：9994274；cm_7d：0.1095；um_7d：0.089393；spread_7d：0.020107；cm_30d：0.096033；um_30d：0.078575；spread_30d：0.017458；cm_90d：0.074722；um_90d：0.069766；spread_90d：0.004956；gross_apr_90d：0.004956；fee_drag_apr：0.011356；net_apr_after_fee：-0.0064；gross_2x：0.004956；net_2x：-0.0064；net_2x_maker：-0.001533；gross_5x：0.01239；net_5x：-0.015999；net_5x_maker：-0.003832；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：是、base：LTC；cm_symbol：LTCUSD_PERP；um_symbol：LTCUSDT；cm_volume_24h_usd：5886670；um_volume_24h_usd：304462657；min_volume_24h_usd：5886670；cm_7d：0.036041；um_7d：0.103088；spread_7d：-0.067047；cm_30d：0.064579；um_30d：0.071824；spread_30d：-0.007245；cm_90d：0.059948；um_90d：0.055947；spread_90d：0.004001；gross_apr_90d：0.004001；fee_drag_apr：0.011356；net_apr_after_fee：-0.007355；gross_2x：0.004001；net_2x：-0.007355；net_2x_maker：-0.002488；gross_5x：0.010002；net_5x：-0.018386；net_5x_maker：-0.00622；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：否、base：NEAR；cm_symbol：NEARUSD_PERP；um_symbol：NEARUSDT；cm_volume_24h_usd：8698975；um_volume_24h_usd：1032326854；min_volume_24h_usd：8698975；cm_7d：0.096681；um_7d：0.108567；spread_7d：-0.011886；cm_30d：0.078907；um_30d：0.056534；spread_30d：0.022373；cm_90d：0.061903；um_90d：0.059323；spread_90d：0.00258；gross_apr_90d：0.00258；fee_drag_apr：0.011356；net_apr_after_fee：-0.008776；gross_2x：0.00258；net_2x：-0.008776；net_2x_maker：-0.003909；gross_5x：0.00645；net_5x：-0.021939；net_5x_maker：-0.009772；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：否、base：BTC；cm_symbol：BTCUSD_PERP；um_symbol：BTCUSDT；cm_volume_24h_usd：876169140；um_volume_24h_usd：9956471947；min_volume_24h_usd：876169140；cm_7d：0.059712；um_7d：0.052439；spread_7d：0.007273；cm_30d：0.064557；um_30d：0.064557；spread_30d：-0.0；cm_90d：0.068826；um_90d：0.066346；spread_90d：0.00248；gross_apr_90d：0.00248；fee_drag_apr：0.011356；net_apr_after_fee：-0.008875；gross_2x：0.00248；net_2x：-0.008875；net_2x_maker：-0.004009；gross_5x：0.0062；net_5x：-0.022189；net_5x_maker：-0.010022；cost_note：一次往返 0.28%（全挂单 0.16%），按持有 90 天摊销 → 年化拖累 1.14%；stable：否",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "估算净年化非本金实收；合约临交割须看绝对收益",
+      "next_step": "只读对照",
+      "source_time": "2026-09-26T19:59:35.527000+08:00",
+      "evidence": [
+        "snapshot/majors-funding.json"
+      ]
+    },
+    {
+      "id": "basis_roll",
+      "name": "季度基差轮动",
+      "lifecycle": "workshop",
+      "status": "降级参考/未新投入",
+      "assessment": "降级参考/未新投入",
+      "progress": "asset：ETH；symbol：ETHUSD_261225；contract_type：CURRENT_QUARTER；delivery_ms：1798185600000；days_to_delivery：89.83；mark：2715.244356；index：2688.792023；basis_pct：0.009838；basis_apr：0.039972；perp_apr_7d：0.051169；edge_fraction：-0.002756；threshold_fraction：0.003；rotate：否、asset：ETH；symbol：ETHUSD_270326；contract_type：NEXT_QUARTER；delivery_ms：1806048000000；days_to_delivery：180.83；mark：2741.80269；index：2688.792023；basis_pct：0.019715；basis_apr：0.039794；perp_apr_7d：0.051169；edge_fraction：-0.005635；threshold_fraction：0.003；rotate：否、asset：BTC；symbol：BTCUSD_261225；contract_type：CURRENT_QUARTER；delivery_ms：1798185600000；days_to_delivery：89.83；mark：85154.409971；index：84157.792822；basis_pct：0.011842；basis_apr：0.048116；perp_apr_7d：0.057249；edge_fraction：-0.002248；threshold_fraction：0.003；rotate：否、asset：BTC；symbol：BTCUSD_270326；contract_type：NEXT_QUARTER；delivery_ms：1806048000000；days_to_delivery：180.83；mark：86212.483924；index：84157.836775；basis_pct：0.024414；basis_apr：0.049278；perp_apr_7d：0.057249；edge_fraction：-0.003949；threshold_fraction：0.003；rotate：否",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "估算净年化非本金实收；合约临交割须看绝对收益",
+      "next_step": "只读对照",
+      "source_time": "2026-09-26T19:59:35.527000+08:00",
+      "evidence": [
+        "snapshot/majors-funding.json"
+      ]
+    },
+    {
+      "id": "paper_1000",
+      "name": "1000U币本位纸上",
+      "lifecycle": "workshop",
+      "status": "纸上/历史",
+      "assessment": "纸上/历史",
+      "progress": "status：OPEN；funding_total：3.030536；last_utc：2026-09-26T12:06:29.814000+00:00；contracts：8.0；face_usd：800.0；valuation：equity：999.457614；net_pnl：-0.542386；net_return_pct：-0.054239；phase_net_pnl：0.789347；exit_fees_estimate：1.203661；spot_exit_fee：0.803432；perp_exit_fee_btc：5e-06；perp_close_pnl_btc：-0.000537；perp_exit_price：84089.4081；spot_exit_price：84129.016257；sell_qty：0.00955；dust_btc：6e-06；dust_value：0.512416；remaining_coin_after_close：0.009556；perp_margin_equity_btc：0.009557；perp_margin_equity：804.085301；maintenance_estimate：8.005369；maintenance_btc：9.5e-05；free_cash：196.316525；residual_btc：4.7e-05；funding_current_value：3.21701；mark_price：84081.0；next_funding_ms：1790438400000；estimated_next_rate：3e-06；next_estimated_btc：0.0；generated_at：未知；received_at_utc：未知；summary：未知；fee_status：MIXED_ACCOUNT_VERIFIED_AND_ASSUMED",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "历史静态文件的AVAILABLE/snapshot_stale=false不能覆盖真实日历时间，ETF为09-09；回测为09-05",
+      "next_step": "不据历史记录称正在产生新样本",
+      "source_time": "2026-09-26T20:06:29.814000+08:00",
+      "evidence": [
+        "research_extra/extra_capture.json"
+      ]
+    },
+    {
+      "id": "basis_backtest",
+      "name": "期现套利历史回测",
+      "lifecycle": "workshop",
+      "status": "纸上/历史",
+      "assessment": "纸上/历史",
+      "progress": "status：未知；funding_total：未知；last_utc：未知；contracts：未知；face_usd：未知；valuation：未知；generated_at：2026-09-05T07:07:33.576132+00:00；received_at_utc：未知；summary：未知；fee_status：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "历史静态文件的AVAILABLE/snapshot_stale=false不能覆盖真实日历时间，ETF为09-09；回测为09-05",
+      "next_step": "不据历史记录称正在产生新样本",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/extra_capture.json"
+      ]
+    },
+    {
+      "id": "etf",
+      "name": "ETF流程测试",
+      "lifecycle": "workshop",
+      "status": "纸上/历史",
+      "assessment": "纸上/历史",
+      "progress": "status：AVAILABLE；funding_total：未知；last_utc：未知；contracts：未知；face_usd：未知；valuation：未知；generated_at：未知；received_at_utc：2026-09-09T07:00:23.491793+00:00；summary：account_id：etf_510880_paper_20260909；cash_cents：30000000；component_sha256：adapter：c3b79bca1f0c1dc73a8df925a6a66e87235a13a1b8333e1450e2d0cb38e6ebc0；connector：36992fccb5cf8e3dab1b0ad322bf154c7aa59acaee6c997882df69b733155eb0；engine：c22ad0854b31d8ae9e9caacd960e293ebbaeabe1e5d7ff74eaba9a25bdb12636；original：6e80d468d7be790f4ed975ddc641af9a2f6ddd492c2a43f77dc047f8ced260b2；currency：CNY；decision_wall：2026-09-09T15:00:01.060786+08:00；equity_cents：30000000；events：time：2026-09-09T05:21:53.277166+08:00；action：PREPARED；reason：事件 control-1；fees_cents：0；generated_at_utc：2026-09-09T07:00:01.321832Z；initial_cash_cents：30000000；journal_seq：242；last_tick：2026-09-09T15:00:00+08:00；limitations：single cloud writer; no atomic CAS、continuous matching only; auction marks only、data gaps cancel remainders; no retroactive risk execution、30 second candidate freshness bound；mode：PAPER_REAL_MARKET；paper_only：是；performance_accepted：否；positions：；revision：241；runtime_status：CLOSED；schema：etf.paper.summary.v1；session_phase：auction_mark_only；trades：；valuation_at：2026-09-09T15:00:00+08:00；fee_status：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "历史静态文件的AVAILABLE/snapshot_stale=false不能覆盖真实日历时间，ETF为09-09；回测为09-05",
+      "next_step": "不据历史记录称正在产生新样本",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/extra_capture.json"
+      ]
+    },
+    {
+      "id": "prediction",
+      "name": "预测市场/外部赔率",
+      "lifecycle": "workshop",
+      "status": "停用/证伪历史",
+      "assessment": "停用/证伪历史",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "无当日新证据",
+      "next_step": "保留记录，不复活",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/extra_capture.json/project-board.js"
+      ]
+    },
+    {
+      "id": "xau_martin",
+      "name": "黄金双向马丁原版",
+      "lifecycle": "workshop",
+      "status": "停用/证伪历史",
+      "assessment": "停用/证伪历史",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "无当日新证据",
+      "next_step": "保留记录，不复活",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/extra_capture.json/project-board.js"
+      ]
+    },
+    {
+      "id": "community_orb15_v1",
+      "name": "开盘15分钟突破",
+      "lifecycle": "workshop",
+      "status": "completed_session",
+      "assessment": "completed_session",
+      "progress": "id：orb15_v1；name：开盘15分钟突破；rule：突破开盘区间且在VWAP之上，开盘相对量≥1.2；区间低点止损，2R目标；source：https://www.quantconnect.com/forum/discussion/18444/opening-range-breakout-for-stocks-in-play/；fills：0；closed_trades：0；wins：0；fees：0.00000000；entry_attempts：0；entry_rejection_counts：；account：initial_cash：10000.00000000；cash：10000.00000000；realized_pnl：0.00000000；position：未知；valuation_is_stale：是；reconciled：是",
+      "change": "相对9月24日报告已结束单次会话，今日无新运行证据；三账户独立",
+      "blockers": "源已停于9月24日20UTC；零成交不构成执行闭环；本金为模拟",
+      "next_step": "保留历史结果；需要新前瞻样本，不自行重启服务",
+      "source_time": "2026-09-25T04:00:00.029000+08:00",
+      "evidence": [
+        "research_extra/extra_capture.json"
+      ]
+    },
+    {
+      "id": "community_ema20_50_v1",
+      "name": "EMA20/50趋势交叉",
+      "lifecycle": "workshop",
+      "status": "completed_session",
+      "assessment": "completed_session",
+      "progress": "id：ema20_50_v1；name：EMA20/50趋势交叉；rule：20EMA上穿50EMA且在VWAP之上，成交量确认；近6根低点止损，2R目标；source：https://www.quantconnect.com/docs/v2/writing-algorithms/optimization/walk-forward-optimization；fills：0；closed_trades：0；wins：0；fees：0.00000000；entry_attempts：1；entry_rejection_counts：reward_risk_too_low：1；account：initial_cash：10000.00000000；cash：10000.00000000；realized_pnl：0.00000000；position：未知；valuation_is_stale：是；reconciled：是",
+      "change": "相对9月24日报告已结束单次会话，今日无新运行证据；三账户独立",
+      "blockers": "源已停于9月24日20UTC；零成交不构成执行闭环；本金为模拟",
+      "next_step": "保留历史结果；需要新前瞻样本，不自行重启服务",
+      "source_time": "2026-09-25T04:00:00.029000+08:00",
+      "evidence": [
+        "research_extra/extra_capture.json"
+      ]
+    },
+    {
+      "id": "community_bb20_reentry_v1",
+      "name": "布林带跌后回归",
+      "lifecycle": "workshop",
+      "status": "completed_session",
+      "assessment": "completed_session",
+      "progress": "id：bb20_reentry_v1；name：布林带跌后回归；rule：跌破20期2倍标准差下轨后收回，成交量确认；结构止损，固定中轨目标；source：https://www.quantconnect.com/docs/v2/writing-algorithms/key-concepts/behavioral-finance；fills：0；closed_trades：0；wins：0；fees：0.00000000；entry_attempts：3；entry_rejection_counts：reward_risk_too_low：2；non_positive_reward：1；account：initial_cash：10000.00000000；cash：10000.00000000；realized_pnl：0.00000000；position：未知；valuation_is_stale：是；reconciled：是",
+      "change": "相对9月24日报告已结束单次会话，今日无新运行证据；三账户独立",
+      "blockers": "源已停于9月24日20UTC；零成交不构成执行闭环；本金为模拟",
+      "next_step": "保留历史结果；需要新前瞻样本，不自行重启服务",
+      "source_time": "2026-09-25T04:00:00.029000+08:00",
+      "evidence": [
+        "research_extra/extra_capture.json"
+      ]
+    },
+    {
+      "id": "experiment_E02",
+      "name": "HOOD双永续",
+      "lifecycle": "experiment",
+      "status": "READINESS_GAPS",
+      "assessment": "READINESS_GAPS",
+      "progress": "planned_budget：30；actual_opening_verified：否；learning_result：not_started",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "私有账户就绪与真实费率、指数/交易时间/公司行动的一致性、双腿退出与资金到位成本可承受、Lighter open_interest数值36.73的单位/完整流动性、清算费字段语义待核、Aster当前资金费0且本轮Lighter当期费率未取，开前核实际方向、休市/周末指数与标记价差异、公司行动语义核验 三层资金口径尚未闭合：②③台账本金699.44U、当前机器人各所预算上限合计2400U、用户此前1000U规划（BTW300＋实验500＋预留200）不是同一分母，也不相加为总资产。预算上限不是已占用资金。500U实验池实际投入待核（主控标记为待用户确认），不是0、不是已用满；应先按账户交易与策略归属追溯，本期不新增用户转资或确认步骤。",
+      "next_step": "注册状态是计划；当日实际投入/交易由主账户分支核验，不能由旧actual_opening_verified推成实时事实",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "quant_setup/EXPERIMENT_REGISTRY.json"
+      ]
+    },
+    {
+      "id": "experiment_E03",
+      "name": "Gate新上市退出验证",
+      "lifecycle": "experiment",
+      "status": "WAIT_ORIGINAL_SIGNAL",
+      "assessment": "WAIT_ORIGINAL_SIGNAL",
+      "progress": "planned_budget：未知；actual_opening_verified：否；learning_result：not_started",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "原冻结条件真实触发、具体币种/对冲规则/最小金额/流动性核验、退出和账户就绪 三层资金口径尚未闭合：②③台账本金699.44U、当前机器人各所预算上限合计2400U、用户此前1000U规划（BTW300＋实验500＋预留200）不是同一分母，也不相加为总资产。预算上限不是已占用资金。500U实验池实际投入待核（主控标记为待用户确认），不是0、不是已用满；应先按账户交易与策略归属追溯，本期不新增用户转资或确认步骤。",
+      "next_step": "注册状态是计划；当日实际投入/交易由主账户分支核验，不能由旧actual_opening_verified推成实时事实",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "quant_setup/EXPERIMENT_REGISTRY.json"
+      ]
+    },
+    {
+      "id": "experiment_E04",
+      "name": "Bybit新上市跨所复验",
+      "lifecycle": "experiment",
+      "status": "WAIT_ORIGINAL_SIGNAL",
+      "assessment": "WAIT_ORIGINAL_SIGNAL",
+      "progress": "planned_budget：未知；actual_opening_verified：否；learning_result：not_started",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "下一次原冻结合格信号、具体币种全部腿规则/费用、先与Gate实验错峰避免相似风险堆叠 三层资金口径尚未闭合：②③台账本金699.44U、当前机器人各所预算上限合计2400U、用户此前1000U规划（BTW300＋实验500＋预留200）不是同一分母，也不相加为总资产。预算上限不是已占用资金。500U实验池实际投入待核（主控标记为待用户确认），不是0、不是已用满；应先按账户交易与策略归属追溯，本期不新增用户转资或确认步骤。",
+      "next_step": "注册状态是计划；当日实际投入/交易由主账户分支核验，不能由旧actual_opening_verified推成实时事实",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "quant_setup/EXPERIMENT_REGISTRY.json"
+      ]
+    },
+    {
+      "id": "venue_binance",
+      "name": "Binance全维度覆盖",
+      "lifecycle": "workshop",
+      "status": "已登记/逐维度缺口见明细",
+      "assessment": "已登记/逐维度缺口见明细",
+      "progress": "market_data：status：covered_with_samples；sample_count：771；reason：公开品种与行情采集；asof_ms：1790422746942；error_code：未知；new_listings：status：covered_with_samples；sample_count：1；reason：已建立新品差分基线；只计接入后的变化；asof_ms：1790422746942；error_code：未知；majors_funding：status：covered_with_samples；sample_count：6；reason：BTC/ETH真实资金费与深度；24小时诊断不等于长期收益；asof_ms：1790422746942；error_code：未知；crypto_crossvenue：status：covered_with_samples；sample_count：2979；reason：已计算双所已知周期的费率差候选；标的类别与经济身份仍须核实，不表示可入场；asof_ms：1790422746942；error_code：未知；tradfi_crossvenue：status：covered_with_samples；sample_count：203；reason：已查全品种；同名与类别候选需核对标的身份；asof_ms：1790422746942；error_code：未知；carry_spot_perp：status：covered_with_samples；sample_count：2729；reason：全登记所双腿候选；实际费用、标的身份及深度未通过者不入场；asof_ms：1790422746942；error_code：未知；pair_shadow：status：covered_with_samples；sample_count：4297；reason：全登记所组合影子候选；与旧已持有纸上账隔离；asof_ms：1790422746942；error_code：未知；newlisting_roadtest：status：covered_with_samples；sample_count：5；reason：按独立起算与冻结入场条件累计；零样本不等于零收益；asof_ms：1790421001370；error_code：未知；account：status：covered_with_samples；sample_count：5；reason：只读观察器实时读取的私人账户余额与持仓（venue_observer，每 60 秒）；asof_ms：1790422709229；error_code：未知；report：status：covered_with_samples；sample_count：1；reason：日报输入逐所包含研究与账户状态，缺余额不作零资产；asof_ms：1790422746290；error_code：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "有候选不代表已有独立前瞻账本或可交易权限",
+      "next_step": "按各维度原始证据推进，不重复建池",
+      "source_time": "2026-09-26T19:39:06.290000+08:00",
+      "evidence": [
+        "snapshot/venue_coverage.json"
+      ]
+    },
+    {
+      "id": "venue_hyperliquid",
+      "name": "Hyperliquid全维度覆盖",
+      "lifecycle": "workshop",
+      "status": "已登记/逐维度缺口见明细",
+      "assessment": "已登记/逐维度缺口见明细",
+      "progress": "market_data：status：covered_with_samples；sample_count：287；reason：公开品种与行情采集；asof_ms：1790422746702；error_code：未知；new_listings：status：covered_no_samples_yet；sample_count：0；reason：已建立新品差分基线；只计接入后的变化；asof_ms：1790422746702；error_code：未知；majors_funding：status：covered_with_samples；sample_count：48；reason：BTC/ETH真实资金费与深度；24小时诊断不等于长期收益；asof_ms：1790422746702；error_code：未知；crypto_crossvenue：status：covered_with_samples；sample_count：1326；reason：已计算双所已知周期的费率差候选；标的类别与经济身份仍须核实，不表示可入场；asof_ms：1790422746702；error_code：未知；tradfi_crossvenue：status：covered_with_samples；sample_count：109；reason：已查全品种；同名与类别候选需核对标的身份；asof_ms：1790422746702；error_code：未知；carry_spot_perp：status：covered_with_samples；sample_count：476；reason：全登记所双腿候选；实际费用、标的身份及深度未通过者不入场；asof_ms：1790422746702；error_code：未知；pair_shadow：status：covered_with_samples；sample_count：1951；reason：全登记所组合影子候选；与旧已持有纸上账隔离；asof_ms：1790422746702；error_code：未知；newlisting_roadtest：status：covered_no_samples_yet；sample_count：0；reason：按独立起算与冻结入场条件累计；零样本不等于零收益；asof_ms：1790421020603；error_code：未知；account：status：unknown_probe_failed；sample_count：0；reason：使用已授权观察器；本次未新增私人账户调用，历史验收不能代替当前余额；asof_ms：1790422750289；error_code：FRESH_ACCOUNT_OBSERVATION_REQUIRED；report：status：covered_with_samples；sample_count：1；reason：日报输入逐所包含研究与账户状态，缺余额不作零资产；asof_ms：1790422746290；error_code：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "有候选不代表已有独立前瞻账本或可交易权限",
+      "next_step": "按各维度原始证据推进，不重复建池",
+      "source_time": "2026-09-26T19:39:06.290000+08:00",
+      "evidence": [
+        "snapshot/venue_coverage.json"
+      ]
+    },
+    {
+      "id": "venue_bybit",
+      "name": "Bybit全维度覆盖",
+      "lifecycle": "workshop",
+      "status": "已登记/逐维度缺口见明细",
+      "assessment": "已登记/逐维度缺口见明细",
+      "progress": "market_data：status：covered_with_samples；sample_count：845；reason：公开品种与行情采集；asof_ms：1790422747239；error_code：未知；new_listings：status：covered_no_samples_yet；sample_count：0；reason：已建立新品差分基线；只计接入后的变化；asof_ms：1790422747239；error_code：未知；majors_funding：status：covered_with_samples；sample_count：6；reason：BTC/ETH真实资金费与深度；24小时诊断不等于长期收益；asof_ms：1790422747239；error_code：未知；crypto_crossvenue：status：covered_with_samples；sample_count：3052；reason：已计算双所已知周期的费率差候选；标的类别与经济身份仍须核实，不表示可入场；asof_ms：1790422747239；error_code：未知；tradfi_crossvenue：status：covered_no_samples_yet；sample_count：0；reason：已查全品种；同名与类别候选需核对标的身份；asof_ms：1790422747239；error_code：未知；carry_spot_perp：status：covered_with_samples；sample_count：2451；reason：全登记所双腿候选；实际费用、标的身份及深度未通过者不入场；asof_ms：1790422747239；error_code：未知；pair_shadow：status：covered_with_samples；sample_count：4464；reason：全登记所组合影子候选；与旧已持有纸上账隔离；asof_ms：1790422747239；error_code：未知；newlisting_roadtest：status：covered_with_samples；sample_count：9；reason：按独立起算与冻结入场条件累计；零样本不等于零收益；asof_ms：1790421001370；error_code：未知；account：status：covered_with_samples；sample_count：0；reason：只读观察器实时读取的私人账户余额与持仓（venue_observer，每 60 秒）；asof_ms：1790422709019；error_code：未知；report：status：covered_with_samples；sample_count：1；reason：日报输入逐所包含研究与账户状态，缺余额不作零资产；asof_ms：1790422746290；error_code：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "有候选不代表已有独立前瞻账本或可交易权限",
+      "next_step": "按各维度原始证据推进，不重复建池",
+      "source_time": "2026-09-26T19:39:06.290000+08:00",
+      "evidence": [
+        "snapshot/venue_coverage.json"
+      ]
+    },
+    {
+      "id": "venue_okx",
+      "name": "OKX全维度覆盖",
+      "lifecycle": "workshop",
+      "status": "已登记/逐维度缺口见明细",
+      "assessment": "已登记/逐维度缺口见明细",
+      "progress": "market_data：status：covered_with_samples；sample_count：477；reason：公开品种与行情采集；asof_ms：1790422746851；error_code：未知；new_listings：status：covered_with_samples；sample_count：1；reason：已建立新品差分基线；只计接入后的变化；asof_ms：1790422746851；error_code：未知；majors_funding：status：covered_with_samples；sample_count：6；reason：BTC/ETH真实资金费与深度；24小时诊断不等于长期收益；asof_ms：1790422746851；error_code：未知；crypto_crossvenue：status：covered_no_samples_yet；sample_count：0；reason：已计算双所已知周期的费率差候选；标的类别与经济身份仍须核实，不表示可入场；asof_ms：1790422746851；error_code：未知；tradfi_crossvenue：status：covered_no_samples_yet；sample_count：0；reason：已查全品种；同名与类别候选需核对标的身份；asof_ms：1790422746851；error_code：未知；carry_spot_perp：status：covered_with_samples；sample_count：2064；reason：全登记所双腿候选；实际费用、标的身份及深度未通过者不入场；asof_ms：1790422746851；error_code：未知；pair_shadow：status：covered_with_samples；sample_count：2915；reason：全登记所组合影子候选；与旧已持有纸上账隔离；asof_ms：1790422746851；error_code：未知；newlisting_roadtest：status：covered_no_samples_yet；sample_count：0；reason：按独立起算与冻结入场条件累计；零样本不等于零收益；asof_ms：1790421020603；error_code：未知；account：status：no_authorization；sample_count：0；reason：仅公共研究配置，无私人账户读取授权；asof_ms：1790422750299；error_code：未知；report：status：covered_with_samples；sample_count：1；reason：日报输入逐所包含研究与账户状态，缺余额不作零资产；asof_ms：1790422746290；error_code：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "有候选不代表已有独立前瞻账本或可交易权限",
+      "next_step": "按各维度原始证据推进，不重复建池",
+      "source_time": "2026-09-26T19:39:06.290000+08:00",
+      "evidence": [
+        "snapshot/venue_coverage.json"
+      ]
+    },
+    {
+      "id": "venue_gate",
+      "name": "Gate全维度覆盖",
+      "lifecycle": "workshop",
+      "status": "已登记/逐维度缺口见明细",
+      "assessment": "已登记/逐维度缺口见明细",
+      "progress": "market_data：status：covered_with_samples；sample_count：1013；reason：公开品种与行情采集；asof_ms：1790422747289；error_code：未知；new_listings：status：covered_with_samples；sample_count：12；reason：已建立新品差分基线；只计接入后的变化；asof_ms：1790422747289；error_code：未知；majors_funding：status：covered_with_samples；sample_count：6；reason：BTC/ETH真实资金费与深度；24小时诊断不等于长期收益；asof_ms：1790422747289；error_code：未知；crypto_crossvenue：status：covered_with_samples；sample_count：2946；reason：已计算双所已知周期的费率差候选；标的类别与经济身份仍须核实，不表示可入场；asof_ms：1790422747289；error_code：未知；tradfi_crossvenue：status：covered_no_samples_yet；sample_count：0；reason：已查全品种；同名与类别候选需核对标的身份；asof_ms：1790422747289；error_code：未知；carry_spot_perp：status：covered_with_samples；sample_count：3619；reason：全登记所双腿候选；实际费用、标的身份及深度未通过者不入场；asof_ms：1790422747289；error_code：未知；pair_shadow：status：covered_with_samples；sample_count：4247；reason：全登记所组合影子候选；与旧已持有纸上账隔离；asof_ms：1790422747289；error_code：未知；newlisting_roadtest：status：covered_with_samples；sample_count：39；reason：按独立起算与冻结入场条件累计；零样本不等于零收益；asof_ms：1790421001370；error_code：未知；account：status：covered_with_samples；sample_count：0；reason：只读观察器实时读取的私人账户余额与持仓（venue_observer，每 60 秒）；asof_ms：1790422708412；error_code：未知；report：status：covered_with_samples；sample_count：1；reason：日报输入逐所包含研究与账户状态，缺余额不作零资产；asof_ms：1790422746290；error_code：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "有候选不代表已有独立前瞻账本或可交易权限",
+      "next_step": "按各维度原始证据推进，不重复建池",
+      "source_time": "2026-09-26T19:39:06.290000+08:00",
+      "evidence": [
+        "snapshot/venue_coverage.json"
+      ]
+    },
+    {
+      "id": "venue_bitget",
+      "name": "Bitget全维度覆盖",
+      "lifecycle": "workshop",
+      "status": "已登记/逐维度缺口见明细",
+      "assessment": "已登记/逐维度缺口见明细",
+      "progress": "market_data：status：covered_with_samples；sample_count：805；reason：公开品种与行情采集；asof_ms：1790422747229；error_code：未知；new_listings：status：covered_no_samples_yet；sample_count：0；reason：已建立新品差分基线；只计接入后的变化；asof_ms：1790422747229；error_code：未知；majors_funding：status：covered_with_samples；sample_count：6；reason：BTC/ETH真实资金费与深度；24小时诊断不等于长期收益；asof_ms：1790422747229；error_code：未知；crypto_crossvenue：status：covered_with_samples；sample_count：2768；reason：已计算双所已知周期的费率差候选；标的类别与经济身份仍须核实，不表示可入场；asof_ms：1790422747229；error_code：未知；tradfi_crossvenue：status：covered_with_samples；sample_count：339；reason：已查全品种；同名与类别候选需核对标的身份；asof_ms：1790422747229；error_code：未知；carry_spot_perp：status：covered_with_samples；sample_count：2876；reason：全登记所双腿候选；实际费用、标的身份及深度未通过者不入场；asof_ms：1790422747229；error_code：未知；pair_shadow：status：covered_with_samples；sample_count：3951；reason：全登记所组合影子候选；与旧已持有纸上账隔离；asof_ms：1790422747229；error_code：未知；newlisting_roadtest：status：covered_no_samples_yet；sample_count：0；reason：按独立起算与冻结入场条件累计；零样本不等于零收益；asof_ms：1790421020603；error_code：未知；account：status：covered_with_samples；sample_count：0；reason：只读观察器实时读取的私人账户余额与持仓（venue_observer，每 60 秒）；asof_ms：1790422709220；error_code：未知；report：status：covered_with_samples；sample_count：1；reason：日报输入逐所包含研究与账户状态，缺余额不作零资产；asof_ms：1790422746290；error_code：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "有候选不代表已有独立前瞻账本或可交易权限",
+      "next_step": "按各维度原始证据推进，不重复建池",
+      "source_time": "2026-09-26T19:39:06.290000+08:00",
+      "evidence": [
+        "snapshot/venue_coverage.json"
+      ]
+    },
+    {
+      "id": "venue_mexc",
+      "name": "MEXC全维度覆盖",
+      "lifecycle": "workshop",
+      "status": "已登记/逐维度缺口见明细",
+      "assessment": "已登记/逐维度缺口见明细",
+      "progress": "market_data：status：covered_with_samples；sample_count：1177；reason：公开品种与行情采集；asof_ms：1790422747325；error_code：未知；new_listings：status：covered_with_samples；sample_count：30；reason：已建立新品差分基线；只计接入后的变化；asof_ms：1790422747325；error_code：未知；majors_funding：status：covered_with_samples；sample_count：6；reason：BTC/ETH真实资金费与深度；24小时诊断不等于长期收益；asof_ms：1790422747325；error_code：未知；crypto_crossvenue：status：covered_no_samples_yet；sample_count：0；reason：已计算双所已知周期的费率差候选；标的类别与经济身份仍须核实，不表示可入场；asof_ms：1790422747325；error_code：未知；tradfi_crossvenue：status：covered_no_samples_yet；sample_count：0；reason：已查全品种；同名与类别候选需核对标的身份；asof_ms：1790422747325；error_code：未知；carry_spot_perp：status：covered_with_samples；sample_count：3721；reason：全登记所双腿候选；实际费用、标的身份及深度未通过者不入场；asof_ms：1790422747325；error_code：未知；pair_shadow：status：covered_with_samples；sample_count：3851；reason：全登记所组合影子候选；与旧已持有纸上账隔离；asof_ms：1790422747325；error_code：未知；newlisting_roadtest：status：covered_no_samples_yet；sample_count：0；reason：按独立起算与冻结入场条件累计；零样本不等于零收益；asof_ms：1790421020603；error_code：未知；account：status：no_authorization；sample_count：0；reason：仅公共研究配置，无私人账户读取授权；asof_ms：1790422750316；error_code：未知；report：status：covered_with_samples；sample_count：1；reason：日报输入逐所包含研究与账户状态，缺余额不作零资产；asof_ms：1790422746290；error_code：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "有候选不代表已有独立前瞻账本或可交易权限",
+      "next_step": "按各维度原始证据推进，不重复建池",
+      "source_time": "2026-09-26T19:39:06.290000+08:00",
+      "evidence": [
+        "snapshot/venue_coverage.json"
+      ]
+    },
+    {
+      "id": "venue_aster",
+      "name": "Aster全维度覆盖",
+      "lifecycle": "workshop",
+      "status": "已登记/逐维度缺口见明细",
+      "assessment": "已登记/逐维度缺口见明细",
+      "progress": "market_data：status：covered_with_samples；sample_count：585；reason：公开品种与行情采集；asof_ms：1790422747012；error_code：未知；new_listings：status：covered_with_samples；sample_count：2；reason：已建立新品差分基线；只计接入后的变化；asof_ms：1790422747012；error_code：未知；majors_funding：status：covered_with_samples；sample_count：6；reason：BTC/ETH真实资金费与深度；24小时诊断不等于长期收益；asof_ms：1790422747012；error_code：未知；crypto_crossvenue：status：covered_with_samples；sample_count：2265；reason：已计算双所已知周期的费率差候选；标的类别与经济身份仍须核实，不表示可入场；asof_ms：1790422747012；error_code：未知；tradfi_crossvenue：status：covered_no_samples_yet；sample_count：0；reason：已查全品种；同名与类别候选需核对标的身份；asof_ms：1790422747012；error_code：未知；carry_spot_perp：status：covered_with_samples；sample_count：667；reason：全登记所双腿候选；实际费用、标的身份及深度未通过者不入场；asof_ms：1790422747012；error_code：未知；pair_shadow：status：covered_with_samples；sample_count：3234；reason：全登记所组合影子候选；与旧已持有纸上账隔离；asof_ms：1790422747012；error_code：未知；newlisting_roadtest：status：covered_no_samples_yet；sample_count：0；reason：按独立起算与冻结入场条件累计；零样本不等于零收益；asof_ms：1790421020603；error_code：未知；account：status：no_authorization；sample_count：0；reason：仅公共研究配置，无私人账户读取授权；asof_ms：1790422750321；error_code：未知；report：status：covered_with_samples；sample_count：1；reason：日报输入逐所包含研究与账户状态，缺余额不作零资产；asof_ms：1790422746290；error_code：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "有候选不代表已有独立前瞻账本或可交易权限",
+      "next_step": "按各维度原始证据推进，不重复建池",
+      "source_time": "2026-09-26T19:39:06.290000+08:00",
+      "evidence": [
+        "snapshot/venue_coverage.json"
+      ]
+    },
+    {
+      "id": "venue_lighter",
+      "name": "Lighter全维度覆盖",
+      "lifecycle": "workshop",
+      "status": "已登记/逐维度缺口见明细",
+      "assessment": "已登记/逐维度缺口见明细",
+      "progress": "market_data：status：covered_with_samples；sample_count：210；reason：公开品种与行情采集；asof_ms：1790422746724；error_code：未知；new_listings：status：covered_no_samples_yet；sample_count：0；reason：已建立新品差分基线；只计接入后的变化；asof_ms：1790422746724；error_code：未知；majors_funding：status：covered_with_samples；sample_count：48；reason：BTC/ETH真实资金费与深度；24小时诊断不等于长期收益；asof_ms：1790422746724；error_code：未知；crypto_crossvenue：status：covered_no_samples_yet；sample_count：0；reason：已计算双所已知周期的费率差候选；标的类别与经济身份仍须核实，不表示可入场；asof_ms：1790422746724；error_code：未知；tradfi_crossvenue：status：covered_no_samples_yet；sample_count：0；reason：已查全品种；同名与类别候选需核对标的身份；asof_ms：1790422746724；error_code：未知；carry_spot_perp：status：covered_with_samples；sample_count：128；reason：全登记所双腿候选；实际费用、标的身份及深度未通过者不入场；asof_ms：1790422746724；error_code：未知；pair_shadow：status：covered_with_samples；sample_count：1456；reason：全登记所组合影子候选；与旧已持有纸上账隔离；asof_ms：1790422746724；error_code：未知；newlisting_roadtest：status：covered_no_samples_yet；sample_count：0；reason：按独立起算与冻结入场条件累计；零样本不等于零收益；asof_ms：1790421020603；error_code：未知；account：status：no_authorization；sample_count：0；reason：仅公共研究配置，无私人账户读取授权；asof_ms：1790422750325；error_code：未知；report：status：covered_with_samples；sample_count：1；reason：日报输入逐所包含研究与账户状态，缺余额不作零资产；asof_ms：1790422746290；error_code：未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "有候选不代表已有独立前瞻账本或可交易权限",
+      "next_step": "按各维度原始证据推进，不重复建池",
+      "source_time": "2026-09-26T19:39:06.290000+08:00",
+      "evidence": [
+        "snapshot/venue_coverage.json"
+      ]
+    },
+    {
+      "id": "pair_shadow",
+      "name": "pair_shadow注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "carry_shadow",
+      "name": "carry_shadow注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "nl_short",
+      "name": "nl_short注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "nl_short_ext",
+      "name": "nl_short_ext注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "nl_short_gate",
+      "name": "nl_short_gate注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "crypto_hedge",
+      "name": "crypto_hedge注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "nl_short_hyperliquid",
+      "name": "nl_short_hyperliquid注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "nl_short_okx",
+      "name": "nl_short_okx注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "nl_short_bitget",
+      "name": "nl_short_bitget注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "nl_short_mexc",
+      "name": "nl_short_mexc注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "nl_short_aster",
+      "name": "nl_short_aster注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    },
+    {
+      "id": "nl_short_lighter",
+      "name": "nl_short_lighter注册主项",
+      "lifecycle": "workshop",
+      "status": "逐子项目已覆盖",
+      "assessment": "逐子项目已覆盖",
+      "progress": "未知",
+      "change": "与09-24最近已完成基线对照；无09-25可比复盘基线",
+      "blockers": "未知",
+      "next_step": "未知",
+      "source_time": "未取得源时间",
+      "evidence": [
+        "research_extra/project-board.js"
+      ]
+    }
+  ],
+  "research": {
+    "full_pool": {
+      "source_ms": 1790422746290,
+      "tradfi_pairs": 3978,
+      "tradfi_price_volume_apr15_pairs": 106,
+      "of_these_selected_in_same_snapshot": 3,
+      "not_selected_from_same_snapshot": 103,
+      "carry_records": 4010,
+      "explicit_carry_pairs": 17260,
+      "pair_records": 15183,
+      "candidate_entry_allowed": false
+    }
+  },
+  "opportunities": {
+    "note": "BTW +2.5471U是过去7天Bybit费率乘今天名义额减今天模型成本的回望反事实，不是已赚或未来预测。另一币安空腿路测当前预告名义年化已降至10.95%；该数不能替代Bybit当前费率。原路线NO-GO与替代公开回望代理均保留，不据此迁仓。 BTW三种成本口径不能直接相减：①200U总资本公开筛选，Bitget现货/Bybit永续约100U每腿，taker假设往返0.37528092U；同一筛选的Gate/币安是0.48144908U。②用户既定300U分配的完整预检，现货买入规模约119.70U、空腿约119.43U，限价/费及缓冲估计往返0.75034529U，超过现行内部上限0.72U，非交易所最低要求。③Bitget现货/币安空腿路测按单腿名义计，往返成本0.410155%，为未来168h按当前费率收入的195.31%，回本328.12h。三者路线、规模、报价时点和费用假设不同，完整预检才是该程序本次检查结果。",
+    "results": [
+      {
+        "id": "BTW",
+        "name": "BTW现货永续公开路线",
+        "assessment": "过去费率×当前规模减当前模型成本，只作候选比较，不能当真实收益",
+        "metrics": {
+          "count": 18,
+          "positive": 17,
+          "best": [
+            {
+              "base": "BTW",
+              "spot": "bitget",
+              "perp": "bybit",
+              "valid": true,
+              "capital_usd": 200.0,
+              "quantity": 106.18869833795088,
+              "spot_entry": 0.9344740000000001,
+              "perp_entry": 0.94751,
+              "roundtrip_cost_usd": 0.37528092127254004,
+              "funding_7d_rate_sum": 0.02904481,
+              "funding_observation_count": 42,
+              "funding_7d_today_notional_proxy": 2.9223393048916853,
+              "net_7d_counterfactual_proxy": 2.547058383619145,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0.00055
+              },
+              "timestamp_span_ms": 422,
+              "execution_authorized": false
+            },
+            {
+              "base": "BTW",
+              "spot": "gate",
+              "perp": "bybit",
+              "valid": true,
+              "capital_usd": 200.0,
+              "quantity": 105.45304383291987,
+              "spot_entry": 0.9476,
+              "perp_entry": 0.94751,
+              "roundtrip_cost_usd": 0.49272906771516817,
+              "funding_7d_rate_sum": 0.02904481,
+              "funding_observation_count": 42,
+              "funding_7d_today_notional_proxy": 2.9020939105274866,
+              "net_7d_counterfactual_proxy": 2.409364842812318,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0.00055
+              },
+              "timestamp_span_ms": 947,
+              "execution_authorized": false
+            },
+            {
+              "base": "BTW",
+              "spot": "mexc",
+              "perp": "bybit",
+              "valid": true,
+              "capital_usd": 200,
+              "quantity": 105.4293045411676,
+              "spot_entry": 0.948026621967705,
+              "perp_entry": 0.9475100000000001,
+              "roundtrip_cost_usd": 0.5552162305626802,
+              "funding_7d_rate_sum": 0.02904481,
+              "funding_observation_count": 42,
+              "funding_7d_today_notional_proxy": 2.9014405993329455,
+              "net_7d_counterfactual_proxy": 2.3462243687702653,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0.00055
+              },
+              "timestamp_span_ms": 272,
+              "execution_authorized": false
+            }
+          ],
+          "scope": "7d observed rates times current notionals minus current roundtrip cost; not actual historical profit"
+        }
+      },
+      {
+        "id": "BR",
+        "name": "BR现货永续公开路线",
+        "assessment": "过去费率×当前规模减当前模型成本，只作候选比较，不能当真实收益",
+        "metrics": {
+          "count": 24,
+          "positive": 10,
+          "best": [
+            {
+              "base": "BR",
+              "spot": "gate",
+              "perp": "binance",
+              "valid": true,
+              "capital_usd": 199.99031356172853,
+              "quantity": 101.63498420478007,
+              "spot_entry": 0.98635,
+              "perp_entry": 0.979904741486915,
+              "roundtrip_cost_usd": 0.407456904645344,
+              "funding_7d_rate_sum": 0.014082599999999999,
+              "funding_observation_count": 42,
+              "funding_7d_today_notional_proxy": 1.402522789926421,
+              "net_7d_counterfactual_proxy": 0.995065885281077,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0.0005
+              },
+              "timestamp_span_ms": 3086,
+              "execution_authorized": false
+            },
+            {
+              "base": "BR",
+              "spot": "bybit",
+              "perp": "binance",
+              "valid": true,
+              "capital_usd": 200,
+              "quantity": 101.63192985544725,
+              "spot_entry": 0.9865042900448561,
+              "perp_entry": 0.979904742474902,
+              "roundtrip_cost_usd": 0.4523080749902106,
+              "funding_7d_rate_sum": 0.014082599999999999,
+              "funding_observation_count": 42,
+              "funding_7d_today_notional_proxy": 1.4024806425215248,
+              "net_7d_counterfactual_proxy": 0.9501725675313142,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0.0005
+              },
+              "timestamp_span_ms": 3240,
+              "execution_authorized": false
+            },
+            {
+              "base": "BR",
+              "spot": "gate",
+              "perp": "mexc",
+              "valid": true,
+              "capital_usd": 199.98497931579183,
+              "quantity": 101.65318162666723,
+              "spot_entry": 0.98635,
+              "perp_entry": 0.9794023245710402,
+              "roundtrip_cost_usd": 0.4957905700171922,
+              "funding_7d_rate_sum": 0.014054,
+              "funding_observation_count": 42,
+              "funding_7d_today_notional_proxy": 1.3992072789616012,
+              "net_7d_counterfactual_proxy": 0.9034167089444091,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0.0006
+              },
+              "timestamp_span_ms": 2259,
+              "execution_authorized": false
+            }
+          ],
+          "scope": "7d observed rates times current notionals minus current roundtrip cost; not actual historical profit"
+        }
+      },
+      {
+        "id": "AIN",
+        "name": "AIN现货永续公开路线",
+        "assessment": "过去费率×当前规模减当前模型成本，只作候选比较，不能当真实收益",
+        "metrics": {
+          "count": 12,
+          "positive": 12,
+          "best": [
+            {
+              "base": "AIN",
+              "spot": "gate",
+              "perp": "aster",
+              "valid": true,
+              "capital_usd": 200,
+              "quantity": 4597.657144056344,
+              "spot_entry": 0.021787788561220652,
+              "perp_entry": 0.02168,
+              "roundtrip_cost_usd": 0.725681602177346,
+              "funding_7d_rate_sum": 0.02646869,
+              "funding_observation_count": 42,
+              "funding_7d_today_notional_proxy": 2.6383250890557397,
+              "net_7d_counterfactual_proxy": 1.9126434868783937,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0.0005
+              },
+              "timestamp_span_ms": 1000,
+              "execution_authorized": false
+            },
+            {
+              "base": "AIN",
+              "spot": "gate",
+              "perp": "binance",
+              "valid": true,
+              "capital_usd": 200,
+              "quantity": 4596.600233319382,
+              "spot_entry": 0.021787785751466476,
+              "perp_entry": 0.02169,
+              "roundtrip_cost_usd": 0.5415863958102232,
+              "funding_7d_rate_sum": 0.02182067,
+              "funding_observation_count": 42,
+              "funding_7d_today_notional_proxy": 2.175526451877988,
+              "net_7d_counterfactual_proxy": 1.6339400560677648,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0.0005
+              },
+              "timestamp_span_ms": 776,
+              "execution_authorized": false
+            },
+            {
+              "base": "AIN",
+              "spot": "gate",
+              "perp": "mexc",
+              "valid": true,
+              "capital_usd": 200,
+              "quantity": 4596.3711680332735,
+              "spot_entry": 0.021787785142335363,
+              "perp_entry": 0.02169,
+              "roundtrip_cost_usd": 0.5614990699097394,
+              "funding_7d_rate_sum": 0.021873,
+              "funding_observation_count": 42,
+              "funding_7d_today_notional_proxy": 2.180635092051518,
+              "net_7d_counterfactual_proxy": 1.6191360221417788,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0.0006
+              },
+              "timestamp_span_ms": 38,
+              "execution_authorized": false
+            }
+          ],
+          "scope": "7d observed rates times current notionals minus current roundtrip cost; not actual historical profit"
+        }
+      },
+      {
+        "id": "ETH",
+        "name": "ETH现货永续公开路线",
+        "assessment": "过去费率×当前规模减当前模型成本，只作候选比较，不能当真实收益",
+        "metrics": {
+          "count": 56,
+          "positive": 5,
+          "best": [
+            {
+              "base": "ETH",
+              "spot": "binance",
+              "perp": "lighter",
+              "valid": true,
+              "capital_usd": 200.0,
+              "quantity": 0.03717134191387918,
+              "spot_entry": 2689.1,
+              "perp_entry": 2688.7,
+              "roundtrip_cost_usd": 0.20065796620608278,
+              "funding_7d_rate_sum": 0.0020159999999999996,
+              "funding_observation_count": 168,
+              "funding_7d_today_notional_proxy": 0.2014842553997554,
+              "net_7d_counterfactual_proxy": 0.0008262891936726136,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0
+              },
+              "timestamp_span_ms": 2027,
+              "execution_authorized": false
+            },
+            {
+              "base": "ETH",
+              "spot": "gate",
+              "perp": "lighter",
+              "valid": true,
+              "capital_usd": 200.0,
+              "quantity": 0.037171134451481826,
+              "spot_entry": 2689.13,
+              "perp_entry": 2688.7,
+              "roundtrip_cost_usd": 0.20065907655272802,
+              "funding_7d_rate_sum": 0.0020159999999999996,
+              "funding_observation_count": 168,
+              "funding_7d_today_notional_proxy": 0.2014831308665935,
+              "net_7d_counterfactual_proxy": 0.0008240543138654799,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0
+              },
+              "timestamp_span_ms": 1298,
+              "execution_authorized": false
+            },
+            {
+              "base": "ETH",
+              "spot": "bybit",
+              "perp": "lighter",
+              "valid": true,
+              "capital_usd": 199.99999999999997,
+              "quantity": 0.03717085783855435,
+              "spot_entry": 2689.17,
+              "perp_entry": 2688.7,
+              "roundtrip_cost_usd": 0.20066055699561935,
+              "funding_7d_rate_sum": 0.0020159999999999996,
+              "funding_observation_count": 168,
+              "funding_7d_today_notional_proxy": 0.20148163150857046,
+              "net_7d_counterfactual_proxy": 0.0008210745129511032,
+              "funding_history_complete": true,
+              "private_fee_verified": false,
+              "fee_assumptions": {
+                "spot_taker": 0.001,
+                "perp_taker": 0
+              },
+              "timestamp_span_ms": 606,
+              "execution_authorized": false
+            }
+          ],
+          "scope": "7d observed rates times current notionals minus current roundtrip cost; not actual historical profit"
+        }
+      }
+    ]
+  },
+  "news": [
+    {
+      "id": "EXT01",
+      "category": "official",
+      "title": "Binance：USDⓈ-M 资金费结算周期调整",
+      "url": "https://www.binance.com/en-AU/support/announcement/detail/e4445d0389ce4defa6009021fcf6ee46",
+      "published_at": "2026-01-02 07:33（页面未标时区）",
+      "event_at": "2026-01-02T12:00:00Z 起",
+      "quote": "revert the settlement frequency from every one hour to every four hours",
+      "facts": "官方规则：1小时合约连续16周期绝对费率不超过0.025%，第17周期改4小时；可查询 fundingInfo。",
+      "impact": "BTW/ETH/BTC及跨所资金费比较必须按每次实际结算时间积分，不把当前费率固定乘24或3；不能据此断言BTW本刻周期，需行情接口核验。",
+      "confidence": "高：官方机制；不是当前合约实时参数",
+      "relevance": [
+        "section1_BTW",
+        "ETH",
+        "BTC",
+        "section3"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "官方规则：1小时合约连续16周期绝对费率不超过0.025%，第17周期改4小时；可查询 fundingInfo。",
+      "inference": "BTW/ETH/BTC及跨所资金费比较必须按每次实际结算时间积分，不把当前费率固定乘24或3；不能据此断言BTW本刻周期，需行情接口核验。",
+      "reliability": "高：官方机制；不是当前合约实时参数",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：2026-01-02T12:00:00Z 起",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT02",
+      "category": "official",
+      "title": "Gate 9月25日现货价格精度调整",
+      "url": "https://www.gate.com/announcements/article/101945",
+      "published_at": "2026-09-24T06:43:00Z",
+      "event_at": "2026-09-25T08:00:00Z",
+      "quote": "Existing orders will not be canceled during the adjustment period.",
+      "facts": "调整列表为BCH3L、UNI3L、ZEC5L、MORPHO、NEAR5L、R2；未列BTW。旧订单保留原精度撮合。",
+      "impact": "研究池和最小试单模块应使用当前交易规格，旧订单对账不可用新精度回写历史；不把此公告错说成BTW已改精度。",
+      "confidence": "高：官方明确清单与时间",
+      "relevance": [
+        "Gate_roadtest",
+        "workshop",
+        "section1_BTW"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "调整列表为BCH3L、UNI3L、ZEC5L、MORPHO、NEAR5L、R2；未列BTW。旧订单保留原精度撮合。",
+      "inference": "研究池和最小试单模块应使用当前交易规格，旧订单对账不可用新精度回写历史；不把此公告错说成BTW已改精度。",
+      "reliability": "高：官方明确清单与时间",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：2026-09-25T08:00:00Z",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT03",
+      "category": "official",
+      "title": "Gate 新增 KII 永续与机器人",
+      "url": "https://www.gate.com/announcements/article/101956",
+      "published_at": "2026-09-24T10:24:00Z",
+      "event_at": "公告称已支持，未给独立精确开盘时刻",
+      "quote": "Gate lists KII for Futures Trading, Bots, and Copy Trading.",
+      "facts": "KII永续支持1至20倍，平台声明可调整费率、精度、杠杆和风险参数。",
+      "impact": "给新币路测增加新的事件样本线索；须先核KII跨所同资产、行情覆盖和可执行报价，公告不能证明策略通过或净盈利。",
+      "confidence": "高：上架事实；收益未证",
+      "relevance": [
+        "Gate_roadtest",
+        "Bybit_roadtest",
+        "Bitget_roadtest",
+        "workshop"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "KII永续支持1至20倍，平台声明可调整费率、精度、杠杆和风险参数。",
+      "inference": "给新币路测增加新的事件样本线索；须先核KII跨所同资产、行情覆盖和可执行报价，公告不能证明策略通过或净盈利。",
+      "reliability": "高：上架事实；收益未证",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：公告称已支持，未给独立精确开盘时刻",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT04",
+      "category": "official",
+      "title": "Gate 计划上线7种 Ondo 股票组合代币",
+      "url": "https://www.gate.com/announcements/article/101963",
+      "published_at": "2026-09-25T09:00:00Z",
+      "event_at": "2026-09-28 12:00/12:30 UTC 现货；9月29日提款",
+      "quote": "Gate will list MAG7XON, BRAINON, YLD5ON, YLD8ON, BLKHION, BLKDIGON and BLKGRWON",
+      "facts": "7种代币按公告计划9月28日开现货；本期尚未到上线时点。资产含股票/组合代币，不等于同名永续合约。",
+      "impact": "新研究方向是RWA现货与匹配衍生品的持有成本/折溢价比较。先核成分、份额乘数、分红、赎回和开休市，不把组合代币对单只股票当对冲。",
+      "confidence": "高：官方计划；实际上线与套利可行性待核",
+      "relevance": [
+        "section3",
+        "workshop",
+        "frontier"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "7种代币按公告计划9月28日开现货；本期尚未到上线时点。资产含股票/组合代币，不等于同名永续合约。",
+      "inference": "新研究方向是RWA现货与匹配衍生品的持有成本/折溢价比较。先核成分、份额乘数、分红、赎回和开休市，不把组合代币对单只股票当对冲。",
+      "reliability": "高：官方计划；实际上线与套利可行性待核",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：2026-09-28 12:00/12:30 UTC 现货；9月29日提款",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT05",
+      "category": "official",
+      "title": "Bybit 9月24日下架4种现货",
+      "url": "https://announcements.bybit.com/en/article/bybit-to-delist-4-token-s-on-sep-24-2026--art1a1071a0dd4e/?category=delistings",
+      "published_at": "2026-09-17（页面仅日期）",
+      "event_at": "2026-09-24T08:00:00Z",
+      "quote": "Delisted tokens: NEON,SUNDOG,ICX,TAC",
+      "facts": "NEON/SUNDOG/ICX/TAC现货9月24日结束交易，未成交订单移除，相关DCA/网格停止；ICX另有提款截止。",
+      "impact": "扩样本不能只加上市样本，应保存下架失败/提前退出样本与退市前流动性；这些币不应继续作为当前可成交现货候选。",
+      "confidence": "高：官方清单",
+      "relevance": [
+        "Bybit_roadtest",
+        "workshop"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "NEON/SUNDOG/ICX/TAC现货9月24日结束交易，未成交订单移除，相关DCA/网格停止；ICX另有提款截止。",
+      "inference": "扩样本不能只加上市样本，应保存下架失败/提前退出样本与退市前流动性；这些币不应继续作为当前可成交现货候选。",
+      "reliability": "高：官方清单",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：2026-09-24T08:00:00Z",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT06",
+      "category": "official",
+      "title": "Bitget经典账户9种币本位合约下架与UTA迁移",
+      "url": "https://www.bitget.com/support/articles/12560603893788",
+      "published_at": "2026-08-31 07:01（页面未标时区）",
+      "event_at": "2026-09-17T15:00:00+08:00",
+      "quote": "Coin-Margined Perpetual Futures under Classic Accounts",
+      "facts": "含BTCUSD/ETHUSD等9种经典账户币本位永续于9月17日停服；公告推荐符合条件者迁移UTA并提示经典API可能不稳定。",
+      "impact": "全交易所覆盖需按账户模式和合约类型验证，不能将Bitget经典接口空结果当全部空仓；不影响币安ETH/BTC的规则判断，也不自动授权账户迁移。",
+      "confidence": "高：官方指定账户产品范围",
+      "relevance": [
+        "Bitget_coverage",
+        "ETH",
+        "BTC",
+        "workshop"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "含BTCUSD/ETHUSD等9种经典账户币本位永续于9月17日停服；公告推荐符合条件者迁移UTA并提示经典API可能不稳定。",
+      "inference": "全交易所覆盖需按账户模式和合约类型验证，不能将Bitget经典接口空结果当全部空仓；不影响币安ETH/BTC的规则判断，也不自动授权账户迁移。",
+      "reliability": "高：官方指定账户产品范围",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：2026-09-17T15:00:00+08:00",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT07",
+      "category": "official",
+      "title": "Bitget RWA永续现金股息结算",
+      "url": "https://www.bitget.com/support/articles/12560603884677",
+      "published_at": "2026-06-05 03:01（页面未标时区）",
+      "event_at": "持续规则；各标的除息日前一交易日盘后收盘",
+      "quote": "Cash dividend records are displayed separately from regular funding fee records",
+      "facts": "适用美股RWA股息为空付多收，T-1按美股交易日历结算，金融记录有单独股息类型；正文对ETF覆盖存在一处概括不一致，应依明确排除项和具体合约核对。",
+      "impact": "板块③跨所净现金流须拆资金费、股息、价格损益、手续费；仅凭费率差可能把股息支出误当套利损失或漏掉。交易所标的乘数与公司行动也须匹配。",
+      "confidence": "高：现金流机制；具体资产适用性需逐合约核",
+      "relevance": [
+        "section3",
+        "Bitget",
+        "account_PnL"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "适用美股RWA股息为空付多收，T-1按美股交易日历结算，金融记录有单独股息类型；正文对ETF覆盖存在一处概括不一致，应依明确排除项和具体合约核对。",
+      "inference": "板块③跨所净现金流须拆资金费、股息、价格损益、手续费；仅凭费率差可能把股息支出误当套利损失或漏掉。交易所标的乘数与公司行动也须匹配。",
+      "reliability": "高：现金流机制；具体资产适用性需逐合约核",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：持续规则；各标的除息日前一交易日盘后收盘",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT08",
+      "category": "official",
+      "title": "Bitget AINUSDT、RCATUSDT 9月22日下架",
+      "url": "https://www.bitgetapp.com/support/articles/12560603895497",
+      "published_at": "2026-09-17 07:46（页面未标时区）",
+      "event_at": "2026-09-22T07:00:00Z",
+      "quote": "Any remaining positions will be automatically settled and closed.",
+      "facts": "9月22日04:00 UTC禁开仓，07:00 UTC下架、撤单、剩余仓位结算；明确含UTA、跟单和机器人。",
+      "impact": "若旧储备候选含AIN并依赖Bitget腿，必须重新核下架状态并剔除其当前可交易标签。不能因旧费率或RPI列表仍有AIN就继续准入。",
+      "confidence": "高：官方合约级停止日期",
+      "relevance": [
+        "Bitget_roadtest",
+        "AIN_reserve",
+        "workshop"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "9月22日04:00 UTC禁开仓，07:00 UTC下架、撤单、剩余仓位结算；明确含UTA、跟单和机器人。",
+      "inference": "Bitget AINUSDT永续腿已下架，应剔除该永续路线。AIN现货和其他交易所永续分别核验，不能扩大解释为AIN所有交易产品都不可用。",
+      "reliability": "高：官方合约级停止日期",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：2026-09-22T07:00:00Z",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT09",
+      "category": "news",
+      "title": "Farside：美国BTC现货ETF最新资金流",
+      "url": "https://farside.co.uk/btc/",
+      "published_at": null,
+      "event_at": "数据业务日2026-09-25；滚动表未披露逐行发布时间",
+      "quote": "25 Sep 2026",
+      "facts": "9月25日净流入134.5百万美元；9月24日190.7，9月21日999.0。最新表截至9月25日，非9月26日流量。",
+      "impact": "机构现货需求仍为正但近日减弱，仅作为BTC行情环境；不能推出资金费持续为正或本账户赚到这些资金。用作基差/费率持续性的外部解释变量。",
+      "confidence": "中高：原数据汇总者自动更新，有更正可能",
+      "relevance": [
+        "BTC",
+        "ETH",
+        "market_news"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "9月25日净流入134.5百万美元；9月24日190.7，9月21日999.0。最新表截至9月25日，非9月26日流量。",
+      "inference": "机构现货需求仍为正但近日减弱，仅作为BTC行情环境；不能推出资金费持续为正或本账户赚到这些资金。用作基差/费率持续性的外部解释变量。",
+      "reliability": "中高：原数据汇总者自动更新，有更正可能",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：数据业务日2026-09-25；滚动表未披露逐行发布时间",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT10",
+      "category": "news",
+      "title": "Farside：美国ETH现货ETF最新资金流",
+      "url": "https://farside.co.uk/eth/",
+      "published_at": "页面创建2024-05-23；本次数据发布时间未知",
+      "event_at": "数据业务日2026-09-25",
+      "quote": "25 Sep 2026",
+      "facts": "9月25日净流入87.0百万美元；9月24日66.1，9月21日270.0。网页创建日不能当当期数据发布日期。",
+      "impact": "和BTC相比ETH单日资金流方向一致、变化幅度不同；可在ETH现货/币本位复盘中分开考察价格敞口与carry，不能据流入外推收益率。",
+      "confidence": "中高：原数据汇总者；非交易所账户数据",
+      "relevance": [
+        "ETH",
+        "market_news"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "9月25日净流入87.0百万美元；9月24日66.1，9月21日270.0。网页创建日不能当当期数据发布日期。",
+      "inference": "和BTC相比ETH单日资金流方向一致、变化幅度不同；可在ETH现货/币本位复盘中分开考察价格敞口与carry，不能据流入外推收益率。",
+      "reliability": "中高：原数据汇总者；非交易所账户数据",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：数据业务日2026-09-25",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT11",
+      "category": "community",
+      "title": "公开社群：19天238市场资金套利回放未覆盖往返成本",
+      "url": "https://www.reddit.com/r/CryptoMarkets/comments/1ve6jqg/we_tracked_238_markets_across_11_exchanges_for_19/",
+      "published_at": null,
+      "event_at": "作者自述19天样本；精确起止未披露",
+      "quote": "19 days, one funding regime, $10k size.",
+      "facts": "作者自述13资产、11场所、238市场，435次跨所carry候选在其规则及1万美元规模下未收回往返成本；maker替代仅少数过线。页面相对日期与搜索索引不一致，未转成绝对发布日期。",
+      "impact": "反证方向：对300U BTW及小额实验做自身规模的持有至退场、费率衰减和费用回放；不能用他人1万美元/19天结论否定本策略，也不能把自述当审计实盘。",
+      "confidence": "低到中：公开自述、原始数据本次未独立复现",
+      "relevance": [
+        "section1_BTW",
+        "section3",
+        "experiments",
+        "community"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "作者自述13资产、11场所、238市场，435次跨所carry候选在其规则及1万美元规模下未收回往返成本；maker替代仅少数过线。页面相对日期与搜索索引不一致，未转成绝对发布日期。",
+      "inference": "反证方向：对300U BTW及小额实验做自身规模的持有至退场、费率衰减和费用回放；不能用他人1万美元/19天结论否定本策略，也不能把自述当审计实盘。",
+      "reliability": "低到中：公开自述、原始数据本次未独立复现",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：作者自述19天样本；精确起止未披露",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    },
+    {
+      "id": "EXT12",
+      "category": "research",
+      "title": "Point-in-Time Audit Before Alpha：BTC永续负结果研究",
+      "url": "https://arxiv.org/abs/2608.25348",
+      "published_at": "2026-08-26T04:07:03Z",
+      "event_at": "研究档案窗口2024-08-01至2026-08-01",
+      "quote": "positive IC but negative net Sharpe under primary costs",
+      "facts": "预印本明确区分事件、公开、可用时刻；匹配搜索预算后自适应agent未显示优于随机搜索；其留出集正IC仍为负净Sharpe。",
+      "impact": "新方向是把全策略信号可用时刻/可成交价/真实成本写入统一实验记录，比较同预算简单基线，减少agent增加复杂度但没有净收益的循环。不是已经验证可赚钱的新策略。",
+      "confidence": "中：原始预印本，非同业评审定论，本次未复现",
+      "relevance": [
+        "workshop",
+        "roadtest",
+        "agent_workflow",
+        "frontier"
+      ],
+      "accessed_at": "2026-09-26T12:05:58Z",
+      "access_method": "本期 web search + 原链接打开核验",
+      "status": "retrieved",
+      "fact": "预印本明确区分事件、公开、可用时刻；匹配搜索预算后自适应agent未显示优于随机搜索；其留出集正IC仍为负净Sharpe。",
+      "inference": "新方向是把全策略信号可用时刻/可成交价/真实成本写入统一实验记录，比较同预算简单基线，减少agent增加复杂度但没有净收益的循环。不是已经验证可赚钱的新策略。",
+      "reliability": "中：原始预印本，非同业评审定论，本次未复现",
+      "read_at_utc": "2026-09-26T12:05:58Z",
+      "freshness": "事件时间：研究档案窗口2024-08-01至2026-08-01",
+      "next_check": "按本条影响所述条件核验，未核实前仅作研究线索。"
+    }
+  ],
+  "review": "GPT执行取证、分析、确定性核算与网页；Claude Fable 5.1 / high原主控终审，独立Claude Fable 5.1 / high复核。仅批准本期日报与研究；不授权交易。\n\n# 货币交易所日报｜2026-09-26\n\n本期是重新取数和重新复盘。计划北京时间18:00启动，实际2026-09-26T20:03:00.072267+08:00启动，未伪装准点。\n主业务窗[2026-09-26T00:00:00+08:00, 2026-09-26T20:03:00.072267+08:00)；补充账户/公开行情各标实际采集时间，不倒填为业务截点。昨日/30/90天统一截至2026-09-26 00:00，分别自09-25、08-27、06-28起。\n比较基线是最近已完成09-24期，不是昨日收盘；09-25本地完整复盘缺失。账户昨日流水仍按真实时间筛选。\n\n本期已读取范围资产小计10,307.08U等值，账户总净利润仍为未知。资产转出或内部划转不是亏损，资金费不是完整净利润。\n完整逐项目清单115项；详细数值、样本、阻塞、下一步和源时间均进入页面。BTW固定300U与另500U实验分开，规划不计投入。工程与成交证据严格区分。\n\n# 2026-09-26 持仓与资产新复盘\n\n执行者：GPT只读取数与确定性计算；本分支由GPT完成；合并日报已由原Claude主控终审。\n\n主交易窗：2026-09-26T00:00:00+08:00 至 2026-09-26T20:03:00.072000+08:00（半开区间）。当前资产私有GET在20:05—20:08取得，单独标时点，不冒充20:03冻结资产。\n\n## 资产与资金变化\n\n五所已读资产小计 10307.07575013 USDT/USD等值。并非完整净权益：PM负债未独立核实，HL此处为统一现金余额未加仓位浮盈，外部钱包与在途未完整覆盖。日净利润仍为null。\n- 币安：5867.63842493；2026-09-26T20:05:07.883000+08:00；钱包总览各桶只计一次；不把LD凭证或合约分项重复加回\n- Gate：3242.62867125；2026-09-26T20:05:08.055000+08:00；total.amount含美股持仓浮盈；借款为0；不再叠加各分项\n- Hyperliquid：197.006226；2026-09-26T20:05:08.675000+08:00；unifiedAccount的统一USDC余额只计一次；不叠加DEX权益或hold\n- Bitget：499.94591860；2026-09-26T20:06:35.329000+08:00；经典账户六类总览只计一次，现货含rSPY；不证明没有在途转账\n- Bybit：499.85650935；2026-09-26T20:08:29.505000+08:00；统一账户totalEquity（USD估值）加独立资金账户；本次资金账户为空。USDT面值499.95与USD估值不同，不重复相加。\n\n无9月25日本地同口径日报基线。与9月24日相同四所范围余额变化 509.46455704；新增Bybit覆盖 499.85650935，分开列示。两者均不能当投资收益。\n\n今日Gate有两笔500USDT提现（合计1000），一笔500USDT现货转合约，以及0.0068312797GT奖励。提现去向/手续费未匹配，不推断就是Bitget或Bybit，也不算亏损；内部划转不计收益。\n\n非对冲方向：Gate BTC（含活期）、GT、ETH5S，币安ETH活期（对冲归属待核），Bitget rSPY应分开展示。日内涨跌按北京00:00首分钟开盘至实际采价；没有取得成本，本人实际盈亏均null。Bitget rSPY价值约100.036313U来自现货钱包桶总估值，非独立ticker。Gate美股MU/SPY/TSLG平台持仓浮盈合计76.75USD，today_pnl=0仅为平台字段；不能推成全天净利。\n\n## 今日交易过程\n\n已有跨所机器人的账本：0新报单、0成交报单、0新开组、0平仓组、5组继续持有。该结论只覆盖该机器人账本，不能说全账户今天没有交易。\n- hyperliquid：102条；收0.137058，付0.031671，净收付0.105387 USDC；不是全净利润。\n- Binance ETH 币本位：3条；收0.00000638，付0，净收付0.00000638 ETH；不是全净利润。\n\nBinance跨所机器人今日账本没有资金费行，不记为已核零收入；ETH没有当天完整成交明细；BTC平台机器人缺当天账单；Bitget/Bybit方向现货交易过程亦未齐。\n\n## 持仓①—③\n\n- ① ETH币本位套利：观察窗口资金费净收付，未扣交易费，按现价折U 0.6671026440000000U；资金费净收付0.6671026440000000，费用None；分母当前对冲面值USD，非全部账户本金，capital_days=4011.036666666666666666666666；年化代理5.7348%，月化代理0.4714%。60期可换算记录；面值由到账/公开费率反推，未扣费，不是总本金净年化。观察器汇总63条，保存明细仅30条。\n- ① BTC币安平台套利机器人：假设固定200USD面值×公开费率模拟资金费（非到账） 0.42301800U；资金费净收付None，费用None；分母固定对冲面值USD，非总本金，capital_days=2200；年化代理7.0183%，月化代理0.5768%。以33期8小时费率×固定200USD面值推算资金费，覆盖11个归一化观察日（非实际持仓天数）；分母2200面值天，不是250U总本金天。250U仅旧网页投入记录，非当前本金核验。旧网页Working不证明当前运行，不与ETH到账相加。\n- ② 长尾币跨所套利：累计盈亏估计 -0.018794000000000165U；资金费净收付0.038617489999999989，费用0.05131749；分母历史平均占用保证金，两腿合计，capital_days=11.155536453245789；年化代理-61.4924%，月化代理-5.0542%。②取完整已平AZTEC和NIL账本：资金费0.038617489999999989减已记费用估计0.05131749得-0.012700000000000011，加价差-0.0060940000000001555得总盈亏-0.018794000000000165。两组已平，review费用不另含未来退出费。年化分子为总盈亏，不能与③资金费年化比较为同一口径；短样本代理不是可持续净年化。\n- ③ 股票／商品永续跨所套利：累计资金费减手续费估计 0.7670361369399996499U；资金费净收付0.85594341999999965，费用0.0889072830600000001；分母历史平均占用保证金，两腿合计，capital_days=1759.4937530031439；年化代理15.9119%，月化代理1.3078%。③分子为资金费减当前保存的费用估计0.0889072830600000001，不含浮盈与未来退出费；review费用0.15869436612另含预计退出。②分子用累计盈亏。源账本14条HL资金费异常尚未独立核实。不同分子，不可加总；短样本代理不是可持续净年化。\n\nETH观察源HEALTHY，五组件fresh，ADL 1/4，无源错误。BTC网页已旧47.33小时；Working是历史状态，当前状态不确证；费率推演是假设固定面值，非真实到账。\n\n③当前5组（USAR、NET、SMH、BMNR、IREN），累计资金费0.85594342U，扣当前费用估计后的资金费0.76703613694U；另有价格浮盈/未来退出费用，累计全策略盈亏估计0.81761028388U。资金费兑现率28.1482%，成本/资金费19.9306%，原复盘规则兑现率≥50%仍未通过。②两笔已平样本，累计盈亏估计-0.018794U，成本/资金费155.1719%，证据不足以推广。\n\n现行生产配置另见③max_positions=12、leg_notional=50、各所预算扩大等变化；这是只读观察事实，不表示当日本日报已批准加仓/资金已投入。与原复盘门槛尚未通过并存；本期已由原Claude终审来源表述，详见末尾配置来源订正，该终审不批准生产变更。\n\nBTW当前签名GET现货、空腿、多腿均0，原程序日志0订单。完整成本预检0.7503452900000U > 现行0.72U，未通过；不再声称180USDT划转未完成。300U预算与500U实验预算独立，预算、余额转移和程序部署都不是实验成交。500U登记实验本期没有取得真实投入凭证，实际投入保持待核，不虚构已用完或0损益。\n\n跨所估计账本仍含14条历史HL资金费名义金额异常待独立核对；全机器人含其他损耗的估计总盈亏0.5036006838799987U，不等于全账户净收益。\n\n## 昨天/30天/90天\n\n- 昨天：2026-09-25T00:00:00+08:00 至 2026-09-26T00:00:00+08:00；净利润null。资金费保存行：币安跨所机器人 3条 -0.03777007 币种未保存；Hyperliquid跨所机器人 120条 0.124237 USDC；ETH币本位账户 3条 -0.00000121 ETH。\n- 最近30天：2026-08-27T00:00:00+08:00 至 2026-09-26T00:00:00+08:00；净利润null。资金费保存行：币安跨所机器人 21条 -0.21433109 币种未保存；Hyperliquid跨所机器人 1139条 1.341547 USDC；ETH币本位账户 27条 0.00017365 ETH。\n- 最近90天：2026-06-28T00:00:00+08:00 至 2026-09-26T00:00:00+08:00；净利润null。资金费保存行：币安跨所机器人 21条 -0.21433109 币种未保存；Hyperliquid跨所机器人 1139条 1.341547 USDC；ETH币本位账户 27条 0.00017365 ETH。\n\n三个期间重叠不能相加；30/90天相同是保存历史不足。ETH窗口汇总63条但保存30条，分期只加保存行；手续费按订单创建时间归窗，非准确成交时间。BTC/Gate/Bitget/Bybit完整期间账本缺失。\n\n## 确定性检查与主要证据\n\n- 五所小计=各所余额相加；Gate分项=total；平台股票浮盈=分项；HL现金不重复加保证金；BTC模拟与ETH到账不相加。\n- BTW预算/实验预算均未加到账户总资产；不存在新订单/撤单/划转/重启服务。\n- assets/ASSET_RAW.json、GATE_BITGET_RAW.json保留最初loader失败；BITGET_CURRENT.json改用现有只读适配器成功；BYBIT_CURRENT.json新采集。\n- snapshot/api_funding_account.json、api_funding_xvenue-bot.json、api_funding_capital.json、majors-funding.json；process/snapshots/ledger.json；periods/RAW.json；assets/BTW_PREFLIGHT.json、BTW_STATUS.json。\n- ASSETS.json、TODAY.json、STRATEGIES.json、holding_inventory.json、ACCOUNTING_CHECKS.json包含当期明细与哈希。\n\n## 独立复核后订正\n\n②改用完整SQLite两笔AZTEC+NIL而非看板裁剪仓列表：0.03861749资金费−0.05131749已记估计费用=−0.01270000；再加−0.006094价差=−0.018794总盈亏。两笔均已平仓，不能把review费用说成另含未来退出。\n\nBTC主卡资本改为200USD面值，33期8小时=11个归一化观察日（非实际持仓天数），分母2200面值天；7.018253%是该面值口径年化。250U只保留为旧网页投入补注，不与年化分母混淆。\n\n\n# 2026-09-26 路测、车间与全所研究新复盘\n\n执行者：GPT只读研究分支，本分支由GPT完成；合并日报已由原Claude主控终审。归属exchange-daily-review/2026-09-26。主业务窗北京时间00:00—20:03:00；源快照与本期补证约20:04—20:07各自留时点。比较基线为最近完成的9月24日报告，间隔两天，不称“昨天”；9月25日没有本地可比基线。所有下面的路测收益都是模拟/模型，不是用户实际账户收入。\n\n## 最值得关注的变化\n\n1. **Gate增加了样本，但结果明显恶化。** 总簿39笔、正式13笔（9月24日37/11）；独立三腿重算39/39有效，正式基线−184.4779U、负费率同步退出−144.5492U。两者都比9月24日的−65.1802/−24.1209U差；这不是今日实盘亏损，而是跨日累计模型、平仓及估值变化。退出变体少亏39.9287U，却仍不能据此盈利晋级。\n2. **Bybit不再只有一笔正式样本。** STONK于9月25日16:00北京时间入册，现正式2笔：LONGXIA已平模型+52.2550U，STONK未平+13.6552U，总+65.9102U。新增事件来自前一个自然日，今天未新入册；1平1开仍不支持稳定盈利结论。\n3. **HOOD/Aster最接近原观察时长，但还没到期。** 315/336h，差21h；费率差名义年化16.14%、正小时93.97%、原成本门暂过。扣一次往返成本后名义年化12.59%，不是投入本金净年化。HOOD/Bitget降至9.29%和75.87%，不是所有组合一起接近实盘。\n4. **BTW有过去7天正收益代理，但当前慢持有原规则已NO-GO。** 296有效小时、覆盖100%，当前回本约328h，原经济门未过；慢持有账户今天重新入场的第三轮模型−0.2204U，总累计−0.0711U，不能拿历史高费率替当前入场判断。用户既定300U配置与实际成交由账户分支另核，研究分支不更改。\n5. **股票全池机会缩小，当前高差不等于持续可赚。** 同池3978路线中106条过价量与15%瞬时费差门，9月24日为197。新深核CRWD/CRCL/NOK及跟踪BMNR，四组均未过全部可计算门。BMNR此前深度不足已改善，本期主要变成当前费率下降及HL点差，不照抄旧阻塞。\n\n## 路测逐项进度\n\n| 项目 | 本期新证据 | 判断 |\n|---|---|---|\n| 路测01短周期200U | 0轮、0模型收益；今天0入0出 | 原12h回本条件仍未产生周期；保留对照 |\n| 路测02慢持有200U | BTW3轮、2平1开；已平+0.1493U、未平−0.2204U，总−0.0711U；较9/24总模型−0.7184U | 前一轮9/25因价格上涨42%重置，第三轮9/26 00:00入册；这是纸上规则，不是真钱机器人执行 |\n| 币安03a/03b及变体 | 总5笔、正式0笔；今天0入0出 | 起点前回放不可作正式样本或盈利验收 |\n| Bybit03a/03b及过滤、费率退出、sl103变体 | 总9笔、正式2笔，1平1开；今天0入0出 | 保留前瞻；STONK浮盈不能当新增已实现收入 |\n| Gate03各变体 | 总39笔、正式13笔，基线8平5开；今天ZCAT、PAID、ALLINU、MUSEBOOK四笔模型退出 | 样本增加但经济证据退步；流动性、300k、sl103、过滤和费率退出分别列清单，不把同事件多版本当独立样本 |\n| Bitget新币独立簿 | 0正式、0待入；有完整独立入口 | 覆盖不等于符合原去重/分类/入场条件，不能灌历史样本 |\n| Aster新币独立簿 | GSTOCK/VERONA两待入；两条ENTRY_MISSED_NO_BACKFILL | 从原四待入变两待入，不是两笔成交；错过原时点不补开 |\n| Hyperliquid/Lighter | 23/17条缺上市证据 | 缺证据而非没有机会，保持待核 |\n| OKX/MEXC | 3/97条待加密分类 | MEXC较9/24的108减少11，不可等同完成11笔交易 |\n| SOXL空Lighter/多Bitget | 315h，费差名义年化2.42%、正小时71.43%；三门全失败 | 扣一次成本后名义年化0.30%，低优先 |\n| SOXL空Lighter/多Aster | 315h，4.05%、83.17%；三门全失败 | 成本比50.05%略超原50%门；不可四舍五入为通过 |\n| HOOD空Lighter/多Bitget | 315h，9.29%、75.87%；成本门通过 | 观察时长增长但收益稳定性退步 |\n| HOOD空Lighter/多Aster | 315h，16.14%、93.97%；三门暂过 | 保留观察，差21h；私人费用、实际执行闭环、公司行动另核 |\n\n新币源为19:10，比主窗口截点旧53分钟；其“今日”过程只证明截至源时点，不声称完整覆盖至20:03。Carry源20:04，属于截点后补证，不能伪装主窗口内成交。路测02无限槽总模型+4.8321U对应峰值1600U，不能除200U或与单槽累加。\n\n## Gate三腿重新计算与反证\n\n本期重新获取Gate结算费率/mark代理、BTC/ETH小时价格与资金费；保持原账本和入场、退出规则不变，独立另存计算结果。\n\n| 正式样本组合 | 基线模型U | 同步费率退出模型U |\n|---|---:|---:|\n| 全13笔 | −184.4779 | −144.5492 |\n| 去EMBER | −130.0281 | −158.7593 |\n| 去FRONG | −204.2103 | −135.5504 |\n| 同时去两笔 | −149.7605 | −149.7605 |\n\n同步退出模型已实现−152.0824U、4笔未平；基线已实现−211.7434U、5笔未平。去掉EMBER后变体反而较差，说明改进集中于个别事件，不能宣布普遍更优。旧页面聚合b为−186.6038U、b_fundexit为−137.2397U，与独立同步三腿口径不同，日报使用本期独立结果并保留原值，不混加。\n\n模型局限保留：小时K线、结算mark开盘代理、旧未平价时间不完全同步，未完整模拟交易数量取整、强平与真实订单成交。39/39可计算不等于39笔真实交易核销；不能从此推用户实验池已经发生损失。\n\n## 车间：全量目录新筛与深核\n\n当前9所登记维度已逐项纳入，98行研究清单包含86个详细条目及12个注册主项映射；映射不重复计收益。完整carry目录4010条、展开17260现货/永续连接；双永续15183条。TradFi同一19:39目录3978路线，其中106过价量与15%门。深核4组中CRWD、CRCL、NOK属于该106，未深核103；BMNR属于额外持续跟踪，不能写成106−4。\n\n| 200U总资本、约100U/腿 | 实际新盘口方向 | 当前费差名义APR | 7天费率代理U | 今天往返成本U | 本期主要失败 |\n|---|---|---:|---:|---:|---|\n| BMNR | 空HL、多Bitget | 5.47% | +1.0319 | 0.4430 | 当前年化门、收益覆盖成本、HL点差；深度已到1907U |\n| CRWD | 空HL、多Bybit | 127.91% | −0.0604 | 0.4804 | 历史均值、滚动正率50.2%、深度987U、收入覆盖成本 |\n| CRCL | 空HL、多Bitget | 45.58% | −0.1595 | 0.3237 | 历史均值、滚动正率52.2%、不利入口13.8bp |\n| NOK | 空HL、多币安 | 57.04% | −0.0360 | 0.4488 | 历史均值、不利入口31.7bp、收入覆盖成本 |\n\n数据来自8条腿本期盘口、费率报价与30天结算请求；4组全部读取成功。手续费为明示的研究taker假设，不是用户私人费档；未用促销假设让结论通过。价格、费率各自保留请求时点。BMNR仍不足完整30天，30天资金代理null，不把短记录外推满月。身份、股息/公司行动、周末底层现货休市与账户权限未完整核验，金融子集通过也不等实盘许可。\n\n另重新抓41个盘口，比较四币110条carry路径：BTW18、BR24、AIN12、ETH56。相同200U研究预算，过去7天费率乘今天名义额扣今天往返成本：BTW Bitget/Bybit+2.5471U、Gate/Bybit+2.4094U、Bitget/币安+1.9687U、Gate/币安+1.8350U。它指出可继续研究的替代对手盘，**不是推荐迁仓**：基差变化、历史成交价、私人费率与未来费率未保证。Bybit/Bitget现货永续价差也须纳入后续固定数量全路径研究。\n\nBR最好Gate/币安+0.9951U，当前原路测回本缺失/不通过；AIN最好Gate/Aster+1.9126U，但有效143h不足168h、覆盖52%。Bitget最新AIN目录只有现货，无AIN永续；结合外部分支9/22下架公告，不能把旧AINUSDT永续列作当前机会。ETH最好币安/Lighter仅+0.0008U，远不足误差、费档差异及执行成本缓冲。\n\nCarry其他标的完整评估：龙虾193h/65.4%、回本317h失败；BULLA113h/48.5%、回本428h；PONS296h/100%但资本模型年化24.63%低于30%；POWER98h/37.3%、年化13.67%；牛来296h/100%、年化11.79%；MARSCOIN仍12有效h/5.9%。没有因为日历过了两天便提升有效样本。\n\nHOOD结算再核14天：Aster42次8h均0，Bitget42次中24次0、费率合计0.2427%，Lighter336小时中2次0、合计0.5636%。Aster零费率是本次真实公共返回，不外推未来；补查336小时不替代正式315小时前瞻期。\n\n## 其余注册项目和真实缺口\n\n- 加密双永续探针45个候选，usable_now=0；全所雷达是发现器而非独立执行账本。九所各10个适用维度在metrics逐项列状态、源时点和缺口，Bitget已含2768加密费差、339TradFi、2876carry、3951组合候选及0正式新币，不拿页面前30行代表全池。\n- 黄金XAUT/PAXG在不复用抵押、90天摊费假设下资本年化约2.36%/2.77%，是低收益研究参考；来源约17:32，比截点旧151分钟。\n- 币本位/U本位差仍为研究收益代理，ETH/BTC长期差扣费不支持新机会；AVAX等不能忽略币价抵押风险与本金分母。\n- 季度已完成换月：当前合约261225、下一季270326，不再沿用9/25临交割高年化。ETH当前季约89.83天、基差年化4.00%；BTC4.81%；相对永续edge均负，全部rotate=false，alerts=0。\n- 1000U币本位纸上账户仍8张/800U面值，累计资金费模型3.030536U，但净值999.457614U、总净损益−0.542386U（含估计退出成本），资金费不能替代总收益；不计用户真实资产。\n- 三项美股社群规则单次模拟已于9/25 04:00北京时间结束，当前源是40小时前历史。三个独立10000美元模拟账户均0成交；EMA一次尝试被收益风险比拒绝，布林三次分别收益风险比两次、目标收益非正一次。它证明候选到风控链有拒单记录，却没有成交—持仓—退出闭环；不能继续写成“今天等待开盘”。\n- basis_v3仍9/05历史，ETF仍9/09流程记录；研究测量器research_measurement_v2约旧87.95小时，本期Gate等独立重算代替其当日结论。预测市场/赔率、黄金马丁保留停用/证伪，不复活、不改变放风筝。\n- earnings-calendar.json本期读取失败（FileNotFoundError）；不能据此宣称没有财报或公司行动。已在extra_failures留证。股票深核保持公司行动未核标记。\n- E02/E03/E04和储备项目逐项保留登记/预算/前置缺口：HOOD实际接口与独立成交验证；Gate/Bybit原始事件信号及同步执行闭环。500U是实验上限，BTW300U独立，登记/测试不当投入。实际资金、订单和自动服务是否运行由本期账户/程序分支核实，不用旧注册false代替当日账户证据。\n\n## 交付与下一步\n\n保留原规则继续前瞻，优先观察HOOD/Aster满336h后的同口径门槛；Gate降低盈利晋级优先级，保留退出对照而不挑赢家改历史；Bybit跟踪第二笔到完整退出；BTW当前费率/成本与账户分支交叉核验。全池新增CRWD/CRCL/NOK作为高瞬时费差的反例，本期不因高APR或要用完预算改变资金计划。\n\n证据：research_inventory.json、research_metrics.json；research_extra/extra_capture.json与project-board.js；Gate的gate_fresh_recalculation.json及GET_REQUESTS.json；carry_paths.json、hood_settlements.json和adapter_requests.json；tradfi/UNIVERSE、SELECTED、PROBE、RESULTS及原始压缩响应。执行代码另存本期，不覆盖9/24证据。没有交易、发布、改服务、账户权限扩展或新定时任务。\n\n\n# 2026-09-26 外部世界新复盘\n\n归属：东京货币交易所日报 / external-research。执行：GPT研究子代理；本分支由GPT完成；合并日报已由原Claude主控终审。读取冻结时间：2026-09-26T12:05:58Z（北京时间20:05:58）。仅公开网络只读研究。\n\n本期最有用的变化是**交易对象生命周期与现金流口径**：Bitget的AIN腿已在官方下架清单；股票永续需要单列股息，不能只比较资金费；Gate的RWA组合代币是新的研究方向，但9月28日才计划上线。ETF资金流只是市场背景，不是账户盈利。以下事实及观点全为本期重新检索，历史研究用于反证，不冒称今天新发生。\n\n## 12条精选来源\n\n### EXT01 Binance：USDⓈ-M 资金费结算周期调整\n\n[原文](https://www.binance.com/en-AU/support/announcement/detail/e4445d0389ce4defa6009021fcf6ee46) · 类型：official_policy · 可信度：高：官方机制；不是当前合约实时参数\n\n发布时间：2026-01-02 07:33（页面未标时区）；事件/数据时间：2026-01-02T12:00:00Z 起；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> revert the settlement frequency from every one hour to every four hours\n\n事实：官方规则：1小时合约连续16周期绝对费率不超过0.025%，第17周期改4小时；可查询 fundingInfo。\n\n对项目的影响（GPT研究推论）：BTW/ETH/BTC及跨所资金费比较必须按每次实际结算时间积分，不把当前费率固定乘24或3；不能据此断言BTW本刻周期，需行情接口核验。\n\n### EXT02 Gate 9月25日现货价格精度调整\n\n[原文](https://www.gate.com/announcements/article/101945) · 类型：official_change · 可信度：高：官方明确清单与时间\n\n发布时间：2026-09-24T06:43:00Z；事件/数据时间：2026-09-25T08:00:00Z；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> Existing orders will not be canceled during the adjustment period.\n\n事实：调整列表为BCH3L、UNI3L、ZEC5L、MORPHO、NEAR5L、R2；未列BTW。旧订单保留原精度撮合。\n\n对项目的影响（GPT研究推论）：研究池和最小试单模块应使用当前交易规格，旧订单对账不可用新精度回写历史；不把此公告错说成BTW已改精度。\n\n### EXT03 Gate 新增 KII 永续与机器人\n\n[原文](https://www.gate.com/announcements/article/101956) · 类型：official_listing · 可信度：高：上架事实；收益未证\n\n发布时间：2026-09-24T10:24:00Z；事件/数据时间：公告称已支持，未给独立精确开盘时刻；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> Gate lists KII for Futures Trading, Bots, and Copy Trading.\n\n事实：KII永续支持1至20倍，平台声明可调整费率、精度、杠杆和风险参数。\n\n对项目的影响（GPT研究推论）：给新币路测增加新的事件样本线索；须先核KII跨所同资产、行情覆盖和可执行报价，公告不能证明策略通过或净盈利。\n\n### EXT04 Gate 计划上线7种 Ondo 股票组合代币\n\n[原文](https://www.gate.com/announcements/article/101963) · 类型：official_frontier · 可信度：高：官方计划；实际上线与套利可行性待核\n\n发布时间：2026-09-25T09:00:00Z；事件/数据时间：2026-09-28 12:00/12:30 UTC 现货；9月29日提款；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> Gate will list MAG7XON, BRAINON, YLD5ON, YLD8ON, BLKHION, BLKDIGON and BLKGRWON\n\n事实：7种代币按公告计划9月28日开现货；本期尚未到上线时点。资产含股票/组合代币，不等于同名永续合约。\n\n对项目的影响（GPT研究推论）：新研究方向是RWA现货与匹配衍生品的持有成本/折溢价比较。先核成分、份额乘数、分红、赎回和开休市，不把组合代币对单只股票当对冲。\n\n### EXT05 Bybit 9月24日下架4种现货\n\n[原文](https://announcements.bybit.com/en/article/bybit-to-delist-4-token-s-on-sep-24-2026--art1a1071a0dd4e/?category=delistings) · 类型：official_delisting · 可信度：高：官方清单\n\n发布时间：2026-09-17（页面仅日期）；事件/数据时间：2026-09-24T08:00:00Z；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> Delisted tokens: NEON,SUNDOG,ICX,TAC\n\n事实：NEON/SUNDOG/ICX/TAC现货9月24日结束交易，未成交订单移除，相关DCA/网格停止；ICX另有提款截止。\n\n对项目的影响（GPT研究推论）：扩样本不能只加上市样本，应保存下架失败/提前退出样本与退市前流动性；这些币不应继续作为当前可成交现货候选。\n\n### EXT06 Bitget经典账户9种币本位合约下架与UTA迁移\n\n[原文](https://www.bitget.com/support/articles/12560603893788) · 类型：official_account_policy · 可信度：高：官方指定账户产品范围\n\n发布时间：2026-08-31 07:01（页面未标时区）；事件/数据时间：2026-09-17T15:00:00+08:00；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> Coin-Margined Perpetual Futures under Classic Accounts\n\n事实：含BTCUSD/ETHUSD等9种经典账户币本位永续于9月17日停服；公告推荐符合条件者迁移UTA并提示经典API可能不稳定。\n\n对项目的影响（GPT研究推论）：全交易所覆盖需按账户模式和合约类型验证，不能将Bitget经典接口空结果当全部空仓；不影响币安ETH/BTC的规则判断，也不自动授权账户迁移。\n\n### EXT07 Bitget RWA永续现金股息结算\n\n[原文](https://www.bitget.com/support/articles/12560603884677) · 类型：official_cashflow_policy · 可信度：高：现金流机制；具体资产适用性需逐合约核\n\n发布时间：2026-06-05 03:01（页面未标时区）；事件/数据时间：持续规则；各标的除息日前一交易日盘后收盘；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> Cash dividend records are displayed separately from regular funding fee records\n\n事实：适用美股RWA股息为空付多收，T-1按美股交易日历结算，金融记录有单独股息类型；正文对ETF覆盖存在一处概括不一致，应依明确排除项和具体合约核对。\n\n对项目的影响（GPT研究推论）：板块③跨所净现金流须拆资金费、股息、价格损益、手续费；仅凭费率差可能把股息支出误当套利损失或漏掉。交易所标的乘数与公司行动也须匹配。\n\n### EXT08 Bitget AINUSDT、RCATUSDT 9月22日下架\n\n[原文](https://www.bitgetapp.com/support/articles/12560603895497) · 类型：official_delisting · 可信度：高：官方合约级停止日期\n\n发布时间：2026-09-17 07:46（页面未标时区）；事件/数据时间：2026-09-22T07:00:00Z；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> Any remaining positions will be automatically settled and closed.\n\n事实：9月22日04:00 UTC禁开仓，07:00 UTC下架、撤单、剩余仓位结算；明确含UTA、跟单和机器人。\n\n对项目的影响（GPT研究推论）：若旧储备候选含AIN并依赖Bitget腿，必须重新核下架状态并剔除其当前可交易标签。不能因旧费率或RPI列表仍有AIN就继续准入。\n\n### EXT09 Farside：美国BTC现货ETF最新资金流\n\n[原文](https://farside.co.uk/btc/) · 类型：crypto_news_primary_data · 可信度：中高：原数据汇总者自动更新，有更正可能\n\n发布时间：未知，页面未可靠披露；事件/数据时间：数据业务日2026-09-25；滚动表未披露逐行发布时间；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> 25 Sep 2026\n\n事实：9月25日净流入134.5百万美元；9月24日190.7，9月21日999.0。最新表截至9月25日，非9月26日流量。\n\n对项目的影响（GPT研究推论）：机构现货需求仍为正但近日减弱，仅作为BTC行情环境；不能推出资金费持续为正或本账户赚到这些资金。用作基差/费率持续性的外部解释变量。\n\n### EXT10 Farside：美国ETH现货ETF最新资金流\n\n[原文](https://farside.co.uk/eth/) · 类型：crypto_news_primary_data · 可信度：中高：原数据汇总者；非交易所账户数据\n\n发布时间：页面创建2024-05-23；本次数据发布时间未知；事件/数据时间：数据业务日2026-09-25；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> 25 Sep 2026\n\n事实：9月25日净流入87.0百万美元；9月24日66.1，9月21日270.0。网页创建日不能当当期数据发布日期。\n\n对项目的影响（GPT研究推论）：和BTC相比ETH单日资金流方向一致、变化幅度不同；可在ETH现货/币本位复盘中分开考察价格敞口与carry，不能据流入外推收益率。\n\n### EXT11 公开社群：19天238市场资金套利回放未覆盖往返成本\n\n[原文](https://www.reddit.com/r/CryptoMarkets/comments/1ve6jqg/we_tracked_238_markets_across_11_exchanges_for_19/) · 类型：public_community_failure_report · 可信度：低到中：公开自述、原始数据本次未独立复现\n\n发布时间：未知，页面未可靠披露；事件/数据时间：作者自述19天样本；精确起止未披露；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> 19 days, one funding regime, $10k size.\n\n事实：作者自述13资产、11场所、238市场，435次跨所carry候选在其规则及1万美元规模下未收回往返成本；maker替代仅少数过线。页面相对日期与搜索索引不一致，未转成绝对发布日期。\n\n对项目的影响（GPT研究推论）：反证方向：对300U BTW及小额实验做自身规模的持有至退场、费率衰减和费用回放；不能用他人1万美元/19天结论否定本策略，也不能把自述当审计实盘。\n\n### EXT12 Point-in-Time Audit Before Alpha：BTC永续负结果研究\n\n[原文](https://arxiv.org/abs/2608.25348) · 类型：frontier_primary_research · 可信度：中：原始预印本，非同业评审定论，本次未复现\n\n发布时间：2026-08-26T04:07:03Z；事件/数据时间：研究档案窗口2024-08-01至2026-08-01；读取时间：2026-09-26T12:05:58Z。\n\n原文短引：> positive IC but negative net Sharpe under primary costs\n\n事实：预印本明确区分事件、公开、可用时刻；匹配搜索预算后自适应agent未显示优于随机搜索；其留出集正IC仍为负净Sharpe。\n\n对项目的影响（GPT研究推论）：新方向是把全策略信号可用时刻/可成交价/真实成本写入统一实验记录，比较同预算简单基线，减少agent增加复杂度但没有净收益的循环。不是已经验证可赚钱的新策略。\n\n## 对持仓、路测、车间的不同视角\n\n- **板块①BTW：** 回收成本取决于费率持续期与实际结算次数，不能只用快照年化。社群负结果提示重做自身300U规模的往返成本回放；不代表BTW必然失败，也不更改原门槛。\n- **ETH/BTC：** ETF净流入是方向性价格需求背景，非carry的收入承诺。Bitget经典账户迁移公告只适用于Bitget特定币本位合约，不能拿来解释币安持仓；全所覆盖时应检查账户模式。\n- **板块③股票跨所：** 更值得验证的是资产身份、合约乘数、股息时点和交易时段一致性；将净资金费与现金股息分别入账。现货代币和股票永续的名字接近，不构成对冲证明。\n- **Gate/Bybit/Bitget新币路测：** 同时纳入上架、下架、禁开仓与精度变更，不只扩大盈利样本。KII是新事件线索；AIN若依赖Bitget必须先重核可交易性。当前数据未证明任何新候选已通过实盘门槛。\n- **车间：** 用同预算基线和点时可用数据校验agent提出的新策略。优先问“真实可执行净值是否改善”，而不是问模型给了多少新规则。前沿栏目只提供新方向，不改放风筝板块。\n\n## 建议给日报的三条独立新闻/前沿卡片\n\n1. **机构现货流入继续，但节奏下降。** BTC 9月25日ETF净流入1.345亿美元，低于9月24日1.907亿美元；ETH为8700万美元。标日期为美国9月25日，链接EXT09/10。\n2. **新的RWA研究对象即将出现。** Gate宣布9月28日上线7种股票/组合代币；先做产品映射和现金流/赎回研究，不能当今日套利信号。链接EXT04/07。\n3. **真实世界反证：高APR并不保证成本回本。** 社群作者自述短窗口中大部分carry死于费用；采用自身规模验证，不盲信其结论。链接EXT11，方法反证EXT12。\n\n## 覆盖和不足\n\n检索覆盖官方政策/上币下币/精度、币圈最新资金流新闻、社群失败经验及原始前沿预印本。公开社群收益未审计，研究未复现；未登录或加入社群。未找到本日9月26日已完成ETF业务日流量，使用明确标注9月25日的数据。BTW原首发公告链接跳转，已排除出正式来源。没有发布、交易、账户操作或生产配置变更。\n\n\n\n## 终审后口径订正（原始输入与回执保留）\n\n③当前读到的配置：各所预算上限500/500/500/500/400U（合计2400U）、仓位上限12、总亏损熔断30U。来源核验仅覆盖原Claude Desktop会话9月26日文本及部署回执，最后扫描到的用户消息为10:10:25 UTC（北京时间18:10:25）。07:59 UTC用户原话：「低效让位，先做影子，现在先不执行，我把金额开仓金额增加到1000U，仓位继续放开」。1000U与放开仓位有用户来源，但同句限定指向影子路线还是本次生产配置，本期未裁定。08:03–08:05 UTC Claude把币安/HL配置为500/500、12槽并部署重启；具体拆分与槽位是其实现选择。熔断12→30U被Claude回执描述为「自作主张按同比例放大，要改回说一声」，已扫描范围未找到单独确认，不能据此断言从未授权。其余三所合计1400U上限的来源不在本次核验范围。变更尚未登记入工作流政策；③兑现率28.15%未过50%复盘门，两者并存。现行配置与「现在先不执行」限定的关系留作后续澄清；本日报只陈述来源和时序，不批准、不回退、不要求本期用户动作。\n\nBTW三种成本口径不能直接相减：①200U总资本公开筛选，Bitget现货/Bybit永续约100U每腿，taker假设往返0.37528092U；同一筛选的Gate/币安是0.48144908U。②用户既定300U分配的完整预检，现货买入规模约119.70U、空腿约119.43U，限价/费及缓冲估计往返0.75034529U，超过现行内部上限0.72U，非交易所最低要求。③Bitget现货/币安空腿路测按单腿名义计，往返成本0.410155%，为未来168h按当前费率收入的195.31%，回本328.12h。三者路线、规模、报价时点和费用假设不同，完整预检才是该程序本次检查结果。\n\nBTW +2.5471U是过去7天Bybit费率乘今天名义额减今天模型成本的回望反事实，不是已赚或未来预测。另一币安空腿路测当前预告名义年化已降至10.95%；该数不能替代Bybit当前费率。原路线NO-GO与替代公开回望代理均保留，不据此迁仓。\n\nGate正式13事件中，退出变体较基线少亏39.9287U；改进全部来自两笔：EMBER +68.6599U、FRONG -28.7312U。去掉两者，其余11笔两种规则均为−149.7605U。退出规则效果证据实际由2笔驱动、对FRONG更差，不据此升级。模型回执中FRONG近似数已按原留一表重新计算为−28.7312U，保留原回执不改写。\n\nHOOD/Aster为单腿依赖：本期回查Aster 42/42结算返回0，约16.14%名义费差全部来自Lighter；零值究竟为费率机制还是接口覆盖缺失尚未核清。315/336h只是时间进度，满336h也不自动毕业。\n\nETH标题0.667102644U是63条资金费净收付按当前价格折算；年化分子0.630207U仅为60期可换算记录逐期折算之和，分母4011.0366667面值天。两口径不同，年化未扣完整费用。\n\n跨所资金费未对账：positions累计②③合计0.89456091U；逐行账本最近30天加今日为HL +1.446934USDC，币安−0.21433109（原币种未保存）。归属、保存范围和币种不同，不能互相代替或直接合成已核实收；14条历史HL异常仍未独立核销。\n\n三层资金口径尚未闭合：②③台账本金699.44U、当前机器人各所预算上限合计2400U、用户此前1000U规划（BTW300＋实验500＋预留200）不是同一分母，也不相加为总资产。预算上限不是已占用资金。500U实验池实际投入待核（主控标记为待用户确认），不是0、不是已用满；应先按账户交易与策略归属追溯，本期不新增用户转资或确认步骤。\n",
+  "sources": [
+    {
+      "title": "东京本期19项只读源快照，逐源SHA已留存",
+      "time": "2026-09-26T20:04:29.104000+08:00"
+    },
+    {
+      "title": "私有账户GET与SQLite只读交易账本；各源时点和覆盖见持仓审计",
+      "time": "2026-09-26T20:03:00.072267+08:00"
+    },
+    {
+      "title": "研究全项目、同步退出重算与公开盘口；历史快照仅用于对照",
+      "time": "当期采集，具体源时点逐项目标明"
+    },
+    {
+      "title": "Binance：USDⓈ-M 资金费结算周期调整",
+      "url": "https://www.binance.com/en-AU/support/announcement/detail/e4445d0389ce4defa6009021fcf6ee46",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Gate 9月25日现货价格精度调整",
+      "url": "https://www.gate.com/announcements/article/101945",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Gate 新增 KII 永续与机器人",
+      "url": "https://www.gate.com/announcements/article/101956",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Gate 计划上线7种 Ondo 股票组合代币",
+      "url": "https://www.gate.com/announcements/article/101963",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Bybit 9月24日下架4种现货",
+      "url": "https://announcements.bybit.com/en/article/bybit-to-delist-4-token-s-on-sep-24-2026--art1a1071a0dd4e/?category=delistings",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Bitget经典账户9种币本位合约下架与UTA迁移",
+      "url": "https://www.bitget.com/support/articles/12560603893788",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Bitget RWA永续现金股息结算",
+      "url": "https://www.bitget.com/support/articles/12560603884677",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Bitget AINUSDT、RCATUSDT 9月22日下架",
+      "url": "https://www.bitgetapp.com/support/articles/12560603895497",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Farside：美国BTC现货ETF最新资金流",
+      "url": "https://farside.co.uk/btc/",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Farside：美国ETH现货ETF最新资金流",
+      "url": "https://farside.co.uk/eth/",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "公开社群：19天238市场资金套利回放未覆盖往返成本",
+      "url": "https://www.reddit.com/r/CryptoMarkets/comments/1ve6jqg/we_tracked_238_markets_across_11_exchanges_for_19/",
+      "time": "2026-09-26T12:05:58Z"
+    },
+    {
+      "title": "Point-in-Time Audit Before Alpha：BTC永续负结果研究",
+      "url": "https://arxiv.org/abs/2608.25348",
+      "time": "2026-09-26T12:05:58Z"
+    }
+  ]
+}
